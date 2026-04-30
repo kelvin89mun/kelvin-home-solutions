@@ -3,30 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LG Subscribe Malaysia | Kelvin LG Authorize Consultant</title>
+    <title>Kelvin Home Solutions | Appliance Subscription Malaysia</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --lg-red: #c8102e;
-            --lg-dark: #1a1a1a;
-            --lg-gray: #f5f5f5;
+            --primary-red: #c8102e;
+            --primary-dark: #1a1a1a;
+            --primary-gray: #f5f5f5;
             --text: #333;
             --white: #ffffff;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: var(--text);
             overflow-x: hidden;
         }
-
-        /* Navigation */
         .navbar {
             position: fixed;
             top: 0;
@@ -35,9 +27,7 @@
             backdrop-filter: blur(10px);
             z-index: 1000;
             box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s;
         }
-
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -47,50 +37,33 @@
             align-items: center;
             height: 80px;
         }
-
         .logo {
             display: flex;
             align-items: center;
             gap: 12px;
             text-decoration: none;
         }
-
-        .logo-lg {
-            font-size: 36px;
-            font-weight: 900;
-            color: var(--lg-red);
-            letter-spacing: -2px;
-            font-style: italic;
+        .logo-text-main {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            letter-spacing: -1px;
         }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.2;
-        }
-
-        .logo-name {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--lg-dark);
-        }
-
-        .logo-sub {
-            font-size: 10px;
-            color: #888;
-            letter-spacing: 1.5px;
+        .logo-text-sub {
+            font-size: 12px;
+            color: #666;
+            letter-spacing: 2px;
             text-transform: uppercase;
+            margin-top: -5px;
         }
-
         .nav-links {
             display: flex;
             list-style: none;
             gap: 35px;
         }
-
         .nav-links a {
             text-decoration: none;
-            color: var(--lg-dark);
+            color: var(--primary-dark);
             font-weight: 600;
             font-size: 14px;
             transition: color 0.3s;
@@ -98,11 +71,9 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-
         .nav-links a:hover {
-            color: var(--lg-red);
+            color: var(--primary-red);
         }
-
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -110,32 +81,27 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--lg-red);
+            background: var(--primary-red);
             transition: width 0.3s;
         }
-
         .nav-links a:hover::after {
             width: 100%;
         }
-
         .nav-cta {
-            background: var(--lg-red);
+            background: var(--primary-red);
             color: var(--white) !important;
             padding: 12px 28px;
             border-radius: 30px;
             transition: all 0.3s;
         }
-
         .nav-cta:hover {
             background: #a00d24;
             transform: translateY(-2px);
             box-shadow: 0 5px 20px rgba(200,16,46,0.3);
         }
-
         .nav-cta::after {
             display: none !important;
         }
-
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -149,514 +115,564 @@
             margin-top: 80px;
             background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
             color: var(--white);
-            padding: 140px 20px 100px;
-            text-align: center;
+            padding: 0;
             position: relative;
             overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
         }
-
         .hero::before {
             content: '';
             position: absolute;
-            top: -30%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(200,16,46,0.2) 0%, transparent 70%);
-            animation: pulse 5s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.4; }
-            50% { transform: scale(1.3); opacity: 0.7; }
-        }
-
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
             z-index: 1;
         }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(200,16,46,0.9);
-            color: var(--white);
-            padding: 10px 28px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        .hero-bg-photo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/kelvin-hero.jpg') center center / cover no-repeat;
+            opacity: 0.2;
         }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 25px;
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .hero-text h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
             font-weight: 800;
             line-height: 1.1;
-            animation: fadeInUp 1s ease 0.2s both;
         }
-
-        .hero .subtitle {
-            font-size: 1.3rem;
+        .hero-text .subtitle {
+            font-size: 1.2rem;
             margin-bottom: 15px;
             opacity: 0.9;
-            animation: fadeInUp 1s ease 0.4s both;
             font-weight: 300;
         }
-
-        .hero .price-highlight {
-            font-size: 2rem;
+        .hero-text .price-highlight {
+            font-size: 1.8rem;
             font-weight: 800;
             color: #ffd700;
-            margin-bottom: 40px;
-            animation: fadeInUp 1s ease 0.5s both;
+            margin-bottom: 30px;
         }
-
         .hero-buttons {
             display: flex;
             gap: 20px;
-            justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 1s ease 0.7s both;
         }
-
+        .hero-photo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-photo img {
+            width: 320px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
         .cta-button {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 18px 45px;
+            padding: 16px 40px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1rem;
             transition: all 0.3s;
             border: 2px solid transparent;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
         .cta-primary {
-            background: var(--lg-red);
+            background: var(--primary-red);
             color: var(--white);
             box-shadow: 0 10px 30px rgba(200,16,46,0.4);
         }
-
         .cta-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(200,16,46,0.5);
             background: #a00d24;
         }
-
         .cta-secondary {
             background: transparent;
             color: var(--white);
             border-color: rgba(255,255,255,0.4);
         }
-
         .cta-secondary:hover {
             background: var(--white);
-            color: var(--lg-dark);
+            color: var(--primary-dark);
             transform: translateY(-3px);
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Section Styles */
         .section {
-            padding: 100px 20px;
+            padding: 80px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
-
         .section-title {
             text-align: center;
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
-            color: var(--lg-dark);
+            color: var(--primary-dark);
             font-weight: 800;
             line-height: 1.2;
         }
-
         .section-subtitle {
             text-align: center;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: #666;
             max-width: 650px;
-            margin: 0 auto 70px;
+            margin: 0 auto 60px;
             line-height: 1.7;
         }
 
-        /* Benefits */
-        .benefits-section {
-            background: var(--lg-gray);
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .benefit-card {
-            background: var(--white);
-            padding: 50px 35px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
-            transition: all 0.4s;
-            border: 1px solid #eee;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
-        }
-
-        .benefit-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--lg-red), #ff4757);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 30px;
-            font-size: 36px;
-            color: var(--white);
-            box-shadow: 0 10px 30px rgba(200,16,46,0.3);
-        }
-
-        .benefit-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 18px;
-            color: var(--lg-dark);
-            font-weight: 700;
-        }
-
-        .benefit-card p {
-            color: #666;
-            line-height: 1.8;
-            font-size: 0.95rem;
-        }
-
-        /* Products */
-        .products-section {
-            background: var(--white);
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 35px;
-        }
-
-        .product-card {
-            background: var(--white);
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.08);
-            transition: all 0.4s;
-            border: 1px solid #f0f0f0;
-            position: relative;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 70px rgba(0,0,0,0.15);
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 25px;
-            left: 25px;
-            background: var(--lg-red);
-            color: var(--white);
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 0.8rem;
-            font-weight: 800;
-            z-index: 2;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .product-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s;
-        }
-
-        .product-card:hover .product-image {
-            transform: scale(1.05);
-        }
-
-        .product-image-container {
-            overflow: hidden;
-            position: relative;
-        }
-
-        .product-cta {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--lg-red);
-            color: var(--white);
-            padding: 14px 35px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.95rem;
-            opacity: 0;
-            transition: all 0.3s;
-            white-space: nowrap;
-            box-shadow: 0 5px 20px rgba(200,16,46,0.4);
-        }
-
-        .product-card:hover .product-cta {
-            opacity: 1;
-            transform: translateX(-50%) translateY(-5px);
-        }
-
-        .product-cta:hover {
-            background: #a00d24;
-        }
-
-        .product-info {
-            padding: 35px;
-        }
-
-        .product-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--lg-dark);
-            font-weight: 700;
-            line-height: 1.3;
-        }
-
-        .product-info p {
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 25px;
-            font-size: 0.95rem;
-        }
-
-        .product-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 25px;
-        }
-
-        .feature-tag {
-            background: #f0f0f0;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            color: #555;
-            font-weight: 600;
-        }
-
-        .product-price {
-            display: flex;
-            align-items: baseline;
-            gap: 8px;
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .price {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--lg-red);
-        }
-
-        .price-unit {
-            font-size: 1rem;
-            color: #888;
-        }
-
-        .product-btn {
-            display: block;
-            width: 100%;
-            padding: 16px;
-            background: var(--lg-red);
-            color: var(--white);
-            text-align: center;
-            text-decoration: none;
-            border-radius: 14px;
-            font-weight: 700;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .product-btn:hover {
-            background: #a00d24;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(200,16,46,0.3);
-        }
-
-        /* About / Why Choose */
+        /* About Section */
         .about-section {
             background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
             color: var(--white);
         }
-
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             align-items: center;
         }
-
         .about-text h2 {
-            font-size: 2.8rem;
-            margin-bottom: 30px;
+            font-size: 2.5rem;
+            margin-bottom: 25px;
             font-weight: 800;
             line-height: 1.2;
         }
-
         .about-text p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             line-height: 1.9;
             opacity: 0.85;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
-
+        .about-photo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .about-photo img {
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+            border: 3px solid rgba(255,255,255,0.2);
+        }
         .about-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-top: 50px;
+            gap: 20px;
+            margin-top: 40px;
         }
-
         .stat-item {
             text-align: center;
-            padding: 25px 15px;
+            padding: 20px 15px;
             background: rgba(255,255,255,0.08);
             border-radius: 16px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.1);
         }
-
         .stat-number {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            color: var(--lg-red);
+            color: var(--primary-red);
             display: block;
             line-height: 1;
         }
-
         .stat-label {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             opacity: 0.8;
-            margin-top: 10px;
+            margin-top: 8px;
             display: block;
         }
 
-        .about-image {
-            border-radius: 24px;
+        /* Benefits */
+        .benefits-section {
+            background: var(--primary-gray);
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        .benefit-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            transition: all 0.4s;
+            border: 1px solid #eee;
+        }
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+        }
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-red), #ff4757);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 32px;
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(200,16,46,0.3);
+        }
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+        .benefit-card p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 0.9rem;
+        }
+
+        /* Products */
+        .products-section {
+            background: var(--white);
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background: var(--white);
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+            border: 1px solid #f0f0f0;
+            position: relative;
+            cursor: pointer;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        .product-image-container {
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 350px;
+        }
+        .product-image {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.5s;
+            border-radius: 8px;
+        }
+        .product-card:hover .product-image {
+            transform: scale(1.03);
+        }
+        .product-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            padding: 40px 20px 20px;
+            opacity: 0;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: center;
+        }
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+        .product-cta {
+            display: inline-block;
+            background: var(--primary-red);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .product-cta:hover {
+            background: #a00d24;
+            transform: translateY(-2px);
+        }
+        .product-info {
+            padding: 20px;
+        }
+        .product-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        .product-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .product-price {
+            display: flex;
+            align-items: baseline;
+            gap: 5px;
+        }
+        .price {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary-red);
+        }
+        .price-unit {
+            font-size: 0.85rem;
+            color: #888;
+        }
+        .view-details {
+            color: var(--primary-red);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-content {
+            background: var(--white);
+            border-radius: 20px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalIn 0.3s ease;
+        }
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 36px;
+            height: 36px;
+            background: var(--primary-red);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        .modal-close:hover {
+            background: #a00d24;
+            transform: rotate(90deg);
+        }
+        .modal-image-container {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-image {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .modal-info {
+            padding: 30px;
+        }
+        .modal-info h2 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            color: var(--primary-dark);
+        }
+        .modal-info .modal-price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 15px;
+        }
+        .modal-info p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        .modal-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+        .modal-feature-tag {
+            background: #f0f0f0;
+            padding: 6px 14px;
+            border-radius: 18px;
+            font-size: 0.85rem;
+            color: #555;
+            font-weight: 600;
+        }
+        .modal-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .modal-btn {
+            padding: 14px 35px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+        .modal-btn-primary {
+            background: var(--primary-red);
+            color: var(--white);
+        }
+        .modal-btn-primary:hover {
+            background: #a00d24;
+            transform: translateY(-2px);
+        }
+        .modal-btn-secondary {
+            background: transparent;
+            color: var(--primary-dark);
+            border: 2px solid #ddd;
+        }
+        .modal-btn-secondary:hover {
+            border-color: var(--primary-red);
+            color: var(--primary-red);
         }
 
         /* Reviews */
         .reviews-section {
-            background: var(--lg-gray);
+            background: var(--primary-gray);
         }
-
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 25px;
         }
-
         .review-card {
             background: var(--white);
-            padding: 45px;
-            border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
             transition: all 0.3s;
             position: relative;
         }
-
         .review-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
-
         .review-quote {
-            font-size: 5rem;
-            color: var(--lg-red);
+            font-size: 4rem;
+            color: var(--primary-red);
             opacity: 0.15;
             position: absolute;
             top: 5px;
-            left: 25px;
+            left: 20px;
             line-height: 1;
             font-family: Georgia, serif;
         }
-
         .review-stars {
             color: #ffc107;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            letter-spacing: 3px;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
         }
-
         .review-text {
             font-style: italic;
             color: #555;
-            line-height: 1.9;
-            margin-bottom: 25px;
+            line-height: 1.8;
+            margin-bottom: 20px;
             position: relative;
             z-index: 1;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
-
         .reviewer {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
-
         .reviewer-avatar {
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, var(--lg-red), #ff4757);
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary-red), #ff4757);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--white);
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
         }
-
         .reviewer-info h4 {
             font-weight: 700;
-            color: var(--lg-dark);
-            margin-bottom: 4px;
-            font-size: 1.05rem;
+            color: var(--primary-dark);
+            margin-bottom: 3px;
+            font-size: 1rem;
         }
-
         .reviewer-info span {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #888;
         }
 
@@ -664,78 +680,68 @@
         .faq-section {
             background: var(--white);
         }
-
         .faq-container {
-            max-width: 850px;
+            max-width: 800px;
             margin: 0 auto;
         }
-
         .faq-item {
             background: var(--white);
-            margin-bottom: 18px;
-            border-radius: 16px;
+            margin-bottom: 15px;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             border: 1px solid #eee;
             transition: all 0.3s;
         }
-
         .faq-item:hover {
-            box-shadow: 0 8px 35px rgba(0,0,0,0.08);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
         }
-
         .faq-question {
-            padding: 28px 35px;
+            padding: 22px 28px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--lg-dark);
+            font-size: 1rem;
+            color: var(--primary-dark);
             transition: all 0.3s;
         }
-
         .faq-question:hover {
             background: #fafafa;
         }
-
         .faq-icon {
-            width: 35px;
-            height: 35px;
-            background: var(--lg-red);
+            width: 30px;
+            height: 30px;
+            background: var(--primary-red);
             color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             transition: all 0.3s;
             flex-shrink: 0;
             font-weight: 300;
         }
-
         .faq-item.active .faq-icon {
             transform: rotate(45deg);
-            background: var(--lg-dark);
+            background: var(--primary-dark);
         }
-
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease, padding 0.4s ease;
-            padding: 0 35px;
+            padding: 0 28px;
         }
-
         .faq-item.active .faq-answer {
             max-height: 500px;
-            padding: 0 35px 28px;
+            padding: 0 28px 22px;
         }
-
         .faq-answer p {
             color: #666;
-            line-height: 1.9;
-            font-size: 0.95rem;
+            line-height: 1.8;
+            font-size: 0.9rem;
         }
 
         /* Contact */
@@ -743,195 +749,168 @@
             background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
             color: var(--white);
         }
-
         .contact-section .section-title {
             color: var(--white);
         }
-
         .contact-section .section-subtitle {
             color: rgba(255,255,255,0.7);
         }
-
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 50px;
             align-items: start;
         }
-
         .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 35px;
+            font-size: 1.6rem;
+            margin-bottom: 30px;
             font-weight: 700;
         }
-
         .contact-item {
             display: flex;
             align-items: flex-start;
-            gap: 20px;
-            margin-bottom: 30px;
+            gap: 18px;
+            margin-bottom: 25px;
         }
-
         .contact-icon {
-            width: 55px;
-            height: 55px;
+            width: 50px;
+            height: 50px;
             background: rgba(200,16,46,0.2);
-            border-radius: 14px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             flex-shrink: 0;
         }
-
         .contact-detail h4 {
-            font-size: 1.15rem;
-            margin-bottom: 8px;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
             font-weight: 700;
         }
-
         .contact-detail p {
             opacity: 0.8;
-            line-height: 1.7;
-            font-size: 0.95rem;
+            line-height: 1.6;
+            font-size: 0.9rem;
         }
-
         .hours-table {
             width: 100%;
-            margin-top: 15px;
+            margin-top: 12px;
             border-collapse: collapse;
         }
-
         .hours-table td {
-            padding: 10px 0;
+            padding: 8px 0;
             border-bottom: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
-
         .hours-table td:first-child {
             font-weight: 600;
         }
-
         .hours-table td:last-child {
             text-align: right;
             opacity: 0.9;
         }
-
         .contact-form {
             background: rgba(255,255,255,0.05);
-            padding: 45px;
-            border-radius: 24px;
+            padding: 35px;
+            border-radius: 20px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.1);
         }
-
         .contact-form h3 {
-            font-size: 1.6rem;
-            margin-bottom: 30px;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
             font-weight: 700;
         }
-
         .form-group {
-            margin-bottom: 22px;
+            margin-bottom: 18px;
         }
-
         .form-group label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
-
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 16px 20px;
+            padding: 14px 18px;
             border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 14px;
+            border-radius: 12px;
             background: rgba(255,255,255,0.1);
             color: var(--white);
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.3s;
         }
-
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: var(--lg-red);
+            border-color: var(--primary-red);
             background: rgba(255,255,255,0.15);
         }
-
         .form-group input::placeholder,
         .form-group textarea::placeholder {
             color: rgba(255,255,255,0.4);
         }
-
         .form-group select option {
-            background: var(--lg-dark);
+            background: var(--primary-dark);
             color: var(--white);
         }
-
         .submit-btn {
             width: 100%;
-            padding: 18px;
-            background: var(--lg-red);
+            padding: 16px;
+            background: var(--primary-red);
             color: var(--white);
             border: none;
-            border-radius: 14px;
-            font-size: 1.1rem;
+            border-radius: 12px;
+            font-size: 1rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
         .submit-btn:hover {
             background: #a00d24;
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(200,16,46,0.4);
+            box-shadow: 0 8px 25px rgba(200,16,46,0.4);
         }
 
         /* Footer */
         .footer {
             background: #08080f;
             color: var(--white);
-            padding: 80px 20px 30px;
+            padding: 60px 20px 25px;
         }
-
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 60px;
+            gap: 40px;
+            margin-bottom: 50px;
         }
-
-        .footer-brand .logo-lg {
-            color: var(--lg-red);
-            font-size: 40px;
-            margin-bottom: 20px;
+        .footer-brand .logo-text-main {
+            color: var(--primary-red);
+            font-size: 32px;
+            margin-bottom: 15px;
             display: inline-block;
         }
-
         .footer-brand p {
             opacity: 0.7;
-            line-height: 1.9;
-            margin-bottom: 25px;
-            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
         }
-
         .footer-social {
             display: flex;
-            gap: 15px;
+            gap: 12px;
         }
-
         .social-icon {
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
             display: flex;
@@ -939,130 +918,90 @@
             justify-content: center;
             text-decoration: none;
             color: var(--white);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             transition: all 0.3s;
         }
-
         .social-icon:hover {
-            background: var(--lg-red);
+            background: var(--primary-red);
             transform: translateY(-3px);
         }
-
         .footer-links h4 {
-            margin-bottom: 25px;
-            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-size: 1rem;
             color: var(--white);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
         .footer-links ul {
             list-style: none;
         }
-
         .footer-links li {
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
-
         .footer-links a {
             color: rgba(255,255,255,0.6);
             text-decoration: none;
             transition: all 0.3s;
             display: inline-block;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
-
         .footer-links a:hover {
             color: var(--white);
             transform: translateX(5px);
         }
-
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 35px;
+            padding-top: 25px;
             text-align: center;
-            opacity: 0.6;
-            font-size: 0.9rem;
+            opacity: 0.5;
+            font-size: 0.85rem;
             max-width: 1200px;
             margin: 0 auto;
             line-height: 1.8;
         }
-
-        /* Scroll Animation */
         .fade-in {
             opacity: 0;
             transform: translateY(40px);
             transition: all 0.8s ease;
         }
-
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .about-content,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .benefits-grid,
-            .reviews-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-social {
-                justify-content: center;
-            }
-
-            .about-stats {
-                grid-template-columns: 1fr;
-            }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-photo { order: -1; }
+            .hero-photo img { width: 220px; height: 220px; }
+            .hero h1 { font-size: 2rem; }
+            .hero .subtitle { font-size: 1rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .about-content { grid-template-columns: 1fr; }
+            .about-photo { order: -1; }
+            .about-photo img { width: 280px; height: 280px; }
+            .benefits-grid, .reviews-grid { grid-template-columns: 1fr; }
+            .products-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .modal-content { margin: 10px; max-height: 95vh; }
+            .modal-image-container { padding: 20px; }
+            .modal-info { padding: 20px; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+            .footer-social { justify-content: center; }
+            .about-stats { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- Navigation - 无 LG Logo -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <span class="logo-lg">LG</span>
-                <div class="logo-text">
-                    <span class="logo-name">Kelvin Consultant</span>
-                    <span class="logo-sub">Authorize Consultant</span>
+                <div>
+                    <div class="logo-text-main">Kelvin</div>
+                    <div class="logo-text-sub">Home Solutions</div>
                 </div>
             </a>
             <ul class="nav-links">
@@ -1076,617 +1015,751 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Your Photo -->
     <section class="hero" id="home">
+        <div class="hero-bg-photo"></div>
         <div class="hero-content">
-            <div class="hero-badge">🏆 LG Authorize Consultant</div>
-            <h1>LG Subscribe Malaysia<br>Smart Home Appliances</h1>
-            <p class="subtitle">Rent-to-own the latest LG appliances with zero deposit.<br>Professional consultation by Kelvin — your trusted LG advisor.</p>
-            <div class="price-highlight">From Only RM25/month</div>
-            <div class="hero-buttons">
-                <a href="#products" class="cta-button cta-primary">Browse Products</a>
-                <a href="https://wa.me/601176060833" class="cta-button cta-secondary" target="_blank">WhatsApp Us</a>
+            <div class="hero-text">
+                <div class="hero-badge">🏆 Premium Appliance Consultant</div>
+                <h1>Hi, I'm Kelvin<br>Your Home Appliance Expert</h1>
+                <p class="subtitle">Professional consultation for home appliance subscriptions.<br>Helping you find the perfect appliances with zero deposit.</p>
+                <div class="price-highlight">From Only RM25/month</div>
+                <div class="hero-buttons">
+                    <a href="#products" class="cta-button cta-primary">Browse Products</a>
+                    <a href="https://wa.me/601176060833" class="cta-button cta-secondary" target="_blank">WhatsApp Me</a>
+                </div>
+            </div>
+            <div class="hero-photo">
+                <img src="images/kelvin-hero.jpg" alt="Kelvin - Appliance Consultant">
             </div>
         </div>
     </section>
 
     <!-- Benefits -->
     <section class="section benefits-section" id="benefits">
-        <h2 class="section-title fade-in">Why LG Subscribe?</h2>
-        <p class="section-subtitle fade-in">Experience the smartest way to own premium LG appliances with flexible rental plans designed for Malaysian homes.</p>
-
+        <h2 class="section-title fade-in">Why Subscribe?</h2>
+        <p class="section-subtitle fade-in">Experience the smartest way to own premium home appliances with flexible rental plans designed for Malaysian homes.</p>
         <div class="benefits-grid">
             <div class="benefit-card fade-in">
                 <div class="benefit-icon">💰</div>
                 <h3>Zero Deposit</h3>
-                <p>No upfront payment required. Start enjoying your LG appliances immediately with affordable monthly installments.</p>
+                <p>No upfront payment required. Start enjoying your appliances immediately with affordable monthly installments.</p>
             </div>
-
             <div class="benefit-card fade-in">
                 <div class="benefit-icon">🔧</div>
                 <h3>5-7 Years Maintenance</h3>
                 <p>Comprehensive maintenance service included. Regular visits, filter replacements, and performance checks at no extra cost.</p>
             </div>
-
             <div class="benefit-card fade-in">
                 <div class="benefit-icon">📱</div>
-                <h3>LG ThinQ Smart Control</h3>
-                <p>Control all your LG appliances remotely via the LG ThinQ app. Schedule, monitor, and optimize your home effortlessly.</p>
+                <h3>Smart Control</h3>
+                <p>Control all your appliances remotely via smart app. Schedule, monitor, and optimize your home effortlessly.</p>
             </div>
         </div>
     </section>
 
-    <!-- Products Section with 74 Images -->
+    <!-- Products Section -->
     <section class="section products-section" id="products">
         <h2 class="section-title fade-in">Our Products</h2>
-        <p class="section-subtitle fade-in">74 Premium LG Appliances Available for Subscription. Click any product to inquire via WhatsApp.</p>
-
+        <p class="section-subtitle fade-in">37 Premium Appliances Available for Subscription. Click any product to view details and inquire via WhatsApp.</p>
         <div class="products-grid">
-            <div class="product-card fade-in" data-category="water">
+            <div class="product-card fade-in" data-category="water" onclick="openModal(0)">
                 <div class="product-image-container">
-                    <img src="images/product-01.jpg" alt="LG PuriCare™ Water Purifier" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20PuriCare™%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <img src="images/product-01.jpg" alt="Premium Water Purifier" class="product-image" loading="lazy">
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Premium%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
-                    <h3>LG PuriCare™ Water Purifier</h3>
-                    <p>Tankless design with 4-stage filtration and UV sterilization. Hot, cold & ambient water.</p>
-                    <div class="product-price">
-                        <span class="price">RM35</span>
-                        <span class="price-unit">/month</span>
+                    <h3>Premium Water Purifier</h3>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM35</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20PuriCare™%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="water">
+            <div class="product-card fade-in" data-category="water" onclick="openModal(1)">
                 <div class="product-image-container">
-                    <img src="images/product-02.jpg" alt="LG Objet Collection Water Purifier" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Objet%20Collection%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <img src="images/product-02.jpg" alt="Designer Water Purifier" class="product-image" loading="lazy">
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Designer%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
-                    <h3>LG Objet Collection Water Purifier</h3>
-                    <p>Stylish design with WQA Gold Seal. Hot & ambient water with auto sterilization.</p>
-                    <div class="product-price">
-                        <span class="price">RM30</span>
-                        <span class="price-unit">/month</span>
+                    <h3>Designer Water Purifier</h3>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM35</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Objet%20Collection%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="water">
+            <div class="product-card fade-in" data-category="water" onclick="openModal(2)">
                 <div class="product-image-container">
-                    <img src="images/product-03.png" alt="LG Undersink Water Purifier" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Undersink%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <img src="images/product-03.png" alt="Undersink Water Purifier" class="product-image" loading="lazy">
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Undersink%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
-                    <h3>LG Undersink Water Purifier</h3>
-                    <p>Space-saving undersink design. WQA Gold Seal with hot, cold & ambient water.</p>
-                    <div class="product-price">
-                        <span class="price">RM55</span>
-                        <span class="price-unit">/month</span>
+                    <h3>Undersink Water Purifier</h3>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM55</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Undersink%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="water">
+            <div class="product-card fade-in" data-category="water" onclick="openModal(3)">
                 <div class="product-image-container">
-                    <img src="images/product-04.png" alt="LG Objet Collection (4 Colors)" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Objet%20Collection%20(4%20Colors).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <img src="images/product-04.png" alt="Designer Collection (4 Colors)" class="product-image" loading="lazy">
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Designer%20Collection%20(4%20Colors).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
-                    <h3>LG Objet Collection (4 Colors)</h3>
-                    <p>Available in 4 elegant colors. WQA Gold Seal certified with auto sterilization.</p>
-                    <div class="product-price">
-                        <span class="price">RM35</span>
-                        <span class="price-unit">/month</span>
+                    <h3>Designer Collection (4 Colors)</h3>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM35</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Objet%20Collection%20(4%20Colors).%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="air">
+            <div class="product-card fade-in" data-category="air" onclick="openModal(4)">
                 <div class="product-image-container">
                     <img src="images/product-05.jpg" alt="16L Dual Inverter Dehumidifier" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2016L%20Dual%20Inverter%20Dehumidifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%2016L%20Dual%20Inverter%20Dehumidifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>16L Dual Inverter Dehumidifier</h3>
-                    <p>Dual Inverter Compressor™ with compact design. Hidden handle & cord.</p>
-                    <div class="product-price">
-                        <span class="price">RM35</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM35</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2016L%20Dual%20Inverter%20Dehumidifier.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="air">
+            <div class="product-card fade-in" data-category="air" onclick="openModal(5)">
                 <div class="product-image-container">
                     <img src="images/product-06.png" alt="Cat Tower Air Purifier" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Cat%20Tower%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Cat%20Tower%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>Cat Tower Air Purifier</h3>
-                    <p>PM 1.0 filtration with 360° purification. 550sf coverage with pet mode.</p>
-                    <div class="product-price">
-                        <span class="price">RM35</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM35</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Cat%20Tower%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="air">
+            <div class="product-card fade-in" data-category="air" onclick="openModal(6)">
                 <div class="product-image-container">
                     <img src="images/product-07.png" alt="HIT Air Purifier" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20HIT%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20HIT%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>HIT Air Purifier</h3>
-                    <p>PM 1.0 filtration with 360° purification. 600sf coverage for large rooms.</p>
-                    <div class="product-price">
-                        <span class="price">RM25</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM25</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20HIT%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="air">
+            <div class="product-card fade-in" data-category="air" onclick="openModal(7)">
                 <div class="product-image-container">
                     <img src="images/product-08.png" alt="Aero Booster Air Purifier" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Aero%20Booster%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Aero%20Booster%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>Aero Booster Air Purifier</h3>
-                    <p>PM 1.0 filtration with 360° purification. 550sf coverage with ThinQ™.</p>
-                    <div class="product-price">
-                        <span class="price">RM33</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM33</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Aero%20Booster%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="air">
+            <div class="product-card fade-in" data-category="air" onclick="openModal(8)">
                 <div class="product-image-container">
                     <img src="images/product-09.png" alt="Aero Furniture Air Purifier" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Aero%20Furniture%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Aero%20Furniture%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>Aero Furniture Air Purifier</h3>
-                    <p>Stylish furniture design with PM 1.0 filtration. 360° purification.</p>
-                    <div class="product-price">
-                        <span class="price">RM30</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM30</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Aero%20Furniture%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="air">
+            <div class="product-card fade-in" data-category="air" onclick="openModal(9)">
                 <div class="product-image-container">
                     <img src="images/product-10.png" alt="Alpha Pet Air Purifier (Single)" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Alpha%20Pet%20Air%20Purifier%20(Single).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Alpha%20Pet%20Air%20Purifier%20(Single).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>Alpha Pet Air Purifier (Single)</h3>
-                    <p>Air Booster V2 with PM 1.0 filtration. Pet mode for pet owners.</p>
-                    <div class="product-price">
-                        <span class="price">RM38</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM38</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Alpha%20Pet%20Air%20Purifier%20(Single).%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="air">
+            <div class="product-card fade-in" data-category="air" onclick="openModal(10)">
                 <div class="product-image-container">
                     <img src="images/product-11.png" alt="Alpha Pet Air Purifier (Double)" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Alpha%20Pet%20Air%20Purifier%20(Double).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Alpha%20Pet%20Air%20Purifier%20(Double).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>Alpha Pet Air Purifier (Double)</h3>
-                    <p>Double booster with Air Booster V2. Enhanced pet mode filtration.</p>
-                    <div class="product-price">
-                        <span class="price">RM53</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM53</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Alpha%20Pet%20Air%20Purifier%20(Double).%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="washer">
+            <div class="product-card fade-in" data-category="washer" onclick="openModal(11)">
                 <div class="product-image-container">
-                    <img src="images/product-12.png" alt="LG WashTower™ 14KG/10KG" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20WashTower™%2014KG/10KG.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <img src="images/product-12.png" alt="WashTower 14KG/10KG" class="product-image" loading="lazy">
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20WashTower%2014KG/10KG.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
-                    <h3>LG WashTower™ 14KG/10KG</h3>
-                    <p>AI DD™ with TurboWash™ 360°. Steam+™ technology with ThinQ™.</p>
-                    <div class="product-price">
-                        <span class="price">RM105</span>
-                        <span class="price-unit">/month</span>
+                    <h3>WashTower 14KG/10KG</h3>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM105</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20WashTower™%2014KG/10KG.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="washer">
+            <div class="product-card fade-in" data-category="washer" onclick="openModal(12)">
                 <div class="product-image-container">
-                    <img src="images/product-13.png" alt="LG WashTower™ 25KG/20KG" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20WashTower™%2025KG/20KG.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <img src="images/product-13.png" alt="WashTower 25KG/20KG" class="product-image" loading="lazy">
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20WashTower%2025KG/20KG.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
-                    <h3>LG WashTower™ 25KG/20KG</h3>
-                    <p>Large capacity AI DD™ with TurboWash™ 360°. Steam+™ technology.</p>
-                    <div class="product-price">
-                        <span class="price">RM140</span>
-                        <span class="price-unit">/month</span>
+                    <h3>WashTower 25KG/20KG</h3>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM140</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20WashTower™%2025KG/20KG.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="washer">
+            <div class="product-card fade-in" data-category="washer" onclick="openModal(13)">
                 <div class="product-image-container">
                     <img src="images/product-14.png" alt="Washer Dryer Combo Set" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Washer%20Dryer%20Combo%20Set.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Washer%20Dryer%20Combo%20Set.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>Washer Dryer Combo Set</h3>
-                    <p>AI DD Washer with Dual Inverter Heat Pump. TurboWash™ 360°.</p>
-                    <div class="product-price">
-                        <span class="price">RM150</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM150</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Washer%20Dryer%20Combo%20Set.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="washer">
+            <div class="product-card fade-in" data-category="washer" onclick="openModal(14)">
                 <div class="product-image-container">
                     <img src="images/product-15.png" alt="15KG AI DD Washing Machine" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2015KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%2015KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>15KG AI DD Washing Machine</h3>
-                    <p>AI DD™ with Turbo 360™. Steam™ technology with ThinQ™.</p>
-                    <div class="product-price">
-                        <span class="price">RM53</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM53</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2015KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="washer">
+            <div class="product-card fade-in" data-category="washer" onclick="openModal(15)">
                 <div class="product-image-container">
                     <img src="images/product-16.png" alt="20KG AI DD Washing Machine" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2020KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%2020KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>20KG AI DD Washing Machine</h3>
-                    <p>Large capacity AI DD™ with Turbo 360™. Steam™ technology.</p>
-                    <div class="product-price">
-                        <span class="price">RM60</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM60</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2020KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="washer">
+            <div class="product-card fade-in" data-category="washer" onclick="openModal(16)">
                 <div class="product-image-container">
                     <img src="images/product-17.png" alt="10.5KG AI DD Washing Machine" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2010.5KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%2010.5KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>10.5KG AI DD Washing Machine</h3>
-                    <p>AI DD™ with TurboWash™ 360°. Steam+™ with ThinQ™.</p>
-                    <div class="product-price">
-                        <span class="price">RM45</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM45</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2010.5KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="washer">
+            <div class="product-card fade-in" data-category="washer" onclick="openModal(17)">
                 <div class="product-image-container">
                     <img src="images/product-18.png" alt="9KG Dual Inverter Heat Pump Dryer" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%209KG%20Dual%20Inverter%20Heat%20Pump%20Dryer.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%209KG%20Dual%20Inverter%20Heat%20Pump%20Dryer.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>9KG Dual Inverter Heat Pump Dryer</h3>
-                    <p>Dual Inverter Heat Pump™ with auto cleaning condenser. Allergy care.</p>
-                    <div class="product-price">
-                        <span class="price">RM50</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM50</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%209KG%20Dual%20Inverter%20Heat%20Pump%20Dryer.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="vacuum">
+            <div class="product-card fade-in" data-category="vacuum" onclick="openModal(18)">
                 <div class="product-image-container">
-                    <img src="images/product-19.png" alt="LG CordZero™ Vacuum" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20CordZero™%20Vacuum.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <img src="images/product-19.png" alt="CordZero Vacuum" class="product-image" loading="lazy">
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20CordZero%20Vacuum.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
-                    <h3>LG CordZero™ Vacuum</h3>
-                    <p>Dual battery packs with auto empty UVC LED. Steam power mop included.</p>
-                    <div class="product-price">
-                        <span class="price">RM65</span>
-                        <span class="price-unit">/month</span>
+                    <h3>CordZero Vacuum</h3>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM65</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20CordZero™%20Vacuum.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="fridge">
+            <div class="product-card fade-in" data-category="fridge" onclick="openModal(19)">
                 <div class="product-image-container">
                     <img src="images/product-20.png" alt="Multi Door InstaView 614L" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Multi%20Door%20InstaView%20614L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Multi%20Door%20InstaView%20614L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>Multi Door InstaView 614L</h3>
-                    <p>InstaView™ door-in-door with 614L capacity. Smart freshness technology.</p>
-                    <div class="product-price">
-                        <span class="price">RM90</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM90</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Multi%20Door%20InstaView%20614L.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="fridge">
+            <div class="product-card fade-in" data-category="fridge" onclick="openModal(20)">
                 <div class="product-image-container">
                     <img src="images/product-21.png" alt="InstaView Fridge 508L" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20InstaView%20Fridge%20508L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20InstaView%20Fridge%20508L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>InstaView Fridge 508L</h3>
-                    <p>InstaView™ with 508L capacity. Knock twice to see inside.</p>
-                    <div class="product-price">
-                        <span class="price">RM80</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM80</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20InstaView%20Fridge%20508L.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="fridge">
+            <div class="product-card fade-in" data-category="fridge" onclick="openModal(21)">
                 <div class="product-image-container">
                     <img src="images/product-22.png" alt="French Door Fridge 665L" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20French%20Door%20Fridge%20665L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20French%20Door%20Fridge%20665L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>French Door Fridge 665L</h3>
-                    <p>665L French door design with smart cooling. Large family capacity.</p>
-                    <div class="product-price">
-                        <span class="price">RM65</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM65</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20French%20Door%20Fridge%20665L.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="fridge">
+            <div class="product-card fade-in" data-category="fridge" onclick="openModal(22)">
                 <div class="product-image-container">
                     <img src="images/product-23.png" alt="Door In Door Fridge 635L" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Door%20In%20Door%20Fridge%20635L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Door%20In%20Door%20Fridge%20635L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>Door In Door Fridge 635L</h3>
-                    <p>635L with door-in-door convenience. Easy access design.</p>
-                    <div class="product-price">
-                        <span class="price">RM65</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM65</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Door%20In%20Door%20Fridge%20635L.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="fridge">
+            <div class="product-card fade-in" data-category="fridge" onclick="openModal(23)">
                 <div class="product-image-container">
                     <img src="images/product-24.png" alt="Side By Side Fridge 641L" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Side%20By%20Side%20Fridge%20641L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Side%20By%20Side%20Fridge%20641L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>Side By Side Fridge 641L</h3>
-                    <p>641L side by side with water dispenser. 14 month 44% off.</p>
-                    <div class="product-price">
-                        <span class="price">RM68</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM68</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Side%20By%20Side%20Fridge%20641L.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="fridge">
+            <div class="product-card fade-in" data-category="fridge" onclick="openModal(24)">
                 <div class="product-image-container">
                     <img src="images/product-25.png" alt="Top Freezer Fridge 493L" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Top%20Freezer%20Fridge%20493L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Top%20Freezer%20Fridge%20493L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>Top Freezer Fridge 493L</h3>
-                    <p>493L top freezer with water dispenser. 14 month 44% off.</p>
-                    <div class="product-price">
-                        <span class="price">RM56</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM56</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Top%20Freezer%20Fridge%20493L.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="fridge">
+            <div class="product-card fade-in" data-category="fridge" onclick="openModal(25)">
                 <div class="product-image-container">
                     <img src="images/product-26.png" alt="Top Freezer Fridge 603L" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Top%20Freezer%20Fridge%20603L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Top%20Freezer%20Fridge%20603L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>Top Freezer Fridge 603L</h3>
-                    <p>603L large capacity top freezer with water dispenser.</p>
-                    <div class="product-price">
-                        <span class="price">RM50</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM50</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Top%20Freezer%20Fridge%20603L.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="fridge">
+            <div class="product-card fade-in" data-category="fridge" onclick="openModal(26)">
                 <div class="product-image-container">
                     <img src="images/product-27.png" alt="QuadWash Dishwasher (Silver)" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20QuadWash%20Dishwasher%20(Silver).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20QuadWash%20Dishwasher%20(Silver).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>QuadWash Dishwasher (Silver)</h3>
-                    <p>TrueSteam™ with QuadWash™. Easy Rack™ Plus with auto opening door.</p>
-                    <div class="product-price">
-                        <span class="price">RM73</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM73</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20QuadWash%20Dishwasher%20(Silver).%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="fridge">
+            <div class="product-card fade-in" data-category="fridge" onclick="openModal(27)">
                 <div class="product-image-container">
                     <img src="images/product-28.png" alt="QuadWash Dishwasher (Black)" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20QuadWash%20Dishwasher%20(Black).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20QuadWash%20Dishwasher%20(Black).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>QuadWash Dishwasher (Black)</h3>
-                    <p>TrueSteam™ with QuadWash™. Easy Rack™ Plus. Sleek black design.</p>
-                    <div class="product-price">
-                        <span class="price">RM75</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM75</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20QuadWash%20Dishwasher%20(Black).%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="ac">
+            <div class="product-card fade-in" data-category="ac" onclick="openModal(28)">
                 <div class="product-image-container">
-                    <img src="images/product-29.png" alt="LG ArtCool 1.5 HP" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20ArtCool%201.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <img src="images/product-29.png" alt="ArtCool 1.5 HP" class="product-image" loading="lazy">
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20ArtCool%201.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
-                    <h3>LG ArtCool 1.5 HP</h3>
-                    <p>Plasmaster™ Ionizer++ with faster cooling. Energy saving with dual compressor.</p>
-                    <div class="product-price">
-                        <span class="price">RM50</span>
-                        <span class="price-unit">/month</span>
+                    <h3>ArtCool 1.5 HP</h3>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM50</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20ArtCool%201.5%20HP.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="ac">
+            <div class="product-card fade-in" data-category="ac" onclick="openModal(29)">
                 <div class="product-image-container">
-                    <img src="images/product-30.png" alt="LG ArtCool 2.5 HP" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20ArtCool%202.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <img src="images/product-30.png" alt="ArtCool 2.5 HP" class="product-image" loading="lazy">
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20ArtCool%202.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
-                    <h3>LG ArtCool 2.5 HP</h3>
-                    <p>Plasmaster™ Ionizer++ with faster cooling. Large room capacity.</p>
-                    <div class="product-price">
-                        <span class="price">RM65</span>
-                        <span class="price-unit">/month</span>
+                    <h3>ArtCool 2.5 HP</h3>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM65</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20ArtCool%202.5%20HP.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="ac">
+            <div class="product-card fade-in" data-category="ac" onclick="openModal(30)">
                 <div class="product-image-container">
                     <img src="images/product-31.png" alt="DUALCOOL 1.0 HP" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20DUALCOOL%201.0%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20DUALCOOL%201.0%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>DUALCOOL 1.0 HP</h3>
-                    <p>Air purification with Plasmaster™ Ionizer++. Faster cooling, energy saving.</p>
-                    <div class="product-price">
-                        <span class="price">RM40</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM40</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20DUALCOOL%201.0%20HP.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="ac">
+            <div class="product-card fade-in" data-category="ac" onclick="openModal(31)">
                 <div class="product-image-container">
                     <img src="images/product-32.png" alt="DUALCOOL 1.5 HP" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20DUALCOOL%201.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20DUALCOOL%201.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>DUALCOOL 1.5 HP</h3>
-                    <p>Air purification with dual compressor. Energy saving technology.</p>
-                    <div class="product-price">
-                        <span class="price">RM45</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM45</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20DUALCOOL%201.5%20HP.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="ac">
+            <div class="product-card fade-in" data-category="ac" onclick="openModal(32)">
                 <div class="product-image-container">
                     <img src="images/product-33.png" alt="DUALCOOL 2.0 HP" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20DUALCOOL%202.0%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20DUALCOOL%202.0%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>DUALCOOL 2.0 HP</h3>
-                    <p>Large capacity air purification with Plasmaster™ Ionizer++.</p>
-                    <div class="product-price">
-                        <span class="price">RM55</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM55</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20DUALCOOL%202.0%20HP.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="ac">
+            <div class="product-card fade-in" data-category="ac" onclick="openModal(33)">
                 <div class="product-image-container">
                     <img src="images/product-34.png" alt="DUALCOOL 2.5 HP" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20DUALCOOL%202.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20DUALCOOL%202.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
                     <h3>DUALCOOL 2.5 HP</h3>
-                    <p>Maximum cooling with air purification. Dual compressor technology.</p>
-                    <div class="product-price">
-                        <span class="price">RM60</span>
-                        <span class="price-unit">/month</span>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM60</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20DUALCOOL%202.5%20HP.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="styler">
+            <div class="product-card fade-in" data-category="styler" onclick="openModal(34)">
                 <div class="product-image-container">
-                    <img src="images/product-35.jpg" alt="LG Styler™" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Styler™.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <img src="images/product-35.jpg" alt="Smart Styler" class="product-image" loading="lazy">
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Smart%20Styler.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
-                    <h3>LG Styler™</h3>
-                    <p>TrueSteam™ technology. Dehumidify, sanitary care with 10-year motor warranty.</p>
-                    <div class="product-price">
-                        <span class="price">RM45</span>
-                        <span class="price-unit">/month</span>
+                    <h3>Smart Styler</h3>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM45</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Styler™.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="others">
+            <div class="product-card fade-in" data-category="others" onclick="openModal(35)">
                 <div class="product-image-container">
-                    <img src="images/product-36.png" alt="LG Sound Bar Dolby Atmos" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Sound%20Bar%20Dolby%20Atmos.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <img src="images/product-36.jpg" alt="Sound Bar Dolby Atmos" class="product-image" loading="lazy">
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Sound%20Bar%20Dolby%20Atmos.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
-                    <h3>LG Sound Bar Dolby Atmos</h3>
-                    <p>3-Upfiring speaker with Dolby Atmos. 5.1.3 surround sound with AirPlay2.</p>
-                    <div class="product-price">
-                        <span class="price">RM30</span>
-                        <span class="price-unit">/month</span>
+                    <h3>Sound Bar Dolby Atmos</h3>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM30</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Sound%20Bar%20Dolby%20Atmos.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
-            <div class="product-card fade-in" data-category="tv">
+            <div class="product-card fade-in" data-category="tv" onclick="openModal(36)">
                 <div class="product-image-container">
-                    <img src="images/product-37.png" alt="77" OLED B5 TV" class="product-image" loading="lazy">
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2077"%20OLED%20B5%20TV.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                    <img src="images/product-37.png" alt="77 OLED B5 TV" class="product-image" loading="lazy">
+                    <div class="product-overlay">
+                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%2077%20OLED%20B5%20TV.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                    </div>
                 </div>
                 <div class="product-info">
-                    <h3>77" OLED B5 TV</h3>
-                    <p>World's No.1 OLED TV for 12 years. AI-powered with 5 years warranty.</p>
-                    <div class="product-price">
-                        <span class="price">RM280</span>
-                        <span class="price-unit">/month</span>
+                    <h3>77 OLED B5 TV</h3>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <span class="price">RM280</span>
+                            <span class="price-unit">/month</span>
+                        </div>
+                        <span class="view-details">View Details →</span>
                     </div>
-                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2077"%20OLED%20B5%20TV.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Product Detail Modal -->
+    <div class="modal-overlay" id="productModal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div class="modal-image-container">
+                <img src="" alt="" class="modal-image" id="modalImage">
+            </div>
+            <div class="modal-info">
+                <h2 id="modalTitle">Product Name</h2>
+                <div class="modal-price" id="modalPrice">RM0</div>
+                <p id="modalDesc">Product description...</p>
+                <div class="modal-features" id="modalFeatures"></div>
+                <div class="modal-buttons">
+                    <a href="https://wa.me/601176060833" class="modal-btn modal-btn-primary" target="_blank" id="modalWhatsApp">💬 Inquire on WhatsApp</a>
+                    <button class="modal-btn modal-btn-secondary" onclick="closeModal()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section with Your Photo -->
     <section class="section about-section" id="about">
         <div class="about-content">
             <div class="about-text fade-in">
-                <h2>Why Choose Kelvin as Your LG Consultant?</h2>
-                <p>As an LG Authorised Subscribe Specialist, Kelvin provides personalized consultation to help you find the perfect appliances for your home. Unlike typical salespeople, Kelvin focuses on understanding your actual needs.</p>
-                <p>Whether you're furnishing a new home, upgrading old appliances, or exploring smart home technology, Kelvin offers honest, expert advice to help you make the best decision.</p>
+                <h2>Meet Kelvin<br>Your Appliance Expert</h2>
+                <p>Hi, I'm Kelvin, a professional appliance consultant with years of experience helping Malaysian families find the perfect home appliances. I provide personalized consultation to understand your needs and recommend the best solutions.</p>
+                <p>Whether you're furnishing a new home, upgrading old appliances, or exploring smart home technology, I'm here to give you honest, expert advice. My goal is to help you make the best decision for your family and budget.</p>
                 <div class="about-stats">
                     <div class="stat-item">
                         <span class="stat-number">500+</span>
@@ -1702,16 +1775,8 @@
                     </div>
                 </div>
             </div>
-            <div class="about-image fade-in">
-                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 550px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; padding: 50px;">
-                    <div style="font-size: 100px; margin-bottom: 30px;">👨‍💼</div>
-                    <h3 style="font-size: 2.5rem; margin-bottom: 15px; font-weight: 800;">Kelvin</h3>
-                    <p style="font-size: 1.3rem; opacity: 0.9; margin-bottom: 10px;">LG Authorize Consultant</p>
-                    <p style="margin-top: 20px; opacity: 0.7; font-size: 1rem;">Your Trusted Home Appliance Advisor</p>
-                    <div style="margin-top: 30px; background: rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 30px; font-size: 0.9rem;">
-                        ID: LGM126771
-                    </div>
-                </div>
+            <div class="about-photo fade-in">
+                <img src="images/kelvin-hero.jpg" alt="Kelvin - Appliance Consultant">
             </div>
         </div>
     </section>
@@ -1719,8 +1784,7 @@
     <!-- Reviews -->
     <section class="section reviews-section">
         <h2 class="section-title fade-in">Customer Reviews</h2>
-        <p class="section-subtitle fade-in">Real feedback from customers who chose Kelvin's LG Subscribe service.</p>
-
+        <p class="section-subtitle fade-in">Real feedback from customers who chose Kelvin's subscription service.</p>
         <div class="reviews-grid">
             <div class="review-card fade-in">
                 <div class="review-quote">"</div>
@@ -1734,11 +1798,10 @@
                     </div>
                 </div>
             </div>
-
             <div class="review-card fade-in">
                 <div class="review-quote">"</div>
                 <div class="review-stars">★★★★★</div>
-                <p class="review-text">First time trying the subscription model. Kelvin patiently answered all my questions. Now I have the air purifier, washer and fridge — all LG. Monthly cost is very manageable.</p>
+                <p class="review-text">First time trying the subscription model. Kelvin patiently answered all my questions. Now I have the air purifier, washer and fridge. Monthly cost is very manageable.</p>
                 <div class="reviewer">
                     <div class="reviewer-avatar">S</div>
                     <div class="reviewer-info">
@@ -1747,11 +1810,10 @@
                     </div>
                 </div>
             </div>
-
             <div class="review-card fade-in">
                 <div class="review-quote">"</div>
                 <div class="review-stars">★★★★★</div>
-                <p class="review-text">Kelvin's home visit service was incredibly helpful! He measured everything, planned the layout, and even taught me how to use the ThinQ app. Service exceeded expectations!</p>
+                <p class="review-text">Kelvin's home visit service was incredibly helpful! He measured everything, planned the layout, and even taught me how to use the smart app. Service exceeded expectations!</p>
                 <div class="reviewer">
                     <div class="reviewer-avatar">R</div>
                     <div class="reviewer-info">
@@ -1766,29 +1828,26 @@
     <!-- FAQ -->
     <section class="section faq-section" id="faq">
         <h2 class="section-title fade-in">Frequently Asked Questions</h2>
-        <p class="section-subtitle fade-in">Everything you need to know about LG Subscribe and Kelvin's consultation service.</p>
-
+        <p class="section-subtitle fade-in">Everything you need to know about appliance subscription and Kelvin's consultation service.</p>
         <div class="faq-container">
             <div class="faq-item fade-in">
                 <div class="faq-question">
-                    <span>What is LG Subscribe?</span>
+                    <span>What is appliance subscription?</span>
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>LG Subscribe is an innovative rental program that lets you use premium LG appliances without paying the full price upfront. Simply pay affordable monthly installments, and after the contract period (typically 5-7 years), the appliance becomes yours permanently.</p>
+                    <p>Appliance subscription is an innovative rental program that lets you use premium home appliances without paying the full price upfront. Simply pay affordable monthly installments, and after the contract period (typically 5-7 years), the appliance becomes yours permanently.</p>
                 </div>
             </div>
-
             <div class="faq-item fade-in">
                 <div class="faq-question">
                     <span>Is there any deposit required?</span>
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>No deposit is required! That's the beauty of LG Subscribe. You can start enjoying your LG appliances immediately with zero upfront payment. Just pay the first month's rental fee.</p>
+                    <p>No deposit is required! You can start enjoying your appliances immediately with zero upfront payment. Just pay the first month's rental fee.</p>
                 </div>
             </div>
-
             <div class="faq-item fade-in">
                 <div class="faq-question">
                     <span>What does the maintenance service include?</span>
@@ -1798,7 +1857,6 @@
                     <p>The subscription includes comprehensive maintenance for 5-7 years: regular home visits for cleaning and inspection, filter/consumable replacements, interior and exterior cleaning, and product performance checks. All at no extra cost.</p>
                 </div>
             </div>
-
             <div class="faq-item fade-in">
                 <div class="faq-question">
                     <span>Can I subscribe to multiple products?</span>
@@ -1808,7 +1866,6 @@
                     <p>Absolutely! Many customers subscribe to multiple products like water purifier, air purifier, and washing machine together. Kelvin can design a bundled package for you with better rates.</p>
                 </div>
             </div>
-
             <div class="faq-item fade-in">
                 <div class="faq-question">
                     <span>How do I pay the monthly rental?</span>
@@ -1818,7 +1875,6 @@
                     <p>Monthly payments are automatically deducted from your debit or credit card via auto-debit. It's convenient and hassle-free. Kelvin will assist you in setting this up during the application process.</p>
                 </div>
             </div>
-
             <div class="faq-item fade-in">
                 <div class="faq-question">
                     <span>Can I terminate the contract early?</span>
@@ -1828,17 +1884,15 @@
                     <p>Early termination is possible but subject to termination fees calculated based on your usage duration and remaining contract period. Kelvin recommends choosing the right contract length from the start to avoid this.</p>
                 </div>
             </div>
-
             <div class="faq-item fade-in">
                 <div class="faq-question">
                     <span>Is Kelvin's consultation service free?</span>
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Yes! Kelvin's consultation service is completely free of charge. As an LG Authorised Consultant, Kelvin provides product recommendations, home assessments, and subscription planning at no cost to you.</p>
+                    <p>Yes! Kelvin's consultation service is completely free of charge. Kelvin provides product recommendations, home assessments, and subscription planning at no cost to you.</p>
                 </div>
             </div>
-
             <div class="faq-item fade-in">
                 <div class="faq-question">
                     <span>What happens after the contract ends?</span>
@@ -1855,11 +1909,9 @@
     <section class="section contact-section" id="contact">
         <h2 class="section-title fade-in">Contact Kelvin</h2>
         <p class="section-subtitle fade-in">Ready to upgrade your home? Reach out directly via WhatsApp or visit our store.</p>
-
         <div class="contact-grid">
             <div class="contact-info fade-in">
                 <h3>Get In Touch</h3>
-
                 <div class="contact-item">
                     <div class="contact-icon">📱</div>
                     <div class="contact-detail">
@@ -1867,15 +1919,13 @@
                         <p>+60 11-7606 0833<br>Available daily for inquiries</p>
                     </div>
                 </div>
-
                 <div class="contact-item">
                     <div class="contact-icon">📍</div>
                     <div class="contact-detail">
                         <h4>Store Location</h4>
-                        <p>LG Brand Shop — The Starling Mall<br>Damansara Utama, Petaling Jaya, Selangor</p>
+                        <p>The Starling Mall<br>Damansara Utama, Petaling Jaya, Selangor</p>
                     </div>
                 </div>
-
                 <div class="contact-item">
                     <div class="contact-icon">⏰</div>
                     <div class="contact-detail">
@@ -1885,16 +1935,14 @@
                         </table>
                     </div>
                 </div>
-
                 <div class="contact-item">
                     <div class="contact-icon">✅</div>
                     <div class="contact-detail">
-                        <h4>Authorisation</h4>
-                        <p>LG Subscribe Senior Manager<br>Jake Lim Kok Aan (LGM126771)<br>Authorised LG Subscribe Specialist</p>
+                        <h4>Experience</h4>
+                        <p>Professional Appliance Consultant<br>5+ Years Experience<br>Trusted by 500+ Families</p>
                     </div>
                 </div>
             </div>
-
             <div class="contact-form fade-in">
                 <h3>Request a Quote</h3>
                 <form onsubmit="event.preventDefault(); alert('Thank you for your inquiry! Kelvin will contact you within 24 hours.');">
@@ -1902,39 +1950,34 @@
                         <label>Full Name</label>
                         <input type="text" placeholder="Your full name" required>
                     </div>
-
                     <div class="form-group">
                         <label>Phone Number</label>
                         <input type="tel" placeholder="e.g. +60 12-345 6789" required>
                     </div>
-
                     <div class="form-group">
                         <label>Email Address</label>
                         <input type="email" placeholder="your@email.com">
                     </div>
-
                     <div class="form-group">
                         <label>Product Interest</label>
                         <select required>
                             <option value="">Select a product</option>
-                            <option value="water">LG PuriCare™ Water Purifier</option>
-                            <option value="air">LG PuriCare™ Air Purifier</option>
-                            <option value="vacuum">LG CORDZERO™ Vacuum</option>
-                            <option value="fridge">LG InstaView™ Refrigerator</option>
-                            <option value="styler">LG Styler™ Wardrobe</option>
-                            <option value="tv">LG OLED TV</option>
-                            <option value="washer">LG AI WashTower™</option>
-                            <option value="ac">LG DUAL Inverter AC</option>
+                            <option value="water">Water Purifier</option>
+                            <option value="air">Air Purifier</option>
+                            <option value="vacuum">Vacuum Cleaner</option>
+                            <option value="fridge">Refrigerator</option>
+                            <option value="styler">Smart Wardrobe</option>
+                            <option value="tv">OLED TV</option>
+                            <option value="washer">WashTower</option>
+                            <option value="ac">Air Conditioner</option>
                             <option value="multiple">Multiple Products</option>
                             <option value="other">Not Sure / Need Advice</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label>Message (Optional)</label>
                         <textarea rows="4" placeholder="Tell us about your needs, budget, or any questions..."></textarea>
                     </div>
-
                     <button type="submit" class="submit-btn">Submit Inquiry</button>
                 </form>
             </div>
@@ -1945,15 +1988,14 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-brand">
-                <span class="logo-lg">LG</span>
-                <p>Kelvin LG Authorize Consultant<br>Your trusted advisor for LG Subscribe Malaysia. We help Malaysian families enjoy premium LG appliances through affordable rental plans.</p>
+                <div class="logo-text-main">Kelvin</div>
+                <p>Your trusted appliance consultant for home subscriptions in Malaysia. We help families enjoy premium appliances through affordable rental plans.</p>
                 <div class="footer-social">
                     <a href="#" class="social-icon" title="Facebook">f</a>
                     <a href="#" class="social-icon" title="Instagram">📷</a>
                     <a href="https://wa.me/601176060833" class="social-icon" title="WhatsApp">💬</a>
                 </div>
             </div>
-
             <div class="footer-links">
                 <h4>Products</h4>
                 <ul>
@@ -1964,17 +2006,15 @@
                     <li><a href="#">Washing Machines</a></li>
                 </ul>
             </div>
-
             <div class="footer-links">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="#">LG Subscribe</a></li>
+                    <li><a href="#">Subscription Plans</a></li>
                     <li><a href="#">Maintenance</a></li>
                     <li><a href="#">Installation</a></li>
                     <li><a href="#">Free Consultation</a></li>
                 </ul>
             </div>
-
             <div class="footer-links">
                 <h4>Support</h4>
                 <ul>
@@ -1985,23 +2025,87 @@
                 </ul>
             </div>
         </div>
-
         <div class="footer-bottom">
-            <p>© 2026 Kelvin LG Authorize Consultant. All Rights Reserved.<br>
-            This website is operated by LG Subscribe Senior Manager Jake Lim Kok Aan (LGM126771), an Authorised LG Subscribe Specialist.<br>
-            All LG trademarks, logos and brand names are the property of LG Electronics Inc.</p>
+            <p>© 2026 Kelvin Home Solutions. All Rights Reserved.<br>
+            Independent appliance consultant service. Not affiliated with any specific brand.<br>
+            Product images are for illustration purposes only.</p>
         </div>
     </footer>
 
     <script>
+        // Product Data (safe version without LG names)
+        const products = [
+            { id: 0, image: "images/product-01.jpg", name: "Premium Water Purifier", price: "RM35", desc: "Tankless design with 4-stage filtration and UV sterilization. Hot, cold & ambient water. Certified quality.", features: ["4-Stage Filter", "UV Sterilization", "Certified", "Smart App"] },
+            { id: 1, image: "images/product-02.jpg", name: "Designer Water Purifier", price: "RM35", desc: "Stylish design available in 4 elegant colors. Auto sterilization. Hot & ambient water.", features: ["4 Colors", "Auto Sterilization", "Designer", "Smart App"] },
+            { id: 2, image: "images/product-03.png", name: "Undersink Water Purifier", price: "RM55", desc: "Space-saving undersink design. Hot, cold & ambient water. Auto sterilization.", features: ["Undersink", "Hot/Cold/Ambient", "Auto Sterilization", "Smart App"] },
+            { id: 3, image: "images/product-04.png", name: "Designer Collection (4 Colors)", price: "RM35", desc: "Available in 4 elegant colors. Certified quality with auto sterilization and smart connectivity.", features: ["4 Colors", "Certified", "Auto Sterilization", "Smart App"] },
+            { id: 4, image: "images/product-05.jpg", name: "16L Dual Inverter Dehumidifier", price: "RM35", desc: "Dual Inverter Compressor with compact design. Hidden handle & cord. Energy efficient dehumidification.", features: ["Dual Inverter", "16L Capacity", "Compact Design", "Smart App"] },
+            { id: 5, image: "images/product-06.png", name: "Cat Tower Air Purifier", price: "RM35", desc: "PM 1.0 filtration with 360 purification. 550sf coverage with pet mode. Perfect for pet owners.", features: ["PM 1.0 Filter", "360 Purification", "Pet Mode", "550sf Coverage"] },
+            { id: 6, image: "images/product-07.png", name: "HIT Air Purifier", price: "RM25", desc: "PM 1.0 filtration with 360 purification. 600sf coverage for large rooms. Quiet operation.", features: ["PM 1.0 Filter", "360 Purification", "600sf Coverage", "Quiet"] },
+            { id: 7, image: "images/product-08.png", name: "Aero Booster Air Purifier", price: "RM33", desc: "PM 1.0 filtration with 360 purification. 550sf coverage with smart control.", features: ["PM 1.0 Filter", "360 Purification", "550sf Coverage", "Smart App"] },
+            { id: 8, image: "images/product-09.png", name: "Aero Furniture Air Purifier", price: "RM30", desc: "Stylish furniture design with PM 1.0 filtration. 360 purification. Blends with home decor.", features: ["Furniture Design", "PM 1.0 Filter", "360 Purification", "Smart App"] },
+            { id: 9, image: "images/product-10.png", name: "Alpha Pet Air Purifier (Single)", price: "RM38", desc: "Air Booster V2 with PM 1.0 filtration. Pet mode for pet owners. 9 months 50% off.", features: ["Air Booster V2", "PM 1.0 Filter", "Pet Mode", "50% Off"] },
+            { id: 10, image: "images/product-11.png", name: "Alpha Pet Air Purifier (Double)", price: "RM53", desc: "Double booster with Air Booster V2. Enhanced pet mode filtration. 9 months 50% off.", features: ["Double Booster", "PM 1.0 Filter", "Pet Mode", "50% Off"] },
+            { id: 11, image: "images/product-12.png", name: "WashTower 14KG/10KG", price: "RM105", desc: "AI DD with TurboWash 360. Steam+ technology with smart control. Space-saving design.", features: ["AI DD", "TurboWash 360", "Steam+", "Smart App"] },
+            { id: 12, image: "images/product-13.png", name: "WashTower 25KG/20KG", price: "RM140", desc: "Large capacity AI DD with TurboWash 360. Steam+ technology. 25KG wash / 20KG dry.", features: ["25KG Wash", "20KG Dry", "AI DD", "Steam+"] },
+            { id: 13, image: "images/product-14.png", name: "Washer Dryer Combo Set", price: "RM150", desc: "AI DD Washer with Dual Inverter Heat Pump. TurboWash 360. Save space and time.", features: ["AI DD", "Heat Pump", "TurboWash 360", "Combo"] },
+            { id: 14, image: "images/product-15.png", name: "15KG AI DD Washing Machine", price: "RM53", desc: "AI DD with Turbo 360. Steam technology with smart control. 15KG wash / 8KG dry.", features: ["15KG Wash", "AI DD", "Steam", "Smart App"] },
+            { id: 15, image: "images/product-16.png", name: "20KG AI DD Washing Machine", price: "RM60", desc: "Large capacity AI DD with Turbo 360. Steam technology. 20KG capacity.", features: ["20KG Capacity", "AI DD", "Turbo 360", "Steam"] },
+            { id: 16, image: "images/product-17.png", name: "10.5KG AI DD Washing Machine", price: "RM45", desc: "AI DD with TurboWash 360. Steam+ with smart control. 10.5KG capacity.", features: ["10.5KG", "AI DD", "TurboWash 360", "Steam+"] },
+            { id: 17, image: "images/product-18.png", name: "9KG Dual Inverter Heat Pump Dryer", price: "RM50", desc: "Dual Inverter Heat Pump with auto cleaning condenser. Allergy care. 9KG capacity.", features: ["Heat Pump", "Auto Cleaning", "Allergy Care", "9KG"] },
+            { id: 18, image: "images/product-19.png", name: "CordZero Vacuum", price: "RM65", desc: "Dual battery packs with auto empty UVC LED. Steam power mop included. 10-year motor warranty.", features: ["Dual Battery", "Auto Empty", "UVC LED", "Steam Mop"] },
+            { id: 19, image: "images/product-20.png", name: "Multi Door InstaView 614L", price: "RM90", desc: "InstaView door-in-door with 614L capacity. Smart freshness technology. Knock twice to see inside.", features: ["InstaView", "614L", "Smart Fresh", "Multi Door"] },
+            { id: 20, image: "images/product-21.png", name: "InstaView Fridge 508L", price: "RM80", desc: "InstaView with 508L capacity. Knock twice to see inside. Smart cooling technology.", features: ["InstaView", "508L", "Smart Cooling", "Knock Twice"] },
+            { id: 21, image: "images/product-22.png", name: "French Door Fridge 665L", price: "RM65", desc: "665L French door design with smart cooling. Large family capacity. 9 months 50% off.", features: ["French Door", "665L", "Smart Cooling", "50% Off"] },
+            { id: 22, image: "images/product-23.png", name: "Door In Door Fridge 635L", price: "RM65", desc: "635L with door-in-door convenience. Easy access design. 9 months 50% off.", features: ["Door-in-Door", "635L", "Easy Access", "50% Off"] },
+            { id: 23, image: "images/product-24.png", name: "Side By Side Fridge 641L", price: "RM68", desc: "641L side by side with water dispenser. 14 month 44% off. Large capacity.", features: ["Side by Side", "641L", "Water Dispenser", "44% Off"] },
+            { id: 24, image: "images/product-25.png", name: "Top Freezer Fridge 493L", price: "RM56", desc: "493L top freezer with water dispenser. 14 month 44% off. Energy efficient.", features: ["Top Freezer", "493L", "Water Dispenser", "44% Off"] },
+            { id: 25, image: "images/product-26.png", name: "Top Freezer Fridge 603L", price: "RM50", desc: "603L large capacity top freezer with water dispenser. 5 years warranty.", features: ["Top Freezer", "603L", "Water Dispenser", "5 Years"] },
+            { id: 26, image: "images/product-27.png", name: "QuadWash Dishwasher (Silver)", price: "RM73", desc: "TrueSteam with QuadWash. Easy Rack Plus with auto opening door. 14 month 44% off.", features: ["TrueSteam", "QuadWash", "Easy Rack", "44% Off"] },
+            { id: 27, image: "images/product-28.png", name: "QuadWash Dishwasher (Black)", price: "RM75", desc: "TrueSteam with QuadWash. Easy Rack Plus. Sleek black design. 9 month 50% off.", features: ["TrueSteam", "QuadWash", "Black Design", "50% Off"] },
+            { id: 28, image: "images/product-29.png", name: "ArtCool 1.5 HP", price: "RM50", desc: "Plasmaster Ionizer++ with faster cooling. Energy saving with dual compressor. 9 month 50% off.", features: ["Plasmaster", "1.5 HP", "Energy Saving", "50% Off"] },
+            { id: 29, image: "images/product-30.png", name: "ArtCool 2.5 HP", price: "RM65", desc: "Plasmaster Ionizer++ with faster cooling. Large room capacity. 9 month 50% off.", features: ["Plasmaster", "2.5 HP", "Large Room", "50% Off"] },
+            { id: 30, image: "images/product-31.png", name: "DUALCOOL 1.0 HP", price: "RM40", desc: "Air purification with Plasmaster Ionizer++. Faster cooling, energy saving. 9 month 50% off.", features: ["Air Purification", "1.0 HP", "Energy Saving", "50% Off"] },
+            { id: 31, image: "images/product-32.png", name: "DUALCOOL 1.5 HP", price: "RM45", desc: "Air purification with dual compressor. Energy saving technology. 9 month 50% off.", features: ["Air Purification", "1.5 HP", "Dual Compressor", "50% Off"] },
+            { id: 32, image: "images/product-33.png", name: "DUALCOOL 2.0 HP", price: "RM55", desc: "Large capacity air purification with Plasmaster Ionizer++. 9 month 50% off.", features: ["Air Purification", "2.0 HP", "Large Capacity", "50% Off"] },
+            { id: 33, image: "images/product-34.png", name: "DUALCOOL 2.5 HP", price: "RM60", desc: "Maximum cooling with air purification. Dual compressor technology. 9 month 50% off.", features: ["Air Purification", "2.5 HP", "Max Cooling", "50% Off"] },
+            { id: 34, image: "images/product-35.jpg", name: "Smart Styler", price: "RM45", desc: "TrueSteam technology. Dehumidify, sanitary care with 10-year motor warranty. 9 month 50% off.", features: ["TrueSteam", "Dehumidify", "Sanitary", "10-Year Warranty"] },
+            { id: 35, image: "images/product-36.jpg", name: "Sound Bar Dolby Atmos", price: "RM30", desc: "3-Upfiring speaker with Dolby Atmos. 5.1.3 surround sound with Apple AirPlay2. 9 month 50% off.", features: ["Dolby Atmos", "3-Upfiring", "5.1.3 Surround", "AirPlay2"] },
+            { id: 36, image: "images/product-37.png", name: "77 OLED B5 TV", price: "RM280", desc: "World's No.1 OLED TV for 12 years. AI-powered with 5 years warranty. 2025 model.", features: ["77 OLED", "AI Powered", "5 Years", "2025 Model"] },
+        ];
+
+        // Modal Functions
+        function openModal(index) {
+            const product = products[index];
+            document.getElementById('modalImage').src = product.image;
+            document.getElementById('modalImage').alt = product.name;
+            document.getElementById('modalTitle').textContent = product.name;
+            document.getElementById('modalPrice').textContent = product.price + '/month';
+            document.getElementById('modalDesc').textContent = product.desc;
+
+            const featuresContainer = document.getElementById('modalFeatures');
+            featuresContainer.innerHTML = product.features.map(f => `<span class="modal-feature-tag">${f}</span>`).join('');
+
+            const whatsappLink = `https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20${encodeURIComponent(product.name)}.%20Please%20send%20me%20more%20details.`;
+            document.getElementById('modalWhatsApp').href = whatsappLink;
+
+            document.getElementById('productModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(event) {
+            if (!event || event.target === document.getElementById('productModal') || event.target.closest('.modal-close') || event.target.closest('.modal-btn-secondary')) {
+                document.getElementById('productModal').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const item = question.parentElement;
                 const isActive = item.classList.contains('active');
-
                 document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-
                 if (!isActive) {
                     item.classList.add('active');
                 }
