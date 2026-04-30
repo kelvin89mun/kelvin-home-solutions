@@ -1,0 +1,2052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LG Subscribe Malaysia | Kelvin LG Authorize Consultant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --lg-red: #c8102e;
+            --lg-dark: #1a1a1a;
+            --lg-gray: #f5f5f5;
+            --text: #333;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-lg {
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--lg-red);
+            letter-spacing: -2px;
+            font-style: italic;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--lg-dark);
+        }
+
+        .logo-sub {
+            font-size: 10px;
+            color: #888;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--lg-dark);
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--lg-red);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--lg-red);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--lg-red);
+            color: var(--white) !important;
+            padding: 12px 28px;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: #a00d24;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(200,16,46,0.3);
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
+            color: var(--white);
+            padding: 140px 20px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(200,16,46,0.2) 0%, transparent 70%);
+            animation: pulse 5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.3); opacity: 0.7; }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(200,16,46,0.9);
+            color: var(--white);
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            font-weight: 800;
+            line-height: 1.1;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.4s both;
+            font-weight: 300;
+        }
+
+        .hero .price-highlight {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffd700;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease 0.5s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.7s both;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-primary {
+            background: var(--lg-red);
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(200,16,46,0.4);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(200,16,46,0.5);
+            background: #a00d24;
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--white);
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        .cta-secondary:hover {
+            background: var(--white);
+            color: var(--lg-dark);
+            transform: translateY(-3px);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--lg-dark);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.15rem;
+            color: #666;
+            max-width: 650px;
+            margin: 0 auto 70px;
+            line-height: 1.7;
+        }
+
+        /* Benefits */
+        .benefits-section {
+            background: var(--lg-gray);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 50px 35px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            transition: all 0.4s;
+            border: 1px solid #eee;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--lg-red), #ff4757);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 36px;
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(200,16,46,0.3);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 18px;
+            color: var(--lg-dark);
+            font-weight: 700;
+        }
+
+        .benefit-card p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* Products */
+        .products-section {
+            background: var(--white);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 35px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+            border: 1px solid #f0f0f0;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 70px rgba(0,0,0,0.15);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            background: var(--lg-red);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-image-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-cta {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--lg-red);
+            color: var(--white);
+            padding: 14px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            opacity: 0;
+            transition: all 0.3s;
+            white-space: nowrap;
+            box-shadow: 0 5px 20px rgba(200,16,46,0.4);
+        }
+
+        .product-card:hover .product-cta {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-5px);
+        }
+
+        .product-cta:hover {
+            background: #a00d24;
+        }
+
+        .product-info {
+            padding: 35px;
+        }
+
+        .product-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--lg-dark);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .product-info p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .product-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .feature-tag {
+            background: #f0f0f0;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--lg-red);
+        }
+
+        .price-unit {
+            font-size: 1rem;
+            color: #888;
+        }
+
+        .product-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: var(--lg-red);
+            color: var(--white);
+            text-align: center;
+            text-decoration: none;
+            border-radius: 14px;
+            font-weight: 700;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-btn:hover {
+            background: #a00d24;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(200,16,46,0.3);
+        }
+
+        /* About / Why Choose */
+        .about-section {
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+            color: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            opacity: 0.85;
+            margin-bottom: 25px;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 25px 15px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--lg-red);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .about-image {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+        }
+
+        /* Reviews */
+        .reviews-section {
+            background: var(--lg-gray);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 45px;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .review-quote {
+            font-size: 5rem;
+            color: var(--lg-red);
+            opacity: 0.15;
+            position: absolute;
+            top: 5px;
+            left: 25px;
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+
+        .review-stars {
+            color: #ffc107;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: #555;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            font-size: 0.95rem;
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .reviewer-avatar {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--lg-red), #ff4757);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .reviewer-info h4 {
+            font-weight: 700;
+            color: var(--lg-dark);
+            margin-bottom: 4px;
+            font-size: 1.05rem;
+        }
+
+        .reviewer-info span {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: var(--white);
+        }
+
+        .faq-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 18px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 35px rgba(0,0,0,0.08);
+        }
+
+        .faq-question {
+            padding: 28px 35px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--lg-dark);
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #fafafa;
+        }
+
+        .faq-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--lg-red);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+            flex-shrink: 0;
+            font-weight: 300;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            background: var(--lg-dark);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 35px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 35px 28px;
+        }
+
+        .faq-answer p {
+            color: #666;
+            line-height: 1.9;
+            font-size: 0.95rem;
+        }
+
+        /* Contact */
+        .contact-section {
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+            color: var(--white);
+        }
+
+        .contact-section .section-title {
+            color: var(--white);
+        }
+
+        .contact-section .section-subtitle {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 35px;
+            font-weight: 700;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(200,16,46,0.2);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        .contact-detail h4 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .contact-detail p {
+            opacity: 0.8;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .hours-table {
+            width: 100%;
+            margin-top: 15px;
+            border-collapse: collapse;
+        }
+
+        .hours-table td {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.95rem;
+        }
+
+        .hours-table td:first-child {
+            font-weight: 600;
+        }
+
+        .hours-table td:last-child {
+            text-align: right;
+            opacity: 0.9;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.05);
+            padding: 45px;
+            border-radius: 24px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-form h3 {
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 14px;
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--lg-red);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+
+        .form-group select option {
+            background: var(--lg-dark);
+            color: var(--white);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--lg-red);
+            color: var(--white);
+            border: none;
+            border-radius: 14px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            background: #a00d24;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(200,16,46,0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: #08080f;
+            color: var(--white);
+            padding: 80px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand .logo-lg {
+            color: var(--lg-red);
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-brand p {
+            opacity: 0.7;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--white);
+            font-size: 1.3rem;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background: var(--lg-red);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4 {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: var(--white);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 14px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 35px;
+            text-align: center;
+            opacity: 0.6;
+            font-size: 0.9rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-lg">LG</span>
+                <div class="logo-text">
+                    <span class="logo-name">Kelvin Consultant</span>
+                    <span class="logo-sub">Authorize Consultant</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="https://wa.me/601176060833" class="nav-cta" target="_blank">Get Quote</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">🏆 LG Authorize Consultant</div>
+            <h1>LG Subscribe Malaysia<br>Smart Home Appliances</h1>
+            <p class="subtitle">Rent-to-own the latest LG appliances with zero deposit.<br>Professional consultation by Kelvin — your trusted LG advisor.</p>
+            <div class="price-highlight">From Only RM25/month</div>
+            <div class="hero-buttons">
+                <a href="#products" class="cta-button cta-primary">Browse Products</a>
+                <a href="https://wa.me/601176060833" class="cta-button cta-secondary" target="_blank">WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section benefits-section" id="benefits">
+        <h2 class="section-title fade-in">Why LG Subscribe?</h2>
+        <p class="section-subtitle fade-in">Experience the smartest way to own premium LG appliances with flexible rental plans designed for Malaysian homes.</p>
+
+        <div class="benefits-grid">
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon">💰</div>
+                <h3>Zero Deposit</h3>
+                <p>No upfront payment required. Start enjoying your LG appliances immediately with affordable monthly installments.</p>
+            </div>
+
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon">🔧</div>
+                <h3>5-7 Years Maintenance</h3>
+                <p>Comprehensive maintenance service included. Regular visits, filter replacements, and performance checks at no extra cost.</p>
+            </div>
+
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon">📱</div>
+                <h3>LG ThinQ Smart Control</h3>
+                <p>Control all your LG appliances remotely via the LG ThinQ app. Schedule, monitor, and optimize your home effortlessly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section with 74 Images -->
+    <section class="section products-section" id="products">
+        <h2 class="section-title fade-in">Our Products</h2>
+        <p class="section-subtitle fade-in">74 Premium LG Appliances Available for Subscription. Click any product to inquire via WhatsApp.</p>
+
+        <div class="products-grid">
+            <div class="product-card fade-in" data-category="water">
+                <div class="product-image-container">
+                    <img src="images/product-01.jpg" alt="LG PuriCare™ Water Purifier" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20PuriCare™%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>LG PuriCare™ Water Purifier</h3>
+                    <p>Tankless design with 4-stage filtration and UV sterilization. Hot, cold & ambient water.</p>
+                    <div class="product-price">
+                        <span class="price">RM35</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20PuriCare™%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="water">
+                <div class="product-image-container">
+                    <img src="images/product-02.jpg" alt="LG Objet Collection Water Purifier" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Objet%20Collection%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>LG Objet Collection Water Purifier</h3>
+                    <p>Stylish design with WQA Gold Seal. Hot & ambient water with auto sterilization.</p>
+                    <div class="product-price">
+                        <span class="price">RM30</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Objet%20Collection%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="water">
+                <div class="product-image-container">
+                    <img src="images/product-03.png" alt="LG Undersink Water Purifier" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Undersink%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>LG Undersink Water Purifier</h3>
+                    <p>Space-saving undersink design. WQA Gold Seal with hot, cold & ambient water.</p>
+                    <div class="product-price">
+                        <span class="price">RM55</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Undersink%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="water">
+                <div class="product-image-container">
+                    <img src="images/product-04.png" alt="LG Objet Collection (4 Colors)" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Objet%20Collection%20(4%20Colors).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>LG Objet Collection (4 Colors)</h3>
+                    <p>Available in 4 elegant colors. WQA Gold Seal certified with auto sterilization.</p>
+                    <div class="product-price">
+                        <span class="price">RM35</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Objet%20Collection%20(4%20Colors).%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="air">
+                <div class="product-image-container">
+                    <img src="images/product-05.jpg" alt="16L Dual Inverter Dehumidifier" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2016L%20Dual%20Inverter%20Dehumidifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>16L Dual Inverter Dehumidifier</h3>
+                    <p>Dual Inverter Compressor™ with compact design. Hidden handle & cord.</p>
+                    <div class="product-price">
+                        <span class="price">RM35</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2016L%20Dual%20Inverter%20Dehumidifier.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="air">
+                <div class="product-image-container">
+                    <img src="images/product-06.png" alt="Cat Tower Air Purifier" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Cat%20Tower%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>Cat Tower Air Purifier</h3>
+                    <p>PM 1.0 filtration with 360° purification. 550sf coverage with pet mode.</p>
+                    <div class="product-price">
+                        <span class="price">RM35</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Cat%20Tower%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="air">
+                <div class="product-image-container">
+                    <img src="images/product-07.png" alt="HIT Air Purifier" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20HIT%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>HIT Air Purifier</h3>
+                    <p>PM 1.0 filtration with 360° purification. 600sf coverage for large rooms.</p>
+                    <div class="product-price">
+                        <span class="price">RM25</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20HIT%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="air">
+                <div class="product-image-container">
+                    <img src="images/product-08.png" alt="Aero Booster Air Purifier" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Aero%20Booster%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>Aero Booster Air Purifier</h3>
+                    <p>PM 1.0 filtration with 360° purification. 550sf coverage with ThinQ™.</p>
+                    <div class="product-price">
+                        <span class="price">RM33</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Aero%20Booster%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="air">
+                <div class="product-image-container">
+                    <img src="images/product-09.png" alt="Aero Furniture Air Purifier" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Aero%20Furniture%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>Aero Furniture Air Purifier</h3>
+                    <p>Stylish furniture design with PM 1.0 filtration. 360° purification.</p>
+                    <div class="product-price">
+                        <span class="price">RM30</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Aero%20Furniture%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="air">
+                <div class="product-image-container">
+                    <img src="images/product-10.png" alt="Alpha Pet Air Purifier (Single)" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Alpha%20Pet%20Air%20Purifier%20(Single).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>Alpha Pet Air Purifier (Single)</h3>
+                    <p>Air Booster V2 with PM 1.0 filtration. Pet mode for pet owners.</p>
+                    <div class="product-price">
+                        <span class="price">RM38</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Alpha%20Pet%20Air%20Purifier%20(Single).%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="air">
+                <div class="product-image-container">
+                    <img src="images/product-11.png" alt="Alpha Pet Air Purifier (Double)" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Alpha%20Pet%20Air%20Purifier%20(Double).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>Alpha Pet Air Purifier (Double)</h3>
+                    <p>Double booster with Air Booster V2. Enhanced pet mode filtration.</p>
+                    <div class="product-price">
+                        <span class="price">RM53</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Alpha%20Pet%20Air%20Purifier%20(Double).%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="washer">
+                <div class="product-image-container">
+                    <img src="images/product-12.png" alt="LG WashTower™ 14KG/10KG" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20WashTower™%2014KG/10KG.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>LG WashTower™ 14KG/10KG</h3>
+                    <p>AI DD™ with TurboWash™ 360°. Steam+™ technology with ThinQ™.</p>
+                    <div class="product-price">
+                        <span class="price">RM105</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20WashTower™%2014KG/10KG.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="washer">
+                <div class="product-image-container">
+                    <img src="images/product-13.png" alt="LG WashTower™ 25KG/20KG" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20WashTower™%2025KG/20KG.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>LG WashTower™ 25KG/20KG</h3>
+                    <p>Large capacity AI DD™ with TurboWash™ 360°. Steam+™ technology.</p>
+                    <div class="product-price">
+                        <span class="price">RM140</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20WashTower™%2025KG/20KG.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="washer">
+                <div class="product-image-container">
+                    <img src="images/product-14.png" alt="Washer Dryer Combo Set" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Washer%20Dryer%20Combo%20Set.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>Washer Dryer Combo Set</h3>
+                    <p>AI DD Washer with Dual Inverter Heat Pump. TurboWash™ 360°.</p>
+                    <div class="product-price">
+                        <span class="price">RM150</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Washer%20Dryer%20Combo%20Set.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="washer">
+                <div class="product-image-container">
+                    <img src="images/product-15.png" alt="15KG AI DD Washing Machine" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2015KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>15KG AI DD Washing Machine</h3>
+                    <p>AI DD™ with Turbo 360™. Steam™ technology with ThinQ™.</p>
+                    <div class="product-price">
+                        <span class="price">RM53</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2015KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="washer">
+                <div class="product-image-container">
+                    <img src="images/product-16.png" alt="20KG AI DD Washing Machine" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2020KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>20KG AI DD Washing Machine</h3>
+                    <p>Large capacity AI DD™ with Turbo 360™. Steam™ technology.</p>
+                    <div class="product-price">
+                        <span class="price">RM60</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2020KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="washer">
+                <div class="product-image-container">
+                    <img src="images/product-17.png" alt="10.5KG AI DD Washing Machine" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2010.5KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>10.5KG AI DD Washing Machine</h3>
+                    <p>AI DD™ with TurboWash™ 360°. Steam+™ with ThinQ™.</p>
+                    <div class="product-price">
+                        <span class="price">RM45</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2010.5KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="washer">
+                <div class="product-image-container">
+                    <img src="images/product-18.png" alt="9KG Dual Inverter Heat Pump Dryer" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%209KG%20Dual%20Inverter%20Heat%20Pump%20Dryer.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>9KG Dual Inverter Heat Pump Dryer</h3>
+                    <p>Dual Inverter Heat Pump™ with auto cleaning condenser. Allergy care.</p>
+                    <div class="product-price">
+                        <span class="price">RM50</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%209KG%20Dual%20Inverter%20Heat%20Pump%20Dryer.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="vacuum">
+                <div class="product-image-container">
+                    <img src="images/product-19.png" alt="LG CordZero™ Vacuum" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20CordZero™%20Vacuum.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>LG CordZero™ Vacuum</h3>
+                    <p>Dual battery packs with auto empty UVC LED. Steam power mop included.</p>
+                    <div class="product-price">
+                        <span class="price">RM65</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20CordZero™%20Vacuum.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="fridge">
+                <div class="product-image-container">
+                    <img src="images/product-20.png" alt="Multi Door InstaView 614L" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Multi%20Door%20InstaView%20614L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>Multi Door InstaView 614L</h3>
+                    <p>InstaView™ door-in-door with 614L capacity. Smart freshness technology.</p>
+                    <div class="product-price">
+                        <span class="price">RM90</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Multi%20Door%20InstaView%20614L.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="fridge">
+                <div class="product-image-container">
+                    <img src="images/product-21.png" alt="InstaView Fridge 508L" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20InstaView%20Fridge%20508L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>InstaView Fridge 508L</h3>
+                    <p>InstaView™ with 508L capacity. Knock twice to see inside.</p>
+                    <div class="product-price">
+                        <span class="price">RM80</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20InstaView%20Fridge%20508L.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="fridge">
+                <div class="product-image-container">
+                    <img src="images/product-22.png" alt="French Door Fridge 665L" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20French%20Door%20Fridge%20665L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>French Door Fridge 665L</h3>
+                    <p>665L French door design with smart cooling. Large family capacity.</p>
+                    <div class="product-price">
+                        <span class="price">RM65</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20French%20Door%20Fridge%20665L.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="fridge">
+                <div class="product-image-container">
+                    <img src="images/product-23.png" alt="Door In Door Fridge 635L" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Door%20In%20Door%20Fridge%20635L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>Door In Door Fridge 635L</h3>
+                    <p>635L with door-in-door convenience. Easy access design.</p>
+                    <div class="product-price">
+                        <span class="price">RM65</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Door%20In%20Door%20Fridge%20635L.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="fridge">
+                <div class="product-image-container">
+                    <img src="images/product-24.png" alt="Side By Side Fridge 641L" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Side%20By%20Side%20Fridge%20641L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>Side By Side Fridge 641L</h3>
+                    <p>641L side by side with water dispenser. 14 month 44% off.</p>
+                    <div class="product-price">
+                        <span class="price">RM68</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Side%20By%20Side%20Fridge%20641L.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="fridge">
+                <div class="product-image-container">
+                    <img src="images/product-25.png" alt="Top Freezer Fridge 493L" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Top%20Freezer%20Fridge%20493L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>Top Freezer Fridge 493L</h3>
+                    <p>493L top freezer with water dispenser. 14 month 44% off.</p>
+                    <div class="product-price">
+                        <span class="price">RM56</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Top%20Freezer%20Fridge%20493L.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="fridge">
+                <div class="product-image-container">
+                    <img src="images/product-26.png" alt="Top Freezer Fridge 603L" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Top%20Freezer%20Fridge%20603L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>Top Freezer Fridge 603L</h3>
+                    <p>603L large capacity top freezer with water dispenser.</p>
+                    <div class="product-price">
+                        <span class="price">RM50</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Top%20Freezer%20Fridge%20603L.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="fridge">
+                <div class="product-image-container">
+                    <img src="images/product-27.png" alt="QuadWash Dishwasher (Silver)" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20QuadWash%20Dishwasher%20(Silver).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>QuadWash Dishwasher (Silver)</h3>
+                    <p>TrueSteam™ with QuadWash™. Easy Rack™ Plus with auto opening door.</p>
+                    <div class="product-price">
+                        <span class="price">RM73</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20QuadWash%20Dishwasher%20(Silver).%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="fridge">
+                <div class="product-image-container">
+                    <img src="images/product-28.png" alt="QuadWash Dishwasher (Black)" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20QuadWash%20Dishwasher%20(Black).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>QuadWash Dishwasher (Black)</h3>
+                    <p>TrueSteam™ with QuadWash™. Easy Rack™ Plus. Sleek black design.</p>
+                    <div class="product-price">
+                        <span class="price">RM75</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20QuadWash%20Dishwasher%20(Black).%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="ac">
+                <div class="product-image-container">
+                    <img src="images/product-29.png" alt="LG ArtCool 1.5 HP" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20ArtCool%201.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>LG ArtCool 1.5 HP</h3>
+                    <p>Plasmaster™ Ionizer++ with faster cooling. Energy saving with dual compressor.</p>
+                    <div class="product-price">
+                        <span class="price">RM50</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20ArtCool%201.5%20HP.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="ac">
+                <div class="product-image-container">
+                    <img src="images/product-30.png" alt="LG ArtCool 2.5 HP" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20ArtCool%202.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>LG ArtCool 2.5 HP</h3>
+                    <p>Plasmaster™ Ionizer++ with faster cooling. Large room capacity.</p>
+                    <div class="product-price">
+                        <span class="price">RM65</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20ArtCool%202.5%20HP.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="ac">
+                <div class="product-image-container">
+                    <img src="images/product-31.png" alt="DUALCOOL 1.0 HP" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20DUALCOOL%201.0%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>DUALCOOL 1.0 HP</h3>
+                    <p>Air purification with Plasmaster™ Ionizer++. Faster cooling, energy saving.</p>
+                    <div class="product-price">
+                        <span class="price">RM40</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20DUALCOOL%201.0%20HP.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="ac">
+                <div class="product-image-container">
+                    <img src="images/product-32.png" alt="DUALCOOL 1.5 HP" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20DUALCOOL%201.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>DUALCOOL 1.5 HP</h3>
+                    <p>Air purification with dual compressor. Energy saving technology.</p>
+                    <div class="product-price">
+                        <span class="price">RM45</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20DUALCOOL%201.5%20HP.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="ac">
+                <div class="product-image-container">
+                    <img src="images/product-33.png" alt="DUALCOOL 2.0 HP" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20DUALCOOL%202.0%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>DUALCOOL 2.0 HP</h3>
+                    <p>Large capacity air purification with Plasmaster™ Ionizer++.</p>
+                    <div class="product-price">
+                        <span class="price">RM55</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20DUALCOOL%202.0%20HP.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="ac">
+                <div class="product-image-container">
+                    <img src="images/product-34.png" alt="DUALCOOL 2.5 HP" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20DUALCOOL%202.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>DUALCOOL 2.5 HP</h3>
+                    <p>Maximum cooling with air purification. Dual compressor technology.</p>
+                    <div class="product-price">
+                        <span class="price">RM60</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20DUALCOOL%202.5%20HP.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="styler">
+                <div class="product-image-container">
+                    <img src="images/product-35.jpg" alt="LG Styler™" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Styler™.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>LG Styler™</h3>
+                    <p>TrueSteam™ technology. Dehumidify, sanitary care with 10-year motor warranty.</p>
+                    <div class="product-price">
+                        <span class="price">RM45</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Styler™.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="others">
+                <div class="product-image-container">
+                    <img src="images/product-36.png" alt="LG Sound Bar Dolby Atmos" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Sound%20Bar%20Dolby%20Atmos.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>LG Sound Bar Dolby Atmos</h3>
+                    <p>3-Upfiring speaker with Dolby Atmos. 5.1.3 surround sound with AirPlay2.</p>
+                    <div class="product-price">
+                        <span class="price">RM30</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20LG%20Sound%20Bar%20Dolby%20Atmos.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+            <div class="product-card fade-in" data-category="tv">
+                <div class="product-image-container">
+                    <img src="images/product-37.png" alt="77" OLED B5 TV" class="product-image" loading="lazy">
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2077"%20OLED%20B5%20TV.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank">Inquire Now</a>
+                </div>
+                <div class="product-info">
+                    <h3>77" OLED B5 TV</h3>
+                    <p>World's No.1 OLED TV for 12 years. AI-powered with 5 years warranty.</p>
+                    <div class="product-price">
+                        <span class="price">RM280</span>
+                        <span class="price-unit">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2077"%20OLED%20B5%20TV.%20Please%20send%20me%20more%20details." class="product-btn" target="_blank">Inquire Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <div class="about-content">
+            <div class="about-text fade-in">
+                <h2>Why Choose Kelvin as Your LG Consultant?</h2>
+                <p>As an LG Authorised Subscribe Specialist, Kelvin provides personalized consultation to help you find the perfect appliances for your home. Unlike typical salespeople, Kelvin focuses on understanding your actual needs.</p>
+                <p>Whether you're furnishing a new home, upgrading old appliances, or exploring smart home technology, Kelvin offers honest, expert advice to help you make the best decision.</p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Happy Customers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">37+</span>
+                        <span class="stat-label">Product Models</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">7 Yrs</span>
+                        <span class="stat-label">Max Warranty</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image fade-in">
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 550px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; padding: 50px;">
+                    <div style="font-size: 100px; margin-bottom: 30px;">👨‍💼</div>
+                    <h3 style="font-size: 2.5rem; margin-bottom: 15px; font-weight: 800;">Kelvin</h3>
+                    <p style="font-size: 1.3rem; opacity: 0.9; margin-bottom: 10px;">LG Authorize Consultant</p>
+                    <p style="margin-top: 20px; opacity: 0.7; font-size: 1rem;">Your Trusted Home Appliance Advisor</p>
+                    <div style="margin-top: 30px; background: rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 30px; font-size: 0.9rem;">
+                        ID: LGM126771
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section reviews-section">
+        <h2 class="section-title fade-in">Customer Reviews</h2>
+        <p class="section-subtitle fade-in">Real feedback from customers who chose Kelvin's LG Subscribe service.</p>
+
+        <div class="reviews-grid">
+            <div class="review-card fade-in">
+                <div class="review-quote">"</div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Kelvin was very professional and recommended the perfect water purifier based on my home's water quality. The installation was smooth and the water tastes amazing now!</p>
+                <div class="reviewer">
+                    <div class="reviewer-avatar">A</div>
+                    <div class="reviewer-info">
+                        <h4>Ahmad</h4>
+                        <span>Water Purifier — 6 months</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card fade-in">
+                <div class="review-quote">"</div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">First time trying the subscription model. Kelvin patiently answered all my questions. Now I have the air purifier, washer and fridge — all LG. Monthly cost is very manageable.</p>
+                <div class="reviewer">
+                    <div class="reviewer-avatar">S</div>
+                    <div class="reviewer-info">
+                        <h4>Siti</h4>
+                        <span>3 Products — 1 year</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card fade-in">
+                <div class="review-quote">"</div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Kelvin's home visit service was incredibly helpful! He measured everything, planned the layout, and even taught me how to use the ThinQ app. Service exceeded expectations!</p>
+                <div class="reviewer">
+                    <div class="reviewer-avatar">R</div>
+                    <div class="reviewer-info">
+                        <h4>Raj</h4>
+                        <span>Fridge + TV — 8 months</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section" id="faq">
+        <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+        <p class="section-subtitle fade-in">Everything you need to know about LG Subscribe and Kelvin's consultation service.</p>
+
+        <div class="faq-container">
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <span>What is LG Subscribe?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>LG Subscribe is an innovative rental program that lets you use premium LG appliances without paying the full price upfront. Simply pay affordable monthly installments, and after the contract period (typically 5-7 years), the appliance becomes yours permanently.</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <span>Is there any deposit required?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>No deposit is required! That's the beauty of LG Subscribe. You can start enjoying your LG appliances immediately with zero upfront payment. Just pay the first month's rental fee.</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <span>What does the maintenance service include?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>The subscription includes comprehensive maintenance for 5-7 years: regular home visits for cleaning and inspection, filter/consumable replacements, interior and exterior cleaning, and product performance checks. All at no extra cost.</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <span>Can I subscribe to multiple products?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! Many customers subscribe to multiple products like water purifier, air purifier, and washing machine together. Kelvin can design a bundled package for you with better rates.</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <span>How do I pay the monthly rental?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Monthly payments are automatically deducted from your debit or credit card via auto-debit. It's convenient and hassle-free. Kelvin will assist you in setting this up during the application process.</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <span>Can I terminate the contract early?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Early termination is possible but subject to termination fees calculated based on your usage duration and remaining contract period. Kelvin recommends choosing the right contract length from the start to avoid this.</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <span>Is Kelvin's consultation service free?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Kelvin's consultation service is completely free of charge. As an LG Authorised Consultant, Kelvin provides product recommendations, home assessments, and subscription planning at no cost to you.</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <span>What happens after the contract ends?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Once your contract period is complete, the appliance becomes your permanent property with no additional payment required. You can continue using it or choose to upgrade to a newer model with a new subscription.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <h2 class="section-title fade-in">Contact Kelvin</h2>
+        <p class="section-subtitle fade-in">Ready to upgrade your home? Reach out directly via WhatsApp or visit our store.</p>
+
+        <div class="contact-grid">
+            <div class="contact-info fade-in">
+                <h3>Get In Touch</h3>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-detail">
+                        <h4>WhatsApp / Phone</h4>
+                        <p>+60 11-7606 0833<br>Available daily for inquiries</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-detail">
+                        <h4>Store Location</h4>
+                        <p>LG Brand Shop — The Starling Mall<br>Damansara Utama, Petaling Jaya, Selangor</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">⏰</div>
+                    <div class="contact-detail">
+                        <h4>Business Hours</h4>
+                        <table class="hours-table">
+                            <tr><td>Monday — Sunday</td><td>10:00 AM — 10:00 PM</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">✅</div>
+                    <div class="contact-detail">
+                        <h4>Authorisation</h4>
+                        <p>LG Subscribe Senior Manager<br>Jake Lim Kok Aan (LGM126771)<br>Authorised LG Subscribe Specialist</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form fade-in">
+                <h3>Request a Quote</h3>
+                <form onsubmit="event.preventDefault(); alert('Thank you for your inquiry! Kelvin will contact you within 24 hours.');">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="e.g. +60 12-345 6789" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Product Interest</label>
+                        <select required>
+                            <option value="">Select a product</option>
+                            <option value="water">LG PuriCare™ Water Purifier</option>
+                            <option value="air">LG PuriCare™ Air Purifier</option>
+                            <option value="vacuum">LG CORDZERO™ Vacuum</option>
+                            <option value="fridge">LG InstaView™ Refrigerator</option>
+                            <option value="styler">LG Styler™ Wardrobe</option>
+                            <option value="tv">LG OLED TV</option>
+                            <option value="washer">LG AI WashTower™</option>
+                            <option value="ac">LG DUAL Inverter AC</option>
+                            <option value="multiple">Multiple Products</option>
+                            <option value="other">Not Sure / Need Advice</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Message (Optional)</label>
+                        <textarea rows="4" placeholder="Tell us about your needs, budget, or any questions..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-lg">LG</span>
+                <p>Kelvin LG Authorize Consultant<br>Your trusted advisor for LG Subscribe Malaysia. We help Malaysian families enjoy premium LG appliances through affordable rental plans.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon" title="Facebook">f</a>
+                    <a href="#" class="social-icon" title="Instagram">📷</a>
+                    <a href="https://wa.me/601176060833" class="social-icon" title="WhatsApp">💬</a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="#">Water Purifiers</a></li>
+                    <li><a href="#">Air Purifiers</a></li>
+                    <li><a href="#">Vacuum Cleaners</a></li>
+                    <li><a href="#">Refrigerators</a></li>
+                    <li><a href="#">Washing Machines</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">LG Subscribe</a></li>
+                    <li><a href="#">Maintenance</a></li>
+                    <li><a href="#">Installation</a></li>
+                    <li><a href="#">Free Consultation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">About Kelvin</a></li>
+                    <li><a href="#">Store Location</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Kelvin LG Authorize Consultant. All Rights Reserved.<br>
+            This website is operated by LG Subscribe Senior Manager Jake Lim Kok Aan (LGM126771), an Authorised LG Subscribe Specialist.<br>
+            All LG trademarks, logos and brand names are the property of LG Electronics Inc.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.boxShadow = '0 2px 15px rgba(0,0,0,0.08)';
+            }
+        });
+    </script>
+</body>
+</html>
