@@ -512,6 +512,24 @@
             justify-content: center;
             min-height: 280px;
         }
+        .product-cat-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--lg-red);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            z-index: 3;
+            box-shadow: 0 4px 15px rgba(165,0,52,0.3);
+            text-transform: uppercase;
+        }
+        .product-cat-tag.water { background: #2196F3; }
+        .product-cat-tag.air { background: #00BCD4; }
+        .product-cat-tag.home { background: #FF9800; }
         .product-image {
             width: 100%;
             height: auto;
@@ -1333,6 +1351,122 @@
             50% { box-shadow: 0 8px 35px rgba(37,211,102,0.5); }
         }
 
+        
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            padding: 12px 0;
+            min-width: 280px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 24px;
+            color: var(--lg-dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+        .dropdown-menu a:hover {
+            background: var(--soft-gray);
+            color: var(--lg-red);
+            padding-left: 30px;
+        }
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            flex-direction: column;
+            gap: 0;
+            z-index: 999;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .mobile-menu.active {
+            display: flex;
+        }
+        .mobile-menu a {
+            padding: 14px 16px;
+            color: var(--lg-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.2s;
+        }
+        .mobile-menu a:hover {
+            background: var(--soft-gray);
+            color: var(--lg-red);
+        }
+        .mobile-menu .mobile-sub {
+            padding-left: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #666;
+        }
+        .mobile-dropdown-header {
+            padding: 14px 16px;
+            font-weight: 700;
+            color: var(--lg-red);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            background: var(--soft-gray);
+        }
+        .mobile-cta {
+            background: var(--lg-red) !important;
+            color: white !important;
+            text-align: center;
+            margin-top: 10px;
+            border-radius: 50px;
+        }
+        /* Brand Disclaimer */
+        .brand-disclaimer {
+            background: #1a1a1a;
+            border-top: 3px solid var(--lg-red);
+            padding: 20px 30px;
+        }
+        .disclaimer-container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        .brand-disclaimer p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.8rem;
+            line-height: 1.8;
+            text-align: center;
+        }
+        .brand-disclaimer strong {
+            color: #ffd700;
+        }
+
         /* RESPONSIVE */
         @media (max-width: 1024px) {
             .benefits-grid, .reviews-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1375,12 +1509,41 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
+                <li class="dropdown">
+                    <a href="pages/products.html">Products ▼</a>
+                    <div class="dropdown-menu">
+                        <a href="pages/water-purifier.html">💧 Water Purifier</a>
+                        <a href="pages/air-purifier.html">🌬️ Air Purifier</a>
+                        <a href="pages/styler.html">👔 Styler</a>
+                        <a href="pages/air-conditioners.html">❄️ Home Air Conditioners</a>
+                        <a href="pages/washer-dryers.html">🧺 Washer & Dryers</a>
+                        <a href="pages/refrigerator.html">🧊 Refrigerator</a>
+                        <a href="pages/smart-tv.html">📺 Smart TV</a>
+                        <a href="pages/vacuum-cleaners.html">🧹 Vacuum Cleaners</a>
+                    </div>
+                </li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="https://wa.me/601176060833" class="nav-cta" target="_blank">Get Quote</a></li>
             </ul>
-            <button class="mobile-menu-btn">☰</button>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#home">🏠 Home</a>
+            <div class="mobile-dropdown-header">📦 Products</div>
+            <a href="pages/water-purifier.html" class="mobile-sub">💧 Water Purifier</a>
+            <a href="pages/air-purifier.html" class="mobile-sub">🌬️ Air Purifier</a>
+            <a href="pages/styler.html" class="mobile-sub">👔 Styler</a>
+            <a href="pages/air-conditioners.html" class="mobile-sub">❄️ Air Conditioners</a>
+            <a href="pages/washer-dryers.html" class="mobile-sub">🧺 Washer & Dryers</a>
+            <a href="pages/refrigerator.html" class="mobile-sub">🧊 Refrigerator</a>
+            <a href="pages/smart-tv.html" class="mobile-sub">📺 Smart TV</a>
+            <a href="pages/vacuum-cleaners.html" class="mobile-sub">🧹 Vacuum Cleaners</a>
+            <a href="#about">👤 About</a>
+            <a href="#faq">❓ FAQ</a>
+            <a href="https://wa.me/601176060833" class="mobile-cta" target="_blank">💬 WhatsApp Me</a>
+        </div>
         </div>
     </nav>
 
@@ -1423,6 +1586,7 @@
         <div class="products-grid">
             <div class="product-card fade-in" data-category="water" onclick="openModal(0)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag water">💧 Water</span>
                     <img src="images/WaterPurifiers.png" alt="LG PuriCare Water Purifier" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20PuriCare%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1438,6 +1602,7 @@
             </div>
             <div class="product-card fade-in" data-category="water" onclick="openModal(1)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag water">💧 Water</span>
                     <img src="images/ObjetCollection.png" alt="LG Objet Collection Water Purifier" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20Objet%20Collection%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1453,6 +1618,7 @@
             </div>
             <div class="product-card fade-in" data-category="water" onclick="openModal(2)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag water">💧 Water</span>
                     <img src="images/Undersink.png" alt="LG Undersink Water Purifier" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20Undersink%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1468,6 +1634,7 @@
             </div>
             <div class="product-card fade-in" data-category="water" onclick="openModal(3)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag water">💧 Water</span>
                     <img src="images/ObjetCollection.png" alt="LG Objet Collection (4 Colors)" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20Objet%20Collection%20(4%20Colors).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1483,6 +1650,7 @@
             </div>
             <div class="product-card fade-in" data-category="air" onclick="openModal(4)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/16LDualInvertorDehumidifier.png" alt="16L Dual Inverter Dehumidifier" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%2016L%20Dual%20Inverter%20Dehumidifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1498,6 +1666,7 @@
             </div>
             <div class="product-card fade-in" data-category="air" onclick="openModal(5)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/CatTowerAirPurifier.png" alt="Cat Tower Air Purifier" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Cat%20Tower%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1513,6 +1682,7 @@
             </div>
             <div class="product-card fade-in" data-category="air" onclick="openModal(6)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/HitAirPurifier.png" alt="HIT Air Purifier" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20HIT%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1528,6 +1698,7 @@
             </div>
             <div class="product-card fade-in" data-category="air" onclick="openModal(7)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/AeroBooster.png" alt="Aero Booster Air Purifier" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Aero%20Booster%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1543,6 +1714,7 @@
             </div>
             <div class="product-card fade-in" data-category="air" onclick="openModal(8)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/AeroFuniture.png" alt="Aero Furniture Air Purifier" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Aero%20Furniture%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1558,6 +1730,7 @@
             </div>
             <div class="product-card fade-in" data-category="air" onclick="openModal(9)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/AlphaPetAirPurifierSingleBooster.png" alt="Alpha Pet Air Purifier (Single)" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Alpha%20Pet%20Air%20Purifier%20(Single).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1573,6 +1746,7 @@
             </div>
             <div class="product-card fade-in" data-category="air" onclick="openModal(10)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/AlphaPetAirPurifierDoubleBooster.png" alt="Alpha Pet Air Purifier (Double)" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Alpha%20Pet%20Air%20Purifier%20(Double).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1588,6 +1762,7 @@
             </div>
             <div class="product-card fade-in" data-category="washer" onclick="openModal(11)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/WashTower14KGW10KWD.png" alt="LG WashTower 14KG/10KG" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20WashTower%2014KG/10KG.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1603,6 +1778,7 @@
             </div>
             <div class="product-card fade-in" data-category="washer" onclick="openModal(12)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/WashTower25KGW20KGD.png" alt="LG WashTower 25KG/20KG" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20WashTower%2025KG/20KG.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1618,6 +1794,7 @@
             </div>
             <div class="product-card fade-in" data-category="washer" onclick="openModal(13)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/WasherDryerComboSet.png" alt="Washer Dryer Combo Set" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Washer%20Dryer%20Combo%20Set.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1633,6 +1810,7 @@
             </div>
             <div class="product-card fade-in" data-category="washer" onclick="openModal(14)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/WashingMachineAIDD15KGW8KGD.png" alt="15KG AI DD Washing Machine" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%2015KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1648,6 +1826,7 @@
             </div>
             <div class="product-card fade-in" data-category="washer" onclick="openModal(15)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/WashingMachineAIDD20KG.png" alt="20KG AI DD Washing Machine" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%2020KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1663,6 +1842,7 @@
             </div>
             <div class="product-card fade-in" data-category="washer" onclick="openModal(16)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/WashingMachineAIDD10.5KG.png" alt="10.5KG AI DD Washing Machine" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%2010.5KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1678,6 +1858,7 @@
             </div>
             <div class="product-card fade-in" data-category="washer" onclick="openModal(17)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/WashingMachineDualImverter9KG.png" alt="9KG Dual Inverter Heat Pump Dryer" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%209KG%20Dual%20Inverter%20Heat%20Pump%20Dryer.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1693,6 +1874,7 @@
             </div>
             <div class="product-card fade-in" data-category="vacuum" onclick="openModal(18)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/CordZero.jpg" alt="LG CordZero Vacuum" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20CordZero%20Vacuum.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1708,6 +1890,7 @@
             </div>
             <div class="product-card fade-in" data-category="fridge" onclick="openModal(19)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/FridgeInstaview508L.png" alt="Multi Door InstaView 614L" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Multi%20Door%20InstaView%20614L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1723,6 +1906,7 @@
             </div>
             <div class="product-card fade-in" data-category="fridge" onclick="openModal(20)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/FridgeFrenchDoor665L.png" alt="InstaView Fridge 508L" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20InstaView%20Fridge%20508L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1738,6 +1922,7 @@
             </div>
             <div class="product-card fade-in" data-category="fridge" onclick="openModal(21)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/FridgeDoorInDoor635L.png" alt="French Door Fridge 665L" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20French%20Door%20Fridge%20665L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1753,6 +1938,7 @@
             </div>
             <div class="product-card fade-in" data-category="fridge" onclick="openModal(22)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/FridgeSideBySide641L.png" alt="Door In Door Fridge 635L" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Door%20In%20Door%20Fridge%20635L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1768,6 +1954,7 @@
             </div>
             <div class="product-card fade-in" data-category="fridge" onclick="openModal(23)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/FridgeTopFreezer493L.png" alt="Side By Side Fridge 641L" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Side%20By%20Side%20Fridge%20641L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1783,6 +1970,7 @@
             </div>
             <div class="product-card fade-in" data-category="fridge" onclick="openModal(24)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/FridgeTopFreezer603L.png" alt="Top Freezer Fridge 493L" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Top%20Freezer%20Fridge%20493L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1798,6 +1986,7 @@
             </div>
             <div class="product-card fade-in" data-category="fridge" onclick="openModal(25)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/DishwasherQuadWash.png" alt="Top Freezer Fridge 603L" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Top%20Freezer%20Fridge%20603L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1843,6 +2032,7 @@
             </div>
             <div class="product-card fade-in" data-category="ac" onclick="openModal(28)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/ArtCool2.5HP.png" alt="LG ArtCool 1.5 HP" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20ArtCool%201.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1858,6 +2048,7 @@
             </div>
             <div class="product-card fade-in" data-category="ac" onclick="openModal(29)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/DualCoolWithPurifier1HP.png" alt="LG ArtCool 2.5 HP" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20ArtCool%202.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1873,6 +2064,7 @@
             </div>
             <div class="product-card fade-in" data-category="ac" onclick="openModal(30)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/DualCoolWithPurifier1.5HP.png" alt="DUALCOOL 1.0 HP" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20DUALCOOL%201.0%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1888,6 +2080,7 @@
             </div>
             <div class="product-card fade-in" data-category="ac" onclick="openModal(31)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/DualCoolWithPurifier2HP.png" alt="DUALCOOL 1.5 HP" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20DUALCOOL%201.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1903,6 +2096,7 @@
             </div>
             <div class="product-card fade-in" data-category="ac" onclick="openModal(32)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/DualCoolWithPurifier2.5HP.png" alt="DUALCOOL 2.0 HP" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20DUALCOOL%202.0%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1918,6 +2112,7 @@
             </div>
             <div class="product-card fade-in" data-category="ac" onclick="openModal(33)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/Styler.png" alt="DUALCOOL 2.5 HP" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20DUALCOOL%202.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1933,6 +2128,7 @@
             </div>
             <div class="product-card fade-in" data-category="styler" onclick="openModal(34)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/Styler.png" alt="LG Styler" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20Styler.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1948,6 +2144,7 @@
             </div>
             <div class="product-card fade-in" data-category="others" onclick="openModal(35)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/SoundBarWithDolbyAtmos.png" alt="LG Sound Bar Dolby Atmos" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20Sound%20Bar%20Dolby%20Atmos.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -1963,6 +2160,7 @@
             </div>
             <div class="product-card fade-in" data-category="tv" onclick="openModal(36)">
                 <div class="product-image-container">
+                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/OLED77AITV.png" alt="77 OLED B5 TV" class="product-image" loading="lazy">
                     <div class="product-overlay">
                         <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%2077%20OLED%20B5%20TV.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
@@ -2306,11 +2504,11 @@
             <div class="footer-links">
                 <h4>Products</h4>
                 <ul>
-                    <li><a href="#">Water Purifiers</a></li>
-                    <li><a href="#">Air Purifiers</a></li>
-                    <li><a href="#">Vacuum Cleaners</a></li>
-                    <li><a href="#">Refrigerators</a></li>
-                    <li><a href="#">Washing Machines</a></li>
+                    <li><a href="pages/water-purifier.html">Water Purifiers</a></li>
+                    <li><a href="pages/air-purifier.html">Air Purifiers</a></li>
+                    <li><a href="pages/vacuum-cleaners.html">Vacuum Cleaners</a></li>
+                    <li><a href="pages/refrigerator.html">Refrigerators</a></li>
+                    <li><a href="pages/washer-dryers.html">Washer & Dryers</a></li>
                 </ul>
             </div>
             <div class="footer-links">
@@ -2582,19 +2780,9 @@
         });
 
         // Mobile menu
-        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '72px';
-            navLinks.style.left = '0';
-            navLinks.style.right = '0';
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.background = 'white';
-            navLinks.style.padding = '20px';
-            navLinks.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
-            navLinks.style.gap = '20px';
-        });
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
     </script>
 </body>
 </html>
