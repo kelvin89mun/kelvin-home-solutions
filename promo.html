@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotions & Offers | Kelvin LG Consultant Malaysia</title>
+    <meta name="description" content="Exclusive LG Subscribe Malaysia promotions. 50% OFF for 9 months, bundle deals, and limited-time offers on premium LG appliances. Contact Kelvin Chan (LGM260389).">
+    <meta name="keywords" content="LG Subscribe Promo, LG Malaysia Offer, LG Discount, LG Bundle Deal, Kelvin Chan">
+    <link rel="canonical" href="https://lg-lifestyle-malaysia.shop/pages/promo.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --lg-red: #a50034;
+            --lg-red-light: #c8102e;
+            --lg-dark: #1a1a1a;
+            --lg-gray: #f5f5f7;
+            --text: #1d1d1f;
+            --white: #ffffff;
+            --cream: #faf9f7;
+            --warm-white: #fdfcfa;
+            --soft-gray: #f2f0ed;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+            background: var(--warm-white);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--soft-gray); }
+        ::-webkit-scrollbar-thumb { background: var(--lg-red); border-radius: 3px; }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: linear-gradient(135deg, #f5f0eb 0%, #ede9e3 100%);
+            padding: 100px 30px 30px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .breadcrumb-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: #888;
+            flex-wrap: wrap;
+        }
+        .breadcrumb a {
+            color: var(--lg-red);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb-separator { color: #ccc; }
+        .breadcrumb-current { color: var(--lg-dark); font-weight: 700; }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(253,252,250,0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            box-shadow: 0 1px 20px rgba(0,0,0,0.04);
+            transition: all 0.4s ease;
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+        .navbar.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.08); }
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        .logo:hover { transform: scale(1.02); }
+        .logo-lg {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--lg-red);
+            letter-spacing: -2px;
+            font-style: italic;
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        .logo-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--lg-dark);
+            letter-spacing: 0.5px;
+        }
+        .logo-sub {
+            font-size: 9px;
+            color: #999;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--lg-dark);
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.3s;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--lg-red);
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+        .nav-links a:hover { color: var(--lg-red); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta {
+            background: var(--lg-red);
+            color: var(--white) !important;
+            padding: 12px 28px;
+            border-radius: 50px;
+            transition: all 0.3s !important;
+            font-weight: 700 !important;
+        }
+        .nav-cta:hover {
+            background: #8a0029;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(165,0,52,0.3);
+        }
+        .nav-cta::after { display: none !important; }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--lg-dark);
+        }
+
+        /* Dropdown Menu */
+        .dropdown { position: relative; }
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            padding: 12px 0;
+            min-width: 280px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 24px;
+            color: var(--lg-dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+        .dropdown-menu a:last-child { border-bottom: none; }
+        .dropdown-menu a:hover {
+            background: var(--soft-gray);
+            color: var(--lg-red);
+            padding-left: 30px;
+        }
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            flex-direction: column;
+            gap: 0;
+            z-index: 999;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .mobile-menu.active { display: flex; }
+        .mobile-menu a {
+            padding: 14px 16px;
+            color: var(--lg-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.2s;
+        }
+        .mobile-menu a:hover { background: var(--soft-gray); color: var(--lg-red); }
+        .mobile-menu .mobile-sub {
+            padding-left: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #666;
+        }
+        .mobile-dropdown-header {
+            padding: 14px 16px;
+            font-weight: 700;
+            color: var(--lg-red);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            background: var(--soft-gray);
+        }
+        .mobile-cta {
+            background: var(--lg-red) !important;
+            color: white !important;
+            text-align: center;
+            margin-top: 10px;
+            border-radius: 50px;
+        }
+
+        /* Promo Hero */
+        .promo-hero {
+            background: linear-gradient(135deg, var(--lg-dark) 0%, #2d1b1b 50%, var(--lg-red) 100%);
+            padding: 100px 30px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .promo-hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .promo-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .promo-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffd700, #ff6b35);
+            color: var(--lg-dark);
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .promo-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            color: var(--white);
+            font-weight: 900;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .promo-hero h1 span {
+            color: #ffd700;
+        }
+        .promo-hero p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.8;
+        }
+        .countdown-box {
+            display: inline-flex;
+            gap: 20px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            position: relative;
+            z-index: 1;
+            margin-top: 20px;
+        }
+        .countdown-item {
+            text-align: center;
+        }
+        .countdown-item .number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #ffd700;
+            line-height: 1;
+            font-family: 'Playfair Display', serif;
+        }
+        .countdown-item .label {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 30px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            margin-bottom: 15px;
+            color: var(--lg-dark);
+            font-weight: 800;
+            line-height: 1.2;
+            font-family: 'Playfair Display', serif;
+        }
+        .section-subtitle {
+            text-align: center;
+            font-size: 1rem;
+            color: #777;
+            max-width: 600px;
+            margin: 0 auto 50px;
+            line-height: 1.8;
+        }
+
+        /* Promo Cards */
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        .promo-card {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0,0,0,0.03);
+            position: relative;
+        }
+        .promo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+        }
+        .promo-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #ffd700, #ff6b35);
+            color: var(--lg-dark);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            z-index: 3;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .promo-tag.bundle {
+            background: linear-gradient(135deg, var(--lg-red), #d4405f);
+            color: white;
+        }
+        .promo-image {
+            background: linear-gradient(135deg, #faf8f6, #f5f2ee);
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+        }
+        .promo-image img {
+            max-width: 100%;
+            max-height: 180px;
+            object-fit: contain;
+            transition: all 0.4s;
+        }
+        .promo-card:hover .promo-image img {
+            transform: scale(1.08);
+        }
+        .promo-content {
+            padding: 30px;
+        }
+        .promo-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--lg-dark);
+            font-weight: 700;
+        }
+        .promo-content p {
+            color: #777;
+            line-height: 1.8;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .promo-price {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .promo-price .old-price {
+            font-size: 1.1rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+        .promo-price .new-price {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--lg-red);
+        }
+        .promo-price .period {
+            font-size: 0.9rem;
+            color: #999;
+        }
+        .promo-savings {
+            display: inline-block;
+            background: rgba(165,0,52,0.1);
+            color: var(--lg-red);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .promo-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: var(--lg-red);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        .promo-btn:hover {
+            background: #8a0029;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(165,0,52,0.3);
+        }
+
+        /* How to Claim */
+        .steps-section {
+            background: linear-gradient(180deg, var(--warm-white) 0%, var(--soft-gray) 100%);
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .step-card {
+            text-align: center;
+            position: relative;
+        }
+        .step-card:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -25px;
+            top: 40px;
+            font-size: 1.5rem;
+            color: var(--lg-red);
+            opacity: 0.3;
+        }
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--lg-red), #d4405f);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(165,0,52,0.2);
+        }
+        .step-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--lg-dark);
+            font-weight: 700;
+        }
+        .step-card p {
+            color: #777;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* Terms */
+        .terms-box {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .terms-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--lg-dark);
+            font-weight: 700;
+        }
+        .terms-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .terms-box li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            position: relative;
+            padding-left: 25px;
+        }
+        .terms-box li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--lg-red);
+            font-weight: 700;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--lg-dark) 0%, #2d2d3a 100%);
+            padding: 80px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(165,0,52,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            color: var(--white);
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        .cta-section p {
+            color: rgba(255,255,255,0.7);
+            max-width: 500px;
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.8;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.4s;
+            border: 2px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .cta-primary {
+            background: var(--lg-red);
+            color: var(--white);
+            box-shadow: 0 8px 30px rgba(165,0,52,0.4);
+        }
+        .cta-primary:hover {
+            background: #c8102e;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(165,0,52,0.5);
+        }
+        .cta-secondary {
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            border-color: rgba(255,255,255,0.4);
+            backdrop-filter: blur(10px);
+        }
+        .cta-secondary:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+
+        /* Brand Disclaimer */
+        .brand-disclaimer {
+            background: #1a1a1a;
+            border-top: 3px solid var(--lg-red);
+            padding: 25px 30px;
+        }
+        .disclaimer-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .brand-disclaimer p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.8rem;
+            line-height: 1.8;
+        }
+        .brand-disclaimer strong {
+            color: #ffd700;
+        }
+        .brand-disclaimer p:last-child {
+            color: #ffd700;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: var(--white);
+            padding: 60px 30px 30px;
+        }
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        .footer-brand .logo-lg {
+            color: var(--lg-red);
+            font-size: 36px;
+            margin-bottom: 15px;
+            display: inline-block;
+            font-style: italic;
+            font-weight: 900;
+        }
+        .footer-brand p {
+            opacity: 0.5;
+            line-height: 1.9;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+        }
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+        .social-icon {
+            width: 42px;
+            height: 42px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--white);
+            font-size: 1.1rem;
+            transition: all 0.4s;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .social-icon:hover {
+            background: var(--lg-red);
+            transform: translateY(-3px);
+            border-color: var(--lg-red);
+        }
+        .footer-links h4 {
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            color: var(--white);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--lg-red);
+            border-radius: 1px;
+        }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            font-size: 0.85rem;
+        }
+        .footer-links a:hover {
+            color: var(--white);
+            transform: translateX(4px);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 25px;
+            text-align: center;
+            opacity: 0.4;
+            font-size: 0.75rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Floating WhatsApp */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 56px;
+            height: 56px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 26px;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(37,211,102,0.35);
+            z-index: 999;
+            transition: all 0.4s;
+            animation: whatsappPulse 2s infinite;
+        }
+        .floating-whatsapp:hover {
+            transform: scale(1.12);
+            box-shadow: 0 12px 35px rgba(37,211,102,0.45);
+        }
+        @keyframes whatsappPulse {
+            0%, 100% { box-shadow: 0 8px 25px rgba(37,211,102,0.35); }
+            50% { box-shadow: 0 8px 35px rgba(37,211,102,0.5); }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .steps-grid { grid-template-columns: repeat(2, 1fr); }
+            .step-card:not(:last-child)::after { display: none; }
+            .footer-content { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .breadcrumb { padding-top: 90px; }
+            .promo-grid { grid-template-columns: 1fr; }
+            .steps-grid { grid-template-columns: 1fr; }
+            .countdown-box { flex-wrap: wrap; justify-content: center; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+            .footer-social { justify-content: center; }
+            .footer-links h4::after { left: 50%; transform: translateX(-50%); }
+            .section { padding: 50px 20px; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .cta-button { width: 100%; max-width: 300px; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-lg">LG</span>
+                <div class="logo-text">
+                    <span class="logo-name">Kelvin Consultant</span>
+                    <span class="logo-sub">Authorize Consultant</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="promo.html" style="color: var(--lg-red);">Promo</a></li>
+                <li class="dropdown">
+                    <a href="products.html">Products ▼</a>
+                    <div class="dropdown-menu">
+                        <a href="water-purifier.html">💧 Water Purifier</a>
+                        <a href="air-purifier.html">🌬️ Air Purifier</a>
+                        <a href="styler.html">👔 Styler</a>
+                        <a href="air-conditioners.html">❄️ Air Conditioners</a>
+                        <a href="washer-dryers.html">🧺 Washer & Dryers</a>
+                        <a href="refrigerator.html">🧊 Refrigerator</a>
+                        <a href="smart-tv.html">📺 Smart TV</a>
+                        <a href="vacuum-cleaners.html">🧹 Vacuum Cleaners</a>
+                    </div>
+                </li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#faq">FAQ</a></li>
+                <li><a href="https://wa.me/601176060833" class="nav-cta" target="_blank">Get Quote</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html">🏠 Home</a>
+            <a href="promo.html" style="color: var(--lg-red); font-weight: 800;">🔥 Promo</a>
+            <div class="mobile-dropdown-header">📦 Products</div>
+            <a href="water-purifier.html" class="mobile-sub">💧 Water Purifier</a>
+            <a href="air-purifier.html" class="mobile-sub">🌬️ Air Purifier</a>
+            <a href="styler.html" class="mobile-sub">👔 Styler</a>
+            <a href="air-conditioners.html" class="mobile-sub">❄️ Air Conditioners</a>
+            <a href="washer-dryers.html" class="mobile-sub">🧺 Washer & Dryers</a>
+            <a href="refrigerator.html" class="mobile-sub">🧊 Refrigerator</a>
+            <a href="smart-tv.html" class="mobile-sub">📺 Smart TV</a>
+            <a href="vacuum-cleaners.html" class="mobile-sub">🧹 Vacuum Cleaners</a>
+            <a href="../index.html#about">👤 About</a>
+            <a href="../index.html#faq">❓ FAQ</a>
+            <a href="https://wa.me/601176060833" class="mobile-cta" target="_blank">💬 WhatsApp Me</a>
+        </div>
+    </nav>
+
+    <div class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="../index.html">🏠 Home</a>
+            <span class="breadcrumb-separator">›</span>
+            <span class="breadcrumb-current">🔥 Promo & Offers</span>
+        </div>
+    </div>
+
+    <!-- Promo Hero -->
+    <div class="promo-hero">
+        <div class="promo-badge">🔥 Limited Time Offer</div>
+        <h1><span>50% OFF</span> for 9 Months!</h1>
+        <p>Subscribe to any LG appliance now and enjoy <strong>50% discount</strong> on your monthly rental for the first 9 months. Zero deposit, full maintenance included.</p>
+        <div class="countdown-box">
+            <div class="countdown-item">
+                <div class="number" id="days">30</div>
+                <div class="label">Days</div>
+            </div>
+            <div class="countdown-item">
+                <div class="number" id="hours">12</div>
+                <div class="label">Hours</div>
+            </div>
+            <div class="countdown-item">
+                <div class="number" id="minutes">45</div>
+                <div class="label">Minutes</div>
+            </div>
+            <div class="countdown-item">
+                <div class="number" id="seconds">30</div>
+                <div class="label">Seconds</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Current Promotions -->
+    <section class="section" style="background: var(--white);">
+        <h2 class="section-title fade-in">Current Promotions</h2>
+        <p class="section-subtitle fade-in">Don't miss out on these exclusive deals. Limited time only!</p>
+
+        <div class="promo-grid">
+            <div class="promo-card fade-in">
+                <span class="promo-tag">50% OFF</span>
+                <div class="promo-image">
+                    <img src="../images/WaterPurifiers.png" alt="Water Purifier Promo">
+                </div>
+                <div class="promo-content">
+                    <h3>LG PuriCare Water Purifier</h3>
+                    <p>Tankless design with UV sterilization. First 9 months at half price. WQA Gold Seal certified.</p>
+                    <div class="promo-savings">Save RM315 over 9 months</div>
+                    <div class="promo-price">
+                        <span class="old-price">RM70</span>
+                        <span class="new-price">RM35</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2050%25%20OFF%20Water%20Purifier%20promo!" class="promo-btn" target="_blank">Claim This Offer</a>
+                </div>
+            </div>
+
+            <div class="promo-card fade-in">
+                <span class="promo-tag">50% OFF</span>
+                <div class="promo-image">
+                    <img src="../images/HitAirPurifier.png" alt="Air Purifier Promo">
+                </div>
+                <div class="promo-content">
+                    <h3>LG PuriCare 360° Air Purifier</h3>
+                    <p>360° HEPA filtration with Plasmaster Ionizer. Perfect for large rooms up to 600sqft.</p>
+                    <div class="promo-savings">Save RM225 over 9 months</div>
+                    <div class="promo-price">
+                        <span class="old-price">RM50</span>
+                        <span class="new-price">RM25</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2050%25%20OFF%20Air%20Purifier%20promo!" class="promo-btn" target="_blank">Claim This Offer</a>
+                </div>
+            </div>
+
+            <div class="promo-card fade-in">
+                <span class="promo-tag bundle">Bundle Deal</span>
+                <div class="promo-image">
+                    <img src="../images/ArtCool1.5HP.png" alt="AC Promo">
+                </div>
+                <div class="promo-content">
+                    <h3>LG ArtCool 1.5 HP + Water Purifier</h3>
+                    <p>Get both appliances with special bundle pricing. Complete home comfort solution.</p>
+                    <div class="promo-savings">Save RM450 over 9 months</div>
+                    <div class="promo-price">
+                        <span class="old-price">RM120</span>
+                        <span class="new-price">RM60</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20Bundle%20Deal%20(ArtCool%20+%20Water%20Purifier)!" class="promo-btn" target="_blank">Claim Bundle Deal</a>
+                </div>
+            </div>
+
+            <div class="promo-card fade-in">
+                <span class="promo-tag">50% OFF</span>
+                <div class="promo-image">
+                    <img src="../images/WashingMachineAIDD10.5KG.png" alt="Washer Promo">
+                </div>
+                <div class="promo-content">
+                    <h3>LG AI DD Washing Machine 10.5KG</h3>
+                    <p>AI-powered washing with TurboWash 360. Steam+ technology for allergen-free clothes.</p>
+                    <div class="promo-savings">Save RM405 over 9 months</div>
+                    <div class="promo-price">
+                        <span class="old-price">RM90</span>
+                        <span class="new-price">RM45</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2050%25%20OFF%20Washing%20Machine%20promo!" class="promo-btn" target="_blank">Claim This Offer</a>
+                </div>
+            </div>
+
+            <div class="promo-card fade-in">
+                <span class="promo-tag">50% OFF</span>
+                <div class="promo-image">
+                    <img src="../images/FridgeDoorInDoor635L.png" alt="Fridge Promo">
+                </div>
+                <div class="promo-content">
+                    <h3>Door In Door Fridge 635L</h3>
+                    <p>Easy access design with smart cooling. Large family capacity with water dispenser.</p>
+                    <div class="promo-savings">Save RM585 over 9 months</div>
+                    <div class="promo-price">
+                        <span class="old-price">RM130</span>
+                        <span class="new-price">RM65</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%2050%25%20OFF%20Fridge%20promo!" class="promo-btn" target="_blank">Claim This Offer</a>
+                </div>
+            </div>
+
+            <div class="promo-card fade-in">
+                <span class="promo-tag bundle">New Customer</span>
+                <div class="promo-image">
+                    <img src="../images/CordZero.jpg" alt="Vacuum Promo">
+                </div>
+                <div class="promo-content">
+                    <h3>LG CordZero Vacuum</h3>
+                    <p>Dual battery with auto-empty station. First-time subscribers get extra filter pack free.</p>
+                    <div class="promo-savings">Free filter pack worth RM150</div>
+                    <div class="promo-price">
+                        <span class="new-price">RM65</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20CordZero%20Vacuum%20New%20Customer%20promo!" class="promo-btn" target="_blank">Claim This Offer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Claim -->
+    <section class="section steps-section">
+        <h2 class="section-title fade-in">How to Claim Your Promo</h2>
+        <p class="section-subtitle fade-in">4 simple steps to start saving</p>
+
+        <div class="steps-grid">
+            <div class="step-card fade-in">
+                <div class="step-number">1</div>
+                <h3>WhatsApp Kelvin</h3>
+                <p>Send a message with the promo code or product you're interested in.</p>
+            </div>
+            <div class="step-card fade-in">
+                <div class="step-number">2</div>
+                <h3>Free Consultation</h3>
+                <p>Kelvin will recommend the best model based on your home and needs.</p>
+            </div>
+            <div class="step-card fade-in">
+                <div class="step-number">3</div>
+                <h3>Submit Documents</h3>
+                <p>IC and bank statement for auto-debit setup. No deposit required!</p>
+            </div>
+            <div class="step-card fade-in">
+                <div class="step-number">4</div>
+                <h3>Enjoy 50% OFF</h3>
+                <p>Installation within 3-5 days. Start enjoying your LG appliance!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms & Conditions -->
+    <section class="section" style="background: var(--white);">
+        <h2 class="section-title fade-in">Terms & Conditions</h2>
+        <p class="section-subtitle fade-in">Please read before claiming</p>
+
+        <div class="terms-box fade-in">
+            <h3>📝 Promotion Details</h3>
+            <ul>
+                <li>50% OFF applies to first 9 months of subscription only</li>
+                <li>Valid for new subscribers only</li>
+                <li>Minimum contract period: 5 years</li>
+                <li>Auto-debit payment required (debit/credit card)</li>
+                <li>Zero deposit for all plans</li>
+                <li>Full maintenance included for contract duration</li>
+                <li>Bundle deals cannot be combined with other promotions</li>
+                <li>Promotion valid while stocks last</li>
+                <li>LG Electronics Malaysia reserves the right to amend terms</li>
+                <li>For enquiries, contact Kelvin Chan (LGM260389) via WhatsApp</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Don't Miss Out!</h2>
+        <p>These promotions are limited time only. Contact Kelvin now to secure your 50% discount.</p>
+        <div class="cta-buttons">
+            <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%20want%20to%20claim%20the%2050%25%20OFF%20promo!" class="cta-button cta-primary" target="_blank">
+                <span>💬 Claim 50% OFF Now</span>
+            </a>
+            <a href="products.html" class="cta-button cta-secondary">
+                <span>📦 Browse All Products</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Brand Disclaimer -->
+    <div class="brand-disclaimer">
+        <div class="disclaimer-container">
+            <p>This website is operated by authorised sales agent of LG Electronics Malaysia — <strong>KELVIN CHAN (LGM260389)</strong>. All LG trademark, logo and brand names are the property of LG Electronics Inc. LG Subscribe - Kiara Bay.</p>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: #ffd700; font-weight: 700;">This is not the official LG Electronics website.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-lg">LG</span>
+                <p>Kelvin LG Authorize Consultant<br>Your trusted advisor for LG Subscribe Malaysia.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon" title="Facebook">f</a>
+                    <a href="#" class="social-icon" title="Instagram">📷</a>
+                    <a href="https://wa.me/601176060833" class="social-icon" title="WhatsApp">💬</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="water-purifier.html">Water Purifiers</a></li>
+                    <li><a href="air-purifier.html">Air Purifiers</a></li>
+                    <li><a href="vacuum-cleaners.html">Vacuum Cleaners</a></li>
+                    <li><a href="refrigerator.html">Refrigerators</a></li>
+                    <li><a href="washer-dryers.html">Washer & Dryers</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="../index.html#products">LG Subscribe</a></li>
+                    <li><a href="../index.html#products">Maintenance</a></li>
+                    <li><a href="../index.html#contact">Free Consultation</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="../index.html#about">About Kelvin</a></li>
+                    <li><a href="../index.html#contact">Contact Us</a></li>
+                    <li><a href="../index.html#faq">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Kelvin LG Authorize Consultant. All Rights Reserved.<br>
+            This website is operated by LG Subscribe Leader Manager Kelvin Chan (M260389), an Authorised LG Subscribe Specialist.<br>
+            All LG trademarks, logos and brand names are the property of LG Electronics Inc.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/601176060833" class="floating-whatsapp" target="_blank" title="Chat on WhatsApp">💬</a>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const endDate = new Date();
+            endDate.setDate(endDate.getDate() + 30);
+
+            function tick() {
+                const now = new Date();
+                const diff = endDate - now;
+
+                if (diff <= 0) return;
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+
+            tick();
+            setInterval(tick, 1000);
+        }
+        updateCountdown();
+
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, {threshold: 0.1, rootMargin: '0px 0px -80px 0px'});
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>
