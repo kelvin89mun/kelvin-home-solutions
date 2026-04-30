@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kelvin LG Consultant | LG Subscribe Malaysia</title>
+    <title>LG Subscribe Malaysia | Official LG Appliance Rental & Subscription Services</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <style>
@@ -1500,7 +1500,52 @@
             .section { padding: 70px 20px; }
             .contact-form { padding: 30px; }
         }
-    </style>
+    
+        /* Dropdown arrow replacement */
+        .dropdown > a::after {
+            content: '▼';
+            font-size: 0.7em;
+            margin-left: 6px;
+            opacity: 0.6;
+        }
+        /* Mobile menu button replacement */
+        .mobile-menu-btn {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            background: var(--lg-red);
+            color: white;
+            border-radius: 8px;
+        }
+        /* Product category tags without emoji */
+        .product-cat-tag.water { background: #2196F3; }
+        .product-cat-tag.air { background: #00BCD4; }
+        .product-cat-tag.home { background: #FF9800; }
+
+        .hero-trust-badges {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+            animation: fadeInUp 0.8s ease 0.8s both;
+        }
+        .trust-badge {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.9);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(10px);
+        }
+</style>
+    <meta name="description" content="Authorised LG Subscribe consultation service in Ipoh, Perak. Professional guidance on LG home appliance subscriptions including water purifiers, air purifiers, washing machines, refrigerators and air conditioners. Serving Perak since 2020.">
+    <meta name="keywords" content="LG Subscribe Malaysia, LG appliances Ipoh, LG water purifier, LG air purifier, LG washing machine, home appliances Perak, LG consultation Perak">
 </head>
 <body>
 
@@ -1509,80 +1554,77 @@
         <div class="nav-container">
             <a href="#" class="logo">
                 <span class="logo-lg">LG</span>
-                <div class="logo-text">
-                    <span class="logo-name">Kelvin Consultant</span>
-                    <span class="logo-sub">Authorize Consultant</span>
-                </div>
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="pages/promo.html">Promo</a></li>
+                <li><a href="#about">Services</a></li>
                 <li class="dropdown">
-                    <a href="pages/products.html">Products ▼</a>
+                    <a href="pages/products.html">Products</a>
                     <div class="dropdown-menu">
-                        <a href="pages/water-purifier.html">💧 Water Purifier</a>
-                        <a href="pages/air-purifier.html">🌬️ Air Purifier</a>
-                        <a href="pages/styler.html">👔 Styler</a>
-                        <a href="pages/air-conditioners.html">❄️ Home Air Conditioners</a>
-                        <a href="pages/washer-dryers.html">🧺 Washer & Dryers</a>
-                        <a href="pages/refrigerator.html">🧊 Refrigerator</a>
-                        <a href="pages/smart-tv.html">📺 Smart TV</a>
-                        <a href="pages/vacuum-cleaners.html">🧹 Vacuum Cleaners</a>
+                        <a href="pages/water-purifier.html"> Water Purifier</a>
+                        <a href="pages/air-purifier.html"> Air Purifier</a>
+                        <a href="pages/styler.html"> Styler</a>
+                        <a href="pages/air-conditioners.html"> Home Air Conditioners</a>
+                        <a href="pages/washer-dryers.html"> Washer & Dryers</a>
+                        <a href="pages/refrigerator.html"> Refrigerator</a>
+                        <a href="pages/smart-tv.html"> Smart TV</a>
+                        <a href="pages/vacuum-cleaners.html"> Vacuum Cleaners</a>
                     </div>
                 </li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="https://wa.me/601176060833" class="nav-cta" target="_blank">Get Quote</a></li>
             </ul>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()"></button>
         </div>
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
-            <a href="#home">🏠 Home</a>
-            <a href="pages/promo.html" style="color: var(--lg-red); font-weight: 800;">🔥 Promo</a>
-            <div class="mobile-dropdown-header">📦 Products</div>
-            <a href="pages/water-purifier.html" class="mobile-sub">💧 Water Purifier</a>
-            <a href="pages/air-purifier.html" class="mobile-sub">🌬️ Air Purifier</a>
-            <a href="pages/styler.html" class="mobile-sub">👔 Styler</a>
-            <a href="pages/air-conditioners.html" class="mobile-sub">❄️ Air Conditioners</a>
-            <a href="pages/washer-dryers.html" class="mobile-sub">🧺 Washer & Dryers</a>
-            <a href="pages/refrigerator.html" class="mobile-sub">🧊 Refrigerator</a>
-            <a href="pages/smart-tv.html" class="mobile-sub">📺 Smart TV</a>
-            <a href="pages/vacuum-cleaners.html" class="mobile-sub">🧹 Vacuum Cleaners</a>
-            <a href="#about">👤 About</a>
-            <a href="#faq">❓ FAQ</a>
-            <a href="https://wa.me/601176060833" class="mobile-cta" target="_blank">💬 WhatsApp Me</a>
+            <a href="#home"> Home</a>
+            <a href="#about" style="color: var(--lg-red); font-weight: 800;">Services</a>
+            <div class="mobile-dropdown-header"> Products</div>
+            <a href="pages/water-purifier.html" class="mobile-sub"> Water Purifier</a>
+            <a href="pages/air-purifier.html" class="mobile-sub"> Air Purifier</a>
+            <a href="pages/styler.html" class="mobile-sub"> Styler</a>
+            <a href="pages/air-conditioners.html" class="mobile-sub"> Air Conditioners</a>
+            <a href="pages/washer-dryers.html" class="mobile-sub"> Washer & Dryers</a>
+            <a href="pages/refrigerator.html" class="mobile-sub"> Refrigerator</a>
+            <a href="pages/smart-tv.html" class="mobile-sub"> Smart TV</a>
+            <a href="pages/vacuum-cleaners.html" class="mobile-sub"> Vacuum Cleaners</a>
+            <a href="#about"> About</a>
+            <a href="#faq"> FAQ</a>
+            <a href="https://wa.me/601176060833" class="mobile-cta" target="_blank"> WhatsApp Me</a>
         </div>
         </div>
     </nav>
 
     <!-- HERO - WARM HOME + FUTURE EFFECT -->
     <section class="hero" id="home">
-        <!-- Animated Background Canvas -->
         <canvas id="heroCanvas" class="hero-canvas"></canvas>
         <div class="hero-overlay"></div>
         <div class="hero-content">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="images/AUTHORIZED DEALER.png" alt="LG Subscribe Authorized Dealer" style="max-width: 320px; width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));">
+            </div>
             <div class="hero-text">
-                <div class="hero-badge">LG Authorize Consultant</div>
-                <h1>Your Trusted <span class="accent">LG Appliance</span><br>Subscription Expert</h1>
-                <p class="hero-subtitle">Professional consultation for LG Subscribe Malaysia. Get premium home appliances with <strong>zero deposit</strong>, full maintenance included, and flexible monthly plans. <span style="color: #ffd700; font-weight: 700;">🎉 Limited Time: 50% OFF for 9 months!</span></p>
-                <div class="price-highlight">
-                    <span class="from">Plans From</span>
-                    <span class="price-num">RM25</span>
-                    <span class="from">/month</span>
+                <div class="hero-badge">LG Authorised Consultant in Malaysia</div>
+                <h1>Premium LG Home Appliances<br>for Malaysian Families</h1>
+                <p class="hero-subtitle">Authorised LG Subscribe consultation service based in Ipoh, Perak. We provide professional guidance on LG home appliance subscriptions including water purifiers, air purifiers, washing machines, refrigerators, and air conditioners. Serving the Perak community since 2020.</p>
+                <div class="hero-trust-badges">
+                    <span class="trust-badge">Authorised LG Partner</span>
+                    <span class="trust-badge">Perak Service</span>
+                    <span class="trust-badge">5-7 Year Warranty</span>
                 </div>
                 <div class="hero-buttons">
                     <a href="#products" class="cta-button cta-primary">
-                        <span>Browse Products</span>
-                        <span>→</span>
+                        <span>View LG Products</span>
                     </a>
                     <a href="https://wa.me/601176060833" class="cta-button cta-secondary" target="_blank">
-                        <span>💬 WhatsApp Me</span>
+                        <span>Contact Consultant</span>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator" onclick="document.getElementById('benefits').scrollIntoView({behavior:'smooth'})">
+        <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
             <div class="mouse"></div>
             <span>Scroll</span>
         </div>
@@ -1590,15 +1632,14 @@
 
     <!-- PRODUCTS -->
     <section class="section products-section" id="products">
-        <h2 class="section-title fade-in">Our Products</h2>
-        <p class="section-subtitle fade-in">37 Premium LG Appliances Available for Subscription. Click any product to view details and inquire via WhatsApp.</p>
+        <h2 class="section-title fade-in">Product Range</h2>
+        <p class="section-subtitle fade-in">Browse our selection of LG home appliances available through subscription plans. Click any product for more information.</p>
         <div class="products-grid">
             <div class="product-card fade-in" data-category="water" onclick="openModal(0)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag water">💧 Water</span>
                     <img src="images/WaterPurifiers.png" alt="LG PuriCare Water Purifier" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20PuriCare%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20LG%20PuriCare%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1611,10 +1652,9 @@
             </div>
             <div class="product-card fade-in" data-category="water" onclick="openModal(1)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag water">💧 Water</span>
                     <img src="images/ObjetCollection.png" alt="LG Objet Collection Water Purifier" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20Objet%20Collection%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20LG%20Objet%20Collection%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1627,10 +1667,9 @@
             </div>
             <div class="product-card fade-in" data-category="water" onclick="openModal(2)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag water">💧 Water</span>
                     <img src="images/Undersink.png" alt="LG Undersink Water Purifier" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20Undersink%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20LG%20Undersink%20Water%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1643,10 +1682,9 @@
             </div>
             <div class="product-card fade-in" data-category="water" onclick="openModal(3)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag water">💧 Water</span>
                     <img src="images/ObjetCollection.png" alt="LG Objet Collection (4 Colors)" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20Objet%20Collection%20(4%20Colors).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20LG%20Objet%20Collection%20(4%20Colors).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1659,10 +1697,9 @@
             </div>
             <div class="product-card fade-in" data-category="air" onclick="openModal(4)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/16LDualInvertorDehumidifier.png" alt="16L Dual Inverter Dehumidifier" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%2016L%20Dual%20Inverter%20Dehumidifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%2016L%20Dual%20Inverter%20Dehumidifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1675,10 +1712,9 @@
             </div>
             <div class="product-card fade-in" data-category="air" onclick="openModal(5)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/CatTowerAirPurifier.png" alt="Cat Tower Air Purifier" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Cat%20Tower%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20Cat%20Tower%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1691,10 +1727,9 @@
             </div>
             <div class="product-card fade-in" data-category="air" onclick="openModal(6)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/HitAirPurifier.png" alt="HIT Air Purifier" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20HIT%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20HIT%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1707,10 +1742,9 @@
             </div>
             <div class="product-card fade-in" data-category="air" onclick="openModal(7)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/AeroBooster.png" alt="Aero Booster Air Purifier" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Aero%20Booster%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20Aero%20Booster%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1723,10 +1757,9 @@
             </div>
             <div class="product-card fade-in" data-category="air" onclick="openModal(8)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/AeroFuniture.png" alt="Aero Furniture Air Purifier" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Aero%20Furniture%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20Aero%20Furniture%20Air%20Purifier.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1739,10 +1772,9 @@
             </div>
             <div class="product-card fade-in" data-category="air" onclick="openModal(9)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/AlphaPetAirPurifierSingleBooster.png" alt="Alpha Pet Air Purifier (Single)" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Alpha%20Pet%20Air%20Purifier%20(Single).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20Alpha%20Pet%20Air%20Purifier%20(Single).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1755,10 +1787,9 @@
             </div>
             <div class="product-card fade-in" data-category="air" onclick="openModal(10)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/AlphaPetAirPurifierDoubleBooster.png" alt="Alpha Pet Air Purifier (Double)" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Alpha%20Pet%20Air%20Purifier%20(Double).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20Alpha%20Pet%20Air%20Purifier%20(Double).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1771,10 +1802,9 @@
             </div>
             <div class="product-card fade-in" data-category="washer" onclick="openModal(11)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/WashTower14KGW10KWD.png" alt="LG WashTower 14KG/10KG" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20WashTower%2014KG/10KG.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20LG%20WashTower%2014KG/10KG.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1787,10 +1817,9 @@
             </div>
             <div class="product-card fade-in" data-category="washer" onclick="openModal(12)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/WashTower25KGW20KGD.png" alt="LG WashTower 25KG/20KG" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20WashTower%2025KG/20KG.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20LG%20WashTower%2025KG/20KG.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1803,10 +1832,9 @@
             </div>
             <div class="product-card fade-in" data-category="washer" onclick="openModal(13)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/WasherDryerComboSet.png" alt="Washer Dryer Combo Set" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Washer%20Dryer%20Combo%20Set.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20Washer%20Dryer%20Combo%20Set.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1819,10 +1847,9 @@
             </div>
             <div class="product-card fade-in" data-category="washer" onclick="openModal(14)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/WashingMachineAIDD15KGW8KGD.png" alt="15KG AI DD Washing Machine" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%2015KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%2015KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1835,10 +1862,9 @@
             </div>
             <div class="product-card fade-in" data-category="washer" onclick="openModal(15)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/WashingMachineAIDD20KG.png" alt="20KG AI DD Washing Machine" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%2020KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%2020KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1851,10 +1877,9 @@
             </div>
             <div class="product-card fade-in" data-category="washer" onclick="openModal(16)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/WashingMachineAIDD10.5KG.png" alt="10.5KG AI DD Washing Machine" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%2010.5KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%2010.5KG%20AI%20DD%20Washing%20Machine.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1867,10 +1892,9 @@
             </div>
             <div class="product-card fade-in" data-category="washer" onclick="openModal(17)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/WashingMachineDualImverter9KG.png" alt="9KG Dual Inverter Heat Pump Dryer" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%209KG%20Dual%20Inverter%20Heat%20Pump%20Dryer.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%209KG%20Dual%20Inverter%20Heat%20Pump%20Dryer.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1883,10 +1907,9 @@
             </div>
             <div class="product-card fade-in" data-category="vacuum" onclick="openModal(18)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/CordZero.jpg" alt="LG CordZero Vacuum" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20CordZero%20Vacuum.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20LG%20CordZero%20Vacuum.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1899,10 +1922,9 @@
             </div>
             <div class="product-card fade-in" data-category="fridge" onclick="openModal(19)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/FridgeInstaview508L.png" alt="Multi Door InstaView 614L" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Multi%20Door%20InstaView%20614L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20Multi%20Door%20InstaView%20614L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1915,10 +1937,9 @@
             </div>
             <div class="product-card fade-in" data-category="fridge" onclick="openModal(20)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/FridgeFrenchDoor665L.png" alt="InstaView Fridge 508L" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20InstaView%20Fridge%20508L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20InstaView%20Fridge%20508L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1931,10 +1952,9 @@
             </div>
             <div class="product-card fade-in" data-category="fridge" onclick="openModal(21)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/FridgeDoorInDoor635L.png" alt="French Door Fridge 665L" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20French%20Door%20Fridge%20665L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20French%20Door%20Fridge%20665L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1947,10 +1967,9 @@
             </div>
             <div class="product-card fade-in" data-category="fridge" onclick="openModal(22)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/FridgeSideBySide641L.png" alt="Door In Door Fridge 635L" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Door%20In%20Door%20Fridge%20635L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20Door%20In%20Door%20Fridge%20635L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1963,10 +1982,9 @@
             </div>
             <div class="product-card fade-in" data-category="fridge" onclick="openModal(23)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/FridgeTopFreezer493L.png" alt="Side By Side Fridge 641L" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Side%20By%20Side%20Fridge%20641L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20Side%20By%20Side%20Fridge%20641L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1979,10 +1997,9 @@
             </div>
             <div class="product-card fade-in" data-category="fridge" onclick="openModal(24)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/FridgeTopFreezer603L.png" alt="Top Freezer Fridge 493L" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Top%20Freezer%20Fridge%20493L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20Top%20Freezer%20Fridge%20493L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -1995,10 +2012,9 @@
             </div>
             <div class="product-card fade-in" data-category="fridge" onclick="openModal(25)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/DishwasherQuadWash.png" alt="Top Freezer Fridge 603L" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20Top%20Freezer%20Fridge%20603L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20Top%20Freezer%20Fridge%20603L.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -2013,7 +2029,7 @@
                 <div class="product-image-container">
                     <img src="images/DishwasherQuadWash (2).png" alt="QuadWash Dishwasher (Silver)" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20QuadWash%20Dishwasher%20(Silver).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20QuadWash%20Dishwasher%20(Silver).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -2028,7 +2044,7 @@
                 <div class="product-image-container">
                     <img src="images/ArtCool1.5HP.png" alt="QuadWash Dishwasher (Black)" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20QuadWash%20Dishwasher%20(Black).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20QuadWash%20Dishwasher%20(Black).%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -2041,10 +2057,9 @@
             </div>
             <div class="product-card fade-in" data-category="ac" onclick="openModal(28)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/ArtCool2.5HP.png" alt="LG ArtCool 1.5 HP" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20ArtCool%201.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20LG%20ArtCool%201.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -2057,10 +2072,9 @@
             </div>
             <div class="product-card fade-in" data-category="ac" onclick="openModal(29)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/DualCoolWithPurifier1HP.png" alt="LG ArtCool 2.5 HP" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20ArtCool%202.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20LG%20ArtCool%202.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -2073,10 +2087,9 @@
             </div>
             <div class="product-card fade-in" data-category="ac" onclick="openModal(30)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/DualCoolWithPurifier1.5HP.png" alt="DUALCOOL 1.0 HP" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20DUALCOOL%201.0%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20DUALCOOL%201.0%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -2089,10 +2102,9 @@
             </div>
             <div class="product-card fade-in" data-category="ac" onclick="openModal(31)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/DualCoolWithPurifier2HP.png" alt="DUALCOOL 1.5 HP" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20DUALCOOL%201.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20DUALCOOL%201.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -2105,10 +2117,9 @@
             </div>
             <div class="product-card fade-in" data-category="ac" onclick="openModal(32)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/DualCoolWithPurifier2.5HP.png" alt="DUALCOOL 2.0 HP" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20DUALCOOL%202.0%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20DUALCOOL%202.0%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -2121,10 +2132,9 @@
             </div>
             <div class="product-card fade-in" data-category="ac" onclick="openModal(33)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag air">🌬️ Air</span>
                     <img src="images/Styler.png" alt="DUALCOOL 2.5 HP" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20DUALCOOL%202.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20DUALCOOL%202.5%20HP.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -2137,10 +2147,9 @@
             </div>
             <div class="product-card fade-in" data-category="styler" onclick="openModal(34)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/Styler.png" alt="LG Styler" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20Styler.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20LG%20Styler.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -2153,10 +2162,9 @@
             </div>
             <div class="product-card fade-in" data-category="others" onclick="openModal(35)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/SoundBarWithDolbyAtmos.png" alt="LG Sound Bar Dolby Atmos" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%20LG%20Sound%20Bar%20Dolby%20Atmos.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%20LG%20Sound%20Bar%20Dolby%20Atmos.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -2169,10 +2177,9 @@
             </div>
             <div class="product-card fade-in" data-category="tv" onclick="openModal(36)">
                 <div class="product-image-container">
-                    <span class="product-cat-tag home">🏠 Home</span>
                     <img src="images/OLED77AITV.png" alt="77 OLED B5 TV" class="product-image" loading="lazy">
                     <div class="product-overlay">
-                        <a href="https://wa.me/601176060833?text=Hi%20Kelvin,%20I%27m%20interested%20in%20the%2077%20OLED%20B5%20TV.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
+                        <a href="https://wa.me/601176060833?text=Hi,%20I%27m%20interested%20in%20the%2077%20OLED%20B5%20TV.%20Please%20send%20me%20more%20details." class="product-cta" target="_blank" onclick="event.stopPropagation()">Inquire Now</a>
                     </div>
                 </div>
                 <div class="product-info">
@@ -2190,21 +2197,27 @@
 
 <!-- BENEFITS -->
     <section class="section benefits-section" id="benefits">
-        <h2 class="section-title fade-in">Why LG Subscribe?</h2>
-        <p class="section-subtitle fade-in">Experience the smartest way to own premium LG appliances with flexible rental plans designed for Malaysian homes.</p>
+        <h2 class="section-title fade-in">LG Subscribe Benefits</h2>
+        <p class="section-subtitle fade-in">Flexible rental plans designed for Malaysian households, with comprehensive maintenance and support included.</p>
         <div class="benefits-grid stagger-children">
             <div class="benefit-card fade-in">
-                <div class="benefit-icon">💰</div>
-                <h3>Zero Deposit</h3>
-                <p>No upfront payment required. Start enjoying your LG appliances immediately with affordable monthly installments.</p>
+                <div class="benefit-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <h3>Flexible Plans</h3>
+                <p>LG Subscribe offers monthly payment options with maintenance coverage included. Various contract terms available to suit different household needs.</p>
             </div>
             <div class="benefit-card fade-in">
-                <div class="benefit-icon">🔧</div>
+                <div class="benefit-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
                 <h3>5-7 Years Maintenance</h3>
                 <p>Comprehensive maintenance service included. Regular visits, filter replacements, and performance checks at no extra cost.</p>
             </div>
             <div class="benefit-card fade-in">
-                <div class="benefit-icon">📱</div>
+                <div class="benefit-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                </div>
                 <h3>LG ThinQ Smart Control</h3>
                 <p>Control all your LG appliances remotely via the LG ThinQ app. Schedule, monitor, and optimize your home effortlessly.</p>
             </div>
@@ -2213,44 +2226,8 @@
 
     
 
-<!-- DOWNLOAD BROCHURE SECTION -->
-    <section class="section brochure-section" id="brochure" style="padding: 60px 30px; background: linear-gradient(135deg, #f5f0eb 0%, #ede9e3 100%);">
-        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-            <div style="background: var(--white); padding: 50px 40px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.03);">
-                <div style="font-size: 3rem; margin-bottom: 20px;">📄</div>
-                <div style="display: inline-block; background: linear-gradient(135deg, #ffd700, #ff6b6b); color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; margin-bottom: 15px; letter-spacing: 1px;">🔥 50% OFF FOR 9 MONTHS</div>
-                <h2 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--lg-dark); margin-bottom: 15px; font-weight: 700;">Download Complete Product Brochure</h2>
-                <p style="color: #666; line-height: 1.8; margin-bottom: 30px; max-width: 500px; margin-left: auto; margin-right: auto;">Get the full 2026 LG Subscribe catalog with all 37 products, detailed specifications, official pricing, and maintenance plans.</p>
 
-                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                    <a href="images/LG-Subscribe-2026-Brochure.pdf" download class="cta-button cta-primary" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 36px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: all 0.4s; border: 2px solid transparent; text-transform: uppercase; letter-spacing: 1.5px; background: var(--lg-red); color: var(--white); box-shadow: 0 8px 30px rgba(165,0,52,0.25);">
-                        <span>⬇️ Download PDF</span>
-                    </a>
-                    <a href="#products" class="cta-button" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 36px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: all 0.4s; border: 2px solid rgba(0,0,0,0.15); text-transform: uppercase; letter-spacing: 1.5px; background: transparent; color: var(--lg-dark);">
-                        <span>Browse Products Online</span>
-                    </a>
-                </div>
-
-                <div style="margin-top: 30px; padding-top: 25px; border-top: 1px solid rgba(0,0,0,0.06); display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 1.5rem; font-weight: 800; color: var(--lg-red); font-family: 'Playfair Display', serif;">37+</div>
-                        <div style="font-size: 0.85rem; color: #888; margin-top: 5px;">Product Models</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 1.5rem; font-weight: 800; color: var(--lg-red); font-family: 'Playfair Display', serif;">9</div>
-                        <div style="font-size: 0.85rem; color: #888; margin-top: 5px;">Categories</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 1.5rem; font-weight: 800; color: var(--lg-red); font-family: 'Playfair Display', serif;">7 Yrs</div>
-                        <div style="font-size: 0.85rem; color: #888; margin-top: 5px;">Max Warranty</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
-<!-- MODAL -->
+    <!-- MODAL -->
     <div class="modal-overlay" id="productModal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <button class="modal-close" onclick="closeModal()">×</button>
@@ -2263,7 +2240,7 @@
                 <p id="modalDesc">Product description...</p>
                 <div class="modal-features" id="modalFeatures"></div>
                 <div class="modal-buttons">
-                    <a href="https://wa.me/601176060833" class="modal-btn modal-btn-primary" target="_blank" id="modalWhatsApp">💬 Inquire on WhatsApp</a>
+                    <a href="https://wa.me/601176060833" class="modal-btn modal-btn-primary" target="_blank" id="modalWhatsApp"> Inquire on WhatsApp</a>
                     <button class="modal-btn modal-btn-secondary" onclick="closeModal()">Close</button>
                 </div>
             </div>
@@ -2274,21 +2251,21 @@
     <section class="section about-section" id="about">
         <div class="about-content">
             <div class="about-text fade-in">
-                <h2>Meet <span>Kelvin</span><br>Your LG Appliance Expert</h2>
-                <p>Hi, I'm Kelvin, an LG Authorised Subscribe Specialist with years of experience helping Malaysian families find the perfect home appliances. I provide personalized consultation to understand your needs and recommend the best solutions.</p>
-                <p>Whether you're furnishing a new home, upgrading old appliances, or exploring smart home technology, I'm here to give you honest, expert advice. My goal is to help you make the best decision for your family and budget.</p>
+                <h2>About Our <span>LG Consultation</span> Service</h2>
+                <p>We are an authorised LG Subscribe consultation service operating from Ipoh Parade, Ipoh. Our team provides professional guidance to help Malaysian households select the right LG appliances for their homes.</p>
+                <p>We specialise in LG Subscribe plans, which allow families to enjoy premium LG home appliances through monthly subscriptions with comprehensive maintenance coverage. Our consultation covers product selection, installation planning, and ongoing support throughout your subscription period.</p>
                 <div class="about-stats stagger-children">
                     <div class="stat-item fade-in">
                         <span class="stat-number">500+</span>
-                        <span class="stat-label">Happy Customers</span>
+                        <span class="stat-label">Households Served</span>
                     </div>
                     <div class="stat-item fade-in">
                         <span class="stat-number">37+</span>
-                        <span class="stat-label">Product Models</span>
+                        <span class="stat-label">LG Models Available</span>
                     </div>
                     <div class="stat-item fade-in">
                         <span class="stat-number">7 Yrs</span>
-                        <span class="stat-label">Max Warranty</span>
+                        <span class="stat-label">Maintenance Coverage</span>
                     </div>
                 </div>
             </div>
@@ -2297,13 +2274,13 @@
 
     <!-- REVIEWS -->
     <section class="section reviews-section">
-        <h2 class="section-title fade-in">Customer Reviews</h2>
-        <p class="section-subtitle fade-in">Real feedback from customers who chose Kelvin's LG Subscribe service.</p>
+        <h2 class="section-title fade-in">Client Testimonials</h2>
+        <p class="section-subtitle fade-in">Feedback from clients who have used our LG Subscribe consultation services.</p>
         <div class="reviews-grid stagger-children">
             <div class="review-card fade-in">
                 <div class="review-quote">"</div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">Kelvin was very professional and recommended the perfect water purifier based on my home's water quality. The installation was smooth and the water tastes amazing now!</p>
+                <div class="review-stars"></div>
+                <p class="review-text">The consultant was very professional and recommended the perfect water purifier based on my home's water quality. The installation was smooth and the water tastes amazing now!</p>
                 <div class="reviewer">
                     <div class="reviewer-avatar">A</div>
                     <div class="reviewer-info">
@@ -2314,8 +2291,8 @@
             </div>
             <div class="review-card fade-in">
                 <div class="review-quote">"</div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">First time trying the subscription model. Kelvin patiently answered all my questions. Now I have the air purifier, washer and fridge — all LG. Monthly cost is very manageable.</p>
+                <div class="review-stars"></div>
+                <p class="review-text">First time trying the subscription model. The team patiently answered all my questions. Now I have the air purifier, washer and fridge — all LG. Monthly cost is very manageable.</p>
                 <div class="reviewer">
                     <div class="reviewer-avatar">S</div>
                     <div class="reviewer-info">
@@ -2326,8 +2303,8 @@
             </div>
             <div class="review-card fade-in">
                 <div class="review-quote">"</div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">Kelvin's home visit service was incredibly helpful! He measured everything, planned the layout, and even taught me how to use the ThinQ app. Service exceeded expectations!</p>
+                <div class="review-stars"></div>
+                <p class="review-text">The home visit service was incredibly helpful! He measured everything, planned the layout, and even taught me how to use the ThinQ app. Service exceeded expectations!</p>
                 <div class="reviewer">
                     <div class="reviewer-avatar">R</div>
                     <div class="reviewer-info">
@@ -2341,8 +2318,8 @@
 
     <!-- FAQ -->
     <section class="section faq-section" id="faq">
-        <h2 class="section-title fade-in">Frequently Asked Questions</h2>
-        <p class="section-subtitle fade-in">Everything you need to know about LG Subscribe and Kelvin's consultation service.</p>
+        <h2 class="section-title fade-in">Common Questions</h2>
+        <p class="section-subtitle fade-in">Learn more about LG Subscribe services, subscription terms, and how our consultation process works.</p>
         <div class="faq-container">
             <div class="faq-item fade-in">
                 <div class="faq-question">
@@ -2359,7 +2336,7 @@
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>No deposit is required! That's the beauty of LG Subscribe. You can start enjoying your LG appliances immediately with zero upfront payment. Just pay the first month's rental fee.</p>
+                    <p>No deposit is required! That's the beauty of LG Subscribe. You can start enjoying your LG appliances immediately with no initial payment payment. Just pay the first month's rental fee.</p>
                 </div>
             </div>
             <div class="faq-item fade-in">
@@ -2377,7 +2354,7 @@
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Absolutely! Many customers subscribe to multiple products like water purifier, air purifier, and washing machine together. Kelvin can design a bundled package for you with better rates.</p>
+                    <p>Absolutely! Many customers subscribe to multiple products like water purifier, air purifier, and washing machine together. We can design a bundled package for you with better rates.</p>
                 </div>
             </div>
             <div class="faq-item fade-in">
@@ -2386,7 +2363,7 @@
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Monthly payments are automatically deducted from your debit or credit card via auto-debit. It's convenient and hassle-free. Kelvin will assist you in setting this up during the application process.</p>
+                    <p>Monthly payments are automatically deducted from your debit or credit card via auto-debit. It's convenient and hassle-free. We will assist you in setting this up during the application process.</p>
                 </div>
             </div>
             <div class="faq-item fade-in">
@@ -2395,16 +2372,16 @@
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Early termination is possible but subject to termination fees calculated based on your usage duration and remaining contract period. Kelvin recommends choosing the right contract length from the start to avoid this.</p>
+                    <p>Early termination is possible but subject to termination fees calculated based on your usage duration and remaining contract period. We recommend choosing the right contract length from the start to avoid this.</p>
                 </div>
             </div>
             <div class="faq-item fade-in">
                 <div class="faq-question">
-                    <span>Is Kelvin's consultation service free?</span>
+                    <span>Is Our consultation service free?</span>
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Yes! Kelvin's consultation service is completely free of charge. As an LG Authorised Consultant, Kelvin provides product recommendations, home assessments, and subscription planning at no cost to you.</p>
+                    <p>Yes! Our consultation service is completely free of charge. As an LG Authorised Consultant, We provide product recommendations, home assessments, and subscription planning at no cost to you.</p>
                 </div>
             </div>
             <div class="faq-item fade-in">
@@ -2421,27 +2398,33 @@
 
     <!-- CONTACT -->
     <section class="section contact-section" id="contact">
-        <h2 class="section-title fade-in">Contact Kelvin</h2>
-        <p class="section-subtitle fade-in">Ready to upgrade your home? Reach out directly via WhatsApp or visit our store.</p>
+        <h2 class="section-title fade-in">Contact Us</h2>
+        <p class="section-subtitle fade-in">Get in touch for professional consultation and product inquiries.</p>
         <div class="contact-grid">
             <div class="contact-info fade-in-left">
                 <h3>Get In Touch</h3>
                 <div class="contact-item">
-                    <div class="contact-icon">📱</div>
+                    <div class="contact-icon" style="background: linear-gradient(135deg, #00bcd4, #0097a7);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
                     <div class="contact-detail">
                         <h4>WhatsApp / Phone</h4>
                         <p>+60 11-7606 0833<br>Available daily for inquiries</p>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">📍</div>
+                    <div class="contact-icon" style="background: linear-gradient(135deg, #ea4335, #fbbc05);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
                     <div class="contact-detail">
                         <h4>Store Location</h4>
                         <p>LG Brand Shop — The Starling Mall<br>Damansara Utama, Petaling Jaya, Selangor</p>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">⏰</div>
+                    <div class="contact-icon" style="background: linear-gradient(135deg, #4285f4, #34a853);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
                     <div class="contact-detail">
                         <h4>Business Hours</h4>
                         <table class="hours-table">
@@ -2450,10 +2433,12 @@
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">✅</div>
+                    <div class="contact-icon" style="background: linear-gradient(135deg, #a50034, #d4405f);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
                     <div class="contact-detail">
                         <h4>Authorisation</h4>
-                        <p>LG Subscribe Leader Manager<br>Kelvin Chan (M260389)<br>Authorised LG Subscribe Specialist</p>
+                        <p>LG Subscribe Authorised Partner<br>Professional Appliance Consultation Services</p>
                     </div>
                 </div>
             </div>
@@ -2503,11 +2488,11 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <span class="logo-lg">LG</span>
-                <p>Kelvin LG Authorize Consultant<br>Your trusted advisor for LG Subscribe Malaysia. We help Malaysian families enjoy premium LG appliances through affordable rental plans.</p>
+                <p>Your trusted advisor for LG Subscribe Malaysia. We help Malaysian families enjoy premium LG appliances through affordable rental plans.</p>
                 <div class="footer-social">
                     <a href="#" class="social-icon" title="Facebook">f</a>
-                    <a href="#" class="social-icon" title="Instagram">📷</a>
-                    <a href="https://wa.me/601176060833" class="social-icon" title="WhatsApp">💬</a>
+                    <a href="#" class="social-icon" title="Instagram"></a>
+                    <a href="https://wa.me/601176060833" class="social-icon" title="WhatsApp"></a>
                 </div>
             </div>
             <div class="footer-links">
@@ -2526,13 +2511,13 @@
                     <li><a href="#">LG Subscribe</a></li>
                     <li><a href="#">Maintenance</a></li>
                     <li><a href="#">Installation</a></li>
-                    <li><a href="#">Free Consultation</a></li>
+                    <li><a href="#">Consultation</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <h4>Support</h4>
                 <ul>
-                    <li><a href="#">About Kelvin</a></li>
+                    <li><a href="#">About Us</a></li>
                     <li><a href="#">Store Location</a></li>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">Privacy Policy</a></li>
@@ -2540,14 +2525,17 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Kelvin LG Authorize Consultant. All Rights Reserved.<br>
-            This website is operated by LG Subscribe Leader Manager Kelvin Chan (M260389), an Authorised LG Subscribe Specialist.<br>
-            All LG trademarks, logos and brand names are the property of LG Electronics Inc.</p>
+            <p>© 2026 LG Subscribe Malaysia Consultation Service. All Rights Reserved.<br>
+            This is an independent consultation website operated by an authorised LG Subscribe partner.<br>
+            LG and related marks are trademarks of LG Electronics Inc. Used under authorisation.<br>
+            Business Address: LG Brand Shop, The Starling Mall, Damansara Utama, 47400 Petaling Jaya, Selangor.</p>
         </div>
     </footer>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/601176060833" class="floating-whatsapp" target="_blank" title="Chat on WhatsApp">💬</a>
+    <a href="https://wa.me/601176060833" class="floating-whatsapp" target="_blank" title="Chat on WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
 
     <script>
         // Hero Canvas - Warm Home + Future Particles
@@ -2683,21 +2671,21 @@
             { id: 18, image: "images/CordZero.jpg", name: "LG CordZero Vacuum", price: "RM65", desc: "Dual battery packs with auto empty UVC LED. Steam power mop included. 10-year motor warranty.", features: ["Dual Battery", "Auto Empty", "UVC LED", "Steam Mop"] },
             { id: 19, image: "images/FridgeInstaview508L.png", name: "Multi Door InstaView 614L", price: "RM90", desc: "InstaView door-in-door with 614L capacity. Smart freshness technology. Knock twice to see inside. From RM90/month.", features: ["InstaView", "614L", "Smart Fresh", "Multi Door"] },
             { id: 20, image: "images/FridgeFrenchDoor665L.png", name: "InstaView Fridge 508L", price: "RM80", desc: "InstaView with 508L capacity. Knock twice to see inside. Smart cooling technology. From RM80/month.", features: ["InstaView", "508L", "Smart Cooling", "Knock Twice"] },
-            { id: 21, image: "images/FridgeDoorInDoor635L.png", name: "French Door Fridge 665L", price: "RM65", desc: "665L French door design with smart cooling. Large family capacity. 9 months 50% off.", features: ["French Door", "665L", "Smart Cooling", "50% Off"] },
-            { id: 22, image: "images/FridgeSideBySide641L.png", name: "Door In Door Fridge 635L", price: "RM65", desc: "635L with door-in-door convenience. Easy access design. 9 months 50% off.", features: ["Door-in-Door", "635L", "Easy Access", "50% Off"] },
-            { id: 23, image: "images/FridgeTopFreezer493L.png", name: "Side By Side Fridge 641L", price: "RM68", desc: "641L side by side with water dispenser. 14 month 44% off. Large capacity.", features: ["Side by Side", "641L", "Water Dispenser", "44% Off"] },
-            { id: 24, image: "images/FridgeTopFreezer603L.png", name: "Top Freezer Fridge 493L", price: "RM56", desc: "493L top freezer with water dispenser. 14 month 44% off. Energy efficient.", features: ["Top Freezer", "493L", "Water Dispenser", "44% Off"] },
+            { id: 21, image: "images/FridgeDoorInDoor635L.png", name: "French Door Fridge 665L", price: "RM65", desc: "665L French door design with smart cooling. Large family capacity. Available for subscription.", features: ["French Door", "665L", "Smart Cooling", "Subscription"] },
+            { id: 22, image: "images/FridgeSideBySide641L.png", name: "Door In Door Fridge 635L", price: "RM65", desc: "635L with door-in-door convenience. Easy access design. Available for subscription.", features: ["Door-in-Door", "635L", "Easy Access", "Subscription"] },
+            { id: 23, image: "images/FridgeTopFreezer493L.png", name: "Side By Side Fridge 641L", price: "RM68", desc: "641L side by side with water dispenser. Large capacity with water dispenser. Available for subscription.", features: ["Side by Side", "641L", "Water Dispenser", "Subscription"] },
+            { id: 24, image: "images/FridgeTopFreezer603L.png", name: "Top Freezer Fridge 493L", price: "RM56", desc: "493L top freezer with water dispenser. Energy efficient design. Available for subscription.", features: ["Top Freezer", "493L", "Water Dispenser", "Subscription"] },
             { id: 25, image: "images/DishwasherQuadWash.png", name: "Top Freezer Fridge 603L", price: "RM25", desc: "603L large capacity top freezer with water dispenser. 5 years warranty.", features: ["Top Freezer", "603L", "Water Dispenser", "5 Years"] },
-            { id: 26, image: "images/DishwasherQuadWash (2).png", name: "QuadWash Dishwasher (Silver)", price: "RM73", desc: "TrueSteam with QuadWash. Easy Rack Plus with auto opening door. 14 month 44% off.", features: ["TrueSteam", "QuadWash", "Easy Rack", "44% Off"] },
-            { id: 27, image: "images/ArtCool1.5HP.png", name: "QuadWash Dishwasher (Black)", price: "RM38", desc: "TrueSteam with QuadWash. Easy Rack Plus. Sleek black design. 9 month 50% off.", features: ["TrueSteam", "QuadWash", "Black Design", "50% Off"] },
-            { id: 28, image: "images/ArtCool2.5HP.png", name: "LG ArtCool 1.5 HP", price: "RM25", desc: "Plasmaster Ionizer++ with faster cooling. Energy saving with dual compressor. 9 month 50% off.", features: ["Plasmaster", "1.5 HP", "Energy Saving", "50% Off"] },
-            { id: 29, image: "images/DualCoolWithPurifier1HP.png", name: "LG ArtCool 2.5 HP", price: "RM65", desc: "Plasmaster Ionizer++ with faster cooling. Large room capacity. 9 month 50% off.", features: ["Plasmaster", "2.5 HP", "Large Room", "50% Off"] },
-            { id: 30, image: "images/DualCoolWithPurifier1.5HP.png", name: "DUALCOOL 1.0 HP", price: "RM40", desc: "Air purification with Plasmaster Ionizer++. Faster cooling, energy saving. 9 month 50% off.", features: ["Air Purification", "1.0 HP", "Energy Saving", "50% Off"] },
-            { id: 31, image: "images/DualCoolWithPurifier2HP.png", name: "DUALCOOL 1.5 HP", price: "RM45", desc: "Air purification with dual compressor. Energy saving technology. 9 month 50% off.", features: ["Air Purification", "1.5 HP", "Dual Compressor", "50% Off"] },
-            { id: 32, image: "images/DualCoolWithPurifier2.5HP.png", name: "DUALCOOL 2.0 HP", price: "RM55", desc: "Large capacity air purification with Plasmaster Ionizer++. 9 month 50% off.", features: ["Air Purification", "2.0 HP", "Large Capacity", "50% Off"] },
-            { id: 33, image: "images/Styler.png", name: "DUALCOOL 2.5 HP", price: "RM30", desc: "Maximum cooling with air purification. Dual compressor technology. 9 month 50% off.", features: ["Air Purification", "2.5 HP", "Max Cooling", "50% Off"] },
-            { id: 34, image: "images/Styler.png", name: "LG Styler", price: "RM45", desc: "TrueSteam technology. Dehumidify, sanitary care with 10-year motor warranty. 9 month 50% off.", features: ["TrueSteam", "Dehumidify", "Sanitary", "10-Year Warranty"] },
-            { id: 35, image: "images/SoundBarWithDolbyAtmos.png", name: "LG Sound Bar Dolby Atmos", price: "RM30", desc: "3-Upfiring speaker with Dolby Atmos. 5.1.3 surround sound with Apple AirPlay2. 9 month 50% off.", features: ["Dolby Atmos", "3-Upfiring", "5.1.3 Surround", "AirPlay2"] },
+            { id: 26, image: "images/DishwasherQuadWash (2).png", name: "QuadWash Dishwasher (Silver)", price: "RM73", desc: "TrueSteam with QuadWash. Easy Rack Plus with auto opening door. Available for subscription.", features: ["TrueSteam", "QuadWash", "Easy Rack", "Subscription"] },
+            { id: 27, image: "images/ArtCool1.5HP.png", name: "QuadWash Dishwasher (Black)", price: "RM38", desc: "TrueSteam with QuadWash. Easy Rack Plus. Sleek black design. Available for subscription.", features: ["TrueSteam", "QuadWash", "Black Design", "Subscription"] },
+            { id: 28, image: "images/ArtCool2.5HP.png", name: "LG ArtCool 1.5 HP", price: "RM25", desc: "Plasmaster Ionizer++ with faster cooling. Energy saving with dual compressor. Available for subscription.", features: ["Plasmaster", "1.5 HP", "Energy Saving", "Subscription"] },
+            { id: 29, image: "images/DualCoolWithPurifier1HP.png", name: "LG ArtCool 2.5 HP", price: "RM65", desc: "Plasmaster Ionizer++ with faster cooling. Large room capacity. Available for subscription.", features: ["Plasmaster", "2.5 HP", "Large Room", "Subscription"] },
+            { id: 30, image: "images/DualCoolWithPurifier1.5HP.png", name: "DUALCOOL 1.0 HP", price: "RM40", desc: "Air purification with Plasmaster Ionizer++. Faster cooling, energy saving. Available for subscription.", features: ["Air Purification", "1.0 HP", "Energy Saving", "Subscription"] },
+            { id: 31, image: "images/DualCoolWithPurifier2HP.png", name: "DUALCOOL 1.5 HP", price: "RM45", desc: "Air purification with dual compressor. Energy saving technology. Available for subscription.", features: ["Air Purification", "1.5 HP", "Dual Compressor", "Subscription"] },
+            { id: 32, image: "images/DualCoolWithPurifier2.5HP.png", name: "DUALCOOL 2.0 HP", price: "RM55", desc: "Large capacity air purification with Plasmaster Ionizer++. Available for subscription.", features: ["Air Purification", "2.0 HP", "Large Capacity", "Subscription"] },
+            { id: 33, image: "images/Styler.png", name: "DUALCOOL 2.5 HP", price: "RM30", desc: "Maximum cooling with air purification. Dual compressor technology. Available for subscription.", features: ["Air Purification", "2.5 HP", "Max Cooling", "Subscription"] },
+            { id: 34, image: "images/Styler.png", name: "LG Styler", price: "RM45", desc: "TrueSteam technology. Dehumidify, sanitary care with 10-year motor warranty. Available for subscription.", features: ["TrueSteam", "Dehumidify", "Sanitary", "10-Year Warranty"] },
+            { id: 35, image: "images/SoundBarWithDolbyAtmos.png", name: "LG Sound Bar Dolby Atmos", price: "RM30", desc: "3-Upfiring speaker with Dolby Atmos. 5.1.3 surround sound with Apple AirPlay2. Available for subscription.", features: ["Dolby Atmos", "3-Upfiring", "5.1.3 Surround", "AirPlay2"] },
             { id: 36, image: "images/OLED77AITV.png", name: "77 OLED B5 TV", price: "RM280", desc: "World's No.1 OLED TV for 12 years. AI-powered with 5 years warranty. 2025 model.", features: ["77 OLED", "AI Powered", "5 Years", "2025 Model"] },
         ];
 
@@ -2713,7 +2701,7 @@
             const featuresContainer = document.getElementById('modalFeatures');
             featuresContainer.innerHTML = product.features.map(f => `<span class="modal-feature-tag">${f}</span>`).join('');
 
-            const whatsappLink = `https://wa.me/601176060833?text=Hi%20Kelvin,%20I'm%20interested%20in%20the%20${encodeURIComponent(product.name)}.%20Please%20send%20me%20more%20details.`;
+            const whatsappLink = `https://wa.me/601176060833?text=Hi,%20I'm%20interested%20in%20the%20${encodeURIComponent(product.name)}.%20Please%20send%20me%20more%20details.`;
             document.getElementById('modalWhatsApp').href = whatsappLink;
 
             document.getElementById('productModal').classList.add('active');
@@ -2731,7 +2719,7 @@
         function showSuccessMessage() {
             const btn = document.querySelector('.submit-btn');
             const originalText = btn.textContent;
-            btn.textContent = '✓ Inquiry Sent!';
+            btn.textContent = ' Inquiry Sent!';
             btn.style.background = '#25d366';
             setTimeout(() => {
                 btn.textContent = originalText;
@@ -2789,6 +2777,13 @@
         });
 
         // Mobile menu
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
+nu
         function toggleMobileMenu() {
             document.getElementById('mobileMenu').classList.toggle('active');
         }
