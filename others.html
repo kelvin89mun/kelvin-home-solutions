@@ -9,16 +9,14 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #ffffff; line-height: 1.6; overflow-x: hidden; }
 
-        /* Navigation */
         .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10,10,10,0.95); backdrop-filter: blur(20px); padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .nav-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 1.5rem; font-weight: 800; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 10px; }
         .logo span { color: #c41e3a; }
-        .nav-links { display: flex; gap: 40px; list-style: none; }
-        .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: #c41e3a; }
 
-        /* Hero */
         .hero { min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 40px 60px; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%); position: relative; }
         .hero::before { content: ''; position: absolute; top: 50%; left: 50%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(196,30,58,0.15) 0%, transparent 70%); transform: translate(-50%,-50%); pointer-events: none; }
         .hero-content { max-width: 900px; position: relative; z-index: 2; }
@@ -27,7 +25,6 @@
         .btn-back { display: inline-block; padding: 12px 28px; background: transparent; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s; }
         .btn-back:hover { border-color: #c41e3a; color: #c41e3a; }
 
-        /* Product Sections */
         .product-section { padding: 80px 0; position: relative; }
         .product-section:nth-child(odd) { background: #0f0f0f; }
         .product-section:nth-child(even) { background: #0a0a0a; }
@@ -49,7 +46,6 @@
         .btn-primary { padding: 14px 30px; background: #c41e3a; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: all 0.3s; display: inline-block; margin-top: 10px; }
         .btn-primary:hover { background: #a01729; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(196,30,58,0.3); }
 
-        /* Footer */
         .footer { background: #050505; padding: 60px 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
         .footer h3 { font-size: 1.5rem; margin-bottom: 20px; }
         .footer p { color: rgba(255,255,255,0.6); margin-bottom: 30px; }
@@ -70,7 +66,7 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo"><span>LG</span> Subscribe Malaysia</a>
+            <a href="index.html" class="logo"><img src="images/AUTHORIZED DEALER.png" alt="LG Subscribe Authorized Dealer" style="height: 45px; width: auto;"></a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="water-purifier.html">Water</a></li>
@@ -93,99 +89,51 @@
     </section>
 
 
-        <!-- LG CordZero Vacuum Cleaner -->
-        <section class="product-section">
-            <div class="product-container">
-                <div class="product-info">
-                    <span class="product-category">OTHER</span>
-                    <h2>LG CordZero Vacuum Cleaner</h2>
-                    <p>Cordless vacuum cleaner with dual battery packs for extended cleaning time. Auto Empty with UVC LED for hygienic dust disposal. Steam Power Mop attachment for deep cleaning. 10-year motor warranty. 5 Years Self Service Filter & Warranty.</p>
-                    <ul class="product-features-list">
+    <!-- LG CordZero Vacuum Cleaner -->
+    <section class="product-section">
+        <div class="product-container">
+            <div class="product-info">
+                <span class="product-category">OTHER</span>
+                <h2>LG CordZero Vacuum Cleaner</h2>
+                <p>Cordless vacuum cleaner with dual battery packs for extended cleaning time. Auto Empty with UVC LED for hygienic dust disposal. Steam Power Mop attachment for deep cleaning. 10-year motor warranty. 5 Years Self Service Filter & Warranty. 9 month 50% off promotion.</p>
+                <ul class="product-features-list">
                     <li>Dual Battery Packs</li>
                     <li>Auto Empty UVC LED</li>
                     <li>Steam Power Mop</li>
                     <li>10-Year Motor Warranty</li>
                     <li>5-Year Warranty</li>
-                    </ul>
-                    <div class="product-price-large">RM130<span>/month</span></div>
-                    <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20CordZero%20Vacuum%20Cleaner" class="btn-primary" target="_blank">Enquire Now</a>
-                </div>
-                <div class="product-image-wrapper">
-                    <img src="images/CordZero.jpg" alt="LG CordZero Vacuum Cleaner" loading="lazy">
-                </div>
+                </ul>
+                <div class="product-price-large">RM130<span>/month</span></div>
+                <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20CordZero%20Vacuum%20Cleaner" class="btn-primary" target="_blank">Enquire Now</a>
             </div>
-        </section>
+            <div class="product-image-wrapper">
+                <img src="images/CordZero.jpg" alt="LG CordZero Vacuum Cleaner" loading="lazy">
+            </div>
+        </div>
+    </section>
 
-        <!-- LG Styler -->
-        <section class="product-section reverse">
-            <div class="product-container">
-                <div class="product-info">
-                    <span class="product-category">OTHER</span>
-                    <h2>LG Styler</h2>
-                    <p>Smart clothing care system with TrueSteam technology for refreshing and sanitizing clothes. Dehumidify function to keep garments fresh. Sanitary cycle for hygienic care. 10-year motor warranty. 7 Years Self Service Package & Warranty.</p>
-                    <ul class="product-features-list">
+    <!-- LG Styler -->
+    <section class="product-section reverse">
+        <div class="product-container">
+            <div class="product-info">
+                <span class="product-category">OTHER</span>
+                <h2>LG Styler</h2>
+                <p>Smart clothing care system with TrueSteam technology for refreshing and sanitizing clothes. Dehumidify function to keep garments fresh. Sanitary cycle for hygienic care. 10-year motor warranty. 7 Years Self Service Package & Warranty. 9 month 50% off promotion.</p>
+                <ul class="product-features-list">
                     <li>TrueSteam</li>
                     <li>Dehumidify</li>
                     <li>Sanitary</li>
                     <li>10-Year Motor Warranty</li>
                     <li>7-Year Warranty</li>
-                    </ul>
-                    <div class="product-price-large">RM90<span>/month</span></div>
-                    <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20Styler" class="btn-primary" target="_blank">Enquire Now</a>
-                </div>
-                <div class="product-image-wrapper">
-                    <img src="images/Styler.png" alt="LG Styler" loading="lazy">
-                </div>
+                </ul>
+                <div class="product-price-large">RM90<span>/month</span></div>
+                <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20Styler" class="btn-primary" target="_blank">Enquire Now</a>
             </div>
-        </section>
-
-        <!-- LG QuadWash Dishwasher -->
-        <section class="product-section">
-            <div class="product-container">
-                <div class="product-info">
-                    <span class="product-category">OTHER</span>
-                    <h2>LG QuadWash Dishwasher</h2>
-                    <p>Advanced dishwasher with QuadWash technology for thorough cleaning from every angle. TrueSteam for hygienic results. Easy Rack Plus for flexible loading. Auto Opening Door for better drying. Smart Inverter for energy efficiency. 5 Years Regular Service & Warranty.</p>
-                    <ul class="product-features-list">
-                    <li>TrueSteam</li>
-                    <li>QuadWash</li>
-                    <li>Easy Rack Plus</li>
-                    <li>Auto Opening Door</li>
-                    <li>Smart Inverter</li>
-                    <li>5-Year Warranty</li>
-                    </ul>
-                    <div class="product-price-large">RM150<span>/month</span></div>
-                    <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20QuadWash%20Dishwasher" class="btn-primary" target="_blank">Enquire Now</a>
-                </div>
-                <div class="product-image-wrapper">
-                    <img src="images/DishwasherQuadWash (2).png" alt="LG QuadWash Dishwasher" loading="lazy">
-                </div>
+            <div class="product-image-wrapper">
+                <img src="images/Styler.jpg" alt="LG Styler" loading="lazy">
             </div>
-        </section>
-
-        <!-- LG QuadWash Dishwasher (Silver) -->
-        <section class="product-section reverse">
-            <div class="product-container">
-                <div class="product-info">
-                    <span class="product-category">OTHER</span>
-                    <h2>LG QuadWash Dishwasher (Silver)</h2>
-                    <p>Advanced dishwasher with QuadWash technology for thorough cleaning from every angle. TrueSteam for hygienic results. Easy Rack Plus for flexible loading. Auto Opening Door for better drying. Smart Inverter for energy efficiency. 5 Years Regular Service & Warranty. Available in Silver finish.</p>
-                    <ul class="product-features-list">
-                    <li>TrueSteam</li>
-                    <li>QuadWash</li>
-                    <li>Easy Rack Plus</li>
-                    <li>Auto Opening Door</li>
-                    <li>Smart Inverter</li>
-                    <li>Silver Finish</li>
-                    </ul>
-                    <div class="product-price-large">RM130<span>/month</span></div>
-                    <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20QuadWash%20Dishwasher%20(Silver)" class="btn-primary" target="_blank">Enquire Now</a>
-                </div>
-                <div class="product-image-wrapper">
-                    <img src="images/DishwasherQuadWash.png" alt="LG QuadWash Dishwasher (Silver)" loading="lazy">
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
 
     <footer class="footer">
