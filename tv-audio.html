@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LG TV & Audio | LG Subscribe Malaysia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #ffffff; line-height: 1.6; overflow-x: hidden; }
+
+        /* Navigation */
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10,10,10,0.95); backdrop-filter: blur(20px); padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .nav-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .logo span { color: #c41e3a; }
+        .nav-links { display: flex; gap: 40px; list-style: none; }
+        .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: #c41e3a; }
+
+        /* Hero */
+        .hero { min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 40px 60px; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%); position: relative; }
+        .hero::before { content: ''; position: absolute; top: 50%; left: 50%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(196,30,58,0.15) 0%, transparent 70%); transform: translate(-50%,-50%); pointer-events: none; }
+        .hero-content { max-width: 900px; position: relative; z-index: 2; }
+        .hero h1 { font-size: 3rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { font-size: 1.1rem; color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto 30px; }
+        .btn-back { display: inline-block; padding: 12px 28px; background: transparent; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s; }
+        .btn-back:hover { border-color: #c41e3a; color: #c41e3a; }
+
+        /* Product Sections */
+        .product-section { padding: 80px 0; position: relative; }
+        .product-section:nth-child(odd) { background: #0f0f0f; }
+        .product-section:nth-child(even) { background: #0a0a0a; }
+        .product-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .product-section.reverse .product-container { direction: rtl; }
+        .product-section.reverse .product-info, .product-section.reverse .product-image-wrapper { direction: ltr; }
+        .product-info { padding: 20px 0; }
+        .product-category { display: inline-block; padding: 6px 16px; background: rgba(196,30,58,0.15); border: 1px solid rgba(196,30,58,0.3); border-radius: 50px; font-size: 0.8rem; font-weight: 600; color: #c41e3a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+        .product-info h2 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; color: #ffffff; }
+        .product-info p { font-size: 1.05rem; color: rgba(255,255,255,0.7); margin-bottom: 25px; line-height: 1.8; }
+        .product-price-large { font-size: 2.8rem; font-weight: 800; color: #c41e3a; margin-bottom: 10px; }
+        .product-price-large span { font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.6); }
+        .product-features-list { list-style: none; margin: 20px 0; }
+        .product-features-list li { padding: 6px 0; color: rgba(255,255,255,0.8); font-size: 0.95rem; display: flex; align-items: center; gap: 10px; }
+        .product-features-list li::before { content: '✓'; color: #c41e3a; font-weight: bold; font-size: 1.2rem; }
+        .product-image-wrapper { position: relative; border-radius: 20px; overflow: hidden; background: linear-gradient(135deg, #1a1a2e 0%, #0f0f0f 100%); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+        .product-image-wrapper img { width: 100%; height: auto; display: block; transition: transform 0.5s; }
+        .product-image-wrapper:hover img { transform: scale(1.05); }
+        .btn-primary { padding: 14px 30px; background: #c41e3a; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: all 0.3s; display: inline-block; margin-top: 10px; }
+        .btn-primary:hover { background: #a01729; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(196,30,58,0.3); }
+
+        /* Footer */
+        .footer { background: #050505; padding: 60px 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer h3 { font-size: 1.5rem; margin-bottom: 20px; }
+        .footer p { color: rgba(255,255,255,0.6); margin-bottom: 30px; }
+        .footer-contact { display: flex; justify-content: center; gap: 40px; margin-bottom: 30px; flex-wrap: wrap; }
+        .footer-contact a { color: #c41e3a; text-decoration: none; font-weight: 600; }
+        .footer-disclaimer { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); }
+
+        @media (max-width: 968px) {
+            .hero h1 { font-size: 2rem; }
+            .product-container { grid-template-columns: 1fr; gap: 40px; }
+            .product-section.reverse .product-container { direction: ltr; }
+            .product-info h2 { font-size: 1.8rem; }
+            .nav-links { display: none; }
+        }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><span>LG</span> Subscribe Malaysia</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="water-purifier.html">Water</a></li>
+                <li><a href="air-purifier.html">Air</a></li>
+                <li><a href="washing-machine.html">Washer</a></li>
+                <li><a href="refrigerator.html">Fridge</a></li>
+                <li><a href="air-conditioner.html">AC</a></li>
+                <li><a href="tv-audio.html">TV</a></li>
+                <li><a href="others.html">Others</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>LG TV & Audio</h1>
+            <p>Premium LG appliances available through subscription plans with professional installation and maintenance.</p>
+            <a href="index.html" class="btn-back">← Back to Home</a>
+        </div>
+    </section>
+
+
+        <!-- LG OLED B5 TV 77" -->
+        <section class="product-section">
+            <div class="product-container">
+                <div class="product-info">
+                    <span class="product-category">TV</span>
+                    <h2>LG OLED B5 TV 77"</h2>
+                    <p>77" OLED B5 TV with AI technology for stunning picture quality. World's No.1 OLED TV for 12 years. Perfect blacks and vibrant colors with OLED display. Smart TV features with AI ThinQ. 5 Years Extend Warranty.</p>
+                    <ul class="product-features-list">
+                    <li>OLED</li>
+                    <li>AI</li>
+                    <li>77" Screen</li>
+                    <li>5-Year Extend Warranty</li>
+                    <li>Smart TV</li>
+                    <li>World's No.1 OLED</li>
+                    </ul>
+                    <div class="product-price-large">RM280<span>/month</span></div>
+                    <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20OLED%20B5%20TV%2077"" class="btn-primary" target="_blank">Enquire Now</a>
+                </div>
+                <div class="product-image-wrapper">
+                    <img src="images/OLED77AITV.png" alt="LG OLED B5 TV 77"" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- LG Sound Bar with Dolby Atmos -->
+        <section class="product-section reverse">
+            <div class="product-container">
+                <div class="product-info">
+                    <span class="product-category">TV</span>
+                    <h2>LG Sound Bar with Dolby Atmos</h2>
+                    <p>Premium sound bar with Dolby Atmos for immersive 3D audio experience. 3-Upfiring speakers for overhead sound effects. 5.1.3 surround sound system for cinema-quality audio. Apple AirPlay2 for seamless wireless streaming. 5 Years Extend Warranty.</p>
+                    <ul class="product-features-list">
+                    <li>3-Upfiring Speaker</li>
+                    <li>Dolby Atmos</li>
+                    <li>5.1.3 Surround Sound</li>
+                    <li>Apple AirPlay2</li>
+                    <li>5-Year Extend Warranty</li>
+                    </ul>
+                    <div class="product-price-large">RM60<span>/month</span></div>
+                    <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20Sound%20Bar%20with%20Dolby%20Atmos" class="btn-primary" target="_blank">Enquire Now</a>
+                </div>
+                <div class="product-image-wrapper">
+                    <img src="images/SoundBarWithDolbyAtmos.png" alt="LG Sound Bar with Dolby Atmos" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Get In Touch</h3>
+            <p>Ready to upgrade your home with LG appliances? Contact us for a free consultation.</p>
+            <div class="footer-contact">
+                <a href="https://wa.me/601176060833" target="_blank">WhatsApp: +60 11-7606 0833</a>
+                <a href="mailto:kelvin@lg-lifestyle-malaysia.shop">Email Us</a>
+            </div>
+            <div class="footer-disclaimer">
+                <p><strong>Brand Disclaimer</strong></p>
+                <p>This website is operated by authorised sales agent of LG Electronics Malaysia KELVIN CHAN (LGM260389). All LG trademark, logo and brand names are the property of LG Electronics Inc.</p>
+                <p>This is not the official LG Electronics website. For official information, please visit lg.com/my.</p>
+                <p style="margin-top: 15px;">© 2025 LG Subscribe Malaysia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
