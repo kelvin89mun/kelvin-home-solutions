@@ -387,6 +387,51 @@
     </style>
 </head>
 <body>
+    <script>
+        // Load product data from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const productData = localStorage.getItem('selectedProduct');
+            if (productData) {
+                const product = JSON.parse(productData);
+
+                // Update page content
+                document.title = product.name + ' | LG Subscribe Malaysia';
+
+                // Update main image
+                const mainImage = document.getElementById('mainImage');
+                if (mainImage) mainImage.src = product.image;
+
+                // Update product info
+                const categoryEl = document.querySelector('.detail-category');
+                if (categoryEl) categoryEl.textContent = product.category.toUpperCase();
+
+                const titleEl = document.querySelector('.detail-title');
+                if (titleEl) titleEl.textContent = product.name;
+
+                const priceEl = document.querySelector('.detail-price');
+                if (priceEl) {
+                    priceEl.innerHTML = product.price + '<span>/month</span>';
+                }
+
+                const descEl = document.querySelector('.detail-desc');
+                if (descEl) descEl.textContent = product.desc;
+
+                // Update features
+                const featureGrid = document.querySelector('.feature-grid');
+                if (featureGrid) {
+                    featureGrid.innerHTML = product.features.map(f => 
+                        '<div class="feature-item">' + f + '</div>'
+                    ).join('');
+                }
+
+                // Update WhatsApp link
+                const whatsappBtn = document.querySelector('.btn-whatsapp');
+                if (whatsappBtn) {
+                    whatsappBtn.href = 'https://wa.me/601176060833?text=I'm%20interested%20in%20' + encodeURIComponent(product.name);
+                }
+            }
+        });
+    </script>
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
