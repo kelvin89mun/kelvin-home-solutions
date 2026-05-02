@@ -1703,7 +1703,15 @@
 
             buttons.forEach(btn => {
                 btn.classList.remove('active');
-                if (btn.textContent.toLowerCase() === category || (category === 'all' && btn.textContent === 'All')) {
+                const btnText = btn.textContent.toLowerCase().trim();
+                if ((category === 'all' && btnText === 'all') || 
+                    (category === 'water' && btnText === 'water') ||
+                    (category === 'air' && btnText === 'air') ||
+                    (category === 'washer' && btnText === 'washer') ||
+                    (category === 'fridge' && btnText === 'fridge') ||
+                    (category === 'ac' && btnText === 'ac') ||
+                    (category === 'tv' && btnText === 'tv') ||
+                    (category === 'other' && btnText === 'others')) {
                     btn.classList.add('active');
                 }
             });
