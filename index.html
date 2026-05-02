@@ -1703,15 +1703,8 @@
 
             buttons.forEach(btn => {
                 btn.classList.remove('active');
-                const btnText = btn.textContent.toLowerCase().trim();
-                if ((category === 'all' && btnText === 'all') || 
-                    (category === 'water' && btnText === 'water') ||
-                    (category === 'air' && btnText === 'air') ||
-                    (category === 'washer' && btnText === 'washer') ||
-                    (category === 'fridge' && btnText === 'fridge') ||
-                    (category === 'ac' && btnText === 'ac') ||
-                    (category === 'tv' && btnText === 'tv') ||
-                    (category === 'other' && btnText === 'others')) {
+                const btnCat = btn.getAttribute('onclick').match(/filterProducts\('([^']+)'\)/);
+                if (btnCat && btnCat[1] === category) {
                     btn.classList.add('active');
                 }
             });
