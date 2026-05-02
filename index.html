@@ -267,7 +267,7 @@
         .product-image {
             position: relative;
             width: 100%;
-            height: 350px;
+            height: 500px;
             overflow: hidden;
             background: linear-gradient(135deg, #f8f5f2 0%, #f0ebe5 100%);
         }
@@ -276,7 +276,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center top;
+            object-position: center;
             display: block;
             transition: transform 0.4s;
         }
@@ -420,7 +420,7 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
             .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            /* Height set above to 350px */
+            /* Height set above to 500px */
             .product-info { padding: 12px; }
             .product-info h3 { font-size: 0.9rem; }
             .nav-links { display: none; }
@@ -802,14 +802,14 @@
 
     <div class="category-bar">
         <div class="category-container">
-            <button class="category-btn active" onclick="filterProducts('all')">All</button>
-            <button class="category-btn" onclick="filterProducts('water')">Water</button>
-            <button class="category-btn" onclick="filterProducts('air')">Air</button>
-            <button class="category-btn" onclick="filterProducts('washer')">Washer</button>
-            <button class="category-btn" onclick="filterProducts('fridge')">Fridge</button>
-            <button class="category-btn" onclick="filterProducts('ac')">AC</button>
-            <button class="category-btn" onclick="filterProducts('tv')">TV</button>
-            <button class="category-btn" onclick="filterProducts('other')">Others</button>
+            <button class="category-btn active" data-category="all" onclick="filterProducts('all')">All</button>
+            <button class="category-btn" data-category="water" onclick="filterProducts('water')">Water</button>
+            <button class="category-btn" data-category="air" onclick="filterProducts('air')">Air</button>
+            <button class="category-btn" data-category="washer" onclick="filterProducts('washer')">Washer</button>
+            <button class="category-btn" data-category="fridge" onclick="filterProducts('fridge')">Fridge</button>
+            <button class="category-btn" data-category="ac" onclick="filterProducts('ac')">AC</button>
+            <button class="category-btn" data-category="tv" onclick="filterProducts('tv')">TV</button>
+            <button class="category-btn" data-category="other" onclick="filterProducts('other')">Others</button>
         </div>
     </div>
 
@@ -1698,25 +1698,38 @@
         }
 
         function filterProducts(category) {
+            // 调试：显示被点击的 category
+            // alert('Clicked: ' + category);
+
             const cards = document.querySelectorAll('.product-card');
             const buttons = document.querySelectorAll('.category-btn');
 
+            // 先移除所有按钮的 active 类
             buttons.forEach(btn => {
                 btn.classList.remove('active');
-                const btnCat = btn.getAttribute('onclick').match(/filterProducts\('([^']+)'\)/);
-                if (btnCat && btnCat[1] === category) {
+            });
+
+            // 再给当前 category 的按钮加上 active
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-category') === category) {
                     btn.classList.add('active');
                 }
             });
 
+            // 显示/隐藏产品卡片
+            let visibleCount = 0;
             cards.forEach(card => {
-                if (category === 'all' || card.dataset.category === category) {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
                     card.style.display = 'block';
                     card.style.animation = 'fadeIn 0.4s ease';
+                    visibleCount++;
                 } else {
                     card.style.display = 'none';
                 }
             });
+
+            // 调试：显示可见产品数量
+            // alert('Visible products: ' + visibleCount);
         }
 
         // Add fade animation
