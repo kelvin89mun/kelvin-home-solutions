@@ -4,290 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | LG Subscribe Malaysia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, #faf8f5 0%, #f5f0eb 100%);
             color: #2d2d2d;
             line-height: 1.7;
-            overflow-x: hidden;
+            padding: 20px;
         }
-
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 1000;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(20px);
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 36px;
-            width: auto;
-        }
-
-        .back-btn {
-            padding: 8px 18px;
-            background: #c41e3a;
-            color: white;
-            text-decoration: none;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .back-btn:hover {
-            background: #a01729;
-        }
-
-        /* Content */
-        .content {
+        .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 100px 20px 60px;
-        }
-
-        .content h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 8px;
-        }
-
-        .content .effective-date {
-            color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 30px;
-            font-weight: 500;
-        }
-
-        .content h2 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin: 25px 0 10px;
-        }
-
-        .content p {
-            color: #555;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-
-        .content ul {
-            margin: 8px 0 12px 20px;
-            color: #555;
-        }
-
-        .content ul li {
-            margin-bottom: 6px;
-            font-size: 0.9rem;
-        }
-
-        .content a {
-            color: #c41e3a;
-            text-decoration: none;
-        }
-
-        .content a:hover {
-            text-decoration: underline;
-        }
-
-        .highlight-box {
-            background: rgba(196, 30, 58, 0.05);
-            border-left: 4px solid #c41e3a;
-            padding: 14px 18px;
-            border-radius: 0 12px 12px 0;
-            margin: 20px 0;
-        }
-
-        .highlight-box p {
-            margin: 0;
-            color: #444;
-            font-size: 0.9rem;
-        }
-
-        .contact-box {
             background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+        h1 { 
+            color: #c41e3a; 
+            font-size: 1.6rem; 
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .effective { 
+            color: #888; 
+            font-size: 0.85rem; 
+            margin-bottom: 30px; 
+        }
+        h2 { 
+            color: #1a1a1a; 
+            font-size: 1.1rem; 
+            margin: 25px 0 12px;
+            font-weight: 600;
+        }
+        p, li { 
+            color: #555; 
+            font-size: 0.9rem; 
+            margin-bottom: 10px; 
+        }
+        ul { 
+            margin-left: 20px; 
+            margin-bottom: 15px; 
+        }
+        li { margin-bottom: 6px; }
+        .contact-box {
+            background: #faf8f5;
+            padding: 18px;
             border-radius: 12px;
-            padding: 20px;
             margin: 20px 0;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            border-left: 4px solid #c41e3a;
         }
-
-        .contact-box p {
-            margin: 4px 0;
-            font-size: 0.9rem;
-        }
-
-        .contact-box strong {
-            color: #1a1a1a;
-        }
-
-        /* Footer */
-        .footer {
-            background: #1a1a1a;
-            padding: 30px 20px;
-            text-align: center;
-            color: rgba(255,255,255,0.5);
-            font-size: 0.8rem;
-        }
-
-        .footer a {
+        .contact-box p { margin-bottom: 6px; }
+        .contact-box strong { color: #1a1a1a; }
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
             color: #c41e3a;
             text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
         }
-
-        @media (max-width: 768px) {
-            .content { padding-top: 90px; }
-            .content h1 { font-size: 1.5rem; }
-            .content h2 { font-size: 1rem; }
+        .back-link:hover { text-decoration: underline; }
+        .footer-note {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.8rem;
+            color: #888;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 25px 20px; }
+            h1 { font-size: 1.3rem; }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="images/LG-Subscribe-AI-Logo.png" alt="LG Subscribe AI" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=font-weight:700;color:#c41e3a;font-size:1.1rem;>LG Subscribe</span>'">
-            </a>
-            <a href="index.html" class="back-btn">← Back to Home</a>
-        </div>
-    </nav>
-
-    <div class="content">
+    <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="effective-date"><strong>Effective Date:</strong> May 2025</p>
-
-        <div class="highlight-box">
-            <p><strong>Business Name:</strong> LG Subscribe Malaysia / Kelvin Chan LG Home Appliances</p>
-        </div>
-
-        <p>This Privacy Policy explains how <strong>LG Subscribe Malaysia (subscribe-smarthome.com)</strong> ("we", "us", "our") collects, uses, shares and protects your personal data when you visit our website or contact us via our forms, WhatsApp, phone, or email. We handle personal data in accordance with the <strong>Malaysian Personal Data Protection Act 2010 (PDPA)</strong>.</p>
-
-        <h2>1) Who we are & how to contact us</h2>
+        <p class="effective">Effective Date: 3 May 2026</p>
 
         <div class="contact-box">
-            <p><strong>Website:</strong> <a href="https://subscribe-smarthome.com">subscribe-smarthome.com</a></p>
-            <p><strong>Email:</strong> <a href="mailto:kelvin89mun@gmail.com">kelvin89mun@gmail.com</a></p>
-            <p><strong>WhatsApp/Phone:</strong> <a href="https://wa.me/601176060833">+60 11-7606 0833</a></p>
-            <p><strong>Agent ID (reference):</strong> LGM260389</p>
-            <p><strong>Location:</strong> Based in Ipoh, Perak – Serving Nationwide across Malaysia</p>
+            <p><strong>Business Name:</strong> LG Subscribe Malaysia / Kelvin Chan LG Home Appliances</p>
+            <p><strong>Website:</strong> subscribe-smarthome.com</p>
+            <p><strong>Email:</strong> kelvin89mun@gmail.com</p>
+            <p><strong>WhatsApp/Phone:</strong> +60 11-7606 0833</p>
+            <p><strong>Agent ID:</strong> LGM260389</p>
+            <p><strong>Location:</strong> Ipoh, Perak, Malaysia</p>
         </div>
 
-        <p>If you have any privacy-related enquiries or requests, please contact us using the details above.</p>
+        <p>This Privacy Policy explains how <strong>LG Subscribe Malaysia</strong> ("we", "us", "our") collects, uses, shares and protects your personal data when you visit our website or contact us via WhatsApp, phone, or email. We handle personal data in accordance with the <strong>Malaysian Personal Data Protection Act 2010 (PDPA)</strong>.</p>
 
-        <h2>2. Information We Collect</h2>
-        <p>We may collect the following types of information:</p>
+        <h2>1. Information We Collect</h2>
         <ul>
-            <li>Personal Information (Name, Phone Number, Email, Home Address)</li>
+            <li>Personal Information (Name, Phone Number, Email)</li>
             <li>Device & Usage Data (IP address, browser type, pages visited)</li>
             <li>Cookies and tracking data</li>
         </ul>
 
-        <h2>3. How We Use Your Information</h2>
-        <p>We use your data to:</p>
+        <h2>2. How We Use Your Information</h2>
         <ul>
-            <li>Respond to inquiries and provide LG appliance consultation services</li>
-            <li>Process LG Subscribe subscription applications</li>
-            <li>Arrange delivery, installation, and maintenance services</li>
-            <li>Improve website performance and user experience</li>
-            <li>Send updates about promotions, new products, and service reminders</li>
+            <li>Respond to inquiries and provide services</li>
+            <li>Improve website performance</li>
             <li>Run marketing campaigns via Google Ads</li>
             <li>Perform remarketing and audience targeting</li>
         </ul>
 
-        <h2>4. Google Advertising & Tracking</h2>
-        <p>We use services provided by Google including:</p>
-        <ul>
-            <li>Google Ads</li>
-            <li>Google Analytics</li>
-            <li>Google Tag Manager</li>
-            <li>Google Search Console</li>
-        </ul>
-        <p>These services may use cookies to:</p>
-        <ul>
-            <li>Show relevant ads to users</li>
-            <li>Measure ad performance</li>
-            <li>Track conversions</li>
-            <li>Analyze website traffic</li>
-        </ul>
-        <p>Third-party vendors, including Google, may display our ads on other websites.</p>
+        <h2>3. Google Advertising & Tracking</h2>
+        <p>We use services provided by Google including Google Ads, Google Analytics, and Google Tag Manager. These services may use cookies to show relevant ads, measure ad performance, and track conversions.</p>
 
-        <h2>5. Cookies Policy</h2>
-        <p>Cookies are small files stored on your device. We use cookies to:</p>
-        <ul>
-            <li>Understand user behavior</li>
-            <li>Improve user experience</li>
-            <li>Deliver personalized advertisements</li>
-        </ul>
-        <p>You can disable cookies through your browser settings.</p>
+        <h2>4. Cookies Policy</h2>
+        <p>Cookies are small files stored on your device. We use cookies to understand user behavior, improve user experience, and deliver personalized advertisements. You can disable cookies through your browser settings.</p>
 
-        <h2>6. Data Sharing</h2>
-        <p>We do <strong>NOT</strong> sell your personal data.</p>
-        <p>We may share data with:</p>
-        <ul>
-            <li><strong>LG Electronics Malaysia</strong> – for subscription processing and warranty registration</li>
-            <li><strong>Advertising partners</strong> (e.g., Google) – for marketing purposes</li>
-            <li><strong>Service providers</strong> – for delivery, installation, and maintenance services</li>
-            <li><strong>Hosting and analytics providers</strong> – for website operation</li>
-        </ul>
+        <h2>5. Data Sharing</h2>
+        <p>We do NOT sell your personal data. We may share data with advertising partners (e.g., Google) and service providers (hosting, analytics).</p>
 
-        <h2>7. Your Rights</h2>
-        <p>Under PDPA Malaysia, you have the right to:</p>
-        <ul>
-            <li>Access your personal data</li>
-            <li>Request correction of your data</li>
-            <li>Withdraw consent for data processing</li>
-            <li>Request deletion of your data</li>
-        </ul>
+        <h2>6. Your Rights</h2>
+        <p>Under PDPA Malaysia, you have the right to access your personal data, request correction, and withdraw consent.</p>
 
-        <h2>8. Data Security</h2>
-        <p>We implement reasonable security measures to protect your personal information from unauthorized access, alteration, or disclosure. However, no internet transmission is 100% secure.</p>
+        <h2>7. Data Security</h2>
+        <p>We implement reasonable security measures to protect your personal information.</p>
 
-        <h2>9. Contact Us</h2>
-        <p>If you have any questions, please contact:</p>
-
+        <h2>8. Contact Us</h2>
         <div class="contact-box">
             <p><strong>Name:</strong> Kelvin Chan</p>
-            <p><strong>Phone/WhatsApp:</strong> <a href="https://wa.me/601176060833">+60 11-7606 0833</a></p>
-            <p><strong>Email:</strong> <a href="mailto:kelvin89mun@gmail.com">kelvin89mun@gmail.com</a></p>
-            <p><strong>Business Hours:</strong> Monday – Saturday, 9:00 AM – 6:00 PM</p>
+            <p><strong>Phone:</strong> +60 11-7606 0833</p>
+            <p><strong>Email:</strong> kelvin89mun@gmail.com</p>
         </div>
 
-        <h2>10. Updates to This Policy</h2>
-        <p>We may update this policy from time to time. Please review periodically. The updated policy will be posted on this page with a revised effective date.</p>
+        <h2>9. Updates to This Policy</h2>
+        <p>We may update this policy from time to time. Please review periodically.</p>
 
-        <div class="highlight-box">
-            <p><strong>Authorized Dealer:</strong> Kelvin Chan (LGM260389) | LG Subscribe Malaysia | Based in Ipoh, Perak – Serving Nationwide</p>
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <div class="footer-note">
+            <p>© 2025 LG Subscribe Malaysia. All rights reserved.</p>
         </div>
     </div>
-
-    <footer class="footer">
-        <p>© 2025 LG Subscribe Malaysia. All rights reserved. | <a href="index.html">Back to Home</a></p>
-    </footer>
 </body>
 </html>
