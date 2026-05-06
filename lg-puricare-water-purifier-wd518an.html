@@ -1,529 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11021213892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-11021213892');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LG PuriCare Water Purifier WD518AN | Subscribe & Save</title>
+    <meta name="description" content="LG PuriCare Water Purifier WD518AN - Tankless smart water purifier. Subscribe from RM70/month. 7 Years warranty. Authorised consultant Kelvin Chan (M260389).">
+    <meta name="keywords" content="LG PuriCare, Water Purifier, WD518AN, LG Subscribe, Malaysia, tankless">
+    <meta name="author" content="Kelvin Chan (M260389)">
+    <link rel="canonical" href="https://subscribe-smarthome.com/">
+
+    <title>LG PuriCare Water Purifier WD518AN | LG Subscribe Malaysia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #faf8f5 0%, #f5f0eb 100%); color: #2d2d2d; line-height: 1.5; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: #ffffff;
-            color: #333333;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+        /* ===== NAVBAR ===== */
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo img { height: 40px; width: auto; }
+        .btn-back { padding: 8px 20px; background: transparent; border: 1.5px solid #ddd; border-radius: 20px; color: #666; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: all 0.3s; }
+        .btn-back:hover { border-color: #c41e3a; color: #c41e3a; }
 
-        /* ===== NAVBAR - Clean white like homepage ===== */
-        .navbar {
-            background: #ffffff;
-            padding: 0 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-            border-bottom: 1px solid #f0f0f0;
-        }
+        /* ===== HERO ===== */
+        .detail-hero { padding: 100px 20px 40px; max-width: 800px; margin: 0 auto; text-align: center; }
+        .detail-category { display: inline-block; padding: 5px 14px; background: rgba(196,30,58,0.1); border: 1px solid rgba(196,30,58,0.2); border-radius: 20px; font-size: 0.75rem; font-weight: 600; color: #c41e3a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+        .detail-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 15px; line-height: 1.2; }
+        .detail-price { font-size: 2.5rem; font-weight: 800; color: #c41e3a; margin-bottom: 20px; }
+        .detail-price span { font-size: 1rem; font-weight: 400; color: #999; }
+        .detail-desc { font-size: 1rem; color: #666; margin-bottom: 25px; line-height: 1.7; }
 
-        .navbar-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 70px;
-        }
-
-        .nav-left {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .back-btn {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: #555;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            padding: 8px 12px;
-            border-radius: 8px;
-            transition: all 0.2s;
-            flex-shrink: 0;
-        }
-
-        .back-btn:hover {
-            background: #f5f5f5;
-            color: #A50034;
-        }
-
-        .back-btn svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-logo img {
-            height: 40px;
-            width: auto;
-            display: block;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 8px;
-        }
-
-        .nav-menu a {
-            color: #555;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: all 0.2s;
-        }
-
-        .nav-menu a:hover {
-            background: #A50034;
-            color: white;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            color: #555;
-        }
-
-        .menu-toggle svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 10px 20px;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-                gap: 4px;
-                border-bottom: 1px solid #f0f0f0;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .nav-menu a {
-                padding: 12px 16px;
-                border-radius: 8px;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-logo img {
-                height: 34px;
-            }
-        }
-
-        /* ===== HERO - Clean white like homepage ===== */
-        .hero {
-            background: #ffffff;
-            padding: 60px 20px 50px;
-            text-align: center;
-            border-bottom: 1px solid #f5f5f5;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: #A50034;
-            color: white;
-            padding: 8px 24px;
-            border-radius: 30px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .hero h1 {
-            font-size: clamp(28px, 5vw, 48px);
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 12px;
-            line-height: 1.15;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(16px, 2.5vw, 22px);
-            color: #666;
-            margin-bottom: 30px;
-            font-weight: 400;
-        }
-
-        .hero-price {
-            background: #A50034;
-            color: white;
-            display: inline-block;
-            padding: 18px 44px;
-            border-radius: 50px;
-            font-size: clamp(22px, 3.5vw, 34px);
-            font-weight: 700;
-            margin-bottom: 16px;
-            box-shadow: 0 8px 25px rgba(165, 0, 52, 0.25);
-        }
-
-        .hero-price span {
-            font-size: 0.55em;
-            font-weight: 400;
-            opacity: 0.9;
-        }
-
-        .hero-note {
-            color: #888;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-
-        /* ===== COLOR SELECTOR ===== */
-        .color-section {
-            background: #fafafa;
-            padding: 50px 20px 40px;
-            text-align: center;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .color-section h2 {
-            font-size: clamp(22px, 3.5vw, 32px);
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #1a1a1a;
-        }
-
-        .color-section p {
-            color: #777;
-            font-size: 16px;
-            margin-bottom: 30px;
-        }
-
-        .color-grid {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .color-item {
-            flex: 1;
-            min-width: 200px;
-            max-width: 280px;
-            text-align: center;
-        }
-
-        .color-item img {
-            width: 100%;
-            height: auto;
-            max-height: 350px;
-            object-fit: contain;
-            display: block;
-            border-radius: 12px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: #ffffff;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        }
-
-        .color-item img:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-        }
-
-        .color-name {
-            margin-top: 16px;
-            font-size: 18px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .color-dot {
-            display: inline-block;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            margin-right: 8px;
-            vertical-align: middle;
-            border: 2px solid #ddd;
-        }
+        /* ===== FULL WIDTH IMAGE - NO CROP ===== */
+        .media-section { width: 100%; padding: 0; margin: 0; }
+        .media-container { width: 100%; display: flex; align-items: center; justify-content: center; padding: 20px 16px; }
+        .media-container img { width: 100%; max-width: 1000px; height: auto; max-height: 85vh; object-fit: contain; display: block; border-radius: 12px; }
+        .media-container video { width: 100%; max-width: 1000px; height: auto; max-height: 70vh; object-fit: contain; display: block; border-radius: 12px; background: #000; }
 
         /* ===== SECTION HEADERS ===== */
-        .section-header {
-            text-align: center;
-            padding: 50px 20px 30px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+        .section-header { text-align: center; padding: 40px 20px 20px; max-width: 700px; margin: 0 auto; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 3.5vw, 30px); font-weight: 700; margin-bottom: 10px; color: #1a1a1a; }
+        .section-header p { font-size: 15px; color: #666; line-height: 1.6; }
 
-        .section-header h2 {
-            font-size: clamp(24px, 4vw, 36px);
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #1a1a1a;
-        }
+        /* ===== COLOR SELECTOR ===== */
+        .color-section { padding: 30px 20px 40px; text-align: center; }
+        .color-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
+        .color-item { flex: 1; min-width: 160px; max-width: 260px; text-align: center; }
+        .color-item img { width: 100%; height: auto; max-height: 300px; object-fit: contain; display: block; border-radius: 12px; background: white; padding: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .color-item img:hover { transform: translateY(-6px); }
+        .color-name { margin-top: 12px; font-size: 16px; font-weight: 600; color: #333; }
+        .color-dot { display: inline-block; width: 16px; height: 16px; border-radius: 50%; margin-right: 6px; vertical-align: middle; border: 2px solid #ddd; }
 
-        .section-header p {
-            font-size: clamp(14px, 2vw, 17px);
-            color: #666;
-            line-height: 1.7;
-        }
-
-        /* ===== FULL WIDTH IMAGE/VIDEO - NO CROP ===== */
-        .media-section {
-            width: 100%;
-            padding: 0;
-            margin: 0;
-        }
-
-        .media-container {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 30px 16px;
-        }
-
-        .media-container img {
-            width: 100%;
-            max-width: 1100px;
-            height: auto;
-            max-height: 90vh;
-            object-fit: contain;
-            display: block;
-            border-radius: 8px;
-        }
-
-        .media-container video {
-            width: 100%;
-            max-width: 1100px;
-            height: auto;
-            max-height: 80vh;
-            object-fit: contain;
-            display: block;
-            border-radius: 8px;
-            background: #000;
-        }
-
-        /* Background colors - Clean like homepage */
-        .bg-white { background: #ffffff; }
-        .bg-light { background: #fafafa; }
-        .bg-lgred { background: #A50034; }
-        .bg-soft { background: #f5f5f5; }
-
-        /* ===== VIDEO SECTION ===== */
-        .video-section {
-            padding: 40px 20px;
-            background: #ffffff;
-            border-top: 1px solid #f0f0f0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        @media (min-width: 768px) {
-            .video-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .video-item {
-            text-align: center;
-        }
-
-        .video-item video {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-
-        .video-item h3 {
-            margin-top: 16px;
-            font-size: 18px;
-            font-weight: 600;
-            color: #333;
-        }
+        /* ===== VIDEO GRID ===== */
+        .video-section { padding: 20px 20px 40px; }
+        .video-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 1000px; margin: 0 auto; }
+        @media (min-width: 768px) { .video-grid { grid-template-columns: 1fr 1fr; } }
+        .video-item { text-align: center; }
+        .video-item video { width: 100%; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .video-item h3 { margin-top: 12px; font-size: 16px; font-weight: 600; color: #333; }
 
         /* ===== FEATURE CARDS ===== */
-        .feature-cards {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px 40px;
-        }
-
-        @media (min-width: 640px) {
-            .feature-cards {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .feature-card {
-            background: #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #f0f0f0;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            border-color: #ddd;
-        }
-
-        .feature-card img {
-            width: 100%;
-            height: auto;
-            max-height: 400px;
-            object-fit: contain;
-            display: block;
-            background: #fafafa;
-        }
-
-        .feature-card-body {
-            padding: 24px;
-        }
-
-        .feature-card-body h3 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #1a1a1a;
-        }
-
-        .feature-card-body p {
-            font-size: 15px;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* ===== CTA SECTION ===== */
-        .cta-section {
-            background: #1a1a1a;
-            padding: 70px 20px;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            color: white;
-            font-size: clamp(24px, 4vw, 36px);
-            margin-bottom: 16px;
-        }
-
-        .cta-section p {
-            color: rgba(255,255,255,0.65);
-            font-size: 17px;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background: #A50034;
-            color: white;
-            padding: 20px 50px;
-            border-radius: 50px;
-            font-size: 19px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(165, 0, 52, 0.3);
-        }
-
-        .cta-btn:hover {
-            background: #C8102E;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(165, 0, 52, 0.4);
-        }
+        .feature-cards { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 1000px; margin: 0 auto; padding: 0 20px 30px; }
+        @media (min-width: 640px) { .feature-cards { grid-template-columns: 1fr 1fr; } }
+        .feature-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.3s; border: 1px solid #eee; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
+        .feature-card img { width: 100%; height: auto; max-height: 350px; object-fit: contain; display: block; background: #fafafa; }
+        .feature-card-body { padding: 20px; }
+        .feature-card-body h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; color: #1a1a1a; }
+        .feature-card-body p { font-size: 14px; color: #666; line-height: 1.5; }
 
         /* ===== SPECIFICATIONS ===== */
-        .specs {
-            padding: 50px 20px;
-            max-width: 720px;
-            margin: 0 auto;
-            background: #ffffff;
-        }
+        .specs { padding: 40px 20px; max-width: 700px; margin: 0 auto; }
+        .specs h2 { text-align: center; font-size: 24px; margin-bottom: 24px; font-family: 'Playfair Display', serif; }
+        .spec-row { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid #eee; font-size: 14px; }
+        .spec-label { color: #777; font-weight: 500; }
+        .spec-value { color: #1a1a1a; font-weight: 600; text-align: right; max-width: 60%; }
 
-        .specs h2 {
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 32px;
-            color: #1a1a1a;
-        }
-
-        .spec-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 16px 0;
-            border-bottom: 1px solid #f0f0f0;
-            font-size: 15px;
-        }
-
-        .spec-label {
-            color: #777;
-            font-weight: 500;
-        }
-
-        .spec-value {
-            color: #1a1a1a;
-            font-weight: 600;
-            text-align: right;
-            max-width: 60%;
-        }
+        /* ===== CTA BUTTON ===== */
+        .cta-wrap { text-align: center; padding: 30px 20px 50px; }
+        .btn-whatsapp { display: inline-flex; align-items: center; gap: 10px; padding: 16px 40px; background: #25D366; color: white; text-decoration: none; border-radius: 30px; font-weight: 600; font-size: 1.05rem; transition: all 0.3s; box-shadow: 0 4px 15px rgba(37,211,102,0.25); }
+        .btn-whatsapp:hover { background: #1faa52; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.35); }
+        .btn-whatsapp svg { width: 22px; height: 22px; fill: white; }
 
         /* ===== FOOTER ===== */
-        .footer {
-            background: #1a1a1a;
-            color: #999;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 13px;
-        }
-
-        .footer p {
-            margin-bottom: 6px;
-        }
+        .footer { background: #1a1a1a; color: #fff; padding: 50px 20px 25px; margin-top: 60px; font-family: 'Inter', sans-serif; }
+        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .footer h4 { color: #e31837; margin-bottom: 18px; font-size: 17px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .footer p { font-size: 14px; line-height: 1.8; color: #bbb; }
+        .footer a { color: #bbb; text-decoration: none; transition: color 0.2s; }
+        .footer a:hover { color: #e31837; }
+        .footer ul { list-style: none; padding: 0; font-size: 14px; line-height: 2.2; }
+        .footer-bottom { border-top: 1px solid #333; margin-top: 40px; padding-top: 25px; text-align: center; }
+        .footer-bottom p { font-size: 13px; color: #777; margin-bottom: 12px; }
+        .footer-bottom a { color: #999; text-decoration: underline; margin: 0 12px; }
 
         /* ===== FLOATING WHATSAPP - BIG ===== */
         .whatsapp-float {
@@ -540,14 +116,14 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
             transition: all 0.3s ease;
             animation: pulse 2.2s infinite;
         }
 
         .whatsapp-float:hover {
             transform: scale(1.12);
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
         }
 
         .whatsapp-float svg {
@@ -557,12 +133,11 @@
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+            70% { box-shadow: 0 0 0 22px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* Mobile */
         @media (max-width: 768px) {
             .whatsapp-float {
                 width: 64px;
@@ -574,19 +149,8 @@
                 width: 32px;
                 height: 32px;
             }
-            .media-container {
-                padding: 20px 12px;
-            }
-            .color-grid {
-                gap: 20px;
-            }
-            .color-item {
-                min-width: 140px;
-            }
-        }
-
-        html {
-            scroll-behavior: smooth;
+            .detail-title { font-size: 1.6rem; }
+            .detail-price { font-size: 2rem; }
         }
     </style>
 <base target="_blank">
@@ -595,54 +159,33 @@
 
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar">
-        <div class="navbar-inner">
-            <div class="nav-left">
-                <a href="index.html" class="back-btn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M19 12H5M12 19l-7-7 7-7"/>
-                    </svg>
-                    Back
-                </a>
-                <a href="index.html" class="nav-logo">
-                    <img src="images/LG-Subscribe-All-Logo.png" alt="LG Subscribe Malaysia">
-                </a>
-            </div>
-            <button class="menu-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
-            <div class="nav-menu">
-                <a href="index.html">Home</a>
-                <a href="products.html">Products</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-            </div>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="images/logo1.png?v=2" alt="LG Subscribe Malaysia Logo"></a>
+            <a href="index.html" class="btn-back">Back to Products</a>
         </div>
     </nav>
 
     <!-- ===== HERO ===== -->
-    <section class="hero">
-        <div class="hero-badge">LG Subscribe Malaysia</div>
-        <h1>LG PuriCare Water Purifier</h1>
-        <p class="hero-subtitle">Tankless. Smart. Pure Water On Demand.<br>Model: WD518AN</p>
-        <div class="hero-price">RM 70 <span>/ month</span></div>
-        <p class="hero-note">7 Years Self Service Filter & Warranty Included</p>
+    <section class="detail-hero">
+        <span class="detail-category">Water Purifier</span>
+        <h1 class="detail-title">LG PuriCare Water Purifier WD518AN</h1>
+        <div class="detail-price">RM70<span>/month</span></div>
+        <p class="detail-desc">Tankless. Smart. Pure Water On Demand. 7 Years Self Service Filter & Warranty Included.</p>
     </section>
 
     <!-- ===== PROMO BANNER ===== -->
     <section class="media-section">
-        <div class="media-container bg-white">
+        <div class="media-container">
             <img src="images/wpa16.jpg" alt="LG Subscribe Water Purifier - RM70 per month, 9 months 50 percent off, 7 Years Warranty">
         </div>
     </section>
 
     <!-- ===== 3 COLORS ===== -->
     <section class="color-section">
-        <h2>Choose Your Style</h2>
-        <p>Three elegant colours to match your kitchen</p>
+        <div class="section-header">
+            <h2>Choose Your Style</h2>
+            <p>Three elegant colours to match your kitchen</p>
+        </div>
         <div class="color-grid">
             <div class="color-item">
                 <img src="images/wpa2.jpg" alt="LG Water Purifier White colour">
@@ -663,14 +206,14 @@
     <section class="media-section">
         <div class="section-header">
             <h2>Super Slim Design</h2>
-            <p>Only 170mm wide. Fits perfectly on any kitchen counter without taking up space.</p>
+            <p>Only 170mm wide. Fits perfectly on any kitchen counter.</p>
         </div>
-        <div class="media-container bg-light">
+        <div class="media-container">
             <img src="images/wpa9.jpg" alt="LG Water Purifier Super Slim Design">
         </div>
     </section>
 
-    <!-- ===== VIDEOS - FILTRATION & HEATING ===== -->
+    <!-- ===== VIDEOS ===== -->
     <section class="video-section">
         <div class="section-header">
             <h2>Advanced Technology Inside</h2>
@@ -692,19 +235,19 @@
         </div>
     </section>
 
-    <!-- ===== 4-STEP FILTRATION STATIC ===== -->
+    <!-- ===== 4-STEP FILTRATION ===== -->
     <section class="media-section">
         <div class="section-header">
             <h2>4-Step Ultra Filtration System</h2>
             <p>Pre-Carbon Block removes 9 types of heavy metals. Ultra Filtration eliminates 99.99% of norovirus.</p>
         </div>
-        <div class="media-container bg-white">
+        <div class="media-container">
             <img src="images/wpa8.jpg" alt="LG Water Purifier 4-Step Filtration">
         </div>
     </section>
 
     <!-- ===== FEATURE CARDS ===== -->
-    <section class="media-section bg-light">
+    <section class="media-section">
         <div class="section-header">
             <h2>Smart Features</h2>
             <p>Designed for modern living</p>
@@ -745,15 +288,15 @@
     <section class="media-section">
         <div class="section-header">
             <h2>Auto Sterilization Every Hour</h2>
-            <p>UV LED automatically sterilizes the water outlet every hour for complete peace of mind.</p>
+            <p>UV LED automatically sterilizes the water outlet every hour.</p>
         </div>
-        <div class="media-container bg-soft">
+        <div class="media-container">
             <img src="images/wpa15.jpg" alt="LG Water Purifier Auto Sterilization">
         </div>
     </section>
 
     <!-- ===== TAP FEATURES ===== -->
-    <section class="media-section bg-light">
+    <section class="media-section">
         <div class="section-header">
             <h2>Flexible & Convenient Tap</h2>
             <p>Designed to fit any container size</p>
@@ -782,13 +325,13 @@
             <h2>Compact Dimensions</h2>
             <p>Height: 419mm | Width: 170mm | Depth: 550mm</p>
         </div>
-        <div class="media-container bg-white">
+        <div class="media-container">
             <img src="images/wpa14.jpg" alt="LG Water Purifier Dimensions">
         </div>
     </section>
 
     <!-- ===== SELF SERVICE FILTER ===== -->
-    <section class="media-section bg-light">
+    <section class="media-section">
         <div class="section-header">
             <h2>Self-Service Filter Replacement</h2>
             <p>No technician needed. Easy DIY filter changes.</p>
@@ -796,20 +339,20 @@
         <div class="media-container">
             <img src="images/wpa12.jpg" alt="LG Water Purifier Self Service Filter">
         </div>
-        <div class="media-container bg-white" style="padding-top: 10px;">
+        <div class="media-container" style="padding-top: 10px;">
             <img src="images/wpa13.jpg" alt="LG PuriCare Replacement Filter Box">
         </div>
     </section>
 
     <!-- ===== WQA CERTIFICATION ===== -->
     <section class="media-section">
-        <div class="media-container bg-lgred" style="padding: 60px 20px;">
-            <img src="images/wpa17.jpg" alt="WQA Gold Seal Certified" style="max-width: 320px; border-radius: 50%;">
+        <div class="media-container" style="background: #A50034; padding: 50px 20px;">
+            <img src="images/wpa17.jpg" alt="WQA Gold Seal Certified" style="max-width: 280px; border-radius: 50%;">
         </div>
     </section>
 
     <!-- ===== STERILIZE CONTROL ===== -->
-    <section class="media-section bg-light">
+    <section class="media-section">
         <div class="section-header">
             <h2>One-Touch Sterilization</h2>
             <p>Hold for 3 seconds to activate outlet or internal sterilization.</p>
@@ -819,14 +362,15 @@
         </div>
     </section>
 
-    <!-- ===== CTA ===== -->
-    <section class="cta-section">
-        <h2>Ready for Pure Water?</h2>
-        <p>No upfront cost. Free installation. 7 years warranty.<br>Subscribe today, enjoy tomorrow.</p>
-        <a href="https://wa.me/601176060833" class="cta-btn">Enquire on WhatsApp</a>
-    </section>
+    <!-- ===== CTA BUTTON ===== -->
+    <div class="cta-wrap">
+        <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20PuriCare%20Water%20Purifier%20WD518AN" class="btn-whatsapp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Enquire on WhatsApp
+        </a>
+    </div>
 
-    <!-- ===== SPECS ===== -->
+    <!-- ===== SPECIFICATIONS ===== -->
     <section class="specs">
         <h2>Specifications</h2>
         <div class="spec-row">
@@ -869,20 +413,47 @@
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <p>LG Subscribe Malaysia | Authorised LG Subscribe Specialist</p>
-        <p>Service available nationwide | Terms & Conditions Apply</p>
-        <p style="margin-top: 8px; opacity: 0.7;">This is an independent authorised dealer website. Not affiliated with LG Electronics official corporate site.</p>
+        <div class="footer-grid">
+            <div>
+                <h4>Business Information</h4>
+                <p>
+                    <strong style="color: #fff;">LG Subscribe Malaysia</strong><br>
+                    Authorised Consultant<br>
+                    Kelvin Chan (M260389)<br><br>
+                    Based in Ipoh, Perak<br>
+                    Serving nationwide Malaysia<br><br>
+                    <a href="https://wa.me/601176060833" style="color: #25D366;">+60 11-7606 0833</a><br>
+                    <a href="mailto:kelvin89mun@gmail.com">kelvin89mun@gmail.com</a>
+                </p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Brand Disclaimer</h4>
+                <p style="font-size: 13px; color: #888;">
+                    This website is operated by an independent authorised LG Subscribe consultant (Kelvin Chan, M260389). 
+                    This is <strong style="color: #e31837;">NOT</strong> the official LG Electronics website. 
+                    LG and LG Subscribe are trademarks of LG Electronics Inc.
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p> 2026 LG Subscribe Malaysia | Kelvin Chan (M260389) | All Rights Reserved</p>
+            <p>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-conditions.html">Terms & Conditions</a>
+            </p>
+        </div>
     </footer>
 
-    <!-- ===== FLOATING WHATSAPP ===== -->
-    <a href="https://wa.me/601176060833" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-        </svg>
-    </a>
-
-</body>
-</html>ank" rel="noopener">
+    <!-- ===== FLOATING WHATSAPP - BIG ===== -->
+    <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20PuriCare%20Water%20Purifier%20WD518AN" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
