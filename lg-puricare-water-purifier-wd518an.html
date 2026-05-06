@@ -14,56 +14,185 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: #ffffff;
-            color: #1a1a1a;
+            color: #333333;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* ===== HERO SECTION ===== */
+        /* ===== NAVBAR - Clean white like homepage ===== */
+        .navbar {
+            background: #ffffff;
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .back-btn:hover {
+            background: #f5f5f5;
+            color: #A50034;
+        }
+
+        .back-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-menu a {
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .nav-menu a:hover {
+            background: #A50034;
+            color: white;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: #555;
+        }
+
+        .menu-toggle svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 10px 20px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+                gap: 4px;
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu a {
+                padding: 12px 16px;
+                border-radius: 8px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-logo img {
+                height: 34px;
+            }
+        }
+
+        /* ===== HERO - Clean white like homepage ===== */
         .hero {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
-            padding: 50px 20px 40px;
+            background: #ffffff;
+            padding: 60px 20px 50px;
             text-align: center;
+            border-bottom: 1px solid #f5f5f5;
         }
 
         .hero-badge {
             display: inline-block;
-            background: #c8102e;
+            background: #A50034;
             color: white;
-            padding: 6px 20px;
+            padding: 8px 24px;
             border-radius: 30px;
             font-size: 13px;
             font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 16px;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
             text-transform: uppercase;
         }
 
         .hero h1 {
-            font-size: clamp(26px, 5vw, 44px);
+            font-size: clamp(28px, 5vw, 48px);
             font-weight: 700;
             color: #1a1a1a;
-            margin-bottom: 10px;
-            line-height: 1.2;
+            margin-bottom: 12px;
+            line-height: 1.15;
         }
 
         .hero-subtitle {
-            font-size: clamp(15px, 2.5vw, 20px);
+            font-size: clamp(16px, 2.5vw, 22px);
             color: #666;
-            margin-bottom: 24px;
+            margin-bottom: 30px;
             font-weight: 400;
         }
 
         .hero-price {
-            background: #c8102e;
+            background: #A50034;
             color: white;
             display: inline-block;
-            padding: 14px 36px;
+            padding: 18px 44px;
             border-radius: 50px;
-            font-size: clamp(18px, 3vw, 28px);
+            font-size: clamp(22px, 3.5vw, 34px);
             font-weight: 700;
             margin-bottom: 16px;
-            box-shadow: 0 8px 25px rgba(200, 16, 46, 0.3);
+            box-shadow: 0 8px 25px rgba(165, 0, 52, 0.25);
         }
 
         .hero-price span {
@@ -74,18 +203,111 @@
 
         .hero-note {
             color: #888;
-            font-size: 13px;
-            margin-top: 8px;
+            font-size: 14px;
+            margin-top: 10px;
         }
 
-        /* ===== FULL WIDTH IMAGE SECTIONS - NO CROP ===== */
-        .section {
+        /* ===== COLOR SELECTOR ===== */
+        .color-section {
+            background: #fafafa;
+            padding: 50px 20px 40px;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .color-section h2 {
+            font-size: clamp(22px, 3.5vw, 32px);
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .color-section p {
+            color: #777;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .color-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .color-item {
+            flex: 1;
+            min-width: 200px;
+            max-width: 280px;
+            text-align: center;
+        }
+
+        .color-item img {
+            width: 100%;
+            height: auto;
+            max-height: 350px;
+            object-fit: contain;
+            display: block;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .color-item img:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+
+        .color-name {
+            margin-top: 16px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .color-dot {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
+            border: 2px solid #ddd;
+        }
+
+        /* ===== SECTION HEADERS ===== */
+        .section-header {
+            text-align: center;
+            padding: 50px 20px 30px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-header h2 {
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .section-header p {
+            font-size: clamp(14px, 2vw, 17px);
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* ===== FULL WIDTH IMAGE/VIDEO - NO CROP ===== */
+        .media-section {
             width: 100%;
             padding: 0;
             margin: 0;
         }
 
-        .image-container {
+        .media-container {
             width: 100%;
             display: flex;
             align-items: center;
@@ -93,84 +315,166 @@
             padding: 30px 16px;
         }
 
-        .image-container img {
+        .media-container img {
             width: 100%;
             max-width: 1100px;
             height: auto;
             max-height: 90vh;
             object-fit: contain;
             display: block;
-            border-radius: 10px;
+            border-radius: 8px;
         }
 
-        /* Background colors */
-        .bg-white { background: #ffffff; }
-        .bg-light { background: #f5f7fa; }
-        .bg-navy { background: #1a2744; }
-        .bg-softblue { background: #e8f0f8; }
+        .media-container video {
+            width: 100%;
+            max-width: 1100px;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+            display: block;
+            border-radius: 8px;
+            background: #000;
+        }
 
-        /* ===== FEATURE TEXT ===== */
-        .feature-text {
-            text-align: center;
-            padding: 50px 20px 30px;
-            max-width: 720px;
+        /* Background colors - Clean like homepage */
+        .bg-white { background: #ffffff; }
+        .bg-light { background: #fafafa; }
+        .bg-lgred { background: #A50034; }
+        .bg-soft { background: #f5f5f5; }
+
+        /* ===== VIDEO SECTION ===== */
+        .video-section {
+            padding: 40px 20px;
+            background: #ffffff;
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
-        .feature-text h2 {
-            font-size: clamp(22px, 4vw, 32px);
+        @media (min-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .video-item {
+            text-align: center;
+        }
+
+        .video-item video {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .video-item h3 {
+            margin-top: 16px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* ===== FEATURE CARDS ===== */
+        .feature-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+        }
+
+        @media (min-width: 640px) {
+            .feature-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .feature-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #ddd;
+        }
+
+        .feature-card img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+            display: block;
+            background: #fafafa;
+        }
+
+        .feature-card-body {
+            padding: 24px;
+        }
+
+        .feature-card-body h3 {
+            font-size: 20px;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             color: #1a1a1a;
         }
 
-        .feature-text p {
-            font-size: clamp(14px, 2vw, 17px);
-            color: #555;
-            line-height: 1.7;
-        }
-
-        .feature-text.light h2,
-        .feature-text.light p {
-            color: #ffffff;
+        .feature-card-body p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
         }
 
         /* ===== CTA SECTION ===== */
         .cta-section {
-            background: linear-gradient(135deg, #1a2744 0%, #2d3a5c 100%);
-            padding: 60px 20px;
+            background: #1a1a1a;
+            padding: 70px 20px;
             text-align: center;
         }
 
         .cta-section h2 {
             color: white;
-            font-size: clamp(22px, 4vw, 32px);
+            font-size: clamp(24px, 4vw, 36px);
             margin-bottom: 16px;
         }
 
         .cta-section p {
-            color: rgba(255,255,255,0.8);
-            font-size: 16px;
-            margin-bottom: 24px;
+            color: rgba(255,255,255,0.65);
+            font-size: 17px;
+            margin-bottom: 30px;
             line-height: 1.6;
         }
 
         .cta-btn {
             display: inline-block;
-            background: #25D366;
+            background: #A50034;
             color: white;
-            padding: 18px 44px;
+            padding: 20px 50px;
             border-radius: 50px;
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 700;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 8px 25px rgba(165, 0, 52, 0.3);
         }
 
         .cta-btn:hover {
+            background: #C8102E;
             transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 12px 30px rgba(165, 0, 52, 0.4);
         }
 
         /* ===== SPECIFICATIONS ===== */
@@ -178,24 +482,26 @@
             padding: 50px 20px;
             max-width: 720px;
             margin: 0 auto;
+            background: #ffffff;
         }
 
         .specs h2 {
             text-align: center;
-            font-size: 26px;
+            font-size: 28px;
             margin-bottom: 32px;
+            color: #1a1a1a;
         }
 
         .spec-row {
             display: flex;
             justify-content: space-between;
-            padding: 14px 0;
-            border-bottom: 1px solid #eee;
+            padding: 16px 0;
+            border-bottom: 1px solid #f0f0f0;
             font-size: 15px;
         }
 
         .spec-label {
-            color: #666;
+            color: #777;
             font-weight: 500;
         }
 
@@ -209,17 +515,17 @@
         /* ===== FOOTER ===== */
         .footer {
             background: #1a1a1a;
-            color: #888;
+            color: #999;
             text-align: center;
-            padding: 24px 20px;
-            font-size: 12px;
+            padding: 30px 20px;
+            font-size: 13px;
         }
 
         .footer p {
             margin-bottom: 6px;
         }
 
-        /* ===== FLOATING WHATSAPP - BIG & ALWAYS VISIBLE ===== */
+        /* ===== FLOATING WHATSAPP - BIG ===== */
         .whatsapp-float {
             position: fixed;
             bottom: 24px;
@@ -234,14 +540,14 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
             transition: all 0.3s ease;
             animation: pulse 2.2s infinite;
         }
 
         .whatsapp-float:hover {
             transform: scale(1.12);
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
         }
 
         .whatsapp-float svg {
@@ -251,8 +557,8 @@
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
-            70% { box-shadow: 0 0 0 22px rgba(37, 211, 102, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
@@ -268,11 +574,14 @@
                 width: 32px;
                 height: 32px;
             }
-            .image-container {
+            .media-container {
                 padding: 20px 12px;
             }
-            .feature-text {
-                padding: 36px 16px 24px;
+            .color-grid {
+                gap: 20px;
+            }
+            .color-item {
+                min-width: 140px;
             }
         }
 
@@ -284,6 +593,36 @@
 </head>
 <body>
 
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <div class="nav-left">
+                <a href="index.html" class="back-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back
+                </a>
+                <a href="index.html" class="nav-logo">
+                    <img src="images/LG-Subscribe-All-Logo.png" alt="LG Subscribe Malaysia">
+                </a>
+            </div>
+            <button class="menu-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="hero-badge">LG Subscribe Malaysia</div>
@@ -294,155 +633,189 @@
     </section>
 
     <!-- ===== PROMO BANNER ===== -->
-    <section class="section">
-        <div class="image-container bg-white">
-            <img src="kelvin-home-solutions/images/wpa16.jpg" alt="LG Subscribe Water Purifier - RM70 per month, 9 months 50 percent off, 7 Years Warranty, White Silver Navy Blue">
+    <section class="media-section">
+        <div class="media-container bg-white">
+            <img src="images/wpa16.jpg" alt="LG Subscribe Water Purifier - RM70 per month, 9 months 50 percent off, 7 Years Warranty">
+        </div>
+    </section>
+
+    <!-- ===== 3 COLORS ===== -->
+    <section class="color-section">
+        <h2>Choose Your Style</h2>
+        <p>Three elegant colours to match your kitchen</p>
+        <div class="color-grid">
+            <div class="color-item">
+                <img src="images/wpa2.jpg" alt="LG Water Purifier White colour">
+                <div class="color-name"><span class="color-dot" style="background:#f7f7f7;"></span>White</div>
+            </div>
+            <div class="color-item">
+                <img src="images/wpa1.jpg" alt="LG Water Purifier Silver colour">
+                <div class="color-name"><span class="color-dot" style="background:#c0c0c0;"></span>Silver</div>
+            </div>
+            <div class="color-item">
+                <img src="images/wpa18.jpg" alt="LG Water Purifier Navy Blue colour">
+                <div class="color-name"><span class="color-dot" style="background:#1e3a5f;"></span>Navy Blue</div>
+            </div>
         </div>
     </section>
 
     <!-- ===== SUPER SLIM DESIGN ===== -->
-    <section class="section">
-        <div class="feature-text">
+    <section class="media-section">
+        <div class="section-header">
             <h2>Super Slim Design</h2>
-            <p>Only 170mm wide. Fits perfectly on any kitchen counter without taking up space. Navy Blue elegance that complements your home.</p>
+            <p>Only 170mm wide. Fits perfectly on any kitchen counter without taking up space.</p>
         </div>
-        <div class="image-container bg-light">
-            <img src="kelvin-home-solutions/images/wpa9.jpg" alt="LG Water Purifier Super Slim Design - Only 170mm wide, fits any kitchen counter">
+        <div class="media-container bg-light">
+            <img src="images/wpa9.jpg" alt="LG Water Purifier Super Slim Design">
         </div>
     </section>
 
-    <!-- ===== 4-STEP FILTRATION ===== -->
-    <section class="section">
-        <div class="feature-text">
-            <h2>4-Step Ultra Filtration System</h2>
-            <p>Pre-Carbon Block removes 9 types of heavy metals. Ultra Filtration eliminates 99.99% of norovirus and harmful contaminants. WQA Gold Seal certified.</p>
+    <!-- ===== VIDEOS - FILTRATION & HEATING ===== -->
+    <section class="video-section">
+        <div class="section-header">
+            <h2>Advanced Technology Inside</h2>
+            <p>See how LG PuriCare delivers pure, safe water every time</p>
         </div>
-        <div class="image-container bg-white">
-            <img src="kelvin-home-solutions/images/wpa8.jpg" alt="LG Water Purifier 4-Step Filtration - Pre Carbon Block Heavy Metal Removal and Ultra Filtration Virus Removal">
+        <div class="video-grid">
+            <div class="video-item">
+                <video autoplay muted loop playsinline>
+                    <source src="images/wpav2.mp4" type="video/mp4">
+                </video>
+                <h3>4-Step Ultra Filtration</h3>
+            </div>
+            <div class="video-item">
+                <video autoplay muted loop playsinline>
+                    <source src="images/wpav3.mp4" type="video/mp4">
+                </video>
+                <h3>Instant Hot Water System</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 4-STEP FILTRATION STATIC ===== -->
+    <section class="media-section">
+        <div class="section-header">
+            <h2>4-Step Ultra Filtration System</h2>
+            <p>Pre-Carbon Block removes 9 types of heavy metals. Ultra Filtration eliminates 99.99% of norovirus.</p>
+        </div>
+        <div class="media-container bg-white">
+            <img src="images/wpa8.jpg" alt="LG Water Purifier 4-Step Filtration">
+        </div>
+    </section>
+
+    <!-- ===== FEATURE CARDS ===== -->
+    <section class="media-section bg-light">
+        <div class="section-header">
+            <h2>Smart Features</h2>
+            <p>Designed for modern living</p>
+        </div>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <img src="images/wpa3.jpg" alt="Voice Guidance">
+                <div class="feature-card-body">
+                    <h3>Smart Voice Guidance</h3>
+                    <p>A smart voice guides you step by step and reminds you when to replace the filter.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <img src="images/wpa4.jpg" alt="LG ThinQ App">
+                <div class="feature-card-body">
+                    <h3>LG ThinQ App</h3>
+                    <p>Check water purifier status in real-time from anywhere using your smartphone.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <img src="images/wpa5.jpg" alt="Volume Control">
+                <div class="feature-card-body">
+                    <h3>One-Touch Volume</h3>
+                    <p>Presets of 120ml, 250ml, 500ml and 1000ml for precise water dispensing.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <img src="images/wpa6.png" alt="Hot Water Control">
+                <div class="feature-card-body">
+                    <h3>Temperature Presets</h3>
+                    <p>Three preset temperatures make your drinks delicious and convenient.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- ===== AUTO STERILIZATION ===== -->
-    <section class="section">
-        <div class="feature-text">
+    <section class="media-section">
+        <div class="section-header">
             <h2>Auto Sterilization Every Hour</h2>
-            <p>UV LED automatically sterilizes the water outlet every hour. One-touch manual sterilization for complete peace of mind.</p>
+            <p>UV LED automatically sterilizes the water outlet every hour for complete peace of mind.</p>
         </div>
-        <div class="image-container bg-light">
-            <img src="kelvin-home-solutions/images/wpa15.jpg" alt="LG Water Purifier Auto Sterilization - UV LED every 1 hour">
-        </div>
-    </section>
-
-    <!-- ===== VOICE GUIDANCE ===== -->
-    <section class="section">
-        <div class="feature-text">
-            <h2>Smart Voice Guidance</h2>
-            <p>A smart voice that guides you step by step. The voice guardian will inform you when it is time to replace the filter.</p>
-        </div>
-        <div class="image-container bg-white">
-            <img src="kelvin-home-solutions/images/wpa3.jpg" alt="LG Water Purifier Voice Guidance - Smart voice filter replacement reminder, Complete filter cleaning">
+        <div class="media-container bg-soft">
+            <img src="images/wpa15.jpg" alt="LG Water Purifier Auto Sterilization">
         </div>
     </section>
 
-    <!-- ===== LG THINQ APP ===== -->
-    <section class="section">
-        <div class="feature-text">
-            <h2>LG ThinQ - Peace of Mind in Your Palm</h2>
-            <p>Directly check the status of the water purifier in real-time, from anywhere, using your smartphone.</p>
+    <!-- ===== TAP FEATURES ===== -->
+    <section class="media-section bg-light">
+        <div class="section-header">
+            <h2>Flexible & Convenient Tap</h2>
+            <p>Designed to fit any container size</p>
         </div>
-        <div class="image-container bg-light">
-            <img src="kelvin-home-solutions/images/wpa4.jpg" alt="LG ThinQ App - Monitor water purifier status from smartphone anywhere">
-        </div>
-    </section>
-
-    <!-- ===== VOLUME CONTROL ===== -->
-    <section class="section">
-        <div class="feature-text">
-            <h2>Convenient One-Touch Volume Presets</h2>
-            <p>With presets of 120ml, 250ml, 500ml and 1000ml, conveniently dispense precise water volumes for any occasion.</p>
-        </div>
-        <div class="image-container bg-softblue">
-            <img src="kelvin-home-solutions/images/wpa5.jpg" alt="LG Water Purifier Volume Control - 120ml 250ml 500ml 1000ml one-touch presets">
-        </div>
-    </section>
-
-    <!-- ===== HOT WATER CONTROL ===== -->
-    <section class="section">
-        <div class="feature-text">
-            <h2>Make Better Drinks with Temperature Presets</h2>
-            <p>Three preset temperature controls make your drinks delicious and convenient. Hot water ready in seconds.</p>
-        </div>
-        <div class="image-container bg-softblue">
-            <img src="kelvin-home-solutions/images/wpa6.png" alt="LG Water Purifier Hot Water Control - Three preset temperature controls">
-        </div>
-    </section>
-
-    <!-- ===== AUTO MOVING TAP ===== -->
-    <section class="section">
-        <div class="feature-text">
-            <h2>Up & Down Auto Moving Tap</h2>
-            <p>Automatically adjusts height for any container. From tall bottles to small cups, effortless dispensing every time.</p>
-        </div>
-        <div class="image-container bg-light">
-            <img src="kelvin-home-solutions/images/wpa10.jpg" alt="LG Water Purifier Auto Moving Tap - Adjusts for bottles, glasses, and cups">
-        </div>
-    </section>
-
-    <!-- ===== 180 ROTATING TAP ===== -->
-    <section class="section">
-        <div class="feature-text">
-            <h2>180 Degree Rotating Tap</h2>
-            <p>Rotates 180 degrees for flexible positioning. Perfect for any kitchen layout and container size.</p>
-        </div>
-        <div class="image-container bg-white">
-            <img src="kelvin-home-solutions/images/wpa11.jpg" alt="LG Water Purifier 180 Degree Rotating Tap - Flexible positioning for any kitchen">
+        <div class="feature-cards">
+            <div class="feature-card">
+                <img src="images/wpa10.jpg" alt="Auto Moving Tap">
+                <div class="feature-card-body">
+                    <h3>Up & Down Auto Moving Tap</h3>
+                    <p>Automatically adjusts height for bottles, glasses, and cups.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <img src="images/wpa11.jpg" alt="180 Rotating Tap">
+                <div class="feature-card-body">
+                    <h3>180 Degree Rotating Tap</h3>
+                    <p>Rotates for flexible positioning in any kitchen layout.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- ===== DIMENSIONS ===== -->
-    <section class="section">
-        <div class="feature-text">
+    <section class="media-section">
+        <div class="section-header">
             <h2>Compact Dimensions</h2>
-            <p>Height: 419mm | Width: 170mm | Depth: 550mm. Designed to maximize space efficiency in Malaysian kitchens.</p>
+            <p>Height: 419mm | Width: 170mm | Depth: 550mm</p>
         </div>
-        <div class="image-container bg-light">
-            <img src="kelvin-home-solutions/images/wpa14.jpg" alt="LG Water Purifier Dimensions - 419mm height, 170mm width, 550mm depth">
+        <div class="media-container bg-white">
+            <img src="images/wpa14.jpg" alt="LG Water Purifier Dimensions">
         </div>
     </section>
 
     <!-- ===== SELF SERVICE FILTER ===== -->
-    <section class="section">
-        <div class="feature-text">
+    <section class="media-section bg-light">
+        <div class="section-header">
             <h2>Self-Service Filter Replacement</h2>
-            <p>No technician needed. Easy DIY filter changes. Replacement filters delivered to your door.</p>
+            <p>No technician needed. Easy DIY filter changes.</p>
         </div>
-        <div class="image-container bg-white">
-            <img src="kelvin-home-solutions/images/wpa12.jpg" alt="LG Water Purifier Self Service Filter - Easy DIY replacement with gloves">
+        <div class="media-container">
+            <img src="images/wpa12.jpg" alt="LG Water Purifier Self Service Filter">
         </div>
-    </section>
-
-    <!-- ===== FILTER BOX ===== -->
-    <section class="section">
-        <div class="image-container bg-light">
-            <img src="kelvin-home-solutions/images/wpa13.jpg" alt="LG PuriCare Water Purifier Replacement Filter Box - Eco-friendly packaging">
+        <div class="media-container bg-white" style="padding-top: 10px;">
+            <img src="images/wpa13.jpg" alt="LG PuriCare Replacement Filter Box">
         </div>
     </section>
 
     <!-- ===== WQA CERTIFICATION ===== -->
-    <section class="section">
-        <div class="image-container bg-navy" style="padding: 50px 20px;">
-            <img src="kelvin-home-solutions/images/wpa17.jpg" alt="WQA Gold Seal Certified - Tested and certified under industry standards" style="max-width: 350px; border-radius: 50%;">
+    <section class="media-section">
+        <div class="media-container bg-lgred" style="padding: 60px 20px;">
+            <img src="images/wpa17.jpg" alt="WQA Gold Seal Certified" style="max-width: 320px; border-radius: 50%;">
         </div>
     </section>
 
     <!-- ===== STERILIZE CONTROL ===== -->
-    <section class="section">
-        <div class="feature-text">
-            <h2>One-Touch Sterilization Control</h2>
-            <p>Hold for 3 seconds to activate outlet or internal sterilization. Complete hygiene control at your fingertips.</p>
+    <section class="media-section bg-light">
+        <div class="section-header">
+            <h2>One-Touch Sterilization</h2>
+            <p>Hold for 3 seconds to activate outlet or internal sterilization.</p>
         </div>
-        <div class="image-container bg-light">
-            <img src="kelvin-home-solutions/images/wpa7.jpg" alt="LG Water Purifier Sterilization Panel - Outlet Sterilize and Internal Sterilize buttons">
+        <div class="media-container">
+            <img src="images/wpa7.jpg" alt="LG Water Purifier Sterilization Panel">
         </div>
     </section>
 
@@ -503,6 +876,13 @@
 
     <!-- ===== FLOATING WHATSAPP ===== -->
     <a href="https://wa.me/601176060833" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+</body>
+</html>ank" rel="noopener">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
