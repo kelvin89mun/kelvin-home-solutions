@@ -11,8 +11,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="LG Subscribe Malaysia - Authorised consultant Kelvin Chan (M260389). Premium LG appliances on subscription. Based in Ipoh, Perak. Serving nationwide Malaysia.">
-    <meta name="keywords" content="LG Subscribe, LG appliances, Malaysia, Ipoh, Perak, subscription">
+    <meta name="description" content="LG DUALCOOL 1.5 HP | LG Subscribe Malaysia - Authorised consultant Kelvin Chan (M260389). Premium LG appliances on subscription. Based in Ipoh, Perak. Serving nationwide Malaysia.">
+    <meta name="keywords" content="LG Subscribe, LG DUALCOOL, air conditioner, Malaysia, Ipoh, Perak, subscription">
     <meta name="author" content="Kelvin Chan (M260389)">
     <link rel="canonical" href="https://subscribe-smarthome.com/">
 
@@ -22,6 +22,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #faf8f5 0%, #f5f0eb 100%); color: #2d2d2d; line-height: 1.5; }
 
+        /* ===== NAVBAR ===== */
         .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
         .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
@@ -29,105 +30,330 @@
         .btn-back { padding: 8px 20px; background: transparent; border: 1.5px solid #ddd; border-radius: 20px; color: #666; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: all 0.3s; }
         .btn-back:hover { border-color: #c41e3a; color: #c41e3a; }
 
-        .detail-hero { padding: 100px 20px 40px; max-width: 800px; margin: 0 auto; }
-        .detail-image { width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: 16px; background: linear-gradient(135deg, #f8f5f2 0%, #f0ebe5 100%); padding: 20px; margin-bottom: 30px; }
-
+        /* ===== HERO ===== */
+        .detail-hero { padding: 100px 20px 40px; max-width: 800px; margin: 0 auto; text-align: center; }
         .detail-category { display: inline-block; padding: 5px 14px; background: rgba(196,30,58,0.1); border: 1px solid rgba(196,30,58,0.2); border-radius: 20px; font-size: 0.75rem; font-weight: 600; color: #c41e3a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
-        .detail-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 15px; line-height: 1.2; }
-        .detail-price { font-size: 2.5rem; font-weight: 800; color: #c41e3a; margin-bottom: 20px; }
+        .detail-title { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 5vw, 2.2rem); font-weight: 700; color: #1a1a1a; margin-bottom: 15px; line-height: 1.2; }
+        .detail-price { font-size: clamp(2.5rem, 7vw, 4rem); font-weight: 800; color: #c41e3a; margin-bottom: 15px; line-height: 1; }
         .detail-price span { font-size: 1rem; font-weight: 400; color: #999; }
-        .detail-desc { font-size: 1rem; color: #666; margin-bottom: 25px; line-height: 1.7; }
+        .detail-desc { font-size: 1rem; color: #666; margin-bottom: 25px; line-height: 1.7; max-width: 600px; margin-left: auto; margin-right: auto; }
 
-        .detail-features { margin-bottom: 30px; }
-        .detail-features h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; color: #1a1a1a; }
-        .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-        .feature-item { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: white; border-radius: 10px; font-size: 0.85rem; color: #555; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
-        .feature-item::before { content: '✓'; color: #c41e3a; font-weight: bold; font-size: 1rem; }
+        /* ===== FULL WIDTH IMAGE/VIDEO - NO CROP ===== */
+        .media-section { width: 100%; padding: 0; margin: 0; }
+        .media-container { width: 100%; display: flex; align-items: center; justify-content: center; padding: 20px 16px; }
+        .media-container img { width: 100%; max-width: 1000px; height: auto; max-height: 85vh; object-fit: contain; display: block; border-radius: 12px; }
+        .media-container video { width: 100%; max-width: 1000px; height: auto; max-height: 70vh; object-fit: contain; display: block; border-radius: 12px; background: #000; }
 
-        .btn-whatsapp { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; background: #25D366; color: white; text-decoration: none; border-radius: 25px; font-weight: 600; font-size: 1rem; transition: all 0.3s; box-shadow: 0 4px 15px rgba(37,211,102,0.2); }
-        .btn-whatsapp:hover { background: #1faa52; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.3); }
+        /* ===== SECTION HEADERS ===== */
+        .section-header { text-align: center; padding: 40px 20px 20px; max-width: 700px; margin: 0 auto; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 3.5vw, 30px); font-weight: 700; margin-bottom: 10px; color: #1a1a1a; }
+        .section-header p { font-size: 15px; color: #666; line-height: 1.6; }
 
-        .footer { background: #1a1a1a; padding: 40px 20px; text-align: center; color: rgba(255,255,255,0.6); margin-top: 40px; }
+        /* ===== FEATURE CARDS ===== */
+        .feature-cards { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 1000px; margin: 0 auto; padding: 0 20px 30px; }
+        @media (min-width: 640px) { .feature-cards { grid-template-columns: 1fr 1fr; } }
+        .feature-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.3s; border: 1px solid #eee; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
+        .feature-card img { width: 100%; height: auto; max-height: 350px; object-fit: contain; display: block; background: #fafafa; }
+        .feature-card-body { padding: 20px; }
+        .feature-card-body h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; color: #1a1a1a; }
+        .feature-card-body p { font-size: 14px; color: #666; line-height: 1.5; }
 
-        @media (max-width: 768px) { .detail-title { font-size: 1.6rem; } .detail-price { font-size: 2rem; } .feature-grid { grid-template-columns: 1fr; } }
+        /* ===== CTA BUTTON ===== */
+        .cta-wrap { text-align: center; padding: 30px 20px 50px; }
+        .btn-whatsapp { display: inline-flex; align-items: center; gap: 10px; padding: 16px 40px; background: #25D366; color: white; text-decoration: none; border-radius: 30px; font-weight: 600; font-size: 1.05rem; transition: all 0.3s; box-shadow: 0 4px 15px rgba(37,211,102,0.25); }
+        .btn-whatsapp:hover { background: #1faa52; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.35); }
+        .btn-whatsapp svg { width: 22px; height: 22px; fill: white; }
+
+        /* ===== SPECIFICATIONS ===== */
+        .specs { padding: 40px 20px; max-width: 700px; margin: 0 auto; }
+        .specs h2 { text-align: center; font-size: 24px; margin-bottom: 24px; font-family: 'Playfair Display', serif; }
+        .spec-row { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid #eee; font-size: 14px; }
+        .spec-row:last-child { border-bottom: none; }
+        .spec-label { color: #777; font-weight: 500; }
+        .spec-value { color: #1a1a1a; font-weight: 600; text-align: right; max-width: 60%; }
+
+        /* ===== FOOTER ===== */
+        .footer { background: #1a1a1a; color: #fff; padding: 50px 20px 25px; margin-top: 60px; font-family: 'Inter', sans-serif; }
+        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .footer h4 { color: #e31837; margin-bottom: 18px; font-size: 17px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .footer p { font-size: 14px; line-height: 1.8; color: #bbb; }
+        .footer a { color: #bbb; text-decoration: none; transition: color 0.2s; }
+        .footer a:hover { color: #e31837; }
+        .footer ul { list-style: none; padding: 0; font-size: 14px; line-height: 2.2; }
+        .footer-bottom { border-top: 1px solid #333; margin-top: 40px; padding-top: 25px; text-align: center; }
+        .footer-bottom p { font-size: 13px; color: #777; margin-bottom: 12px; }
+        .footer-bottom a { color: #999; text-decoration: underline; margin: 0 12px; }
+
+        /* ===== FLOATING WHATSAPP - BIG ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9999;
+            background: #25D366;
+            color: white;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            transition: all 0.3s ease;
+            animation: pulse 2.2s infinite;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.12);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+        }
+        .whatsapp-float svg {
+            width: 38px;
+            height: 38px;
+            fill: white;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+            70% { box-shadow: 0 0 0 22px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 64px;
+                height: 64px;
+                bottom: 16px;
+                right: 16px;
+            }
+            .whatsapp-float svg {
+                width: 32px;
+                height: 32px;
+            }
+        }
     </style>
+    <base target="_blank">
+<base target="_blank">
 </head>
 <body>
+
+    <!-- ===== NAVBAR ===== -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo"><img src="images/logo1.png?v=2" alt="LG Subscribe Malaysia Logo"></a>
-            <a href="index.html" class="btn-back">← Back to Products</a>
+            <a href="index.html" class="btn-back">Back to Products</a>
         </div>
     </nav>
 
+    <!-- ===== HERO ===== -->
     <section class="detail-hero">
-        <span class="detail-category">AC</span>
+        <span class="detail-category">Air Conditioner</span>
         <h1 class="detail-title">LG DUALCOOL 1.5 HP</h1>
-        <img src="images/DualCoolWithPurifier1.5HP.png" alt="LG DUALCOOL 1.5 HP" class="detail-image">
         <div class="detail-price">RM90<span>/month</span></div>
-        <p class="detail-desc">Wall-mounted AC with built-in air purification. Plasmaster Ionizer++. 5 Years UV Steam Service & Warranty.</p>
-
-        <div class="detail-features">
-            <h3>Key Features</h3>
-            <div class="feature-grid">
-                                <div class="feature-item">Air Purification</div>
-                <div class="feature-item">1.5 HP</div>
-                <div class="feature-item">Energy Saving</div>
-                <div class="feature-item">5-Year Warranty</div>
-            </div>
-        </div>
-
-        <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20DUALCOOL%201.5%20HP" class="btn-whatsapp" target="_blank">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Enquire on WhatsApp
-        </a>
+        <p class="detail-desc">Wall-mounted AC with built-in air purification. Ideal for medium rooms up to 180 sq ft. 5 Years UV Steam Service & Warranty Included.</p>
     </section>
 
-    <footer style="background: #1a1a1a; color: #fff; padding: 50px 20px 25px; margin-top: 80px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;">
-        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
+    <!-- ===== COOL COMFORT FOR YOUR HOME ===== -->
+    <section class="media-section">
+        <div class="section-header">
+            <h2>Cool Comfort for Your Home</h2>
+            <p>Powerful cooling that reaches every corner of your room, keeping your family comfortable all day long.</p>
+        </div>
+        <div class="media-container">
+            <img src="images/ac1.jpg" alt="Cool Comfort for Your Home">
+        </div>
+    </section>
 
+    <!-- ===== SMART ENERGY CONTROL ===== -->
+    <section class="media-section">
+        <div class="section-header">
+            <h2>Smart Energy Control</h2>
+            <p>Dual Inverter technology delivers precise temperature control while cutting energy consumption by up to 70%.</p>
+        </div>
+        <div class="media-container">
+            <img src="images/ac3.jpg" alt="Smart Energy Control">
+        </div>
+    </section>
+
+    <!-- ===== PLASMASTER IONIZER++ ===== -->
+    <section class="media-section">
+        <div class="section-header">
+            <h2>Plasmaster Ionizer++</h2>
+            <p>Over 2 million ions purify your air, removing 99.9% of harmful bacteria and allergens for healthier breathing.</p>
+        </div>
+        <div class="media-container">
+            <video autoplay muted loop playsinline>
+                <source src="images/acv2.webm" type="video/webm">
+            </video>
+        </div>
+    </section>
+
+    <!-- ===== SMART THINQ ENERGY MONITORING ===== -->
+    <section class="media-section">
+        <div class="section-header">
+            <h2>Smart ThinQ Energy Monitoring</h2>
+            <p>Track your electricity usage in real-time. Week, month, or year - stay in control of your energy bills.</p>
+        </div>
+        <div class="media-container">
+            <img src="images/ac4.jpg" alt="Smart ThinQ Energy Monitoring">
+        </div>
+    </section>
+
+    <!-- ===== SLEEP SOUNDLY ALL NIGHT ===== -->
+    <section class="media-section">
+        <div class="section-header">
+            <h2>Sleep Soundly All Night</h2>
+            <p>Ultra-quiet operation and gentle airflow direction ensure undisturbed sleep for you and your loved ones.</p>
+        </div>
+        <div class="media-container">
+            <img src="images/ac7.jpg" alt="Sleep Soundly All Night">
+        </div>
+    </section>
+
+    <!-- ===== ENERGY SAVING YOU CAN SEE ===== -->
+    <section class="media-section">
+        <div class="section-header">
+            <h2>Energy Saving You Can See</h2>
+            <p>Dual Inverter Compressor adjusts speed intelligently. Lower electricity bills, same powerful cooling.</p>
+        </div>
+        <div class="media-container">
+            <video autoplay muted loop playsinline>
+                <source src="images/acv3.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+
+    <!-- ===== KEY FEATURES CARDS ===== -->
+    <section class="media-section">
+        <div class="section-header">
+            <h2>Key Features at a Glance</h2>
+            <p>Everything you need for cool, clean air</p>
+        </div>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <div class="feature-card-body">
+                    <h3>Dual Inverter Compressor</h3>
+                    <p>Up to 70% energy saving. Cools 40% faster. Runs quieter. 10-year compressor warranty.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-card-body">
+                    <h3>Plasmaster Ionizer++</h3>
+                    <p>Over 2 million ions eliminate 99.9% of bacteria, viruses and allergens from your air.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-card-body">
+                    <h3>LG ThinQ Smart Control</h3>
+                    <p>Control temperature, schedule cooling, and monitor energy usage from your smartphone.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-card-body">
+                    <h3>5 Years Full Service</h3>
+                    <p>UV Steam cleaning, filter replacement, and full maintenance included in your subscription.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA BUTTON ===== -->
+    <div class="cta-wrap">
+        <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20DUALCOOL%201.5%20HP" class="btn-whatsapp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Enquire on WhatsApp
+        </a>
+    </div>
+
+    <!-- ===== SPECIFICATIONS ===== -->
+    <section class="specs">
+        <h2>Specifications</h2>
+        <div class="spec-row">
+            <span class="spec-label">Model</span>
+            <span class="spec-value">LG DUALCOOL 1.5 HP</span>
+        </div>
+        <div class="spec-row">
+            <span class="spec-label">Cooling Capacity</span>
+            <span class="spec-value">1.5 HP</span>
+        </div>
+        <div class="spec-row">
+            <span class="spec-label">Recommended Room Size</span>
+            <span class="spec-value">Up to 180 sq ft</span>
+        </div>
+        <div class="spec-row">
+            <span class="spec-label">Air Purification</span>
+            <span class="spec-value">Plasmaster Ionizer++</span>
+        </div>
+        <div class="spec-row">
+            <span class="spec-label">Smart Control</span>
+            <span class="spec-value">LG ThinQ App + Voice</span>
+        </div>
+        <div class="spec-row">
+            <span class="spec-label">Energy Saving</span>
+            <span class="spec-value">Up to 70% with Dual Inverter</span>
+        </div>
+        <div class="spec-row">
+            <span class="spec-label">Compressor Warranty</span>
+            <span class="spec-value">10 Years</span>
+        </div>
+        <div class="spec-row">
+            <span class="spec-label">Service & Warranty</span>
+            <span class="spec-value">5 Years UV Steam Service</span>
+        </div>
+        <div class="spec-row">
+            <span class="spec-label">Monthly Subscription</span>
+            <span class="spec-value">RM 90 / month</span>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-grid">
             <div>
-                <h4 style="color: #e31837; margin-bottom: 18px; font-size: 17px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Business Information</h4>
-                <p style="font-size: 14px; line-height: 1.8; color: #bbb;">
+                <h4>Business Information</h4>
+                <p>
                     <strong style="color: #fff;">LG Subscribe Malaysia</strong><br>
                     Authorised Consultant<br>
                     Kelvin Chan (M260389)<br><br>
                     Based in Ipoh, Perak<br>
                     Serving nationwide Malaysia<br><br>
-                    <a href="https://wa.me/601176060833" style="color: #25D366; text-decoration: none;">+60 11-7606 0833</a><br>
-                    <a href="mailto:kelvin89mun@gmail.com" style="color: #bbb; text-decoration: none;">kelvin89mun@gmail.com</a>
+                    <a href="https://wa.me/601176060833" style="color: #25D366;">+60 11-7606 0833</a><br>
+                    <a href="mailto:kelvin89mun@gmail.com">kelvin89mun@gmail.com</a>
                 </p>
             </div>
-
             <div>
-                <h4 style="color: #e31837; margin-bottom: 18px; font-size: 17px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Quick Links</h4>
-                <ul style="list-style: none; padding: 0; font-size: 14px; line-height: 2.2;">
-                    <li><a href="index.html" style="color: #bbb; text-decoration: none;">Home</a></li>
-                    <li><a href="privacy-policy.html" style="color: #bbb; text-decoration: none;">Privacy Policy</a></li>
-                    <li><a href="terms-conditions.html" style="color: #bbb; text-decoration: none;">Terms & Conditions</a></li>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-conditions.html">Terms & Conditions</a></li>
                 </ul>
             </div>
-
             <div>
-                <h4 style="color: #e31837; margin-bottom: 18px; font-size: 17px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Brand Disclaimer</h4>
-                <p style="font-size: 13px; line-height: 1.7; color: #888;">
+                <h4>Brand Disclaimer</h4>
+                <p style="font-size: 13px; color: #888;">
                     This website is operated by an independent authorised LG Subscribe consultant (Kelvin Chan, M260389). 
                     This is <strong style="color: #e31837;">NOT</strong> the official LG Electronics website. 
                     LG and LG Subscribe are trademarks of LG Electronics Inc.
                 </p>
             </div>
-
         </div>
-
-        <div style="border-top: 1px solid #333; margin-top: 40px; padding-top: 25px; text-align: center;">
-            <p style="font-size: 13px; color: #777; margin-bottom: 12px;">
-                © 2026 LG Subscribe Malaysia | Kelvin Chan (M260389) | All Rights Reserved
-            </p>
-            <p style="font-size: 12px; color: #555;">
-                <a href="privacy-policy.html" style="color: #999; text-decoration: underline; margin: 0 12px;">Privacy Policy</a>
-                <a href="terms-conditions.html" style="color: #999; text-decoration: underline; margin: 0 12px;">Terms & Conditions</a>
+        <div class="footer-bottom">
+            <p> 2026 LG Subscribe Malaysia | Kelvin Chan (M260389) | All Rights Reserved</p>
+            <p>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-conditions.html">Terms & Conditions</a>
             </p>
         </div>
     </footer>
+
+    <!-- ===== FLOATING WHATSAPP - BIG ===== -->
+    <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20DUALCOOL%201.5%20HP" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
 </body>
 </html>
