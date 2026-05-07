@@ -709,6 +709,237 @@
         }
 
         html { scroll-behavior: smooth; }
+        /* ===== HERO SLIDESHOW ===== */
+        .hero-slideshow {
+            position: relative;
+            width: 100%;
+            height: 75vh;
+            min-height: 500px;
+            max-height: 700px;
+            overflow: hidden;
+            background: #000;
+            margin-top: 0;
+        }
+
+        .hero-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0.7) 100%);
+            pointer-events: none;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 140px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: white;
+            width: 90%;
+            max-width: 600px;
+            z-index: 2;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+        }
+
+        .slide-caption h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .slide-caption p {
+            font-size: 16px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .hero-dots {
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .hero-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .hero-dot.active {
+            background: #c41e3a;
+            width: 28px;
+            border-radius: 5px;
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .hero-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 22px;
+            color: white;
+            z-index: 10;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-nav:hover {
+            background: rgba(196, 30, 58, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .hero-nav.prev { left: 20px; }
+        .hero-nav.next { right: 20px; }
+
+        /* ===== DYNAMIC PULSE CTA ===== */
+        .pulse-cta-container {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            width: 90%;
+            max-width: 420px;
+        }
+
+        .pulse-cta-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 18px 28px;
+            background: linear-gradient(135deg, #c41e3a 0%, #e63950 50%, #c41e3a 100%);
+            background-size: 200% 200%;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            box-shadow: 0 6px 25px rgba(196, 30, 58, 0.5), 0 0 0 4px rgba(196, 30, 58, 0.15);
+            animation: 
+                pulse-glow 2.5s ease-in-out infinite,
+                gradient-shift 3s ease infinite;
+            border: 3px solid rgba(255,255,255,0.2);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pulse-cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        .pulse-cta-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 35px rgba(196, 30, 58, 0.7), 0 0 0 6px rgba(196, 30, 58, 0.2);
+        }
+
+        .pulse-cta-btn .fire-icon {
+            font-size: 22px;
+            animation: fire-flicker 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { 
+                box-shadow: 0 6px 25px rgba(196, 30, 58, 0.5), 0 0 0 4px rgba(196, 30, 58, 0.15);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 8px 35px rgba(196, 30, 58, 0.7), 0 0 0 8px rgba(196, 30, 58, 0.25);
+                transform: scale(1.02);
+            }
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes fire-flicker {
+            0% { transform: scale(1) rotate(-5deg); }
+            100% { transform: scale(1.2) rotate(5deg); }
+        }
+
+        /* Responsive Hero */
+        @media (max-width: 768px) {
+            .hero-slideshow { height: 60vh; min-height: 400px; }
+            .slide-caption h2 { font-size: 24px; }
+            .slide-caption p { font-size: 14px; }
+            .slide-caption { bottom: 120px; }
+            .pulse-cta-btn { font-size: 15px; padding: 16px 22px; }
+            .hero-nav { width: 38px; height: 38px; font-size: 18px; }
+            .hero-nav.prev { left: 10px; }
+            .hero-nav.next { right: 10px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-slideshow { height: 55vh; min-height: 350px; }
+            .slide-caption h2 { font-size: 20px; }
+            .slide-caption { bottom: 110px; }
+            .pulse-cta-container { max-width: 340px; }
+            .pulse-cta-btn { font-size: 14px; padding: 14px 18px; }
+        }
     </style>
 <base target="_blank">
 <!-- Google tag (gtag.js) -->
@@ -719,6 +950,7 @@
   gtag('js', new Date());
   gtag('config', 'AW-11021213892');
 </script>
+<base target="_blank">
 <base target="_blank">
 <base target="_blank">
 <base target="_blank">
@@ -837,20 +1069,75 @@
         </div>
     </nav>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div style="margin-bottom: 20px;">
-                <img src="images/logo1.png" alt="LG Subscribe Malaysia Logo" style="max-height: 55px; width: auto; display: block; margin: 0 auto;">
-            </div>
-            <div class="hero-badge">LG Authorised Consultant</div>
-            <h1>Make Your Home Smarter & Healthier</h1>
-            <p>Premium LG appliances for Malaysian families. Professional consultation service available nationwide across Malaysia.</p>
-            <div class="hero-buttons">
-                <a href="#products" class="btn-primary">View Products</a>
-                <a href="https://wa.me/601176060833" class="btn-secondary" target="_blank">WhatsApp Us</a>
+    <!-- ===== HERO SLIDESHOW ===== -->
+    <div class="hero-slideshow" id="heroSlideshow">
+
+        <!-- Slide 1: Water Purifier -->
+        <div class="hero-slide active">
+            <img src="images/WaterPurifiers.jpg" alt="LG PuriCare Water Purifier - Pure Water for Your Family">
+            <div class="slide-caption">
+                <h2>Pure Water for Your Family</h2>
+                <p>Advanced 4-stage filtration with UV sterilization</p>
             </div>
         </div>
-    </section>
+
+        <!-- Slide 2: Air Purifier -->
+        <div class="hero-slide">
+            <img src="images/AeroBooster.jpg" alt="LG Aero Booster Air Purifier - Breathe Cleaner Air">
+            <div class="slide-caption">
+                <h2>Breathe Cleaner Air</h2>
+                <p>PM 1.0 filtration covers up to 550sqft</p>
+            </div>
+        </div>
+
+        <!-- Slide 3: Air Conditioner -->
+        <div class="hero-slide">
+            <img src="images/ArtCool1.5HP.jpg" alt="LG ArtCool Air Conditioner - Stay Cool Save Energy">
+            <div class="slide-caption">
+                <h2>Stay Cool, Save Energy</h2>
+                <p>Dual Inverter technology with Plasmaster Ionizer++</p>
+            </div>
+        </div>
+
+        <!-- Slide 4: Refrigerator -->
+        <div class="hero-slide">
+            <img src="images/FridgeInstaview614L.jpg" alt="LG InstaView Refrigerator - Fresh Food Smart Storage">
+            <div class="slide-caption">
+                <h2>Fresh Food, Smart Storage</h2>
+                <p>Knock twice to see inside with InstaView</p>
+            </div>
+        </div>
+
+        <!-- Slide 5: Washer -->
+        <div class="hero-slide">
+            <img src="images/WashTower14KGW10KWD.jpg" alt="LG WashTower - Effortless Cleaning">
+            <div class="slide-caption">
+                <h2>Effortless Cleaning</h2>
+                <p>AI DD intelligent fabric care technology</p>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="hero-nav prev" onclick="changeHeroSlide(-1)" aria-label="Previous slide">&#8249;</button>
+        <button class="hero-nav next" onclick="changeHeroSlide(1)" aria-label="Next slide">&#8250;</button>
+
+        <!-- Dots -->
+        <div class="hero-dots">
+            <span class="hero-dot active" onclick="goToHeroSlide(0)"></span>
+            <span class="hero-dot" onclick="goToHeroSlide(1)"></span>
+            <span class="hero-dot" onclick="goToHeroSlide(2)"></span>
+            <span class="hero-dot" onclick="goToHeroSlide(3)"></span>
+            <span class="hero-dot" onclick="goToHeroSlide(4)"></span>
+        </div>
+
+        <!-- Dynamic Pulse CTA Button -->
+        <div class="pulse-cta-container">
+            <a href="https://wa.me/601176060833?text=Hi%20LG%20Subscribe%2C%20I%20want%20to%20know%20the%20latest%20offer%20please" class="pulse-cta-btn" target="_blank">
+                <span class="fire-icon">&#128293;</span>
+                <span>Ask for Latest Offer</span>
+            </a>
+        </div>
+    </div>
 
     <div class="category-bar">
         <div class="category-container">
@@ -1938,4 +2225,73 @@
     </style>
 
 </body>
-</html>
+</html>    <script>
+        // ===== HERO SLIDESHOW SCRIPT =====
+        let currentHeroSlide = 0;
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const heroDots = document.querySelectorAll('.hero-dot');
+        const totalHeroSlides = heroSlides.length;
+        let heroAutoPlay;
+
+        function showHeroSlide(index) {
+            heroSlides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            heroDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+            currentHeroSlide = index;
+        }
+
+        function changeHeroSlide(direction) {
+            let newIndex = currentHeroSlide + direction;
+            if (newIndex >= totalHeroSlides) newIndex = 0;
+            if (newIndex < 0) newIndex = totalHeroSlides - 1;
+            showHeroSlide(newIndex);
+            resetHeroAutoPlay();
+        }
+
+        function goToHeroSlide(index) {
+            showHeroSlide(index);
+            resetHeroAutoPlay();
+        }
+
+        function resetHeroAutoPlay() {
+            clearInterval(heroAutoPlay);
+            heroAutoPlay = setInterval(() => {
+                changeHeroSlide(1);
+            }, 5000);
+        }
+
+        // Auto-play every 5 seconds
+        heroAutoPlay = setInterval(() => {
+            changeHeroSlide(1);
+        }, 5000);
+
+        // Touch swipe support for mobile
+        const heroSlideshow = document.getElementById('heroSlideshow');
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        heroSlideshow.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        heroSlideshow.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) {
+                changeHeroSlide(1);
+            } else if (touchEndX - touchStartX > 50) {
+                changeHeroSlide(-1);
+            }
+        }, {passive: true});
+
+        // Pause on hover
+        heroSlideshow.addEventListener('mouseenter', () => {
+            clearInterval(heroAutoPlay);
+        });
+
+        heroSlideshow.addEventListener('mouseleave', () => {
+            resetHeroAutoPlay();
+        });
+    </script>
