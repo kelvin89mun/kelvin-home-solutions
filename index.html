@@ -699,92 +699,6 @@
             font-weight: 400;
         }
 
-        /* ===== DYNAMIC PULSE CTA ===== */
-        .pulse-cta-container {
-            position: absolute;
-            bottom: 25px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-            width: 90%;
-            max-width: 420px;
-        }
-
-        .pulse-cta-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            padding: 18px 28px;
-            background: linear-gradient(135deg, #c41e3a 0%, #e63950 50%, #c41e3a 100%);
-            background-size: 200% 200%;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 17px;
-            font-weight: 700;
-            letter-spacing: 0.3px;
-            box-shadow: 0 6px 25px rgba(196, 30, 58, 0.5), 0 0 0 4px rgba(196, 30, 58, 0.15);
-            animation: 
-                pulse-glow 2.5s ease-in-out infinite,
-                gradient-shift 3s ease infinite;
-            border: 3px solid rgba(255,255,255,0.2);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pulse-cta-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            animation: shimmer 3s infinite;
-        }
-
-        .pulse-cta-btn:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 35px rgba(196, 30, 58, 0.7), 0 0 0 6px rgba(196, 30, 58, 0.2);
-        }
-
-        .pulse-cta-btn .fire-icon {
-            font-size: 22px;
-            animation: fire-flicker 1s ease-in-out infinite alternate;
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { 
-                box-shadow: 0 6px 25px rgba(196, 30, 58, 0.5), 0 0 0 4px rgba(196, 30, 58, 0.15);
-                transform: scale(1);
-            }
-            50% { 
-                box-shadow: 0 8px 35px rgba(196, 30, 58, 0.7), 0 0 0 8px rgba(196, 30, 58, 0.25);
-                transform: scale(1.02);
-            }
-        }
-
-        @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes shimmer {
-            0% { left: -100%; }
-            50% { left: 100%; }
-            100% { left: 100%; }
-        }
-
-        @keyframes fire-flicker {
-            0% { transform: scale(1) rotate(-5deg); }
-            100% { transform: scale(1.2) rotate(5deg); }
-        }
-
         /* Responsive Hero Video */
         @media (max-width: 768px) {
             .hero-video-section { height: 60vh; min-height: 400px; }
@@ -812,6 +726,7 @@
   gtag('js', new Date());
   gtag('config', 'AW-11021213892');
 </script>
+<base target="_blank">
 <base target="_blank">
 </head>
 <body>
@@ -944,25 +859,12 @@
         <!-- Dark overlay for text readability -->
         <div class="hero-video-overlay"></div>
 
-        <!-- Promo Badge -->
-        <div class="hero-promo-badge">
-            <span class="promo-pulse"></span>
-            May 2026 Promo Running
-        </div>
-
         <!-- Caption -->
         <div class="hero-video-caption">
             <h2>LG PuriCare Water Purifier</h2>
             <p>Pure Water for Your Family — Advanced 4-stage filtration with UV sterilization</p>
         </div>
 
-        <!-- Dynamic Pulse CTA Button -->
-        <div class="pulse-cta-container">
-            <a href="https://wa.me/601176060833?text=Hi%20LG%20Subscribe%2C%20I%20want%20to%20know%20the%20latest%20offer%20please" class="pulse-cta-btn" target="_blank">
-                <span class="fire-icon">&#128293;</span>
-                <span>Ask for Latest Offer</span>
-            </a>
-        </div>
     </div>
 
     <div class="category-bar">
@@ -1642,4 +1544,4 @@
     </style>
 
 </body>
-</html>
+    </html>
