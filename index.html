@@ -72,112 +72,6 @@
             background: rgba(196, 30, 58, 0.05);
         }
 
-        /* Hero Section - Cozy */
-        .hero {
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 100px 20px 60px;
-            background: linear-gradient(135deg, #f8f5f2 0%, #ebe4dc 50%, #f5f0eb 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(196, 30, 58, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            max-width: 700px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            padding: 6px 16px;
-            background: rgba(196, 30, 58, 0.1);
-            border: 1px solid rgba(196, 30, 58, 0.2);
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #c41e3a;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        .hero h1 {
-            font-family: 'Inter', sans-serif;
-            font-size: 2.8rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 16px;
-            color: #1a1a1a;
-        }
-
-        .hero p {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 28px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            padding: 12px 28px;
-            background: #c41e3a;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.2);
-        }
-
-        .btn-primary:hover {
-            background: #a01729;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(196, 30, 58, 0.3);
-        }
-
-        .btn-secondary {
-            padding: 12px 28px;
-            background: white;
-            color: #2d2d2d;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            border: 1.5px solid #ddd;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .btn-secondary:hover {
-            border-color: #c41e3a;
-            color: #c41e3a;
-        }
-
         /* Category Filter */
         .category-bar {
             background: white;
@@ -415,7 +309,6 @@
             transform: translateX(3px);
         }
 
-
         /* Footer */
         .footer {
             background: #1a1a1a;
@@ -458,9 +351,7 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
             .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            /* aspect-ratio: 4/3 handles responsive height */
             .product-info { padding: 12px; }
             .product-info h3 { font-size: 0.9rem; }
             .nav-links { display: none; }
@@ -469,7 +360,6 @@
 
         @media (max-width: 480px) {
             .products-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 1.6rem; }
         }
 
         /* Hamburger Menu */
@@ -709,57 +599,80 @@
         }
 
         html { scroll-behavior: smooth; }
-        /* ===== HERO SLIDESHOW ===== */
-        .hero-slideshow {
+
+        /* ===== HERO VIDEO ===== */
+        .hero-video-section {
             position: relative;
             width: 100%;
             height: 75vh;
             min-height: 500px;
             max-height: 700px;
             overflow: hidden;
-            background: linear-gradient(135deg, #f8f5f2 0%, #ebe4dc 50%, #f5f0eb 100%);
+            background: #1a1a1a;
             margin-top: 0;
         }
 
-        .hero-slide {
+        .hero-video {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1.2s ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 1;
         }
 
-        .hero-slide.active {
-            opacity: 1;
-        }
-
-        .hero-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            object-position: center;
-            padding: 20px;
-        }
-
-        .hero-slide::after {
-            content: '';
+        .hero-video-overlay {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             background: linear-gradient(to bottom, 
-                rgba(0,0,0,0) 0%, 
-                rgba(0,0,0,0) 50%, 
-                rgba(0,0,0,0.6) 85%, 
+                rgba(0,0,0,0.2) 0%, 
+                rgba(0,0,0,0) 30%, 
+                rgba(0,0,0,0.5) 70%, 
                 rgba(0,0,0,0.85) 100%);
+            z-index: 2;
             pointer-events: none;
         }
 
-        .slide-caption {
+        .hero-promo-badge {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            padding: 8px 20px;
+            background: rgba(196, 30, 58, 0.9);
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.4);
+        }
+
+        .promo-pulse {
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            animation: promo-blink 1.5s infinite;
+        }
+
+        @keyframes promo-blink {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.3); }
+        }
+
+        .hero-video-caption {
             position: absolute;
             bottom: 140px;
             left: 50%;
@@ -768,11 +681,11 @@
             color: white;
             width: 90%;
             max-width: 600px;
-            z-index: 2;
+            z-index: 3;
             text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
         }
 
-        .slide-caption h2 {
+        .hero-video-caption h2 {
             font-size: 32px;
             font-weight: 800;
             margin-bottom: 12px;
@@ -780,66 +693,11 @@
             letter-spacing: -0.5px;
         }
 
-        .slide-caption p {
+        .hero-video-caption p {
             font-size: 16px;
             opacity: 0.9;
             font-weight: 400;
         }
-
-        .hero-dots {
-            position: absolute;
-            bottom: 100px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 10;
-        }
-
-        .hero-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.4);
-            cursor: pointer;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-
-        .hero-dot.active {
-            background: #c41e3a;
-            width: 28px;
-            border-radius: 5px;
-            border-color: rgba(255,255,255,0.3);
-        }
-
-        .hero-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.2);
-            border: none;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 22px;
-            color: white;
-            z-index: 10;
-            backdrop-filter: blur(8px);
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-nav:hover {
-            background: rgba(196, 30, 58, 0.8);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .hero-nav.prev { left: 20px; }
-        .hero-nav.next { right: 20px; }
 
         /* ===== DYNAMIC PULSE CTA ===== */
         .pulse-cta-container {
@@ -927,22 +785,20 @@
             100% { transform: scale(1.2) rotate(5deg); }
         }
 
-        /* Responsive Hero */
+        /* Responsive Hero Video */
         @media (max-width: 768px) {
-            .hero-slideshow { height: 60vh; min-height: 400px; }
-            .slide-caption h2 { font-size: 24px; }
-            .slide-caption p { font-size: 14px; }
-            .slide-caption { bottom: 120px; }
+            .hero-video-section { height: 60vh; min-height: 400px; }
+            .hero-video-caption h2 { font-size: 24px; }
+            .hero-video-caption p { font-size: 14px; }
+            .hero-video-caption { bottom: 120px; }
+            .hero-promo-badge { top: 85px; font-size: 0.8rem; }
             .pulse-cta-btn { font-size: 15px; padding: 16px 22px; }
-            .hero-nav { width: 38px; height: 38px; font-size: 18px; }
-            .hero-nav.prev { left: 10px; }
-            .hero-nav.next { right: 10px; }
         }
 
         @media (max-width: 480px) {
-            .hero-slideshow { height: 55vh; min-height: 350px; }
-            .slide-caption h2 { font-size: 20px; }
-            .slide-caption { bottom: 110px; }
+            .hero-video-section { height: 55vh; min-height: 350px; }
+            .hero-video-caption h2 { font-size: 20px; }
+            .hero-video-caption { bottom: 110px; }
             .pulse-cta-container { max-width: 340px; }
             .pulse-cta-btn { font-size: 14px; padding: 14px 18px; }
         }
@@ -956,9 +812,6 @@
   gtag('js', new Date());
   gtag('config', 'AW-11021213892');
 </script>
-<base target="_blank">
-<base target="_blank">
-<base target="_blank">
 <base target="_blank">
 </head>
 <body>
@@ -1003,7 +856,6 @@
             closeMenu();
         }
 
-        // Allow Enter key for search
         document.addEventListener('DOMContentLoaded', function() {
             const searchInput = document.getElementById('searchInput');
             if (searchInput) {
@@ -1014,28 +866,27 @@
                 });
             }
         });
-
-        // Chat icon now directly links to WhatsApp
     </script>
+
     <!-- Mobile Menu Overlay -->
     <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
 
     <!-- Side Menu -->
     <div class="side-menu" id="sideMenu">
         <div class="menu-header">
-            <button class="close-btn" onclick="closeMenu()">✕</button>
+            <button class="close-btn" onclick="closeMenu()">&#10005;</button>
         </div>
 
         <div class="search-box">
             <input type="text" placeholder="Search products" id="searchInput">
-            <button onclick="searchProducts()">🔍</button>
+            <button onclick="searchProducts()">&#128269;</button>
         </div>
 
         <div class="menu-items">
             <a href="#about" class="menu-item" onclick="closeMenu()">About</a>
             <div class="menu-item has-submenu" onclick="toggleSubmenu(this)">
                 Products
-                <span class="arrow">▼</span>
+                <span class="arrow">&#9660;</span>
                 <div class="submenu">
                     <a href="water-purifier.html">Water Purifiers</a>
                     <a href="air-purifier.html">Air Purifiers</a>
@@ -1053,10 +904,10 @@
         </div>
 
         <div class="menu-footer">
-            <a href="tel:+601176060833" class="menu-icon" title="Call Us">📞</a>
-            <a href="#location" class="menu-icon" title="Our Location">📍</a>
-            <a href="https://wa.me/601176060833" class="menu-icon" title="WhatsApp">💬</a>
-            <a href="https://wa.me/601176060833" class="menu-icon" title="Chat on WhatsApp" target="_blank">💭</a>
+            <a href="tel:+601176060833" class="menu-icon" title="Call Us">&#128222;</a>
+            <a href="#location" class="menu-icon" title="Our Location">&#128205;</a>
+            <a href="https://wa.me/601176060833" class="menu-icon" title="WhatsApp">&#128172;</a>
+            <a href="https://wa.me/601176060833" class="menu-icon" title="Chat on WhatsApp" target="_blank">&#128490;</a>
         </div>
     </div>
 
@@ -1071,69 +922,38 @@
             <a href="index.html" class="logo">
                 <img src="images/logo1.png" alt="LG Subscribe AI Authorized Dealer" onerror="this.style.display='none'">
             </a>
-            <div style="width: 40px;"></div> <!-- Spacer for balance -->
+            <div style="width: 40px;"></div>
         </div>
     </nav>
 
-    <!-- ===== HERO SLIDESHOW ===== -->
-    <div class="hero-slideshow" id="heroSlideshow">
+    <!-- ===== HERO VIDEO ===== -->
+    <div class="hero-video-section" id="heroVideoSection">
+        <video 
+            class="hero-video" 
+            autoplay 
+            muted 
+            loop 
+            playsinline
+            poster="images/WaterPurifiers.jpg"
+        >
+            <source src="images/heropage.MOV" type="video/quicktime">
+            <source src="images/heropage.MOV" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-        <!-- Slide 1: Water Purifier -->
-        <div class="hero-slide active">
-            <img src="images/WaterPurifiers.jpg" alt="LG PuriCare Water Purifier - Pure Water for Your Family">
-            <div class="slide-caption">
-                <h2>Pure Water for Your Family</h2>
-                <p>Advanced 4-stage filtration with UV sterilization</p>
-            </div>
+        <!-- Dark overlay for text readability -->
+        <div class="hero-video-overlay"></div>
+
+        <!-- Promo Badge -->
+        <div class="hero-promo-badge">
+            <span class="promo-pulse"></span>
+            May 2026 Promo Running
         </div>
 
-        <!-- Slide 2: Air Purifier -->
-        <div class="hero-slide">
-            <img src="images/AeroBooster.jpg" alt="LG Aero Booster Air Purifier - Breathe Cleaner Air">
-            <div class="slide-caption">
-                <h2>Breathe Cleaner Air</h2>
-                <p>PM 1.0 filtration covers up to 550sqft</p>
-            </div>
-        </div>
-
-        <!-- Slide 3: Air Conditioner -->
-        <div class="hero-slide">
-            <img src="images/ArtCool1.5HP.jpg" alt="LG ArtCool Air Conditioner - Stay Cool Save Energy">
-            <div class="slide-caption">
-                <h2>Stay Cool, Save Energy</h2>
-                <p>Dual Inverter technology with Plasmaster Ionizer++</p>
-            </div>
-        </div>
-
-        <!-- Slide 4: Refrigerator -->
-        <div class="hero-slide">
-            <img src="images/FridgeInstaview614L.jpg" alt="LG InstaView Refrigerator - Fresh Food Smart Storage">
-            <div class="slide-caption">
-                <h2>Fresh Food, Smart Storage</h2>
-                <p>Knock twice to see inside with InstaView</p>
-            </div>
-        </div>
-
-        <!-- Slide 5: Washer -->
-        <div class="hero-slide">
-            <img src="images/WashTower14KGW10KWD.jpg" alt="LG WashTower - Effortless Cleaning">
-            <div class="slide-caption">
-                <h2>Effortless Cleaning</h2>
-                <p>AI DD intelligent fabric care technology</p>
-            </div>
-        </div>
-
-        <!-- Navigation Arrows -->
-        <button class="hero-nav prev" onclick="changeHeroSlide(-1)" aria-label="Previous slide">&#8249;</button>
-        <button class="hero-nav next" onclick="changeHeroSlide(1)" aria-label="Next slide">&#8250;</button>
-
-        <!-- Dots -->
-        <div class="hero-dots">
-            <span class="hero-dot active" onclick="goToHeroSlide(0)"></span>
-            <span class="hero-dot" onclick="goToHeroSlide(1)"></span>
-            <span class="hero-dot" onclick="goToHeroSlide(2)"></span>
-            <span class="hero-dot" onclick="goToHeroSlide(3)"></span>
-            <span class="hero-dot" onclick="goToHeroSlide(4)"></span>
+        <!-- Caption -->
+        <div class="hero-video-caption">
+            <h2>LG PuriCare Water Purifier</h2>
+            <p>Pure Water for Your Family — Advanced 4-stage filtration with UV sterilization</p>
         </div>
 
         <!-- Dynamic Pulse CTA Button -->
@@ -1814,416 +1634,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="product-card" data-category="ac">
-                <div class="product-image" onclick="window.open('https://wa.me/601176060833?text=I%27m%20interested%20in%20LG%20ArtCool%201.5%20HP', '_blank')" style="cursor: pointer;">
-                    <img src="images/ArtCool1.5HP.jpg" alt="LG ArtCool 1.5 HP" loading="lazy">
-                    <span class="product-badge">AC</span>
-                </div>
-                <div class="product-info">
-                    <h3>LG ArtCool 1.5 HP</h3>
-                    <p class="product-desc">Premium wall-mounted AC with sleek mirror glass design. Plasmaster Ionizer++.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">Plasmaster Ionizer++</span><span class="feature-tag">1.5 HP</span><span class="feature-tag">Energy Saving</span><span class="feature-tag">5-Year Warranty</span>
-                    </div>
-                    <a href="lg-artcool-15-hp.html" class="btn-detail" target="_blank">View Details &rarr;</a>
-                    <div class="product-footer">
-                        <div class="product-price">RM100<span>/month</span></div>
-                        <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20ArtCool%201.5%20HP" class="btn-enquire" target="_blank">Enquire</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="ac">
-                <div class="product-image" onclick="window.open('https://wa.me/601176060833?text=I%27m%20interested%20in%20LG%20ArtCool%202.5%20HP', '_blank')" style="cursor: pointer;">
-                    <img src="images/ArtCool2.5HP.jpg" alt="LG ArtCool 2.5 HP" loading="lazy">
-                    <span class="product-badge">AC</span>
-                </div>
-                <div class="product-info">
-                    <h3>LG ArtCool 2.5 HP</h3>
-                    <p class="product-desc">Premium wall-mounted AC with sleek mirror glass design. For larger rooms.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">Plasmaster Ionizer++</span><span class="feature-tag">2.5 HP</span><span class="feature-tag">Energy Saving</span><span class="feature-tag">5-Year Warranty</span>
-                    </div>
-                    <a href="lg-artcool-25-hp.html" class="btn-detail" target="_blank">View Details &rarr;</a>
-                    <div class="product-footer">
-                        <div class="product-price">RM130<span>/month</span></div>
-                        <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20ArtCool%202.5%20HP" class="btn-enquire" target="_blank">Enquire</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="ac">
-                <div class="product-image" onclick="window.open('https://wa.me/601176060833?text=I%27m%20interested%20in%20LG%20DUALCOOL%201.0%20HP', '_blank')" style="cursor: pointer;">
-                    <img src="images/DualCoolWithPurifier1HP.jpg" alt="LG DUALCOOL 1.0 HP" loading="lazy">
-                    <span class="product-badge">AC</span>
-                </div>
-                <div class="product-info">
-                    <h3>LG DUALCOOL 1.0 HP</h3>
-                    <p class="product-desc">Wall-mounted AC with built-in air purification. Plasmaster Ionizer++.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">Air Purification</span><span class="feature-tag">1.0 HP</span><span class="feature-tag">Energy Saving</span><span class="feature-tag">5-Year Warranty</span>
-                    </div>
-                    <a href="lg-dualcool-10-hp.html" class="btn-detail" target="_blank">View Details &rarr;</a>
-                    <div class="product-footer">
-                        <div class="product-price">RM80<span>/month</span></div>
-                        <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20DUALCOOL%201.0%20HP" class="btn-enquire" target="_blank">Enquire</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="ac">
-                <div class="product-image" onclick="window.open('https://wa.me/601176060833?text=I%27m%20interested%20in%20LG%20DUALCOOL%201.5%20HP', '_blank')" style="cursor: pointer;">
-                    <img src="images/DualCoolWithPurifier1.5HP.png" alt="LG DUALCOOL 1.5 HP" loading="lazy">
-                    <span class="product-badge">AC</span>
-                </div>
-                <div class="product-info">
-                    <h3>LG DUALCOOL 1.5 HP</h3>
-                    <p class="product-desc">Wall-mounted AC with built-in air purification. Plasmaster Ionizer++.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">Air Purification</span><span class="feature-tag">1.5 HP</span><span class="feature-tag">Energy Saving</span><span class="feature-tag">5-Year Warranty</span>
-                    </div>
-                    <a href="lg-dualcool-15-hp.html" class="btn-detail" target="_blank">View Details &rarr;</a>
-                    <div class="product-footer">
-                        <div class="product-price">RM90<span>/month</span></div>
-                        <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20DUALCOOL%201.5%20HP" class="btn-enquire" target="_blank">Enquire</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="ac">
-                <div class="product-image" onclick="window.open('https://wa.me/601176060833?text=I%27m%20interested%20in%20LG%20DUALCOOL%20Premium%202.0%20HP', '_blank')" style="cursor: pointer;">
-                    <img src="images/DualCoolWithPurifier2HP.jpg" alt="LG DUALCOOL Premium 2.0 HP" loading="lazy">
-                    <span class="product-badge">AC</span>
-                </div>
-                <div class="product-info">
-                    <h3>LG DUALCOOL Premium 2.0 HP</h3>
-                    <p class="product-desc">Premium wall-mounted AC with built-in air purification for larger spaces.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">Air Purification</span><span class="feature-tag">2.0 HP</span><span class="feature-tag">Premium Design</span><span class="feature-tag">5-Year Warranty</span>
-                    </div>
-                    <a href="lg-dualcool-premium-20-hp.html" class="btn-detail" target="_blank">View Details &rarr;</a>
-                    <div class="product-footer">
-                        <div class="product-price">RM110<span>/month</span></div>
-                        <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20DUALCOOL%20Premium%202.0%20HP" class="btn-enquire" target="_blank">Enquire</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="ac">
-                <div class="product-image" onclick="window.open('https://wa.me/601176060833?text=I%27m%20interested%20in%20LG%20DUALCOOL%20Premium%202.5%20HP', '_blank')" style="cursor: pointer;">
-                    <img src="images/DualCoolWithPurifier2.5HP.jpg" alt="LG DUALCOOL Premium 2.5 HP" loading="lazy">
-                    <span class="product-badge">AC</span>
-                </div>
-                <div class="product-info">
-                    <h3>LG DUALCOOL Premium 2.5 HP</h3>
-                    <p class="product-desc">Premium wall-mounted AC with built-in air purification for large spaces.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">Air Purification</span><span class="feature-tag">2.5 HP</span><span class="feature-tag">Premium Design</span><span class="feature-tag">5-Year Warranty</span>
-                    </div>
-                    <a href="lg-dualcool-premium-25-hp.html" class="btn-detail" target="_blank">View Details &rarr;</a>
-                    <div class="product-footer">
-                        <div class="product-price">RM120<span>/month</span></div>
-                        <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20DUALCOOL%20Premium%202.5%20HP" class="btn-enquire" target="_blank">Enquire</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="other">
-                <div class="product-image" onclick="window.open('https://wa.me/601176060833?text=I%27m%20interested%20in%20LG%20Styler', '_blank')" style="cursor: pointer;">
-                    <img src="images/Styler.jpg" alt="LG Styler" loading="lazy">
-                    <span class="product-badge">OTHER</span>
-                </div>
-                <div class="product-info">
-                    <h3>LG Styler</h3>
-                    <p class="product-desc">Smart clothing care system with TrueSteam technology. Refresh & sanitize clothes.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">TrueSteam</span><span class="feature-tag">Dehumidify</span><span class="feature-tag">Sanitary</span><span class="feature-tag">7-Year Warranty</span>
-                    </div>
-                    <a href="lg-styler.html" class="btn-detail" target="_blank">View Details &rarr;</a>
-                    <div class="product-footer">
-                        <div class="product-price">RM90<span>/month</span></div>
-                        <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20Styler" class="btn-enquire" target="_blank">Enquire</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="tv">
-                <div class="product-image" onclick="window.open('https://wa.me/601176060833?text=I%27m%20interested%20in%20LG%20Sound%20Bar%20Dolby%20Atmos', '_blank')" style="cursor: pointer;">
-                    <img src="images/SoundBarWithDolbyAtmos.jpg" alt="LG Sound Bar Dolby Atmos" loading="lazy">
-                    <span class="product-badge">TV</span>
-                </div>
-                <div class="product-info">
-                    <h3>LG Sound Bar Dolby Atmos</h3>
-                    <p class="product-desc">Premium sound bar with Dolby Atmos. 3-Upfiring speakers for 3D audio.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">Dolby Atmos</span><span class="feature-tag">3-Upfiring</span><span class="feature-tag">5.1.3 Surround</span><span class="feature-tag">5-Year Warranty</span>
-                    </div>
-                    <a href="lg-sound-bar-dolby-atmos.html" class="btn-detail" target="_blank">View Details &rarr;</a>
-                    <div class="product-footer">
-                        <div class="product-price">RM60<span>/month</span></div>
-                        <a href="https://wa.me/601176060833?text=I'm%20interested%20in%20LG%20Sound%20Bar%20Dolby%20Atmos" class="btn-enquire" target="_blank">Enquire</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="tv">
-                <div class="product-image" onclick="window.open('https://wa.me/601176060833?text=I%27m%20interested%20in%20LG%20OLED%20B5%20TV%2077', '_blank')" style="cursor: pointer;">
-                    <img src="images/OledAiTv77.jpg" alt="LG OLED B5 TV 77&quot;" loading="lazy">
-                    <span class="product-badge">TV</span>
-                </div>
-                <div class="product-info">
-                    <h3>LG OLED B5 TV 77&quot;</h3>
-                    <p class="product-desc">77&quot; OLED B5 TV with AI technology. World's No.1 OLED TV for 12 years.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">OLED</span><span class="feature-tag">AI</span><span class="feature-tag">77" Screen</span><span class="feature-tag">5-Year Warranty</span>
-                    </div>
-                    <a href="product-detail.html" class="btn-detail" target="_blank">View Details &rarr;</a>
-                    <div class="product-footer">
-                        <div class="product-price">RM280<span>/month</span></div>
-                        <a href="https://wa.me/601176060833?text=I%27m%20interested%20in%20LG%20OLED%20B5%20TV%2077&quot;" class="btn-enquire" target="_blank">Enquire</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="tv">
-                <div class="product-image" onclick="window.open('https://wa.me/601176060833?text=I%27m%20interested%20in%20LG%20OLED%20B5%20TV%2077', '_blank')" style="cursor: pointer;">
-                    <img src="images/NanoCellAiTv65.jpg" alt="LG NanoCell AI TV 75&quot;" loading="lazy">
-                    <span class="product-badge">TV</span>
-                </div>
-                <div class="product-info">
-                    <h3>LG NanoCell AI TV 75&quot;</h3>
-                    <p class="product-desc">75&quot; 4K UHD NanoCell TV with AI technology. Vibrant colors and sharp details.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">4K UHD</span><span class="feature-tag">NanoCell</span><span class="feature-tag">AI</span><span class="feature-tag">75" Screen</span>
-                    </div>
-                    <a href="product-detail.html" class="btn-detail" target="_blank">View Details &rarr;</a>
-                    <div class="product-footer">
-                        <div class="product-price">RM110<span>/month</span></div>
-                        <a href="https://wa.me/601176060833?text=I%27m%20interested%20in%20LG%20NanoCell%20AI%20TV%2075&quot;" class="btn-enquire" target="_blank">Enquire</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="tv">
-                <div class="product-image" onclick="window.open('https://wa.me/601176060833?text=I%27m%20interested%20in%20LG%20OLED%20B5%20TV%2077', '_blank')" style="cursor: pointer;">
-                    <img src="images/QnedEvoAiTv65.jpg" alt="LG QNED Evo AI TV 65&quot;" loading="lazy">
-                    <span class="product-badge">TV</span>
-                </div>
-                <div class="product-info">
-                    <h3>LG QNED Evo AI TV 65&quot;</h3>
-                    <p class="product-desc">65&quot; QNED Mini LED TV with AI technology. Enhanced brightness and contrast.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">QNED Mini LED</span><span class="feature-tag">AI</span><span class="feature-tag">65" Screen</span><span class="feature-tag">5-Year Warranty</span>
-                    </div>
-                    <a href="product-detail.html" class="btn-detail" target="_blank">View Details &rarr;</a>
-                    <div class="product-footer">
-                        <div class="product-price">RM135<span>/month</span></div>
-                        <a href="https://wa.me/601176060833?text=I%27m%20interested%20in%20LG%20QNED%20Evo%20AI%20TV%2065&quot;" class="btn-enquire" target="_blank">Enquire</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <footer class="footer" id="contact">
-        <h3 onclick="window.location.href='product-detail.html'" style="cursor: pointer;">Get In Touch</h3>
-        <p>Ready to upgrade your home? Contact us for a free consultation.</p>
-        <div class="footer-contact">
-            <a href="https://wa.me/601176060833" target="_blank">WhatsApp: +60 11-7606 0833</a>
-            <a href="mailto:kelvin@lg-lifestyle-malaysia.shop">Email Us</a>
-        </div>
-        <div class="footer-disclaimer">
-            <p><strong>Brand Disclaimer</strong></p>
-            <p>This website is operated by authorised sales agent of LG Electronics Malaysia KELVIN CHAN (LGM260389). All LG trademark, logo and brand names are the property of LG Electronics Inc.</p>
-            <p>This is not the official LG Electronics website. For official information, please visit lg.com/my.</p>
-            <p style="margin-top: 10px;"><a href="privacy-policy.html" style="color:#c41e3a;">Privacy Policy</a> | © 2025 LG Subscribe Malaysia. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Product data for detail view
-        const productData = [
-            { name: "LG PuriCare Water Purifier WD516AN", price: "RM70", image: "images/WaterPurifiers.jpg", category: "water", desc: "Tankless design with 4-stage filtration and UV sterilization. Hot, cold & ambient water. WQA Gold Seal certified. 7 Years Self Service Filter & Warranty.", features: ["4-Stage Filter", "UV Sterilization", "WQA Gold Seal", "7-Year Warranty"] },
-            { name: "LG Objet Collection Water Purifier", price: "RM60", image: "images/ObjetCollection.jpg", category: "water", desc: "Stylish wall-mounted design. WQA Gold Seal certified with auto sterilization. Hot & ambient water. 7 Years Self Service Filter & Warranty.", features: ["WQA Gold Seal", "Auto Sterilization", "LG ThinQ", "7-Year Warranty"] },
-            { name: "LG Undersink Water Purifier", price: "RM110", image: "images/Undersink.jpg", category: "water", desc: "Sleek undersink design with modern faucet. WQA Gold Seal certified with 4-stage filtration. Hot, cold & ambient water with auto sterilization. 7 Years Self Service Filter & Warranty.", features: ["4-Stage Filtration", "Hot Cold Ambient", "LG ThinQ", "7-Year Warranty"] },
-            { name: "LG Objet Collection (4 Colors)", price: "RM70", image: "images/ObjetCollection2.jpg", category: "water", desc: "Premium wall-mounted water purifier available in 4 elegant colors. WQA Gold Seal certified with auto sterilization and ThinQ connectivity. 7 Years Self Service Filter & Warranty.", features: ["4 Colors", "WQA Gold Seal", "Auto Sterilization", "7-Year Warranty"] },
-            { name: "16L Dual Inverter Dehumidifier", price: "RM70", image: "images/16LDualInvertorDehumidifier.png", category: "air", desc: "Dual Inverter Compressor with compact design. Hidden handle & hidden cord for sleek appearance. Energy efficient dehumidification with LG ThinQ smart control. 7 Years Self Service Package & Warranty.", features: ["Dual Inverter", "Compact Design", "LG ThinQ", "7-Year Warranty"] },
-            { name: "LG Aero Booster Air Purifier", price: "RM65", image: "images/AeroBooster.jpg", category: "air", desc: "Advanced air purifier with PM 1.0 filtration system. 360° purification technology covers up to 550sf. Smart control via LG ThinQ app. 7 Years Self Service Filter & Warranty.", features: ["PM 1.0 Filtration", "360° Purification", "550sf Coverage", "7-Year Warranty"] },
-            { name: "LG Aero Furniture Air Purifier", price: "RM60", image: "images/AeroFuniture.jpg", category: "air", desc: "Innovative air purifier that doubles as furniture with built-in table surface. PM 1.0 filtration with 360° purification. Available in White, Black, and Yellow. Smart control via LG ThinQ app. 7 Years Self Service Filter & Warranty.", features: ["Table Surface", "3 Colors", "PM 1.0 Filtration", "7-Year Warranty"] },
-            { name: "LG HIT Air Purifier", price: "RM50", image: "images/HitAirPurifier.jpg", category: "air", desc: "High-performance air purifier with PM 1.0 filtration system. 360° purification technology covers up to 600sf for large rooms. Smart control via LG ThinQ app. 7 Years Self Service Filter & Warranty.", features: ["PM 1.0 Filtration", "600sf Coverage", "Compact Design", "7-Year Warranty"] },
-            { name: "LG Aero Hit Air Purifier", price: "RM50", image: "images/AeroHitAirPurifier.jpg", category: "air", desc: "Compact air purifier with PM 1.0 filtration system. 360° purification technology for comprehensive air cleaning. Smart control via LG ThinQ app. 7 Years Self Service Filter & Warranty.", features: ["PM 1.0 Filtration", "360° Purification", "Compact", "7-Year Warranty"] },
-            { name: "LG Alpha Pet Single Booster", price: "RM75", image: "images/AlphaPetAirPurifierSingleBooster.jpg", category: "air", desc: "Air purifier for pet owners with Single Booster technology. Pet Mode for hair & odor removal. 7 Years Self Service Filter & Warranty.", features: ["Pet Mode", "Single Booster", "PM 1.0 Filtration", "7-Year Warranty"] },
-            { name: "LG Alpha Pet Double Booster", price: "RM105", image: "images/AlphaPetAirPurifierDoubleBooster.jpg", category: "air", desc: "Advanced air purifier for pet owners with Double Booster technology. 7 Years Self Service Filter & Warranty.", features: ["Pet Mode", "Double Booster", "PM 1.0 Filtration", "7-Year Warranty"] },
-            { name: "LG Cat Tower Air Purifier", price: "RM70", image: "images/CatTowerAirPurifier.jpg", category: "air", desc: "Unique air purifier with built-in cat resting platform. 550sf coverage. 5 Years Regular Service & Warranty.", features: ["Cat Platform", "550sf Coverage", "PM 1.0 Filtration", "5-Year Warranty"] },
-            { name: "LG WashTower 14KG/10KG", price: "RM210", image: "images/WashTower14KGW10KWD.jpg", category: "washer", desc: "Premium stacked washer dryer tower with AI DD technology. TurboWash 360°. 5 Years Combine Service & Warranty.", features: ["AI DD", "TurboWash 360°", "Steam+", "5-Year Warranty"] },
-            { name: "LG WashTower 25KG/20KG", price: "RM244", image: "images/WashTower25KGW20KGD.jpg", category: "washer", desc: "Extra large capacity washer dryer tower. 25KG wash & 20KG dry capacity. 5 Years Combine Service & Warranty.", features: ["AI DD", "25KG Wash", "20KG Dry", "5-Year Warranty"] },
-            { name: "LG Washer Dryer Combo", price: "RM150", image: "images/WasherDryerComboSet.jpg", category: "washer", desc: "Complete laundry solution with AI DD washer and Dual Inverter Heat Pump dryer. 5 Years Combine Service & Warranty.", features: ["AI DD Washer", "Heat Pump Dryer", "TurboWash 360°", "5-Year Warranty"] },
-            { name: "LG AI DD 9KG Wash 5KG Dry", price: "RM75", image: "images/WashMachine AIDD9KGW5KWD.jpg", category: "washer", desc: "2-in-1 washer dryer with AI DD technology. 9KG wash & 5KG dry capacity. 5 Years Combine Service & Warranty.", features: ["AI DD", "9KG Wash", "5KG Dry", "5-Year Warranty"] },
-            { name: "LG AI DD 10KG Wash 6KG Dry", price: "RM85", image: "images/WashMachine AIDD10KGW6KWD.jpg", category: "washer", desc: "2-in-1 washer dryer with AI DD technology. 10KG wash & 6KG dry capacity. 5 Years Combine Service & Warranty.", features: ["AI DD", "10KG Wash", "6KG Dry", "5-Year Warranty"] },
-            { name: "LG AI DD 15KG Wash 8KG Dry", price: "RM105", image: "images/WashMachine AIDD15KGW8KWD.jpg", category: "washer", desc: "Large capacity 2-in-1 washer dryer. 15KG wash & 8KG dry for big families. 5 Years Combine Service & Warranty.", features: ["AI DD", "15KG Wash", "8KG Dry", "5-Year Warranty"] },
-            { name: "LG AI DD 20KG Washing Machine", price: "RM120", image: "images/WashMachine AIDD20KW.jpg", category: "washer", desc: "Extra large capacity washing machine with AI DD technology. 20KG capacity. 5 Years Combine Service & Warranty.", features: ["AI DD", "20KG Capacity", "Turbo 360°", "5-Year Warranty"] },
-            { name: "LG AI DD Washing Machine 10.5KG", price: "RM90", image: "images/WashingMachineAIDD10.5KG.jpg", category: "washer", desc: "Advanced washing machine with AI DD technology. 10.5KG capacity with TurboWash 360°. 5 Years Combine Service & Warranty.", features: ["AI DD", "10.5KG Capacity", "TurboWash 360°", "5-Year Warranty"] },
-            { name: "LG AI DD 17KG Top Load", price: "RM85", image: "images/WashingMachineDual17KG.jpg", category: "washer", desc: "Large capacity top load washing machine with AI DD. 17KG capacity. 5 Years Combine Service & Warranty.", features: ["AI DD", "17KG Capacity", "TurboDrum", "5-Year Warranty"] },
-            { name: "LG AI DD 20KG Top Load", price: "RM100", image: "images/WashingMachineDual20KG.jpg", category: "washer", desc: "Extra large capacity top load washing machine with AI DD. 20KG capacity. 5 Years Combine Service & Warranty.", features: ["AI DD", "20KG Capacity", "TurboDrum", "5-Year Warranty"] },
-            { name: "LG Dual Inverter Dryer 9KG", price: "RM100", image: "images/WashingMachineDualImverter9KG.jpg", category: "washer", desc: "Energy-efficient dryer with Dual Inverter Heat Pump technology. 9KG capacity. 5 Years Combine Service & Warranty.", features: ["Heat Pump", "9KG Capacity", "Auto Cleaning", "5-Year Warranty"] },
-            { name: "LG CordZero Vacuum", price: "RM130", image: "images/CordZero.jpg", category: "other", desc: "Cordless vacuum with dual battery packs. Auto Empty with UVC LED. 5 Years Self Service Filter & Warranty.", features: ["Dual Battery", "Auto Empty", "UVC LED", "5-Year Warranty"] },
-            { name: "LG Multi Door InstaView 614L", price: "RM180", image: "images/FridgeInstaview614L.jpg", category: "fridge", desc: "Premium multi-door refrigerator with InstaView glass panel. Knock twice to see inside. 5 Years Regular Service & Warranty.", features: ["InstaView", "614L Capacity", "Water Dispenser", "5-Year Warranty"] },
-            { name: "LG InstaView Fridge 508L", price: "RM160", image: "images/FridgeFrenchDoor508L.jpg", category: "fridge", desc: "Premium French door refrigerator with InstaView glass panel. 508L capacity. 5 Years Regular Service & Warranty.", features: ["InstaView", "508L Capacity", "French Door", "5-Year Warranty"] },
-            { name: "LG French Door Fridge 665L", price: "RM130", image: "images/FridgeFrenchDoor665L.jpg", category: "fridge", desc: "Large capacity French door refrigerator with 665L space. Multi-door design. 5 Years Regular Service & Warranty.", features: ["French Door", "665L Capacity", "Multi-Door", "5-Year Warranty"] },
-            { name: "LG Door In Door Fridge 635L", price: "RM130", image: "images/FridgeDoorInDoor635L.jpg", category: "fridge", desc: "Premium side-by-side refrigerator with Door In Door convenience. 635L capacity. 5 Years Regular Service & Warranty.", features: ["Door In Door", "635L Capacity", "Water Dispenser", "5-Year Warranty"] },
-            { name: "LG Side By Side Fridge 641L", price: "RM120", image: "images/FridgeSideBySide641L.jpg", category: "fridge", desc: "Large capacity side-by-side refrigerator with 641L space. Modern design. 5 Years Regular Service & Warranty.", features: ["Side By Side", "641L Capacity", "Water Dispenser", "5-Year Warranty"] },
-            { name: "LG Top Freezer Fridge 493L", price: "RM80", image: "images/FridgeTopFreezer493L.jpg", category: "fridge", desc: "Classic top freezer refrigerator with 493L capacity. Smart Inverter technology. 5 Years Regular Service & Warranty.", features: ["Top Freezer", "493L Capacity", "Smart Inverter", "5-Year Warranty"] },
-            { name: "LG Top Freezer Fridge 603L", price: "RM100", image: "images/FridgeTopFreezer603L.jpg", category: "fridge", desc: "Large capacity top freezer refrigerator with 603L space. Smart Inverter technology. 5 Years Regular Service & Warranty.", features: ["Top Freezer", "603L Capacity", "Smart Inverter", "5-Year Warranty"] },
-            { name: "LG QuadWash Dishwasher Silver", price: "RM130", image: "images/DishwasherQuadWash.jpg", category: "dishwasher", desc: "Advanced dishwasher with QuadWash technology. TrueSteam for hygienic results. 5 Years Regular Service & Warranty.", features: ["QuadWash", "TrueSteam", "Auto Door", "5-Year Warranty"] },
-            { name: "LG QuadWash Dishwasher", price: "RM150", image: "images/DishwasherQuadWash (2).jpg", category: "dishwasher", desc: "Advanced dishwasher with QuadWash technology. TrueSteam for hygienic results. 5 Years Regular Service & Warranty.", features: ["QuadWash", "TrueSteam", "Auto Door", "5-Year Warranty"] },
-            { name: "LG ArtCool 1.5 HP", price: "RM100", image: "images/ArtCool1.5HP.jpg", category: "ac", desc: "Premium wall-mounted AC with sleek mirror glass design. Plasmaster Ionizer++. 5 Years UV Steam Service & Warranty.", features: ["Plasmaster Ionizer++", "1.5 HP", "Energy Saving", "5-Year Warranty"] },
-            { name: "LG ArtCool 2.5 HP", price: "RM130", image: "images/ArtCool2.5HP.jpg", category: "ac", desc: "Premium wall-mounted AC with sleek mirror glass design. For larger rooms. 5 Years UV Steam Service & Warranty.", features: ["Plasmaster Ionizer++", "2.5 HP", "Energy Saving", "5-Year Warranty"] },
-            { name: "LG DUALCOOL 1.0 HP", price: "RM80", image: "images/DualCoolWithPurifier1HP.jpg", category: "ac", desc: "Wall-mounted AC with built-in air purification. Plasmaster Ionizer++. 5 Years UV Steam Service & Warranty.", features: ["Air Purification", "1.0 HP", "Energy Saving", "5-Year Warranty"] },
-            { name: "LG DUALCOOL 1.5 HP", price: "RM90", image: "images/DualCoolWithPurifier1.5HP.png", category: "ac", desc: "Wall-mounted AC with built-in air purification. Plasmaster Ionizer++. 5 Years UV Steam Service & Warranty.", features: ["Air Purification", "1.5 HP", "Energy Saving", "5-Year Warranty"] },
-            { name: "LG DUALCOOL Premium 2.0 HP", price: "RM110", image: "images/DualCoolWithPurifier2HP.jpg", category: "ac", desc: "Premium wall-mounted AC with built-in air purification for larger spaces. 5 Years UV Steam Service & Warranty.", features: ["Air Purification", "2.0 HP", "Premium Design", "5-Year Warranty"] },
-            { name: "LG DUALCOOL Premium 2.5 HP", price: "RM120", image: "images/DualCoolWithPurifier2.5HP.jpg", category: "ac", desc: "Premium wall-mounted AC with built-in air purification for large spaces. 5 Years UV Steam Service & Warranty.", features: ["Air Purification", "2.5 HP", "Premium Design", "5-Year Warranty"] },
-            { name: "LG Styler", price: "RM90", image: "images/Styler.jpg", category: "other", desc: "Smart clothing care system with TrueSteam technology. Refresh & sanitize clothes. 7 Years Self Service Package & Warranty.", features: ["TrueSteam", "Dehumidify", "Sanitary", "7-Year Warranty"] },
-            { name: "LG Sound Bar Dolby Atmos", price: "RM60", image: "images/SoundBarWithDolbyAtmos.jpg", category: "tv", desc: "Premium sound bar with Dolby Atmos. 3-Upfiring speakers for 3D audio. 5 Years Extend Warranty.", features: ["Dolby Atmos", "3-Upfiring", "5.1.3 Surround", "5-Year Warranty"] },
-            { name: "LG OLED B5 TV 77"", price: "RM280", image: "images/OledAiTv77.jpg", category: "tv", desc: "77&quot; OLED B5 TV with AI technology. World's No.1 OLED TV for 12 years. 5 Years Extend Warranty.", features: ["OLED", "AI", "77&quot; Screen", "5-Year Warranty"] },
-            { name: "LG NanoCell AI TV 75"", price: "RM110", image: "images/NanoCellAiTv65.jpg", category: "tv", desc: "75&quot; 4K UHD NanoCell TV with AI technology. Vibrant colors and sharp details. 5 Years Extend Warranty.", features: ["4K UHD", "NanoCell", "AI", "75&quot; Screen", "5-Year Warranty"] },
-            { name: "LG QNED Evo AI TV 65"", price: "RM135", image: "images/QnedEvoAiTv65.jpg", category: "tv", desc: "65&quot; QNED Mini LED TV with AI technology. Enhanced brightness and contrast. 5 Years Extend Warranty.", features: ["QNED Mini LED", "AI", "65&quot; Screen", "5-Year Warranty"] }
-        ];
-
-        function showProductDetail(card) {
-            const index = Array.from(document.querySelectorAll('.product-card')).indexOf(card);
-            const product = productData[index];
-            if (product) {
-                // Build URL with product parameters
-                const params = new URLSearchParams();
-                params.set('name', product.name);
-                params.set('price', product.price);
-                params.set('image', product.image);
-                params.set('category', product.category);
-                params.set('desc', product.desc);
-                params.set('features', JSON.stringify(product.features));
-
-                // Navigate to detail page with parameters
-                window.location.href = 'product-detail.html?' + params.toString();
-            }
-        }
-
-        </script>
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/601176060833" class="floating-whatsapp" target="_blank" title="Chat with us on WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        <span class="pulse"></span>
-    </a>
-
-    <style>
-        /* Floating WhatsApp Button */
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 85px;
-            height: 85px;
-            background: #25D366;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.55), 0 0 0 6px rgba(37, 211, 102, 0.15);
-            z-index: 1000;
-            transition: all 0.3s;
-            animation: slideIn 0.5s ease;
-            border: 4px solid white;
-        }
-
-        .floating-whatsapp:hover {
-            transform: scale(1.2) translateY(-5px);
-            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.7), 0 0 0 10px rgba(37, 211, 102, 0.2);
-        }
-
-        .floating-whatsapp svg {
-            width: 44px;
-            height: 44px;
-            fill: white;
-        }
-
-        /* Pulse animation */
-        .pulse {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: #25D366;
-            opacity: 0.4;
-            z-index: -1;
-            animation: pulse-ring 2s infinite;
-        }
-
-        .floating-whatsapp::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: #25D366;
-            opacity: 0.3;
-            z-index: -2;
-            animation: pulse-ring 2s infinite 0.5s;
-        }
-
-        .floating-whatsapp::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: #25D366;
-            opacity: 0.2;
-            z-index: -3;
-            animation: pulse-ring 2s infinite 1s;
-        }
-
-        @keyframes pulse-ring {
-            0% {
-                transform: scale(1);
-                opacity: 0.4;
-            }
-            50% {
-                transform: scale(1.6);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 0;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Mobile adjustment */
-        @media (max-width: 768px) {
-            .floating-whatsapp {
-                width: 75px;
-                height: 75px;
-                bottom: 15px;
-                right: 15px;
-                border: 3px solid white;
-                box-shadow: 0 6px 25px rgba(37, 211, 102, 0.55), 0 0 0 5px rgba(37, 211, 102, 0.15);
-            }
-            .floating-whatsapp svg {
+ svg {
                 width: 40px;
                 height: 40px;
             }
@@ -2231,73 +1642,4 @@
     </style>
 
 </body>
-</html>    <script>
-        // ===== HERO SLIDESHOW SCRIPT =====
-        let currentHeroSlide = 0;
-        const heroSlides = document.querySelectorAll('.hero-slide');
-        const heroDots = document.querySelectorAll('.hero-dot');
-        const totalHeroSlides = heroSlides.length;
-        let heroAutoPlay;
-
-        function showHeroSlide(index) {
-            heroSlides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
-            });
-            heroDots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-            currentHeroSlide = index;
-        }
-
-        function changeHeroSlide(direction) {
-            let newIndex = currentHeroSlide + direction;
-            if (newIndex >= totalHeroSlides) newIndex = 0;
-            if (newIndex < 0) newIndex = totalHeroSlides - 1;
-            showHeroSlide(newIndex);
-            resetHeroAutoPlay();
-        }
-
-        function goToHeroSlide(index) {
-            showHeroSlide(index);
-            resetHeroAutoPlay();
-        }
-
-        function resetHeroAutoPlay() {
-            clearInterval(heroAutoPlay);
-            heroAutoPlay = setInterval(() => {
-                changeHeroSlide(1);
-            }, 5000);
-        }
-
-        // Auto-play every 5 seconds
-        heroAutoPlay = setInterval(() => {
-            changeHeroSlide(1);
-        }, 5000);
-
-        // Touch swipe support for mobile
-        const heroSlideshow = document.getElementById('heroSlideshow');
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        heroSlideshow.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, {passive: true});
-
-        heroSlideshow.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            if (touchStartX - touchEndX > 50) {
-                changeHeroSlide(1);
-            } else if (touchEndX - touchStartX > 50) {
-                changeHeroSlide(-1);
-            }
-        }, {passive: true});
-
-        // Pause on hover
-        heroSlideshow.addEventListener('mouseenter', () => {
-            clearInterval(heroAutoPlay);
-        });
-
-        heroSlideshow.addEventListener('mouseleave', () => {
-            resetHeroAutoPlay();
-        });
-    </script>
+</html>
