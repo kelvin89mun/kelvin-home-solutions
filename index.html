@@ -1902,10 +1902,10 @@
                     '<img src="' + gImg + '" alt="' + p.imgAlt + (idx > 0 ? ' - view ' + (idx + 1) : '') + '">' +
                     '</div>');
             });
-            // Add video slides if available (for DUALCOOL products)
+            // Add video slides if available
             if (p.videos && p.videos.length > 0) {
-                var videoLabels = ['Air Purification', 'DUAL Inverter Tech', 'Smart Voice Control'];
-                var videoEmojis = ['&#127807;', '&#9889;', '&#128241;'];
+                var videoLabels = ['Air Purification', 'DUAL Inverter Tech', 'Smart Voice Control', '4-Stage Filtration', 'Instant Hot Water'];
+                var videoEmojis = ['&#127807;', '&#9889;', '&#128241;', '&#128167;', '&#127800;'];
                 p.videos.forEach(function(vSrc, vIdx) {
                     var mimeType = vSrc.endsWith('.webm') ? 'video/webm' : 'video/mp4';
                     allSlides.push('<div class="gallery-slide" style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);">' +
@@ -1971,7 +1971,7 @@
 <div class="products-grid" id="productsGrid">
 <div class="product-card" data-category="water">
 <div class="product-image" onclick="window.open('https://wa.me/601176060833?text=I%27m%20interested%20in%20LG%20PuriCare%20Water%20Purifier%20WD516AN', '_blank')" style="cursor: pointer;">
-<img alt="LG PuriCare Water Purifier WD516AN" loading="lazy" src="images/WaterPurifiers.jpg"/>
+<img alt="LG PuriCare Water Purifier WD516AN" loading="lazy" src="images/wpa18.jpg"/>
 <span class="product-badge">WATER</span>
 </div>
 <div class="product-info">
