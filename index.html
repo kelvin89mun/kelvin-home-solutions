@@ -76,7 +76,7 @@
         /* Category Filter */
         .category-bar {
             background: white;
-            padding: 15px 20px;
+            padding: 12px 20px;
             position: sticky;
             top: 65px;
             z-index: 100;
@@ -90,8 +90,8 @@
             margin: 0 auto;
             display: flex;
             gap: 8px;
-            justify-content: flex-start;
-            flex-wrap: nowrap;
+            justify-content: center;
+            flex-wrap: wrap;
             min-width: max-content;
             position: relative;
         }
@@ -118,22 +118,29 @@
         }
 
         .category-btn {
-            padding: 8px 18px;
-            background: transparent;
+            padding: 10px 24px;
+            background: white;
             border: 1.5px solid #e0e0e0;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
             font-weight: 500;
             color: #666;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.25s;
             white-space: nowrap;
+            flex-shrink: 0;
         }
 
-        .category-btn:hover, .category-btn.active {
+        .category-btn:hover {
+            border-color: #c41e3a;
+            color: #c41e3a;
+        }
+
+        .category-btn.active {
             background: #c41e3a;
             border-color: #c41e3a;
             color: white;
+            box-shadow: 0 4px 15px rgba(196,30,58,0.3);
         }
 
         /* Products Grid - Airy Breathing Cards */
@@ -1475,7 +1482,6 @@
   gtag('config', 'AW-11021213892');
 </script>
 <base target="_blank">
-<base target="_blank">
 </head>
 <body>
 <script>
@@ -1847,6 +1853,8 @@
                     card.style.display = 'none';
                 }
             });
+            // Update URL hash for sharing
+            history.pushState({ category: category }, '', '#' + category);
         }
 
         function showProductDetail(index) {
@@ -3194,8 +3202,10 @@
         // Handle browser back button - works with browser back/forward
         window.addEventListener('popstate', function(e) {
             var subpage = document.getElementById('detailSubpage');
+            var hash = window.location.hash;
+            
+            // If detail subpage is active, close it
             if (subpage.classList.contains('active')) {
-                // Hide detail subpage, restore main content
                 subpage.classList.remove('active');
                 document.getElementById('heroVideoSection').style.display = 'block';
                 document.querySelector('.category-bar').style.display = 'block';
@@ -3203,15 +3213,38 @@
                 document.querySelector('.footer').style.display = 'block';
                 document.querySelector('.navbar').style.display = 'block';
             }
+            
+            // Handle category hash from back button
+            if (hash && hash.startsWith('#') && !hash.startsWith('#detail-')) {
+                var cat = hash.replace('#', '');
+                if (['all','water','air','washer','fridge','ac','tv','other'].includes(cat)) {
+                    filterProducts(cat);
+                    document.getElementById('products').scrollIntoView({ behavior: 'instant' });
+                }
+            } else if (!hash || hash === '' || hash === '#') {
+                // No hash = show all
+                filterProducts('all');
+            }
         });
 
-        // Also handle initial page load with #detail-XX hash
+        // Handle initial page load with URL hash
         window.addEventListener('DOMContentLoaded', function() {
             var hash = window.location.hash;
-            if (hash && hash.startsWith('#detail-')) {
+            if (!hash || hash === '' || hash === '#') return;
+            
+            if (hash.startsWith('#detail-')) {
                 var idx = parseInt(hash.replace('#detail-', ''));
                 if (!isNaN(idx) && productData[idx]) {
                     showProductDetail(idx);
+                }
+            } else {
+                // Category hash like #water, #air
+                var cat = hash.replace('#', '');
+                if (['all','water','air','washer','fridge','ac','tv','other'].includes(cat)) {
+                    filterProducts(cat);
+                    setTimeout(function() {
+                        document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+                    }, 300);
                 }
             }
         });
