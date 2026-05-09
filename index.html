@@ -927,11 +927,6 @@
         }
         .detail-subpage.active {
             display: block;
-            animation: fadeInUp 0.4s ease;
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         .detail-nav-top {
             display: flex;
@@ -1876,7 +1871,6 @@
             // Badge & Title
             document.getElementById('spBadge').textContent = p.badge;
             document.getElementById('spTitle').textContent = p.title;
-            document.getElementById('galleryBadge1').textContent = p.badge;
 
             // Model
             var modelMatch = p.title.match(/([A-Z]+\d+[A-Z]*\d*)/);
