@@ -1,69 +1,232 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://lg-lifestyle-malaysia.shop/</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://lg-lifestyle-malaysia.shop/pages/products.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lg-lifestyle-malaysia.shop/pages/promo.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lg-lifestyle-malaysia.shop/pages/water-purifier.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lg-lifestyle-malaysia.shop/pages/air-purifier.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lg-lifestyle-malaysia.shop/pages/styler.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lg-lifestyle-malaysia.shop/pages/air-conditioners.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lg-lifestyle-malaysia.shop/pages/washer-dryers.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lg-lifestyle-malaysia.shop/pages/refrigerator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lg-lifestyle-malaysia.shop/pages/smart-tv.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lg-lifestyle-malaysia.shop/pages/vacuum-cleaners.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://subscribe-smarthome.com/</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/water-purifier.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/air-purifier.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/washing-machine.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/refrigerator.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/air-conditioner.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/tv-audio.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/others.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/privacy-policy.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/index.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-puricare-water-purifier-wd516an.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-objet-collection-water-purifier.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-undersink-water-purifier.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-objet-collection-4-colors.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/16l-dual-inverter-dehumidifier.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-aero-booster-air-purifier.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-aero-furniture-air-purifier.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-hit-air-purifier.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-aero-hit-air-purifier.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-alpha-pet-single-booster.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-alpha-pet-double-booster.html</loc>
+  <lastmod>2026-05-08T11:16:05+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-cat-tower-air-purifier.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-washtower-14kg-10kg.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-washtower-25kg-20kg.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-washer-dryer-combo.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-ai-dd-9kg-wash-5kg-dry.html</loc>
+  <lastmod>2026-05-08T11:16:05+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-ai-dd-10kg-wash-6kg-dry.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-ai-dd-15kg-wash-8kg-dry.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-ai-dd-20kg-washing-machine.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-ai-dd-washing-machine-105kg.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-ai-dd-17kg-top-load.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-ai-dd-20kg-top-load.html</loc>
+  <lastmod>2026-05-08T11:16:05+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-dual-inverter-dryer-9kg.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-cordzero-vacuum.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-multi-door-instaview-614l.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-instaview-fridge-508l.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-french-door-fridge-665l.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-door-in-door-fridge-635l.html</loc>
+  <lastmod>2026-05-08T11:16:05+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-side-by-side-fridge-641l.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-top-freezer-fridge-493l.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-top-freezer-fridge-603l.html</loc>
+  <lastmod>2026-05-08T11:16:05+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-quadwash-dishwasher-silver.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/lg-quadwash-dishwasher.html</loc>
+  <lastmod>2026-05-08T11:16:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://subscribe-smarthome.com/terms-conditions.html</loc>
+  <lastmod>2026-05-08T11:16:05+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
 </urlset>
