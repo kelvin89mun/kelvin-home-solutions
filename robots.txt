@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lg-lifestyle-malaysia.shop/sitemap.xml
+Sitemap: https://subscribe-smarthome.com/sitemap.xml
 
 # Brand Disclaimer
 # This website is operated by authorised sales agent KELVIN CHAN (LGM260389)
