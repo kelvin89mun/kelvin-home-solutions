@@ -1472,6 +1472,249 @@
             50% { transform: translateY(-8px); }
         }
 
+
+        /* ===== WHY SUBSCRIBE ===== */
+        .why-subscribe {
+            background: white;
+            padding: 60px 20px;
+            position: relative;
+        }
+        .why-subscribe-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .why-subscribe h2 {
+            text-align: center;
+            color: #1a1a1a;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .why-subscribe .subhead {
+            text-align: center;
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 40px;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .benefit-card {
+            background: #faf8f5;
+            border: 1px solid rgba(0,0,0,0.04);
+            border-radius: 20px;
+            padding: 28px 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .benefit-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+            border-color: rgba(196,30,58,0.1);
+        }
+        .benefit-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(196,30,58,0.08);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin: 0 auto 16px;
+        }
+        .benefit-card h3 {
+            color: #1a1a1a;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .benefit-card p {
+            color: #888;
+            font-size: 0.8rem;
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-subscribe h2 { font-size: 1.4rem; }
+        }
+
+        /* ===== TRUST BADGES ===== */
+        .trust-section {
+            background: white;
+            padding: 50px 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .trust-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .trust-item {
+            text-align: center;
+            flex: 1;
+            min-width: 140px;
+        }
+        .trust-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #c41e3a;
+            line-height: 1;
+        }
+        .trust-label {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+        .trust-divider {
+            width: 1px;
+            height: 50px;
+            background: rgba(0,0,0,0.08);
+        }
+        @media (max-width: 768px) {
+            .trust-divider { display: none; }
+            .trust-inner { gap: 20px; }
+            .trust-number { font-size: 1.8rem; }
+        }
+
+        /* ===== FAQ ===== */
+        .faq-section {
+            background: linear-gradient(135deg, #faf8f5 0%, #f5f0eb 100%);
+            padding: 60px 20px;
+        }
+        .faq-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-section h2 {
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        .faq-section .subhead {
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 36px;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 14px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .faq-question {
+            padding: 18px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #1a1a1a;
+            transition: background 0.2s;
+        }
+        .faq-question:hover { background: rgba(196,30,58,0.02); }
+        .faq-question .faq-toggle {
+            font-size: 1.2rem;
+            color: #c41e3a;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+        .faq-item.active .faq-toggle { transform: rotate(45deg); }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 24px 18px;
+        }
+        .faq-answer p {
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+
+        /* ===== VALUE BAR ===== */
+        .value-bar {
+            background: #f5f0eb;
+            padding: 14px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+        .value-bar-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .value-item {
+            color: #5a5a5a;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 4px 10px;
+            white-space: nowrap;
+        }
+        .value-divider {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #ccc;
+            flex-shrink: 0;
+        }
+
+        /* ===== STICKY CTA ===== */
+        .sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 12px 20px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+            z-index: 999;
+            justify-content: center;
+            gap: 10px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        .sticky-cta.show { display: flex; }
+        .sticky-cta a {
+            flex: 1;
+            max-width: 280px;
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+        .sticky-cta .btn-primary {
+            background: #25D366;
+            color: white;
+        }
+        .sticky-cta .btn-primary:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-11021213892"></script>
@@ -1481,6 +1724,7 @@
   gtag('js', new Date());
   gtag('config', 'AW-11021213892');
 </script>
+<base target="_blank">
 <base target="_blank">
 </head>
 <body>
@@ -1601,6 +1845,80 @@
 <div class="hero-video-caption" style="display: none;">
 </div>
 </div>
+
+<!-- ===== VALUE BAR (subtle, no promo language) ===== -->
+<div class="value-bar">
+    <div class="value-bar-inner">
+        <span class="value-item">&#128230; Delivery &amp; Setup Included</span>
+        <span class="value-divider"></span>
+        <span class="value-item">&#128736;&#65039; Full Maintenance Covered</span>
+        <span class="value-divider"></span>
+        <span class="value-item">&#128260; Upgrade to Latest Model</span>
+        <span class="value-divider"></span>
+        <span class="value-item">&#127969; Relocate When You Move</span>
+    </div>
+</div>
+
+<!-- ===== WHY SUBSCRIBE ===== -->
+<div class="why-subscribe">
+    <div class="why-subscribe-inner">
+        <h2>Why LG Subscribe is Smarter Than Buying</h2>
+        <p class="subhead">Join thousands of Malaysian families who switched to worry-free appliance subscription</p>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">&#128176;</div>
+                <h3>Zero Upfront Cost</h3>
+                <p>No deposit, no down payment. Start from RM50/month and get premium LG appliances immediately.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">&#128295;</div>
+                <h3>Free Maintenance</h3>
+                <p>All repairs, servicing & filter replacements included. We come to you, zero hassle.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">&#128170;</div>
+                <h3>5-7 Year Warranty</h3>
+                <p>Longer coverage than standard purchases. If it breaks, we fix or replace it for free.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">&#128260;</div>
+                <h3>Upgrade Anytime</h3>
+                <p>Technology changes? Upgrade to the latest model anytime. No need to sell your old unit.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== TRUST BADGES ===== -->
+<div class="trust-section">
+    <div class="trust-inner">
+        <div class="trust-item">
+            <div class="trust-number">2,800+</div>
+            <div class="trust-label">Happy Families</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+            <div class="trust-number">4,200+</div>
+            <div class="trust-label">Appliances Installed</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+            <div class="trust-number">4.9/5</div>
+            <div class="trust-label">Customer Rating</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+            <div class="trust-number">7</div>
+            <div class="trust-label">Years Warranty</div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== STICKY BOTTOM CTA ===== -->
+<div class="sticky-cta" id="stickyCta">
+    <a class="btn-primary" href="https://wa.me/601176060833" target="_blank">&#128172; Chat on WhatsApp</a>
+</div>
+
 <div class="category-bar">
 <div class="category-container">
 <button class="category-btn active" data-category="all" onclick="filterProducts('all')">All</button>
@@ -3148,6 +3466,95 @@
 
 </div>
 
+
+<!-- ===== FAQ ===== -->
+<div class="faq-section">
+    <div class="faq-inner">
+        <h2>Frequently Asked Questions</h2>
+        <p class="subhead">Everything you need to know before subscribing</p>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                How does LG Subscribe work?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>It is simple: choose your appliance, apply online, and we will deliver and install it at your home for FREE. You pay a fixed monthly fee that covers the appliance, all maintenance, and repairs. No surprises, no hidden charges.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                Is there any deposit or upfront payment?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>No! LG Subscribe requires ZERO deposit and ZERO down payment. You only start paying the monthly fee after installation is complete. First month is prorated based on your installation date.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                What happens if the appliance breaks down?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>All repairs are fully covered under your subscription. Simply contact us via WhatsApp and our technician will be dispatched within 48 hours. No repair fees, no parts charges - it is all included in your monthly fee.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                Who pays for filter replacements and servicing?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>We do! All routine maintenance, filter replacements, and servicing are completely FREE for the entire subscription period. For water purifiers, filters are replaced every 6 months. For air conditioners, servicing is done every 3-4 months.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                Can I upgrade to a newer model later?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Absolutely! You can upgrade to the latest model anytime after 12 months. When LG launches a new model, just let us know and we will swap it for you. No need to sell your old unit or deal with second-hand buyers.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                What if I move house?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>No problem at all! Just give us 2 weeks notice and we will relocate your appliance to your new home for FREE. This applies within Peninsular Malaysia. Your subscription continues seamlessly at the new location.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                What is the minimum subscription period?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>The minimum commitment is 3 years for most appliances. After the minimum period, you can continue subscribing, upgrade to a new model, or even purchase the appliance outright at a discounted price. Early termination fees may apply.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                How do I apply? How long does approval take?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Click "Enquire" or "Chat on WhatsApp" on any product. Our consultant Kelvin will guide you through the application. Most applications are approved within 1-2 working days. Once approved, installation is scheduled within 3-5 days.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="footer" id="contact">
     <h3>LG Subscribe Malaysia</h3>
     <p>Authorised Consultant | Kelvin Chan (M260389)</p>
@@ -3266,7 +3673,24 @@
                 }
             }
         });
-    </script>
+    
+
+        // Sticky CTA - show after scrolling past hero
+        (function() {
+            var stickyCta = document.getElementById('stickyCta');
+            if (!stickyCta) return;
+            var heroSection = document.getElementById('heroVideoSection');
+            var heroBottom = heroSection ? heroSection.offsetTop + heroSection.offsetHeight : 500;
+
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > heroBottom) {
+                    stickyCta.classList.add('show');
+                } else {
+                    stickyCta.classList.remove('show');
+                }
+            });
+        })();
+</script>
 
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/601176060833" class="floating-whatsapp" target="_blank" title="Chat with us on WhatsApp">
@@ -3276,4 +3700,4 @@
     </a>
 
 </body>
-</html>
+                                                         </html>
