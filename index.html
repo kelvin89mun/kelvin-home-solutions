@@ -1810,6 +1810,7 @@
   gtag('config', 'AW-11021213892');
 </script>
 <base target="_blank">
+<base target="_blank">
 </head>
 <body>
 <script>
@@ -3771,6 +3772,20 @@
         });
     
 
+        // Google Ads Conversion Tracking - WhatsApp clicks
+        document.addEventListener('click', function(e) {
+            var target = e.target.closest('a');
+            if (target && target.href && target.href.indexOf('api.whatsapp.com') !== -1) {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-11021213892/6MwxCNmlrqgcEMTBqYcp',
+                        'value': 1.0,
+                        'currency': 'MYR'
+                    });
+                }
+            }
+        });
+
         // Sticky CTA - show after scrolling past hero
         (function() {
             var stickyCta = document.getElementById('stickyCta');
@@ -3791,4 +3806,4 @@
     <!-- Floating WhatsApp Button -->
     <a href="https://api.whatsapp.com/send?phone=601176060833" class="floating-whatsapp" title="Chat with us on WhatsApp">
         &#128172; Chat
-       </a>
+    </a>
