@@ -1655,7 +1655,10 @@
         /* ===== VALUE BAR ===== */
         .value-bar {
             background: #f5f0eb;
-            padding: 14px 20px;
+            padding: 80px 20px 14px;
+            margin-top: 0;
+            position: relative;
+            z-index: 10;
             text-align: center;
             border-bottom: 1px solid rgba(0,0,0,0.04);
         }
@@ -1667,6 +1670,11 @@
             gap: 6px;
             flex-wrap: wrap;
             justify-content: center;
+            padding: 4px 0;
+        }
+        @media (max-width: 768px) {
+            .value-bar { padding: 90px 16px 12px; }
+            .value-item { font-size: 0.75rem; padding: 3px 6px; }
         }
         .value-item {
             color: #5a5a5a;
@@ -1732,7 +1740,6 @@
   gtag('js', new Date());
   gtag('config', 'AW-11021213892');
 </script>
-<base target="_blank">
 <base target="_blank">
 </head>
 <body>
@@ -1841,17 +1848,17 @@
 <div style="width: 40px;"></div>
 </div>
 </nav>
-<!-- ===== HERO VIDEO ===== -->
-<div class="hero-video-section" id="heroVideoSection">
-<video autoplay="" class="hero-video" id="heroVideo" loop="" muted="" playsinline="" poster="images/WaterPurifiers.jpg" preload="auto">
-<source src="images/heropage.MOV" type="video/quicktime"/>
-<source src="images/heropage.MOV" type="video/mp4"/>
-</video>
-<!-- Dark overlay for text readability -->
-<div class="hero-video-overlay"></div>
-<!-- Caption -->
-<div class="hero-video-caption" style="display: none;">
-</div>
+<!-- ===== HERO BANNER ===== -->
+<div class="hero-video-section" id="heroVideoSection" style="background:url('images/ac_scene_2.jpg') center/cover no-repeat;position:relative;min-height:500px;display:flex;align-items:center;justify-content:center;">
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.5) 100%);"></div>
+    <div style="position:relative;z-index:2;text-align:center;padding:60px 20px;max-width:600px;">
+        <h1 style="font-size:2.2rem;font-weight:800;color:white;margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,0.3);">Premium LG Appliances</h1>
+        <p style="font-size:1rem;color:rgba(255,255,255,0.9);margin-bottom:24px;line-height:1.6;">Subscribe from RM50/month &mdash; zero deposit, free installation, free maintenance</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+            <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20learn%20more%20about%20LG%20Subscribe" style="padding:14px 32px;background:#25D366;color:white;border-radius:30px;text-decoration:none;font-weight:600;font-size:0.95rem;box-shadow:0 4px 15px rgba(37,211,102,0.4);">&#128172; Chat on WhatsApp</a>
+            <a href="#products" onclick="event.preventDefault();document.querySelector('.products-section').scrollIntoView({behavior:'smooth'});" style="padding:14px 32px;background:rgba(255,255,255,0.15);color:white;border-radius:30px;text-decoration:none;font-weight:600;font-size:0.95rem;border:1px solid rgba(255,255,255,0.3);">&#128064; Browse Products</a>
+        </div>
+    </div>
 </div>
 
 <!-- ===== VALUE BAR (subtle, no promo language) ===== -->
@@ -2192,6 +2199,17 @@
             document.querySelector('.category-bar').style.display = 'none';
             document.querySelector('.products-section').style.display = 'none';
             document.querySelector('.footer').style.display = 'none';
+            // Hide conversion optimization sections
+            var vb = document.querySelector('.value-bar');
+            var ws = document.querySelector('.why-subscribe');
+            var ts = document.querySelector('.trust-section');
+            var fs = document.querySelector('.faq-section');
+            var sc = document.getElementById('stickyCta');
+            if (vb) vb.style.display = 'none';
+            if (ws) ws.style.display = 'none';
+            if (ts) ts.style.display = 'none';
+            if (fs) fs.style.display = 'none';
+            if (sc) sc.classList.remove('show');
             document.getElementById('privacySection').classList.remove('active');
             document.getElementById('termsSection').classList.remove('active');
             document.getElementById('aboutSection').classList.remove('active');
@@ -2236,7 +2254,7 @@
                     var mimeType = vSrc.endsWith('.webm') ? 'video/webm' : 'video/mp4';
                     allSlides.push('<div class="gallery-slide" style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);">' +
                         '<div style="position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:20px;">' +
-                        '<video autoplay loop muted playsinline style="max-width:85%;max-height:320px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.3);" preload="metadata">' +
+                        '<video loop muted playsinline controls style="max-width:85%;max-height:320px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.3);" preload="none">' +
                         '<source src="' + vSrc + '" type="' + mimeType + '"/>' +
                         '</video>' +
                         '<div style="margin-top:14px;padding:6px 16px;background:rgba(255,255,255,0.1);border-radius:20px;color:white;font-size:0.8rem;font-weight:600;text-align:center;">' +
