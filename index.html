@@ -665,12 +665,15 @@
         .hero-video-section {
             position: relative;
             width: 100%;
-            height: 55vh;
-            min-height: 360px;
-            max-height: 520px;
+            height: 50vh;
+            min-height: 300px;
+            max-height: 480px;
             overflow: hidden;
             background: #1a1a1a;
             margin-top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero-video {
@@ -735,20 +738,21 @@
         }
 
         .hero-video-caption {
-            position: absolute;
-            bottom: 140px;
-            left: 50%;
-            transform: translateX(-50%);
+            position: relative;
             text-align: center;
             color: white;
             width: 90%;
             max-width: 600px;
             z-index: 3;
             text-shadow: 0 2px 20px rgba(0,0,0,0.8), 0 4px 40px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero-video-caption h2 {
-            font-size: 38px;
+            font-size: 32px;
             font-weight: 800;
             margin-bottom: 12px;
             line-height: 1.2;
@@ -756,28 +760,28 @@
         }
 
         .hero-video-caption p {
-            font-size: 18px;
+            font-size: 16px;
             opacity: 0.9;
             font-weight: 400;
         }
 
         /* Responsive Hero */
         @media (max-width: 768px) {
-            .hero-video-section { height: 45vh; min-height: 280px; }
+            .hero-video-section { height: 40vh; min-height: 250px; }
             .hero-video-section h1 { font-size: 1.5rem !important; }
             .hero-video-section p { font-size: 0.8rem !important; margin-bottom: 6px !important; }
             .hero-video-section a { padding: 10px 20px !important; font-size: 0.8rem !important; }
-            .hero-video-caption h2 { font-size: 26px; }
-            .hero-video-caption p { font-size: 15px; }
-            .hero-video-caption { bottom: 90px; }
+            .hero-video-caption h2 { font-size: 22px; }
+            .hero-video-caption p { font-size: 14px; }
+            .hero-video-caption { bottom: auto; position: relative; }
             .hero-promo-badge { top: 75px; font-size: 0.75rem; }
             .pulse-cta-btn { font-size: 14px; padding: 14px 20px; }
         }
 
         @media (max-width: 480px) {
-            .hero-video-section { height: 42vh; min-height: 260px; }
+            .hero-video-section { height: 38vh; min-height: 240px; }
             .hero-video-caption h2 { font-size: 18px; }
-            .hero-video-caption { bottom: 80px; }
+            .hero-video-caption { bottom: auto; position: relative; }
             .pulse-cta-container { max-width: 320px; }
             .pulse-cta-btn { font-size: 13px; padding: 12px 16px; }
         }
@@ -1809,8 +1813,10 @@
   gtag('js', new Date());
   gtag('config', 'AW-11021213892');
 </script>
-<base target="_blank">
-<base target="_blank">
+
+
+
+
 <base target="_blank">
 <base target="_blank">
 </head>
@@ -1923,7 +1929,7 @@
 <!-- ===== HERO BANNER ===== -->
 <div class="hero-video-section" id="heroVideoSection" style="background:url('images/Hero516.jpg') center/cover no-repeat;position:relative;min-height:260px;display:flex;align-items:flex-start;justify-content:center;padding-top:50px;">
     <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.5) 100%);"></div>
-    <div style="position:relative;z-index:2;text-align:center;padding:24px 20px 16px;max-width:600px;">
+    <div style="position:relative;z-index:2;text-align:center;padding:24px 20px 16px;max-width:600px;margin:0 auto;display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:100%;">
         <h1 style="font-size:2.2rem;font-weight:800;color:white;margin-bottom:10px;text-shadow:0 2px 10px rgba(0,0,0,0.3);line-height:1.2;">Premium LG Appliances</h1>
         <p style="font-size:0.9rem;color:rgba(255,255,255,0.9);margin-bottom:8px;line-height:1.5;">LG PuriCare Water Purifier WD516AN &mdash; Zero deposit, free installation</p>
         <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px;">
@@ -2286,6 +2292,15 @@
             document.getElementById('privacySection').classList.remove('active');
             document.getElementById('termsSection').classList.remove('active');
             document.getElementById('aboutSection').classList.remove('active');
+            // Ensure main content sections are visible when returning
+            var vb = document.querySelector('.value-bar');
+            var ws = document.querySelector('.why-subscribe');
+            var ts = document.querySelector('.trust-section');
+            var fs = document.querySelector('.faq-section');
+            if (vb) vb.style.display = 'block';
+            if (ws) ws.style.display = 'block';
+            if (ts) ts.style.display = 'block';
+            if (fs) fs.style.display = 'block';
 
             var subpage = document.getElementById('detailSubpage');
             subpage.classList.add('active');
@@ -3719,6 +3734,15 @@
             document.getElementById('privacySection').classList.remove('active');
             document.getElementById('termsSection').classList.remove('active');
             document.getElementById('aboutSection').classList.remove('active');
+            // Ensure main content sections are visible when returning
+            var vb = document.querySelector('.value-bar');
+            var ws = document.querySelector('.why-subscribe');
+            var ts = document.querySelector('.trust-section');
+            var fs = document.querySelector('.faq-section');
+            if (vb) vb.style.display = 'block';
+            if (ws) ws.style.display = 'block';
+            if (ts) ts.style.display = 'block';
+            if (fs) fs.style.display = 'block';
             document.getElementById('detailSubpage').classList.remove('active');
             setTimeout(function() { window.scrollTo(0, 0); }, 50);
         }
