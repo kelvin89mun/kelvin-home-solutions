@@ -767,48 +767,21 @@
 
         /* Responsive Hero */
         @media (max-width: 768px) {
-            .hero-video-section { 
-                height: auto; 
-                min-height: 320px; 
-                max-height: none;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding-top: 60px;
-                padding-bottom: 24px;
-            }
+            .hero-video-section { height: auto; min-height: 320px; max-height: none; padding: 60px 16px 24px; flex-direction: column; align-items: center; justify-content: flex-start; }
             .hero-video-section h1 { font-size: 1.5rem !important; }
             .hero-video-section p { font-size: 0.8rem !important; margin-bottom: 6px !important; }
             .hero-video-section a { padding: 10px 20px !important; font-size: 0.8rem !important; }
-            .hero-video-caption h2 { font-size: 22px; margin-bottom: 8px; }
+            .hero-video-caption h2 { font-size: 22px; }
             .hero-video-caption p { font-size: 14px; }
-            .hero-video-caption { 
-                bottom: auto; 
-                position: relative; 
-                margin-top: 16px;
-                padding: 0 16px;
-            }
-            .hero-promo-badge { 
-                position: relative; 
-                top: auto; 
-                left: auto; 
-                transform: none;
-                font-size: 0.75rem; 
-                margin-bottom: 0;
-                order: -1;
-            }
+            .hero-video-caption { position: relative; width: 95%; margin-top: 12px; }
+            .hero-promo-badge { position: relative; top: auto; left: auto; transform: none; font-size: 0.75rem; margin-bottom: 4px; order: -1; flex-shrink: 0; }
             .pulse-cta-btn { font-size: 14px; padding: 14px 20px; }
         }
 
         @media (max-width: 480px) {
-            .hero-video-section { 
-                min-height: 300px;
-                padding-top: 55px;
-                padding-bottom: 20px;
-            }
+            .hero-video-section { min-height: 300px; padding-top: 55px; padding-bottom: 20px; }
             .hero-video-caption h2 { font-size: 18px; }
-            .hero-video-caption p { font-size: 13px; }
-            .hero-video-caption { bottom: auto; position: relative; }
+            .hero-video-caption { position: relative; }
             .pulse-cta-container { max-width: 320px; }
             .pulse-cta-btn { font-size: 13px; padding: 12px 16px; }
         }
@@ -1763,7 +1736,7 @@
             align-items: center;
         }
         .value-bullet::before {
-            content: '\25CF';
+            content: '●';
             color: #aaa;
             margin-right: 6px;
             font-size: 0.5rem;
@@ -1906,17 +1879,17 @@
 <!-- Side Menu -->
 <div class="side-menu" id="sideMenu">
 <div class="menu-header">
-<button class="close-btn" onclick="closeMenu()">&#x2715;</button>
+<button class="close-btn" onclick="closeMenu()">✕</button>
 </div>
 <div class="search-box">
 <input id="searchInput" placeholder="Search products" type="text"/>
-<button onclick="searchProducts()">&#128269;</button>
+<button onclick="searchProducts()">🔍</button>
 </div>
 <div class="menu-items">
 <a class="menu-item" href="#" onclick="closeMenu(); showAbout(); return false;">About</a>
 <div class="menu-item has-submenu" onclick="toggleSubmenu(this)">
                 Products
-                <span class="arrow">&#9660;</span>
+                <span class="arrow">▼</span>
 <div class="submenu">
 <a href="#products" onclick="event.preventDefault(); showMainContent(); filterProducts('water'); document.getElementById('products').scrollIntoView({behavior:'smooth'}); closeMenu();">Water Purifiers</a>
 <a href="#products" onclick="event.preventDefault(); showMainContent(); filterProducts('air'); document.getElementById('products').scrollIntoView({behavior:'smooth'}); closeMenu();">Air Purifiers</a>
@@ -1934,10 +1907,10 @@
 <a class="menu-item" href="#contact" onclick="closeMenu()">Contact</a>
 </div>
 <div class="menu-footer">
-<a class="menu-icon" href="tel:+601176060833" title="Call Us">&#128222;</a>
-<a class="menu-icon" href="#location" title="Our Location">&#128205;</a>
-<a class="menu-icon" href="https://api.whatsapp.com/send?phone=601176060833" title="WhatsApp">&#128172;</a>
-<a class="menu-icon" href="https://api.whatsapp.com/send?phone=601176060833" title="Chat on WhatsApp">&#128490;</a>
+<a class="menu-icon" href="tel:+601176060833" title="Call Us">📞</a>
+<a class="menu-icon" href="#location" title="Our Location">📍</a>
+<a class="menu-icon" href="https://api.whatsapp.com/send?phone=601176060833" title="WhatsApp">💬</a>
+<a class="menu-icon" href="https://api.whatsapp.com/send?phone=601176060833" title="Chat on WhatsApp">🗪</a>
 </div>
 </div>
 <!-- Navigation Bar -->
@@ -1965,9 +1938,9 @@
     </div>
     <div class="hero-video-caption">
         <h2>Premium LG Appliances</h2>
-        <p>LG PuriCare Water Purifier WD516AN &mdash; Zero deposit, free installation</p>
+        <p>LG PuriCare Water Purifier WD516AN — Zero deposit, free installation</p>
         <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px;">
-            <a href="https://api.whatsapp.com/send?phone=601176060833&amp;text=Hi%2C%20I%20want%20to%20learn%20more%20about%20LG%20Subscribe" style="padding:12px 24px;background:#25D366;color:white;border-radius:30px;text-decoration:none;font-weight:600;font-size:0.85rem;box-shadow:0 4px 15px rgba(37,211,102,0.4);white-space:nowrap;">&#128172; Chat on WhatsApp</a>
+            <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20learn%20more%20about%20LG%20Subscribe" style="padding:12px 24px;background:#25D366;color:white;border-radius:30px;text-decoration:none;font-weight:600;font-size:0.85rem;box-shadow:0 4px 15px rgba(37,211,102,0.4);white-space:nowrap;">&#128172; Chat on WhatsApp</a>
             <a href="#products" onclick="event.preventDefault();document.querySelector('.products-section').scrollIntoView({behavior:'smooth'});" style="padding:12px 24px;background:rgba(255,255,255,0.15);color:white;border-radius:30px;text-decoration:none;font-weight:600;font-size:0.85rem;border:1px solid rgba(255,255,255,0.3);white-space:nowrap;">&#128064; Browse Products</a>
         </div>
     </div>
@@ -2001,7 +1974,7 @@
             <div class="benefit-card">
                 <div class="benefit-icon">&#128295;</div>
                 <h3>Free Maintenance</h3>
-                <p>All repairs, servicing &amp; filter replacements included. We come to you, zero hassle.</p>
+                <p>All repairs, servicing & filter replacements included. We come to you, zero hassle.</p>
             </div>
             <div class="benefit-card">
                 <div class="benefit-icon">&#128170;</div>
@@ -2025,3 +1998,1845 @@
             <div class="trust-label">Happy Families</div>
         </div>
         <div class="trust-divider"></div>
+        <div class="trust-item">
+            <div class="trust-number">4,200+</div>
+            <div class="trust-label">Appliances Installed</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+            <div class="trust-number">4.9/5</div>
+            <div class="trust-label">Customer Rating</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+            <div class="trust-number">7</div>
+            <div class="trust-label">Years Warranty</div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== STICKY BOTTOM CTA ===== -->
+<div class="sticky-cta" id="stickyCta">
+    <a class="btn-primary" href="https://api.whatsapp.com/send?phone=601176060833">&#128172; Chat on WhatsApp</a>
+</div>
+
+<div class="category-bar">
+<div class="category-container">
+<button class="category-btn active" data-category="all" onclick="filterProducts('all')">All</button>
+<button class="category-btn" data-category="water" onclick="filterProducts('water')">Water</button>
+<button class="category-btn" data-category="air" onclick="filterProducts('air')">Air</button>
+<button class="category-btn" data-category="washer" onclick="filterProducts('washer')">Washer</button>
+<button class="category-btn" data-category="fridge" onclick="filterProducts('fridge')">Fridge</button>
+<button class="category-btn" data-category="ac" onclick="filterProducts('ac')">AC</button>
+<button class="category-btn" data-category="tv" onclick="filterProducts('tv')">TV</button>
+<button class="category-btn" data-category="other" onclick="filterProducts('other')">Others</button>
+<div class="category-scroll-hint">&#8250;</div>
+</div>
+</div>
+<script>
+        // ===== Product Detail Functions - Subpage Style =====
+        const productData = [
+        {category:'water',badge:'WATER',title:'LG PuriCare Water Purifier WD516AN',img:'images/WaterPurifiers.jpg',gallery:['images/wpa18.jpg','images/wpa9.jpg','images/wpa8.jpg','images/wpa15.jpg','images/wpa10.jpg','images/wpa5.jpg','images/wpa14.jpg'],videos:['images/wpav2.mp4','images/wpav3.mp4'],imgAlt:'LG PuriCare Water Purifier WD516AN',desc:'Tankless design with 4-stage filtration and UV sterilization. Hot, cold & ambient water. 170mm super slim fits any kitchen.',features:["4-Stage Filter", "UV Sterilization", "Auto Moving Tap", "7-Year Warranty"],price:'RM70',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20PuriCare%20Water%20Purifier%20WD516AN'},
+        {category:'water',badge:'WATER',title:'LG Objet Collection Water Purifier',img:'images/ObjetCollection.jpg',gallery:['images/wpc7.jpg','images/wpc1.jpg','images/wpc5.jpg','images/wpc4.jpg','images/wpc2.jpg'],videos:['images/wpcv6.webm','images/wpcv2.mp4','images/wpcv5.webm'],imgAlt:'LG Objet Collection Water Purifier',desc:'New Calming Beige color. Instant hot water with transparent heating pipe. UV auto sterilization every hour. 168mm super slim design.',features:["Calming Beige", "Instant Hot Water", "UV Auto Sterilization", "7-Year Warranty"],price:'RM60',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Objet%20Collection%20Water%20Purifier'},
+        {category:'water',badge:'WATER',title:'LG Undersink Water Purifier',img:'images/Undersink.jpg',gallery:['images/Undersink.jpg'],imgAlt:'LG Undersink Water Purifier',desc:'Sleek undersink design with modern faucet. 4-stage filtration.',features:["4-Stage Filtration", "Hot Cold Ambient", "LG ThinQ", "7-Year Warranty"],price:'RM110',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Undersink%20Water%20Purifier'},
+        {category:'water',badge:'WATER',title:'LG Objet Collection (4 Colors)',img:'images/ObjetCollection2.jpg',gallery:['images/wpc6.jpg','images/wpc7.jpg','images/wpc1.jpg','images/wpc5.jpg'],videos:['images/wpcv5.webm','images/wpcv6.webm','images/wpcv2.mp4'],imgAlt:'LG Objet Collection (4 Colors)',desc:'Available in 5 elegant colors: Calming Pink, Calming Blue, Calming Gray, Calming White, and Calming Beige. UV auto sterilization with instant hot water.',features:["5 Colors", "Instant Hot Water", "UV Auto Sterilization", "7-Year Warranty"],price:'RM70',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Objet%20Collection%20(4%20Colors)'},
+        {category:'air',badge:'AIR',title:'16L Dual Inverter Dehumidifier',img:'images/16LDualInvertorDehumidifier.png',gallery:['images/16LDualInvertorDehumidifier.png'],imgAlt:'16L Dual Inverter Dehumidifier',desc:'Dual Inverter Compressor with compact design. Hidden handle & cord.',features:["Dual Inverter", "Compact Design", "LG ThinQ", "7-Year Warranty"],price:'RM70',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%2016L%20Dual%20Inverter%20Dehumidifier'},
+        {category:'air',badge:'AIR',title:'LG Aero Booster Air Purifier',img:'images/AeroBooster.jpg',gallery:['images/AeroBooster.jpg'],imgAlt:'LG Aero Booster Air Purifier',desc:'Advanced air purifier with PM 1.0 filtration. 360° purification covers 550sf.',features:["PM 1.0 Filtration", "360\u00b0 Purification", "550sf Coverage", "7-Year Warranty"],price:'RM65',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Aero%20Booster%20Air%20Purifier'},
+        {category:'air',badge:'AIR',title:'LG Aero Furniture Air Purifier',img:'images/AeroFuniture.jpg',gallery:['images/AeroFuniture.jpg'],imgAlt:'LG Aero Furniture Air Purifier',desc:'Innovative air purifier that doubles as furniture with built-in table surface.',features:["Table Surface", "3 Colors", "PM 1.0 Filtration", "7-Year Warranty"],price:'RM60',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Aero%20Furniture%20Air%20Purifier'},
+        {category:'air',badge:'AIR',title:'LG HIT Air Purifier',img:'images/HitAirPurifier.jpg',gallery:['images/HitAirPurifier.jpg'],imgAlt:'LG HIT Air Purifier',desc:'High-performance air purifier. 360° purification covers 600sf for large rooms.',features:["PM 1.0 Filtration", "600sf Coverage", "Compact Design", "7-Year Warranty"],price:'RM50',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20HIT%20Air%20Purifier'},
+        {category:'air',badge:'AIR',title:'LG Aero Hit Air Purifier',img:'images/AeroHitAirPurifier.jpg',gallery:['images/AeroHitAirPurifier.jpg'],imgAlt:'LG Aero Hit Air Purifier',desc:'Compact air purifier with PM 1.0 filtration. 360° purification technology.',features:["PM 1.0 Filtration", "360\u00b0 Purification", "Compact", "7-Year Warranty"],price:'RM50',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Aero%20Hit%20Air%20Purifier'},
+        {category:'air',badge:'AIR',title:'LG Alpha Pet Single Booster',img:'images/AlphaPetAirPurifierSingleBooster.jpg',gallery:['images/AlphaPetAirPurifierSingleBooster.jpg'],imgAlt:'LG Alpha Pet Single Booster',desc:'Air purifier for pet owners with Single Booster technology. Pet Mode for hair & odor removal.',features:["Pet Mode", "Single Booster", "PM 1.0 Filtration", "7-Year Warranty"],price:'RM75',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Alpha%20Pet%20Single%20Booster'},
+        {category:'air',badge:'AIR',title:'LG Alpha Pet Double Booster',img:'images/AlphaPetAirPurifierDoubleBooster.jpg',gallery:['images/AlphaPetAirPurifierDoubleBooster.jpg'],imgAlt:'LG Alpha Pet Double Booster',desc:'Advanced air purifier for pet owners with Double Booster technology.',features:["Pet Mode", "Double Booster", "PM 1.0 Filtration", "7-Year Warranty"],price:'RM105',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Alpha%20Pet%20Double%20Booster'},
+        {category:'air',badge:'AIR',title:'LG Cat Tower Air Purifier',img:'images/CatTowerAirPurifier.jpg',gallery:['images/CatTowerAirPurifier.jpg'],imgAlt:'LG Cat Tower Air Purifier',desc:'Unique air purifier with built-in cat resting platform. 550sf coverage.',features:["Cat Platform", "550sf Coverage", "PM 1.0 Filtration", "5-Year Warranty"],price:'RM70',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Cat%20Tower%20Air%20Purifier'},
+        {category:'washer',badge:'WASHER',title:'LG WashTower 14KG/10KG',img:'images/WashTower14KGW10KWD.jpg',gallery:['images/WashTower14KGW10KWD.jpg'],imgAlt:'LG WashTower 14KG/10KG',desc:'Premium stacked washer dryer tower with AI DD technology. TurboWash 360°.',features:["AI DD", "TurboWash 360\u00b0", "Steam+", "5-Year Warranty"],price:'RM210',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20WashTower%2014KG/10KG'},
+        {category:'washer',badge:'WASHER',title:'LG WashTower 25KG/20KG',img:'images/WashTower25KGW20KGD.jpg',gallery:['images/WashTower25KGW20KGD.jpg'],imgAlt:'LG WashTower 25KG/20KG',desc:'Extra large capacity washer dryer tower. 25KG wash & 20KG dry capacity.',features:["AI DD", "25KG Wash", "20KG Dry", "5-Year Warranty"],price:'RM244',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20WashTower%2025KG/20KG'},
+        {category:'washer',badge:'WASHER',title:'LG Washer Dryer Combo',img:'images/WasherDryerComboSet.jpg',gallery:['images/WasherDryerComboSet.jpg'],imgAlt:'LG Washer Dryer Combo',desc:'Complete laundry solution with AI DD washer and Dual Inverter Heat Pump dryer.',features:["AI DD Washer", "Heat Pump Dryer", "TurboWash 360\u00b0", "5-Year Warranty"],price:'RM150',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Washer%20Dryer%20Combo'},
+        {category:'washer',badge:'WASHER',title:'LG AI DD 9KG Wash 5KG Dry',img:'images/WashMachine AIDD9KGW5KWD.jpg',gallery:['images/WashMachine AIDD9KGW5KWD.jpg'],imgAlt:'LG AI DD 9KG Wash 5KG Dry',desc:'2-in-1 washer dryer with AI DD technology. 9KG wash & 5KG dry capacity.',features:["AI DD", "9KG Wash", "5KG Dry", "5-Year Warranty"],price:'RM75',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20AI%20DD%209KG%20Wash%205KG%20Dry'},
+        {category:'washer',badge:'WASHER',title:'LG AI DD 10KG Wash 6KG Dry',img:'images/WashMachine AIDD10KGW6KWD.jpg',gallery:['images/WashMachine AIDD10KGW6KWD.jpg'],imgAlt:'LG AI DD 10KG Wash 6KG Dry',desc:'2-in-1 washer dryer with AI DD technology. 10KG wash & 6KG dry capacity.',features:["AI DD", "10KG Wash", "6KG Dry", "5-Year Warranty"],price:'RM85',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20AI%20DD%2010KG%20Wash%206KG%20Dry'},
+        {category:'washer',badge:'WASHER',title:'LG AI DD 15KG Wash 8KG Dry',img:'images/WashMachine AIDD15KGW8KWD.jpg',gallery:['images/WashMachine AIDD15KGW8KWD.jpg'],imgAlt:'LG AI DD 15KG Wash 8KG Dry',desc:'Large capacity 2-in-1 washer dryer. 15KG wash & 8KG dry for big families.',features:["AI DD", "15KG Wash", "8KG Dry", "5-Year Warranty"],price:'RM105',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20AI%20DD%2015KG%20Wash%208KG%20Dry'},
+        {category:'washer',badge:'WASHER',title:'LG AI DD 20KG Washing Machine',img:'images/WashMachine AIDD20KW.jpg',gallery:['images/WashMachine AIDD20KW.jpg'],imgAlt:'LG AI DD 20KG Washing Machine',desc:'Extra large capacity washing machine with AI DD technology. 20KG capacity.',features:["AI DD", "20KG Capacity", "Turbo 360\u00b0", "5-Year Warranty"],price:'RM120',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20AI%20DD%2020KG%20Washing%20Machine'},
+        {category:'washer',badge:'WASHER',title:'LG AI DD Washing Machine 10.5KG',img:'images/WashingMachineAIDD10.5KG.jpg',gallery:['images/WashingMachineAIDD10.5KG.jpg'],imgAlt:'LG AI DD Washing Machine 10.5KG',desc:'Advanced washing machine with AI DD technology. 10.5KG capacity with TurboWash 360°.',features:["AI DD", "10.5KG Capacity", "TurboWash 360\u00b0", "5-Year Warranty"],price:'RM90',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20AI%20DD%20Washing%20Machine%2010.5KG'},
+        {category:'washer',badge:'WASHER',title:'LG AI DD 17KG Top Load',img:'images/WashingMachineDual17KG.jpg',gallery:['images/WashingMachineDual17KG.jpg'],imgAlt:'LG AI DD 17KG Top Load',desc:'Large capacity top load washing machine with AI DD. 17KG capacity.',features:["AI DD", "17KG Capacity", "TurboDrum", "5-Year Warranty"],price:'RM85',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20AI%20DD%2017KG%20Top%20Load'},
+        {category:'washer',badge:'WASHER',title:'LG AI DD 20KG Top Load',img:'images/WashingMachineDual20KG.jpg',gallery:['images/WashingMachineDual20KG.jpg'],imgAlt:'LG AI DD 20KG Top Load',desc:'Extra large capacity top load washing machine with AI DD. 20KG capacity.',features:["AI DD", "20KG Capacity", "TurboDrum", "5-Year Warranty"],price:'RM100',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20AI%20DD%2020KG%20Top%20Load'},
+        {category:'washer',badge:'WASHER',title:'LG Dual Inverter Dryer 9KG',img:'images/WashingMachineDualImverter9KG.jpg',gallery:['images/WashingMachineDualImverter9KG.jpg'],imgAlt:'LG Dual Inverter Dryer 9KG',desc:'Energy-efficient dryer with Dual Inverter Heat Pump technology. 9KG capacity.',features:["Heat Pump", "9KG Capacity", "Auto Cleaning", "5-Year Warranty"],price:'RM100',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Dual%20Inverter%20Dryer%209KG'},
+        {category:'other',badge:'OTHER',title:'LG CordZero Vacuum',img:'images/CordZero.jpg',gallery:['images/CordZero.jpg'],imgAlt:'LG CordZero Vacuum',desc:'Cordless vacuum with dual battery packs. Auto Empty with UVC LED.',features:["Dual Battery", "Auto Empty", "UVC LED", "5-Year Warranty"],price:'RM130',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20CordZero%20Vacuum'},
+        {category:'fridge',badge:'FRIDGE',title:'LG Multi Door InstaView 614L',img:'images/FridgeInstaview614L.jpg',gallery:['images/FridgeInstaview614L.jpg'],imgAlt:'LG Multi Door InstaView 614L',desc:'Premium multi-door refrigerator with InstaView glass panel. Knock twice to see inside.',features:["InstaView", "614L Capacity", "Water Dispenser", "5-Year Warranty"],price:'RM180',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Multi%20Door%20InstaView%20614L'},
+        {category:'fridge',badge:'FRIDGE',title:'LG InstaView Fridge 508L',img:'images/FridgeFrenchDoor508L.jpg',gallery:['images/FridgeFrenchDoor508L.jpg'],imgAlt:'LG InstaView Fridge 508L',desc:'Premium French door refrigerator with InstaView glass panel. 508L capacity.',features:["InstaView", "508L Capacity", "French Door", "5-Year Warranty"],price:'RM160',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20InstaView%20Fridge%20508L'},
+        {category:'fridge',badge:'FRIDGE',title:'LG French Door Fridge 665L',img:'images/FridgeFrenchDoor665L.jpg',gallery:['images/FridgeFrenchDoor665L.jpg'],imgAlt:'LG French Door Fridge 665L',desc:'Large capacity French door refrigerator with 665L space. Multi-door design.',features:["French Door", "665L Capacity", "Multi-Door", "5-Year Warranty"],price:'RM130',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20French%20Door%20Fridge%20665L'},
+        {category:'fridge',badge:'FRIDGE',title:'LG Door In Door Fridge 635L',img:'images/FridgeDoorInDoor635L.jpg',gallery:['images/FridgeDoorInDoor635L.jpg'],imgAlt:'LG Door In Door Fridge 635L',desc:'Premium side-by-side refrigerator with Door In Door convenience. 635L capacity.',features:["Door In Door", "635L Capacity", "Water Dispenser", "5-Year Warranty"],price:'RM130',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Door%20In%20Door%20Fridge%20635L'},
+        {category:'fridge',badge:'FRIDGE',title:'LG Side By Side Fridge 641L',img:'images/FridgeSideBySide641L.jpg',gallery:['images/FridgeSideBySide641L.jpg'],imgAlt:'LG Side By Side Fridge 641L',desc:'Large capacity side-by-side refrigerator with 641L space. Modern design.',features:["Side By Side", "641L Capacity", "Water Dispenser", "5-Year Warranty"],price:'RM120',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Side%20By%20Side%20Fridge%20641L'},
+        {category:'fridge',badge:'FRIDGE',title:'LG Top Freezer Fridge 493L',img:'images/FridgeTopFreezer493L.jpg',gallery:['images/FridgeTopFreezer493L.jpg'],imgAlt:'LG Top Freezer Fridge 493L',desc:'Classic top freezer refrigerator with 493L capacity. Smart Inverter technology.',features:["Top Freezer", "493L Capacity", "Smart Inverter", "5-Year Warranty"],price:'RM80',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Top%20Freezer%20Fridge%20493L'},
+        {category:'fridge',badge:'FRIDGE',title:'LG Top Freezer Fridge 603L',img:'images/FridgeTopFreezer603L.jpg',gallery:['images/FridgeTopFreezer603L.jpg'],imgAlt:'LG Top Freezer Fridge 603L',desc:'Large capacity top freezer refrigerator with 603L space. Smart Inverter technology.',features:["Top Freezer", "603L Capacity", "Smart Inverter", "5-Year Warranty"],price:'RM100',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Top%20Freezer%20Fridge%20603L'},
+        {category:'other',badge:'DISHWASHER',title:'LG QuadWash Dishwasher Silver',img:'images/DishwasherQuadWash.jpg',gallery:['images/DishwasherQuadWash.jpg'],imgAlt:'LG QuadWash Dishwasher Silver',desc:'Advanced dishwasher with QuadWash technology. TrueSteam for hygienic results.',features:["QuadWash", "TrueSteam", "Auto Door", "5-Year Warranty"],price:'RM130',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20QuadWash%20Dishwasher%20Silver'},
+        {category:'other',badge:'DISHWASHER',title:'LG QuadWash Dishwasher',img:'images/DishwasherQuadWash (2).jpg',gallery:['images/DishwasherQuadWash (2).jpg'],imgAlt:'LG QuadWash Dishwasher',desc:'Advanced dishwasher with QuadWash technology. TrueSteam for hygienic results.',features:["QuadWash", "TrueSteam", "Auto Door", "5-Year Warranty"],price:'RM150',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20QuadWash%20Dishwasher'},
+        {category:'ac',badge:'AC',title:'LG ArtCool 1.5 HP',img:'images/ArtCool1.5HP.jpg',gallery:['images/aca3.jpg','images/aca2.jpg','images/aca4.jpg','images/aca1.jpg'],videos:['images/acav1.mp4','images/acav2.mp4','images/acav3.mp4','images/acav4.mp4'],imgAlt:'LG ArtCool 1.5 HP',desc:'Premium wall-mounted AC with sleek mirror glass design. Plasmaster Ionizer++.',features:["Plasmaster Ionizer++", "1.5 HP", "Energy Saving", "5-Year Warranty"],price:'RM100',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20ArtCool%201.5%20HP'},
+        {category:'ac',badge:'AC',title:'LG ArtCool 2.5 HP',img:'images/ArtCool2.5HP.jpg',gallery:['images/aca3.jpg','images/aca2.jpg','images/aca4.jpg','images/aca1.jpg'],videos:['images/acav1.mp4','images/acav2.mp4','images/acav3.mp4','images/acav4.mp4'],imgAlt:'LG ArtCool 2.5 HP',desc:'Premium wall-mounted AC with sleek mirror glass design. For larger rooms.',features:["Plasmaster Ionizer++", "2.5 HP", "Energy Saving", "5-Year Warranty"],price:'RM130',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20ArtCool%202.5%20HP'},
+        {category:'ac',badge:'AC',title:'LG DUALCOOL 1.0 HP',img:'images/DualCoolWithPurifier1HP.jpg',gallery:['images/ac_scene_1.jpg','images/ac1.jpg','images/ac5.jpg','images/ac7.jpg'],videos:['images/acv2.webm','images/acv3.mp4','images/acv4.mp4'],imgAlt:'LG DUALCOOL 1.0 HP',desc:'Wall-mounted AC with built-in air purification. Plasmaster Ionizer++.',features:["Air Purification", "1.0 HP", "Energy Saving", "5-Year Warranty"],price:'RM80',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20DUALCOOL%201.0%20HP'},
+        {category:'ac',badge:'AC',title:'LG DUALCOOL 1.5 HP',img:'images/DualCoolWithPurifier1.5HP.png',gallery:['images/ac_scene_1.jpg','images/ac1.jpg','images/ac5.jpg','images/ac7.jpg'],videos:['images/acv2.webm','images/acv3.mp4','images/acv4.mp4'],imgAlt:'LG DUALCOOL 1.5 HP',desc:'Wall-mounted AC with built-in air purification. Plasmaster Ionizer++.',features:["Air Purification", "1.5 HP", "Energy Saving", "5-Year Warranty"],price:'RM90',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20DUALCOOL%201.5%20HP'},
+        {category:'ac',badge:'AC',title:'LG DUALCOOL Premium 2.0 HP',img:'images/DualCoolWithPurifier2HP.jpg',gallery:['images/ac_scene_1.jpg','images/ac1.jpg','images/ac5.jpg','images/ac7.jpg'],videos:['images/acv2.webm','images/acv3.mp4','images/acv4.mp4'],imgAlt:'LG DUALCOOL Premium 2.0 HP',desc:'Premium wall-mounted AC with built-in air purification for larger spaces.',features:["Air Purification", "2.0 HP", "Premium Design", "5-Year Warranty"],price:'RM110',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20DUALCOOL%20Premium%202.0%20HP'},
+        {category:'ac',badge:'AC',title:'LG DUALCOOL Premium 2.5 HP',img:'images/DualCoolWithPurifier2.5HP.jpg',gallery:['images/ac_scene_1.jpg','images/ac1.jpg','images/ac5.jpg','images/ac7.jpg'],videos:['images/acv2.webm','images/acv3.mp4','images/acv4.mp4'],imgAlt:'LG DUALCOOL Premium 2.5 HP',desc:'Premium wall-mounted AC with built-in air purification for large spaces.',features:["Air Purification", "2.5 HP", "Premium Design", "5-Year Warranty"],price:'RM120',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20DUALCOOL%20Premium%202.5%20HP'},
+        {category:'tv',badge:'TV',title:'LG Sound Bar Dolby Atmos',img:'images/SoundBarWithDolbyAtmos.jpg',gallery:['images/SoundBarWithDolbyAtmos.jpg'],imgAlt:'LG Sound Bar Dolby Atmos',desc:'Premium sound bar with Dolby Atmos. 3-Upfiring speakers for 3D audio.',features:["Dolby Atmos", "3-Upfiring", "5.1.3 Surround", "5-Year Warranty"],price:'RM60',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20Sound%20Bar%20Dolby%20Atmos'},
+        {category:'tv',badge:'TV',title:'LG OLED B5 TV 77\"',img:'images/OledAiTv77.jpg',gallery:['images/OledAiTv77.jpg'],imgAlt:'LG OLED B5 TV 77',desc:'77\" OLED B5 TV with AI technology. World\'s No.1 OLED TV for 12 years.',features:["OLED", "AI", "77\" Screen", "5-Year Warranty"],price:'RM280',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20OLED%20B5%20TV%2077%22'},
+        {category:'tv',badge:'TV',title:'LG NanoCell AI TV 75\"',img:'images/NanoCellAiTv65.jpg',gallery:['images/NanoCellAiTv65.jpg'],imgAlt:'LG NanoCell AI TV 75',desc:'75\" 4K UHD NanoCell TV with AI technology. Vibrant colors and sharp details.',features:["4K UHD", "NanoCell", "AI", "75\" Screen"],price:'RM110',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20NanoCell%20AI%20TV%2075%22'},
+        {category:'tv',badge:'TV',title:'LG QNED Evo AI TV 65\"',img:'images/QnedEvoAiTv65.jpg',gallery:['images/QnedEvoAiTv65.jpg'],imgAlt:'LG QNED Evo AI TV 65',desc:'65\" QNED Mini LED TV with AI technology. Enhanced brightness and contrast.',features:["QNED Mini LED", "AI", "65\" Screen", "5-Year Warranty"],price:'RM135',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20QNED%20Evo%20AI%20TV%2065%22'},
+        {category:'other',badge:'OTHER',title:'LG Styler',img:'images/Styler.jpg',gallery:['images/Styler.jpg'],imgAlt:'LG Styler',desc:'Smart clothing care system with TrueSteam technology. Refresh & sanitize clothes.',features:["TrueSteam", "Dehumidify", "Sanitary", "7-Year Warranty"],price:'RM90',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20Styler'}
+        ];
+
+        // Brand mapping by category
+        const brandMap = {
+            water: { name: 'LG PuriCare', sub: 'Water Purifier' },
+            air: { name: 'LG PuriCare', sub: 'Air Purifier' },
+            washer: { name: 'LG', sub: 'Washing Machine' },
+            fridge: { name: 'LG', sub: 'Refrigerator' },
+            ac: { name: 'LG', sub: 'Air Conditioner' },
+            tv: { name: 'LG', sub: 'TV & Audio' },
+            other: { name: 'LG', sub: 'Home Appliance' }
+        };
+        const catLabelMap = {
+            water: 'Water Purifiers',
+            air: 'Air Purifiers',
+            washer: 'Washers & Dryers',
+            fridge: 'Refrigerators',
+            ac: 'Air Conditioners',
+            tv: 'TV & Audio',
+            other: 'Others'
+        };
+        // Feature descriptions for richer display
+        const featDescMap = {
+            '4-Stage Filter': 'Multi-stage filtration removes heavy metals and bacteria for clean water.',
+            'UV Sterilization': 'High temperature sterilization cleans internal pipes and outlet automatically.',
+            'WQA Gold Seal': 'Certified by Water Quality Association for superior filtration performance.',
+            '7-Year Warranty': 'Long-term warranty coverage for peace of mind.',
+            '5-Year Warranty': 'Comprehensive warranty coverage included with subscription.',
+            'Auto Sterilization': 'Automatic sterilization keeps the system hygienic at all times.',
+            'LG ThinQ': 'Smart connectivity with LG ThinQ app for remote control and monitoring.',
+            '4 Colors': 'Available in multiple elegant colors to match your home decor.',
+            'Dual Inverter': 'Energy-efficient Dual Inverter compressor for optimal performance.',
+            'Compact Design': 'Space-saving design that fits seamlessly into any room.',
+            'PM 1.0 Filtration': 'Advanced filtration captures ultrafine dust particles for cleaner air.',
+            '360° Purification': '360-degree circular design purifies air from all directions.',
+            '550sf Coverage': 'Powerful coverage for spaces up to 550 square feet.',
+            '600sf Coverage': 'Extended coverage for large rooms up to 600 square feet.',
+            'Table Surface': 'Innovative design doubles as functional furniture with built-in table.',
+            '3 Colors': 'Choose from multiple color options to suit your style.',
+            'Pet Mode': 'Specialized mode removes pet hair and odors effectively.',
+            'Single Booster': 'Single booster fan for efficient air circulation.',
+            'Double Booster': 'Dual booster fans for maximum airflow and purification.',
+            'Cat Platform': 'Built-in cat rest platform for your feline friend.',
+            'AI DD': 'AI Direct Drive optimizes wash cycles for fabric care.',
+            'TurboWash 360°': 'Complete 360-degree wash for thorough cleaning in less time.',
+            'Steam+': 'Steam technology reduces allergens and wrinkles effectively.',
+            '9KG Wash': 'Large 9KG washing capacity for family-sized loads.',
+            '10KG Wash': 'Extra-large 10KG washing capacity for bigger families.',
+            '15KG Wash': 'Massive 15KG wash capacity for heavy-duty laundry needs.',
+            '20KG Capacity': 'Industry-leading 20KG capacity for maximum laundry loads.',
+            '17KG Capacity': 'Generous 17KG top-load capacity for large families.',
+            '10.5KG Capacity': 'Optimal 10.5KG front-load capacity with energy efficiency.',
+            '5KG Dry': '5KG drying capacity with gentle care for fabrics.',
+            '6KG Dry': '6KG drying capacity for medium-sized loads.',
+            '8KG Dry': '8KG drying capacity for large volume drying needs.',
+            '20KG Dry': '20KG drying capacity, perfect for commercial use.',
+            '25KG Wash': 'Professional-grade 25KG washing for maximum loads.',
+            'Heat Pump': 'Energy-efficient heat pump dryer technology saves electricity.',
+            'TurboDrum': 'Powerful TurboDrum for deep and effective cleaning.',
+            'Auto Cleaning': 'Self-cleaning function maintains dryer performance automatically.',
+            'AI DD Washer': 'Intelligent washer with AI fabric sensing technology.',
+            'InstaView': 'Knock twice on the glass panel to see inside without opening.',
+            '614L Capacity': 'Massive 614L multi-door storage for large families.',
+            '508L Capacity': 'Spacious 508L French door design with premium features.',
+            '665L Capacity': 'Extra-large 665L capacity for maximum food storage.',
+            '635L Capacity': 'Generous 635L with convenient Door-in-Door access.',
+            '641L Capacity': 'Large 641L side-by-side with modern features.',
+            '493L Capacity': 'Efficient 493L top freezer with Smart Inverter.',
+            '603L Capacity': 'Spacious 603L top freezer with reliable performance.',
+            'Water Dispenser': 'Built-in water dispenser for convenient access to chilled water.',
+            'French Door': 'Elegant French door design for easy access and organization.',
+            'Multi-Door': 'Multi-door configuration for optimal storage flexibility.',
+            'Door In Door': 'Quick access panel reduces cold air loss by up to 41%.',
+            'Side By Side': 'Classic side-by-side design with ample storage space.',
+            'Top Freezer': 'Traditional top freezer design with modern Smart Inverter.',
+            'Smart Inverter': 'Energy-saving Smart Inverter compressor technology.',
+            'Plasmaster Ionizer++': 'Releases over 3 million ions to remove 99.9% bacteria.',
+            '1.5 HP': '1.5 horsepower ideal for medium-sized rooms.',
+            '2.5 HP': '2.5 horsepower for large living spaces.',
+            '1.0 HP': '1.0 horsepower perfect for small to medium rooms.',
+            '2.0 HP': '2.0 horsepower for spacious areas.',
+            'Energy Saving': 'DUAL Inverter Compressor saves up to 70% on energy.',
+            'Air Purification': 'Built-in air purification with HEPA filtration system.',
+            'Premium Design': 'Sleek mirror glass design enhances any interior.',
+            'Dolby Atmos': 'Immersive 3D surround sound with Dolby Atmos technology.',
+            '3-Upfiring': 'Upfiring speakers create overhead sound dimension.',
+            '5.1.3 Surround': 'Complete 5.1.3 channel surround sound experience.',
+            'OLED': 'Self-lit OLED pixels for perfect black and infinite contrast.',
+            '77" Screen': 'Massive 77-inch screen for cinematic viewing experience.',
+            '4K UHD': 'Crystal clear 4K Ultra HD resolution with vibrant colors.',
+            'NanoCell': 'NanoCell technology delivers pure, accurate colors.',
+            '75" Screen': 'Large 75-inch display for immersive entertainment.',
+            'QNED Mini LED': 'Quantum Dot NanoCell with Mini LED for stunning brightness.',
+            '65" Screen': '65-inch display perfect for living rooms.',
+            'AI': 'Alpha AI processor optimizes picture and sound intelligently.',
+            'Dual Battery': 'Two interchangeable battery packs for uninterrupted cleaning.',
+            'Auto Empty': 'Automatic dustbin emptying for hassle-free maintenance.',
+            'UVC LED': 'UVC LED sanitizes the dustbin for hygienic operation.',
+            'QuadWash': 'Multi-motion arms spray from multiple angles for thorough cleaning.',
+            'TrueSteam': 'TrueSteam technology eliminates 99.999% of bacteria.',
+            'Auto Door': 'Automatic door opening for enhanced drying performance.',
+            'Dehumidify': 'Built-in dehumidifier function for versatile use.',
+            'Sanitary': 'Sanitary cycle eliminates allergens and odors from clothing.'
+        };
+        // Feature icons (emoji-based)
+        const featIconMap = {
+            '4-Stage Filter': '&#128167;', 'UV Sterilization': '&#10013;', 'WQA Gold Seal': '&#127942;',
+            '7-Year Warranty': '&#128170;', '5-Year Warranty': '&#128170;', 'Auto Sterilization': '&#9889;',
+            'LG ThinQ': '&#128241;', '4 Colors': '&#127912;', 'Dual Inverter': '&#9889;',
+            'Compact Design': '&#127968;', 'PM 1.0 Filtration': '&#127807;', '360° Purification': '&#128168;',
+            '550sf Coverage': '&#128207;', '600sf Coverage': '&#128207;', 'Table Surface': '&#128719;',
+            '3 Colors': '&#127912;', 'Pet Mode': '&#128062;', 'Single Booster': '&#128168;',
+            'Double Booster': '&#128168;', 'Cat Platform': '&#128049;', 'AI DD': '&#129302;',
+            'TurboWash 360°': '&#128167;', 'Steam+': '&#9729;', '9KG Wash': '&#128230;',
+            '10KG Wash': '&#128230;', '15KG Wash': '&#128230;', '20KG Capacity': '&#128230;',
+            '17KG Capacity': '&#128230;', '10.5KG Capacity': '&#128230;', '5KG Dry': '&#127788;',
+            '6KG Dry': '&#127788;', '8KG Dry': '&#127788;', '20KG Dry': '&#127788;',
+            '25KG Wash': '&#128230;', 'Heat Pump': '&#128293;', 'TurboDrum': '&#128266;',
+            'Auto Cleaning': '&#129529;', 'AI DD Washer': '&#129302;', 'InstaView': '&#128064;',
+            '614L Capacity': '&#128229;', '508L Capacity': '&#128229;', '665L Capacity': '&#128229;',
+            '635L Capacity': '&#128229;', '641L Capacity': '&#128229;', '493L Capacity': '&#128229;',
+            '603L Capacity': '&#128229;', 'Water Dispenser': '&#128688;', 'French Door': '&#128739;',
+            'Multi-Door': '&#128739;', 'Door In Door': '&#128739;', 'Side By Side': '&#128739;',
+            'Top Freezer': '&#10052;', 'Smart Inverter': '&#9889;', 'Plasmaster Ionizer++': '&#127774;',
+            '1.5 HP': '&#10052;', '2.5 HP': '&#10052;', '1.0 HP': '&#10052;', '2.0 HP': '&#10052;',
+            'Energy Saving': '&#128161;', 'Air Purification': '&#127807;', 'Premium Design': '&#128142;',
+            'Dolby Atmos': '&#127911;', '3-Upfiring': '&#127925;', '5.1.3 Surround': '&#127925;',
+            'OLED': '&#127903;', '77" Screen': '&#127903;', '4K UHD': '&#127903;', 'NanoCell': '&#127903;',
+            '75" Screen': '&#127903;', 'QNED Mini LED': '&#127903;', '65" Screen': '&#127903;', 'AI': '&#129302;',
+            'Dual Battery': '&#128267;', 'Auto Empty': '&#128230;', 'UVC LED': '&#128161;',
+            'QuadWash': '&#128167;', 'TrueSteam': '&#9729;', 'Auto Door': '&#128682;',
+            'Dehumidify': '&#127783;', 'Sanitary': '&#128083;'
+        };
+
+        function parsePrice(priceStr) {
+            const num = parseInt(priceStr.replace(/[^0-9]/g, ''));
+            return isNaN(num) ? 70 : num;
+        }
+
+        function calculatePrices(basePrice) {
+            const p = parsePrice(basePrice);
+            return {
+                outright: 'RM' + (p * 45).toLocaleString(),
+                self7: 'RM' + p + '/mth',
+                self5: 'RM' + Math.round(p * 1.4) + '/mth',
+                reg7: 'RM' + Math.round(p * 1.25) + '/mth',
+                reg5: 'RM' + Math.round(p * 1.7) + '/mth',
+                combo7: 'RM' + Math.round(p * 1.1) + '/mth',
+                combo5: 'RM' + Math.round(p * 1.55) + '/mth'
+            };
+        }
+
+        // Gallery functions
+        function galleryScroll() {
+            var scroll = document.getElementById('galleryScroll');
+            var dots = document.querySelectorAll('.gallery-dot');
+            var slideWidth = scroll.offsetWidth;
+            var index = Math.round(scroll.scrollLeft / slideWidth);
+            dots.forEach(function(d, i) {
+                d.classList.toggle('active', i === index);
+            });
+        }
+        function galleryPrev() {
+            var scroll = document.getElementById('galleryScroll');
+            scroll.scrollBy({ left: -scroll.offsetWidth, behavior: 'smooth' });
+        }
+        function galleryNext() {
+            var scroll = document.getElementById('galleryScroll');
+            scroll.scrollBy({ left: scroll.offsetWidth, behavior: 'smooth' });
+        }
+        function galleryGoTo(index) {
+            var scroll = document.getElementById('galleryScroll');
+            scroll.scrollTo({ left: index * scroll.offsetWidth, behavior: 'smooth' });
+        }
+        document.getElementById('galleryScroll').addEventListener('scroll', galleryScroll);
+
+        function filterProducts(category) {
+            const buttons = document.querySelectorAll('.category-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.category === category) {
+                    btn.classList.add('active');
+                }
+            });
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            // Update URL hash for sharing
+            history.pushState({ category: category }, '', '#' + category);
+        }
+
+        function showProductDetail(index) {
+            var p = productData[index];
+            if (!p) return;
+
+            // Hide main content, show subpage
+            document.getElementById('heroVideoSection').style.display = 'none';
+            document.querySelector('.category-bar').style.display = 'none';
+            document.querySelector('.products-section').style.display = 'none';
+            document.querySelector('.footer').style.display = 'none';
+            // Hide conversion optimization sections
+            var vb = document.querySelector('.value-bar');
+            var ws = document.querySelector('.why-subscribe');
+            var ts = document.querySelector('.trust-section');
+            var fs = document.querySelector('.faq-section');
+            var sc = document.getElementById('stickyCta');
+            if (vb) vb.style.display = 'none';
+            if (ws) ws.style.display = 'none';
+            if (ts) ts.style.display = 'none';
+            if (fs) fs.style.display = 'none';
+            if (sc) sc.classList.remove('show');
+            document.getElementById('privacySection').classList.remove('active');
+            document.getElementById('termsSection').classList.remove('active');
+            document.getElementById('aboutSection').classList.remove('active');
+            // Ensure main content sections are visible when returning
+            var vb = document.querySelector('.value-bar');
+            var ws = document.querySelector('.why-subscribe');
+            var ts = document.querySelector('.trust-section');
+            var fs = document.querySelector('.faq-section');
+            if (vb) vb.style.display = 'block';
+            if (ws) ws.style.display = 'block';
+            if (ts) ts.style.display = 'block';
+            if (fs) fs.style.display = 'block';
+
+            var subpage = document.getElementById('detailSubpage');
+            subpage.classList.add('active');
+            history.pushState({ detail: index }, '', '#detail-' + index);
+            setTimeout(function() { window.scrollTo(0, 0); }, 50);
+
+            // Brand
+            var brand = brandMap[p.category] || brandMap.other;
+            // Badge & Title
+            document.getElementById('spBadge').textContent = p.badge;
+            document.getElementById('spTitle').textContent = p.title;
+
+            // Model
+            var modelMatch = p.title.match(/([A-Z]+\d+[A-Z]*\d*)/);
+            document.getElementById('spModel').textContent = modelMatch ? modelMatch[1] : '';
+
+            // Description
+            document.getElementById('spDesc').textContent = p.desc;
+
+            // Gallery images - dynamic from productData gallery array
+            var galleryImages = p.gallery || [p.img];
+            var galleryScroll = document.getElementById('galleryScroll');
+            var galleryDots = document.getElementById('galleryDots');
+            var galleryHint = document.getElementById('galleryHint');
+            
+            // Build slides (images + optional videos)
+            var allSlides = [];
+            galleryImages.forEach(function(gImg, idx) {
+                allSlides.push('<div class="gallery-slide">' +
+                    '<span class="gallery-badge"' + (idx > 0 ? ' style="display:none;"' : '') + '>' + p.badge + '</span>' +
+                    '<img src="' + gImg + '" alt="' + p.imgAlt + (idx > 0 ? ' - view ' + (idx + 1) : '') + '">' +
+                    '</div>');
+            });
+            // Add video slides if available
+            if (p.videos && p.videos.length > 0) {
+                var videoLabels = ['Air Purification', 'DUAL Inverter Tech', 'Smart Voice Control', '4-Stage Filtration', 'Instant Hot Water'];
+                var videoEmojis = ['&#127807;', '&#9889;', '&#128241;', '&#128167;', '&#127800;'];
+                p.videos.forEach(function(vSrc, vIdx) {
+                    var mimeType = vSrc.endsWith('.webm') ? 'video/webm' : 'video/mp4';
+                    allSlides.push('<div class="gallery-slide" style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);">' +
+                        '<div style="position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:20px;">' +
+                        '<video loop muted playsinline controls style="max-width:85%;max-height:320px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.3);" preload="none">' +
+                        '<source src="' + vSrc + '" type="' + mimeType + '"/>' +
+                        '</video>' +
+                        '<div style="margin-top:14px;padding:6px 16px;background:rgba(255,255,255,0.1);border-radius:20px;color:white;font-size:0.8rem;font-weight:600;text-align:center;">' +
+                        videoEmojis[vIdx] + ' ' + videoLabels[vIdx] + '</div></div></div>');
+                });
+            }
+            galleryScroll.innerHTML = allSlides.join('');
+
+            // Build dots
+            var totalSlides = allSlides.length;
+            galleryDots.innerHTML = Array(totalSlides).fill(0).map(function(_, idx) {
+                return '<button class="gallery-dot' + (idx === 0 ? ' active' : '') + '" onclick="galleryGoTo(' + idx + ')"></button>';
+            }).join('');
+
+            // Show/hide hint based on total slide count
+            galleryHint.style.display = totalSlides > 1 ? 'block' : 'none';
+
+            // Prices
+            var prices = calculatePrices(p.price);
+            document.getElementById('spPrice').innerHTML = p.price + '<span>/month</span>';
+            document.getElementById('spPriceNote').textContent = '7 Years Self-Service from ' + p.price + '/month';
+            document.getElementById('spPriceSelf7').innerHTML = prices.self7 + '<span style="font-size:0.72rem;font-weight:400;color:#999;">/mth</span>';
+            document.getElementById('spPriceReg7').innerHTML = prices.reg7 + '<span style="font-size:0.72rem;font-weight:400;color:#999;">/mth</span>';
+            document.getElementById('spPriceCombo7').innerHTML = prices.combo7 + '<span style="font-size:0.72rem;font-weight:400;color:#999;">/mth</span>';
+            document.getElementById('spPriceOutright').textContent = prices.outright;
+
+            // Features
+            document.getElementById('spFeatures').innerHTML = p.features.map(function(f) {
+                var icon = featIconMap[f] || '&#10003;';
+                var desc = featDescMap[f] || 'Premium feature for enhanced performance.';
+                return '<div class="detail-feature-card">' +
+                    '<div class="feat-icon">' + icon + '</div>' +
+                    '<div><div class="feat-title">' + f + '</div>' +
+                    '<div class="feat-desc">' + desc + '</div></div></div>';
+            }).join('');
+
+            // WhatsApp links
+            document.getElementById('spWA').href = p.wa.replace("wa.me", "api.whatsapp.com/send?phone=");
+            document.getElementById('spWAExclusive').href = p.wa.replace("wa.me", "api.whatsapp.com/send?phone=");
+            document.getElementById('spBenefitVideo').href = 'https://api.whatsapp.com/send?phone=601176060833&text=' + encodeURIComponent('Hi, I\'m interested in ' + p.title + '. Could you share the product demo video with me?');
+            document.getElementById('spBenefitPhoto').href = 'https://api.whatsapp.com/send?phone=601176060833&text=' + encodeURIComponent('Hi, I\'m looking at ' + p.title + '. Do you have any real customer installation photos you could share?');
+            document.getElementById('spBenefitCompare').href = 'https://api.whatsapp.com/send?phone=601176060833&text=' + encodeURIComponent('Hi, I want to learn more about ' + p.title + ' and see how it compares with other models. Can you help?');
+            document.getElementById('spBenefitConsult').href = 'https://api.whatsapp.com/send?phone=601176060833&text=' + encodeURIComponent('Hi, I have some questions about ' + p.title + '. Can I get a one-on-one consultation?');
+
+            // Reset gallery to first slide
+            document.getElementById('galleryScroll').scrollLeft = 0;
+            document.querySelectorAll('.gallery-dot').forEach(function(d, i) {
+                d.classList.toggle('active', i === 0);
+            });
+        }
+
+</script>
+<section class="products-section" id="products">
+<div class="section-title">
+<h2>Our Collection</h2>
+<p>44 premium appliances for your modern home</p>
+</div>
+<div class="products-grid" id="productsGrid">
+<div class="product-card" data-category="water">
+<div class="product-image" onclick="showProductDetail(0)" style="cursor: pointer;">
+<img alt="LG PuriCare Water Purifier WD516AN" loading="lazy" src="images/WaterPurifiers.jpg"/>
+<span class="product-badge">WATER</span>
+</div>
+<div class="product-info">
+<h3>LG PuriCare Water Purifier WD516AN</h3>
+<p class="product-desc">Tankless design with 4-stage filtration and UV sterilization. Hot, cold &amp; ambient water.</p>
+<div class="product-features">
+<span class="feature-tag">4-Stage Filter</span><span class="feature-tag">UV Sterilization</span><span class="feature-tag">WQA Gold Seal</span><span class="feature-tag">7-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(0)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM70<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20PuriCare%20Water%20Purifier%20WD516AN" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="water">
+<div class="product-image" onclick="showProductDetail(1)" style="cursor: pointer;">
+<img alt="LG Objet Collection Water Purifier" loading="lazy" src="images/ObjetCollection.jpg"/>
+<span class="product-badge">WATER</span>
+</div>
+<div class="product-info">
+<h3>LG Objet Collection Water Purifier</h3>
+<p class="product-desc">Stylish wall-mounted design. WQA Gold Seal certified with auto sterilization.</p>
+<div class="product-features">
+<span class="feature-tag">WQA Gold Seal</span><span class="feature-tag">Auto Sterilization</span><span class="feature-tag">LG ThinQ</span><span class="feature-tag">7-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(1)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM60<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20Objet%20Collection%20Water%20Purifier" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="water">
+<div class="product-image" onclick="showProductDetail(2)" style="cursor: pointer;">
+<img alt="LG Undersink Water Purifier" loading="lazy" src="images/Undersink.jpg"/>
+<span class="product-badge">WATER</span>
+</div>
+<div class="product-info">
+<h3>LG Undersink Water Purifier</h3>
+<p class="product-desc">Sleek undersink design with modern faucet. 4-stage filtration.</p>
+<div class="product-features">
+<span class="feature-tag">4-Stage Filtration</span><span class="feature-tag">Hot Cold Ambient</span><span class="feature-tag">LG ThinQ</span><span class="feature-tag">7-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(2)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM110<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20Undersink%20Water%20Purifier" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="water">
+<div class="product-image" onclick="showProductDetail(3)" style="cursor: pointer;">
+<img alt="LG Objet Collection (4 Colors)" loading="lazy" src="images/ObjetCollection2.jpg"/>
+<span class="product-badge">WATER</span>
+</div>
+<div class="product-info">
+<h3>LG Objet Collection (4 Colors)</h3>
+<p class="product-desc">Premium wall-mounted water purifier available in 4 elegant colors.</p>
+<div class="product-features">
+<span class="feature-tag">4 Colors</span><span class="feature-tag">WQA Gold Seal</span><span class="feature-tag">Auto Sterilization</span><span class="feature-tag">7-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(3)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM70<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20Objet%20Collection%20(4%20Colors)" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="air">
+<div class="product-image" onclick="showProductDetail(4)" style="cursor: pointer;">
+<img alt="16L Dual Inverter Dehumidifier" loading="lazy" src="images/16LDualInvertorDehumidifier.png"/>
+<span class="product-badge">AIR</span>
+</div>
+<div class="product-info">
+<h3>16L Dual Inverter Dehumidifier</h3>
+<p class="product-desc">Dual Inverter Compressor with compact design. Hidden handle &amp; cord.</p>
+<div class="product-features">
+<span class="feature-tag">Dual Inverter</span><span class="feature-tag">Compact Design</span><span class="feature-tag">LG ThinQ</span><span class="feature-tag">7-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(4)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM70<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%2016L%20Dual%20Inverter%20Dehumidifier" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="air">
+<div class="product-image" onclick="showProductDetail(5)" style="cursor: pointer;">
+<img alt="LG Aero Booster Air Purifier" loading="lazy" src="images/AeroBooster.jpg"/>
+<span class="product-badge">AIR</span>
+</div>
+<div class="product-info">
+<h3>LG Aero Booster Air Purifier</h3>
+<p class="product-desc">Advanced air purifier with PM 1.0 filtration. 360° purification covers 550sf.</p>
+<div class="product-features">
+<span class="feature-tag">PM 1.0 Filtration</span><span class="feature-tag">360° Purification</span><span class="feature-tag">550sf Coverage</span><span class="feature-tag">7-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(5)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM65<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20Aero%20Booster%20Air%20Purifier" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="air">
+<div class="product-image" onclick="showProductDetail(6)" style="cursor: pointer;">
+<img alt="LG Aero Furniture Air Purifier" loading="lazy" src="images/AeroFuniture.jpg"/>
+<span class="product-badge">AIR</span>
+</div>
+<div class="product-info">
+<h3>LG Aero Furniture Air Purifier</h3>
+<p class="product-desc">Innovative air purifier that doubles as furniture with built-in table surface.</p>
+<div class="product-features">
+<span class="feature-tag">Table Surface</span><span class="feature-tag">3 Colors</span><span class="feature-tag">PM 1.0 Filtration</span><span class="feature-tag">7-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(6)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM60<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20Aero%20Furniture%20Air%20Purifier" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="air">
+<div class="product-image" onclick="showProductDetail(7)" style="cursor: pointer;">
+<img alt="LG HIT Air Purifier" loading="lazy" src="images/HitAirPurifier.jpg"/>
+<span class="product-badge">AIR</span>
+</div>
+<div class="product-info">
+<h3>LG HIT Air Purifier</h3>
+<p class="product-desc">High-performance air purifier. 360° purification covers 600sf for large rooms.</p>
+<div class="product-features">
+<span class="feature-tag">PM 1.0 Filtration</span><span class="feature-tag">600sf Coverage</span><span class="feature-tag">Compact Design</span><span class="feature-tag">7-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(7)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM50<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20HIT%20Air%20Purifier" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="air">
+<div class="product-image" onclick="showProductDetail(8)" style="cursor: pointer;">
+<img alt="LG Aero Hit Air Purifier" loading="lazy" src="images/AeroHitAirPurifier.jpg"/>
+<span class="product-badge">AIR</span>
+</div>
+<div class="product-info">
+<h3>LG Aero Hit Air Purifier</h3>
+<p class="product-desc">Compact air purifier with PM 1.0 filtration. 360° purification technology.</p>
+<div class="product-features">
+<span class="feature-tag">PM 1.0 Filtration</span><span class="feature-tag">360° Purification</span><span class="feature-tag">Compact</span><span class="feature-tag">7-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(8)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM50<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20Aero%20Hit%20Air%20Purifier" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="air">
+<div class="product-image" onclick="showProductDetail(9)" style="cursor: pointer;">
+<img alt="LG Alpha Pet Single Booster" loading="lazy" src="images/AlphaPetAirPurifierSingleBooster.jpg"/>
+<span class="product-badge">AIR</span>
+</div>
+<div class="product-info">
+<h3>LG Alpha Pet Single Booster</h3>
+<p class="product-desc">Air purifier for pet owners with Single Booster technology. Pet Mode for hair &amp; odor removal.</p>
+<div class="product-features">
+<span class="feature-tag">Pet Mode</span><span class="feature-tag">Single Booster</span><span class="feature-tag">PM 1.0 Filtration</span><span class="feature-tag">7-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(9)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM75<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20Alpha%20Pet%20Single%20Booster" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="air">
+<div class="product-image" onclick="showProductDetail(10)" style="cursor: pointer;">
+<img alt="LG Alpha Pet Double Booster" loading="lazy" src="images/AlphaPetAirPurifierDoubleBooster.jpg"/>
+<span class="product-badge">AIR</span>
+</div>
+<div class="product-info">
+<h3>LG Alpha Pet Double Booster</h3>
+<p class="product-desc">Advanced air purifier for pet owners with Double Booster technology.</p>
+<div class="product-features">
+<span class="feature-tag">Pet Mode</span><span class="feature-tag">Double Booster</span><span class="feature-tag">PM 1.0 Filtration</span><span class="feature-tag">7-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(10)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM105<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20Alpha%20Pet%20Double%20Booster" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="air">
+<div class="product-image" onclick="showProductDetail(11)" style="cursor: pointer;">
+<img alt="LG Cat Tower Air Purifier" loading="lazy" src="images/CatTowerAirPurifier.jpg"/>
+<span class="product-badge">AIR</span>
+</div>
+<div class="product-info">
+<h3>LG Cat Tower Air Purifier</h3>
+<p class="product-desc">Unique air purifier with built-in cat resting platform. 550sf coverage.</p>
+<div class="product-features">
+<span class="feature-tag">Cat Platform</span><span class="feature-tag">550sf Coverage</span><span class="feature-tag">PM 1.0 Filtration</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(11)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM70<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20Cat%20Tower%20Air%20Purifier" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="washer">
+<div class="product-image" onclick="showProductDetail(12)" style="cursor: pointer;">
+<img alt="LG WashTower 14KG/10KG" loading="lazy" src="images/WashTower14KGW10KWD.jpg"/>
+<span class="product-badge">WASHER</span>
+</div>
+<div class="product-info">
+<h3>LG WashTower 14KG/10KG</h3>
+<p class="product-desc">Premium stacked washer dryer tower with AI DD technology. TurboWash 360°.</p>
+<div class="product-features">
+<span class="feature-tag">AI DD</span><span class="feature-tag">TurboWash 360°</span><span class="feature-tag">Steam+</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(12)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM210<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20WashTower%2014KG/10KG" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="washer">
+<div class="product-image" onclick="showProductDetail(13)" style="cursor: pointer;">
+<img alt="LG WashTower 25KG/20KG" loading="lazy" src="images/WashTower25KGW20KGD.jpg"/>
+<span class="product-badge">WASHER</span>
+</div>
+<div class="product-info">
+<h3>LG WashTower 25KG/20KG</h3>
+<p class="product-desc">Extra large capacity washer dryer tower. 25KG wash &amp; 20KG dry capacity.</p>
+<div class="product-features">
+<span class="feature-tag">AI DD</span><span class="feature-tag">25KG Wash</span><span class="feature-tag">20KG Dry</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(13)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM244<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20WashTower%2025KG/20KG" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="washer">
+<div class="product-image" onclick="showProductDetail(14)" style="cursor: pointer;">
+<img alt="LG Washer Dryer Combo" loading="lazy" src="images/WasherDryerComboSet.jpg"/>
+<span class="product-badge">WASHER</span>
+</div>
+<div class="product-info">
+<h3>LG Washer Dryer Combo</h3>
+<p class="product-desc">Complete laundry solution with AI DD washer and Dual Inverter Heat Pump dryer.</p>
+<div class="product-features">
+<span class="feature-tag">AI DD Washer</span><span class="feature-tag">Heat Pump Dryer</span><span class="feature-tag">TurboWash 360°</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(14)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM150<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20Washer%20Dryer%20Combo" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="washer">
+<div class="product-image" onclick="showProductDetail(15)" style="cursor: pointer;">
+<img alt="LG AI DD 9KG Wash 5KG Dry" loading="lazy" src="images/WashMachine AIDD9KGW5KWD.jpg"/>
+<span class="product-badge">WASHER</span>
+</div>
+<div class="product-info">
+<h3>LG AI DD 9KG Wash 5KG Dry</h3>
+<p class="product-desc">2-in-1 washer dryer with AI DD technology. 9KG wash &amp; 5KG dry capacity.</p>
+<div class="product-features">
+<span class="feature-tag">AI DD</span><span class="feature-tag">9KG Wash</span><span class="feature-tag">5KG Dry</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(15)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM75<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20AI%20DD%209KG%20Wash%205KG%20Dry" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="washer">
+<div class="product-image" onclick="showProductDetail(16)" style="cursor: pointer;">
+<img alt="LG AI DD 10KG Wash 6KG Dry" loading="lazy" src="images/WashMachine AIDD10KGW6KWD.jpg"/>
+<span class="product-badge">WASHER</span>
+</div>
+<div class="product-info">
+<h3>LG AI DD 10KG Wash 6KG Dry</h3>
+<p class="product-desc">2-in-1 washer dryer with AI DD technology. 10KG wash &amp; 6KG dry capacity.</p>
+<div class="product-features">
+<span class="feature-tag">AI DD</span><span class="feature-tag">10KG Wash</span><span class="feature-tag">6KG Dry</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(16)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM85<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20AI%20DD%2010KG%20Wash%206KG%20Dry" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="washer">
+<div class="product-image" onclick="showProductDetail(17)" style="cursor: pointer;">
+<img alt="LG AI DD 15KG Wash 8KG Dry" loading="lazy" src="images/WashMachine AIDD15KGW8KWD.jpg"/>
+<span class="product-badge">WASHER</span>
+</div>
+<div class="product-info">
+<h3>LG AI DD 15KG Wash 8KG Dry</h3>
+<p class="product-desc">Large capacity 2-in-1 washer dryer. 15KG wash &amp; 8KG dry for big families.</p>
+<div class="product-features">
+<span class="feature-tag">AI DD</span><span class="feature-tag">15KG Wash</span><span class="feature-tag">8KG Dry</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(17)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM105<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20AI%20DD%2015KG%20Wash%208KG%20Dry" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="washer">
+<div class="product-image" onclick="showProductDetail(18)" style="cursor: pointer;">
+<img alt="LG AI DD 20KG Washing Machine" loading="lazy" src="images/WashMachine AIDD20KW.jpg"/>
+<span class="product-badge">WASHER</span>
+</div>
+<div class="product-info">
+<h3>LG AI DD 20KG Washing Machine</h3>
+<p class="product-desc">Extra large capacity washing machine with AI DD technology. 20KG capacity.</p>
+<div class="product-features">
+<span class="feature-tag">AI DD</span><span class="feature-tag">20KG Capacity</span><span class="feature-tag">Turbo 360°</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(18)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM120<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20AI%20DD%2020KG%20Washing%20Machine" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="washer">
+<div class="product-image" onclick="showProductDetail(19)" style="cursor: pointer;">
+<img alt="LG AI DD Washing Machine 10.5KG" loading="lazy" src="images/WashingMachineAIDD10.5KG.jpg"/>
+<span class="product-badge">WASHER</span>
+</div>
+<div class="product-info">
+<h3>LG AI DD Washing Machine 10.5KG</h3>
+<p class="product-desc">Advanced washing machine with AI DD technology. 10.5KG capacity with TurboWash 360°.</p>
+<div class="product-features">
+<span class="feature-tag">AI DD</span><span class="feature-tag">10.5KG Capacity</span><span class="feature-tag">TurboWash 360°</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(19)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM90<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20AI%20DD%20Washing%20Machine%2010.5KG" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="washer">
+<div class="product-image" onclick="showProductDetail(20)" style="cursor: pointer;">
+<img alt="LG AI DD 17KG Top Load" loading="lazy" src="images/WashingMachineDual17KG.jpg"/>
+<span class="product-badge">WASHER</span>
+</div>
+<div class="product-info">
+<h3>LG AI DD 17KG Top Load</h3>
+<p class="product-desc">Large capacity top load washing machine with AI DD. 17KG capacity.</p>
+<div class="product-features">
+<span class="feature-tag">AI DD</span><span class="feature-tag">17KG Capacity</span><span class="feature-tag">TurboDrum</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(20)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM85<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20AI%20DD%2017KG%20Top%20Load" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="washer">
+<div class="product-image" onclick="showProductDetail(21)" style="cursor: pointer;">
+<img alt="LG AI DD 20KG Top Load" loading="lazy" src="images/WashingMachineDual20KG.jpg"/>
+<span class="product-badge">WASHER</span>
+</div>
+<div class="product-info">
+<h3>LG AI DD 20KG Top Load</h3>
+<p class="product-desc">Extra large capacity top load washing machine with AI DD. 20KG capacity.</p>
+<div class="product-features">
+<span class="feature-tag">AI DD</span><span class="feature-tag">20KG Capacity</span><span class="feature-tag">TurboDrum</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(21)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM100<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20AI%20DD%2020KG%20Top%20Load" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="washer">
+<div class="product-image" onclick="showProductDetail(22)" style="cursor: pointer;">
+<img alt="LG Dual Inverter Dryer 9KG" loading="lazy" src="images/WashingMachineDualImverter9KG.jpg"/>
+<span class="product-badge">WASHER</span>
+</div>
+<div class="product-info">
+<h3>LG Dual Inverter Dryer 9KG</h3>
+<p class="product-desc">Energy-efficient dryer with Dual Inverter Heat Pump technology. 9KG capacity.</p>
+<div class="product-features">
+<span class="feature-tag">Heat Pump</span><span class="feature-tag">9KG Capacity</span><span class="feature-tag">Auto Cleaning</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(22)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM100<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20Dual%20Inverter%20Dryer%209KG" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="other">
+<div class="product-image" onclick="showProductDetail(23)" style="cursor: pointer;">
+<img alt="LG CordZero Vacuum" loading="lazy" src="images/CordZero.jpg"/>
+<span class="product-badge">OTHER</span>
+</div>
+<div class="product-info">
+<h3>LG CordZero Vacuum</h3>
+<p class="product-desc">Cordless vacuum with dual battery packs. Auto Empty with UVC LED.</p>
+<div class="product-features">
+<span class="feature-tag">Dual Battery</span><span class="feature-tag">Auto Empty</span><span class="feature-tag">UVC LED</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(23)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM130<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20CordZero%20Vacuum" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="fridge">
+<div class="product-image" onclick="showProductDetail(24)" style="cursor: pointer;">
+<img alt="LG Multi Door InstaView 614L" loading="lazy" src="images/FridgeInstaview614L.jpg"/>
+<span class="product-badge">FRIDGE</span>
+</div>
+<div class="product-info">
+<h3>LG Multi Door InstaView 614L</h3>
+<p class="product-desc">Premium multi-door refrigerator with InstaView glass panel. Knock twice to see inside.</p>
+<div class="product-features">
+<span class="feature-tag">InstaView</span><span class="feature-tag">614L Capacity</span><span class="feature-tag">Water Dispenser</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(24)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM180<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20Multi%20Door%20InstaView%20614L" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="fridge">
+<div class="product-image" onclick="showProductDetail(25)" style="cursor: pointer;">
+<img alt="LG InstaView Fridge 508L" loading="lazy" src="images/FridgeFrenchDoor508L.jpg"/>
+<span class="product-badge">FRIDGE</span>
+</div>
+<div class="product-info">
+<h3>LG InstaView Fridge 508L</h3>
+<p class="product-desc">Premium French door refrigerator with InstaView glass panel. 508L capacity.</p>
+<div class="product-features">
+<span class="feature-tag">InstaView</span><span class="feature-tag">508L Capacity</span><span class="feature-tag">French Door</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(25)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM160<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20InstaView%20Fridge%20508L" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="fridge">
+<div class="product-image" onclick="showProductDetail(26)" style="cursor: pointer;">
+<img alt="LG French Door Fridge 665L" loading="lazy" src="images/FridgeFrenchDoor665L.jpg"/>
+<span class="product-badge">FRIDGE</span>
+</div>
+<div class="product-info">
+<h3>LG French Door Fridge 665L</h3>
+<p class="product-desc">Large capacity French door refrigerator with 665L space. Multi-door design.</p>
+<div class="product-features">
+<span class="feature-tag">French Door</span><span class="feature-tag">665L Capacity</span><span class="feature-tag">Multi-Door</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(26)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM130<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20French%20Door%20Fridge%20665L" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="fridge">
+<div class="product-image" onclick="showProductDetail(27)" style="cursor: pointer;">
+<img alt="LG Door In Door Fridge 635L" loading="lazy" src="images/FridgeDoorInDoor635L.jpg"/>
+<span class="product-badge">FRIDGE</span>
+</div>
+<div class="product-info">
+<h3>LG Door In Door Fridge 635L</h3>
+<p class="product-desc">Premium side-by-side refrigerator with Door In Door convenience. 635L capacity.</p>
+<div class="product-features">
+<span class="feature-tag">Door In Door</span><span class="feature-tag">635L Capacity</span><span class="feature-tag">Water Dispenser</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(27)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM130<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20Door%20In%20Door%20Fridge%20635L" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="fridge">
+<div class="product-image" onclick="showProductDetail(28)" style="cursor: pointer;">
+<img alt="LG Side By Side Fridge 641L" loading="lazy" src="images/FridgeSideBySide641L.jpg"/>
+<span class="product-badge">FRIDGE</span>
+</div>
+<div class="product-info">
+<h3>LG Side By Side Fridge 641L</h3>
+<p class="product-desc">Large capacity side-by-side refrigerator with 641L space. Modern design.</p>
+<div class="product-features">
+<span class="feature-tag">Side By Side</span><span class="feature-tag">641L Capacity</span><span class="feature-tag">Water Dispenser</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(28)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM120<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20Side%20By%20Side%20Fridge%20641L" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="fridge">
+<div class="product-image" onclick="showProductDetail(29)" style="cursor: pointer;">
+<img alt="LG Top Freezer Fridge 493L" loading="lazy" src="images/FridgeTopFreezer493L.jpg"/>
+<span class="product-badge">FRIDGE</span>
+</div>
+<div class="product-info">
+<h3>LG Top Freezer Fridge 493L</h3>
+<p class="product-desc">Classic top freezer refrigerator with 493L capacity. Smart Inverter technology.</p>
+<div class="product-features">
+<span class="feature-tag">Top Freezer</span><span class="feature-tag">493L Capacity</span><span class="feature-tag">Smart Inverter</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(29)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM80<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20Top%20Freezer%20Fridge%20493L" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="fridge">
+<div class="product-image" onclick="showProductDetail(30)" style="cursor: pointer;">
+<img alt="LG Top Freezer Fridge 603L" loading="lazy" src="images/FridgeTopFreezer603L.jpg"/>
+<span class="product-badge">FRIDGE</span>
+</div>
+<div class="product-info">
+<h3>LG Top Freezer Fridge 603L</h3>
+<p class="product-desc">Large capacity top freezer refrigerator with 603L space. Smart Inverter technology.</p>
+<div class="product-features">
+<span class="feature-tag">Top Freezer</span><span class="feature-tag">603L Capacity</span><span class="feature-tag">Smart Inverter</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(30)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM100<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20Top%20Freezer%20Fridge%20603L" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="other">
+<div class="product-image" onclick="showProductDetail(31)" style="cursor: pointer;">
+<img alt="LG QuadWash Dishwasher Silver" loading="lazy" src="images/DishwasherQuadWash.jpg"/>
+<span class="product-badge">DISHWASHER</span>
+</div>
+<div class="product-info">
+<h3>LG QuadWash Dishwasher Silver</h3>
+<p class="product-desc">Advanced dishwasher with QuadWash technology. TrueSteam for hygienic results.</p>
+<div class="product-features">
+<span class="feature-tag">QuadWash</span><span class="feature-tag">TrueSteam</span><span class="feature-tag">Auto Door</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(31)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM130<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20QuadWash%20Dishwasher%20Silver" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="other">
+<div class="product-image" onclick="showProductDetail(32)" style="cursor: pointer;">
+<img alt="LG QuadWash Dishwasher" loading="lazy" src="images/DishwasherQuadWash (2).jpg"/>
+<span class="product-badge">DISHWASHER</span>
+</div>
+<div class="product-info">
+<h3>LG QuadWash Dishwasher</h3>
+<p class="product-desc">Advanced dishwasher with QuadWash technology. TrueSteam for hygienic results.</p>
+<div class="product-features">
+<span class="feature-tag">QuadWash</span><span class="feature-tag">TrueSteam</span><span class="feature-tag">Auto Door</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(32)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM150<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I'm%20interested%20in%20LG%20QuadWash%20Dishwasher" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="ac">
+<div class="product-image" onclick="showProductDetail(33)" style="cursor: pointer;">
+<img alt="LG ArtCool 1.5 HP" loading="lazy" src="images/ArtCool1.5HP.jpg"/>
+<span class="product-badge">AC</span>
+</div>
+<div class="product-info">
+<h3>LG ArtCool 1.5 HP</h3>
+<p class="product-desc">Premium wall-mounted AC with sleek mirror glass design. Plasmaster Ionizer++.</p>
+<div class="product-features">
+<span class="feature-tag">Plasmaster Ionizer++</span><span class="feature-tag">1.5 HP</span><span class="feature-tag">Energy Saving</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(33)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM100<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20ArtCool%201.5%20HP" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="ac">
+<div class="product-image" onclick="showProductDetail(34)" style="cursor: pointer;">
+<img alt="LG ArtCool 2.5 HP" loading="lazy" src="images/ArtCool2.5HP.jpg"/>
+<span class="product-badge">AC</span>
+</div>
+<div class="product-info">
+<h3>LG ArtCool 2.5 HP</h3>
+<p class="product-desc">Premium wall-mounted AC with sleek mirror glass design. For larger rooms.</p>
+<div class="product-features">
+<span class="feature-tag">Plasmaster Ionizer++</span><span class="feature-tag">2.5 HP</span><span class="feature-tag">Energy Saving</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(34)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM130<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20ArtCool%202.5%20HP" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="ac">
+<div class="product-image" onclick="showProductDetail(35)" style="cursor: pointer;">
+<img alt="LG DUALCOOL 1.0 HP" loading="lazy" src="images/DualCoolWithPurifier1HP.jpg"/>
+<span class="product-badge">AC</span>
+</div>
+<div class="product-info">
+<h3>LG DUALCOOL 1.0 HP</h3>
+<p class="product-desc">Wall-mounted AC with built-in air purification. Plasmaster Ionizer++.</p>
+<div class="product-features">
+<span class="feature-tag">Air Purification</span><span class="feature-tag">1.0 HP</span><span class="feature-tag">Energy Saving</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(35)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM80<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20DUALCOOL%201.0%20HP" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="ac">
+<div class="product-image" onclick="showProductDetail(36)" style="cursor: pointer;">
+<img alt="LG DUALCOOL 1.5 HP" loading="lazy" src="images/DualCoolWithPurifier1.5HP.png"/>
+<span class="product-badge">AC</span>
+</div>
+<div class="product-info">
+<h3>LG DUALCOOL 1.5 HP</h3>
+<p class="product-desc">Wall-mounted AC with built-in air purification. Plasmaster Ionizer++.</p>
+<div class="product-features">
+<span class="feature-tag">Air Purification</span><span class="feature-tag">1.5 HP</span><span class="feature-tag">Energy Saving</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(36)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM90<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20DUALCOOL%201.5%20HP" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="ac">
+<div class="product-image" onclick="showProductDetail(37)" style="cursor: pointer;">
+<img alt="LG DUALCOOL Premium 2.0 HP" loading="lazy" src="images/DualCoolWithPurifier2HP.jpg"/>
+<span class="product-badge">AC</span>
+</div>
+<div class="product-info">
+<h3>LG DUALCOOL Premium 2.0 HP</h3>
+<p class="product-desc">Premium wall-mounted AC with built-in air purification for larger spaces.</p>
+<div class="product-features">
+<span class="feature-tag">Air Purification</span><span class="feature-tag">2.0 HP</span><span class="feature-tag">Premium Design</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(37)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM110<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20DUALCOOL%20Premium%202.0%20HP" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="ac">
+<div class="product-image" onclick="showProductDetail(38)" style="cursor: pointer;">
+<img alt="LG DUALCOOL Premium 2.5 HP" loading="lazy" src="images/DualCoolWithPurifier2.5HP.jpg"/>
+<span class="product-badge">AC</span>
+</div>
+<div class="product-info">
+<h3>LG DUALCOOL Premium 2.5 HP</h3>
+<p class="product-desc">Premium wall-mounted AC with built-in air purification for large spaces.</p>
+<div class="product-features">
+<span class="feature-tag">Air Purification</span><span class="feature-tag">2.5 HP</span><span class="feature-tag">Premium Design</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(38)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM120<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20DUALCOOL%20Premium%202.5%20HP" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="tv">
+<div class="product-image" onclick="showProductDetail(39)" style="cursor: pointer;">
+<img alt="LG Sound Bar Dolby Atmos" loading="lazy" src="images/SoundBarWithDolbyAtmos.jpg"/>
+<span class="product-badge">TV</span>
+</div>
+<div class="product-info">
+<h3>LG Sound Bar Dolby Atmos</h3>
+<p class="product-desc">Premium sound bar with Dolby Atmos. 3-Upfiring speakers for 3D audio.</p>
+<div class="product-features">
+<span class="feature-tag">Dolby Atmos</span><span class="feature-tag">3-Upfiring</span><span class="feature-tag">5.1.3 Surround</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(39)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM60<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20Sound%20Bar%20Dolby%20Atmos" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="tv">
+<div class="product-image" onclick="showProductDetail(40)" style="cursor: pointer;">
+<img "="" alt="LG OLED B5 TV 77" loading="lazy" src="images/OledAiTv77.jpg"/>
+<span class="product-badge">TV</span>
+</div>
+<div class="product-info">
+<h3>LG OLED B5 TV 77"</h3>
+<p class="product-desc">77" OLED B5 TV with AI technology. World's No.1 OLED TV for 12 years.</p>
+<div class="product-features">
+<span class="feature-tag">OLED</span><span class="feature-tag">AI</span><span class="feature-tag">77" Screen</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(40)">View Details →</a><br/><div class="product-footer">
+<div class="product-price">RM280<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20OLED%20B5%20TV%2077%22" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="tv">
+<div class="product-image" onclick="showProductDetail(41)" style="cursor: pointer;">
+<img "="" alt="LG NanoCell AI TV 75" loading="lazy" src="images/NanoCellAiTv65.jpg"/>
+<span class="product-badge">TV</span>
+</div>
+<div class="product-info">
+<h3>LG NanoCell AI TV 75"</h3>
+<p class="product-desc">75" 4K UHD NanoCell TV with AI technology. Vibrant colors and sharp details.</p>
+<div class="product-features">
+<span class="feature-tag">4K UHD</span><span class="feature-tag">NanoCell</span><span class="feature-tag">AI</span><span class="feature-tag">75" Screen</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(41)">View Details →</a><br/><div class="product-footer">
+<div class="product-price">RM110<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20NanoCell%20AI%20TV%2075%22" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="tv">
+<div class="product-image" onclick="showProductDetail(42)" style="cursor: pointer;">
+<img "="" alt="LG QNED Evo AI TV 65" loading="lazy" src="images/QnedEvoAiTv65.jpg"/>
+<span class="product-badge">TV</span>
+</div>
+<div class="product-info">
+<h3>LG QNED Evo AI TV 65"</h3>
+<p class="product-desc">65" QNED Mini LED TV with AI technology. Enhanced brightness and contrast.</p>
+<div class="product-features">
+<span class="feature-tag">QNED Mini LED</span><span class="feature-tag">AI</span><span class="feature-tag">65" Screen</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(42)">View Details →</a><br/><div class="product-footer">
+<div class="product-price">RM135<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20QNED%20Evo%20AI%20TV%2065%22" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="other">
+<div class="product-image" onclick="showProductDetail(43)" style="cursor: pointer;">
+<img alt="LG Styler" loading="lazy" src="images/Styler.jpg"/>
+<span class="product-badge">OTHER</span>
+</div>
+<div class="product-info">
+<h3>LG Styler</h3>
+<p class="product-desc">Smart clothing care system with TrueSteam technology. Refresh &amp; sanitize clothes.</p>
+<div class="product-features">
+<span class="feature-tag">TrueSteam</span><span class="feature-tag">Dehumidify</span><span class="feature-tag">Sanitary</span><span class="feature-tag">7-Year Warranty</span>
+</div>
+<a class="btn-detail" href="javascript:void(0);" target="_self" onclick="showProductDetail(43)">View Details →</a>
+<div class="product-footer">
+<div class="product-price">RM90<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20Styler" >&#128172; Enquire</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Detail Subpage -->
+    <div class="detail-subpage" id="detailSubpage">
+        <!-- Top Navigation -->
+        <div class="detail-nav-top">
+            <a href="#" onclick="history.back(); return false;">&#8592; Back</a>
+            <span>Product Details</span>
+        </div>
+
+        <!-- Image Gallery - Swipeable -->
+        <div class="detail-gallery">
+            <div class="gallery-scroll" id="galleryScroll"></div>
+            <button class="gallery-nav prev" onclick="galleryPrev()">&#8249;</button>
+            <button class="gallery-nav next" onclick="galleryNext()">&#8250;</button>
+            <div class="gallery-dots" id="galleryDots"></div>
+            <div class="gallery-hint" id="galleryHint">&#8596; Swipe to see more</div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="detail-content-grid">
+            <div class="detail-info-block">
+                <span class="detail-badge" id="spBadge">WATER</span>
+                <h1 id="spTitle">Product Title</h1>
+                <div class="detail-model" id="spModel">Model No.</div>
+                <p class="detail-desc" id="spDesc">Description</p>
+                <div class="detail-price-value" id="spPrice">RM70<span>/month</span></div>
+                <div class="detail-price-note" id="spPriceNote">7 Years Self-Service</div>
+            </div>
+            <div class="detail-info-block">
+                <!-- Subscription Plans Summary -->
+                <div style="background:white;border-radius:16px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.04);">
+                    <h3 style="font-size:0.75rem;font-weight:700;color:#1a1a1a;margin-bottom:14px;text-transform:uppercase;letter-spacing:1px;">Subscription Plans</h3>
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f0f0f0;">
+                        <span style="font-size:0.8rem;color:#666;">Self-Service 7yr</span>
+                        <span style="font-size:0.9rem;font-weight:700;" id="spPriceSelf7">RM70<span style="font-size:0.72rem;font-weight:400;color:#999;">/mth</span></span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f0f0f0;">
+                        <span style="font-size:0.8rem;color:#666;">Regular Visit 7yr</span>
+                        <span style="font-size:0.9rem;font-weight:700;" id="spPriceReg7">RM90<span style="font-size:0.72rem;font-weight:400;color:#999;">/mth</span></span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f0f0f0;">
+                        <span style="font-size:0.8rem;color:#666;">Combine 7yr</span>
+                        <span style="font-size:0.9rem;font-weight:700;" id="spPriceCombo7">RM80<span style="font-size:0.72rem;font-weight:400;color:#999;">/mth</span></span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;">
+                        <span style="font-size:0.8rem;color:#666;">Outright Purchase</span>
+                        <span style="font-size:1.1rem;font-weight:800;color:#333;" id="spPriceOutright">RM3,200</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="detail-features-section">
+            <h3>Key Features</h3>
+            <div class="detail-features-grid" id="spFeatures"></div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="detail-cta-group">
+            <a href="#" class="btn-wa-flyer" id="spWA" target="_blank">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Enquire on WhatsApp
+            </a>
+        </div>
+
+        <!-- WhatsApp More Info Section -->
+        <div class="wa-exclusive-section">
+            <div class="wa-exclusive-badge">
+                <span class="blink">&#128172;</span> Chat with Us on WhatsApp
+            </div>
+            <h3>Need More Information?</h3>
+            <p class="subtitle">Our product specialist is here to help you</p>
+            <div class="wa-benefits">
+                <a class="wa-benefit-item" id="spBenefitVideo" href="#" target="_blank">
+                    <div class="benf-icon">&#127909;</div>
+                    <div class="benf-text">Product Demo Video<small>See it in action before deciding</small></div>
+                </a>
+                <a class="wa-benefit-item" id="spBenefitPhoto" href="#" target="_blank">
+                    <div class="benf-icon">&#128248;</div>
+                    <div class="benf-text">Real Customer Photos<small>Actual installs in real homes</small></div>
+                </a>
+                <a class="wa-benefit-item" id="spBenefitCompare" href="#" target="_blank">
+                    <div class="benf-icon">&#128161;</div>
+                    <div class="benf-text">Product Comparison<small>Find the right model for you</small></div>
+                </a>
+                <a class="wa-benefit-item" id="spBenefitConsult" href="#" target="_blank">
+                    <div class="benf-icon">&#128172;</div>
+                    <div class="benf-text">One-on-One Consultation<small>Ask anything about the product</small></div>
+                </a>
+            </div>
+            <a href="#" class="btn-wa-exclusive" id="spWAExclusive" target="_blank">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Chat with Product Specialist
+            </a>
+        </div>
+
+        <div class="detail-nav-top" style="margin-top: 40px;">
+            <a href="#" onclick="history.back(); return false;">&#8592; Back</a>
+            <span>Product Details</span>
+        </div>
+        <div style="border-top: 1px solid rgba(0,0,0,0.08); margin-top: 40px; padding-top: 24px; text-align: center; color: #888; font-size: 0.7rem;">
+            <p style="margin-bottom: 8px;"><a href="#" onclick="showPrivacy(); return false;" style="color: #c41e3a; text-decoration: none;">Privacy Policy</a> | <a href="#" onclick="showTerms(); return false;" style="color: #c41e3a; text-decoration: none;">Terms &amp; Conditions</a></p>
+            <p style="margin: 12px auto 0; max-width: 700px; color: #aaa; font-size: 0.65rem; line-height: 1.5;">This website is operated by an independent authorised LG Subscribe consultant (Kelvin Chan, M260389). This is NOT the official LG Electronics website. LG and LG Subscribe are trademarks of LG Electronics Inc.</p>
+            <p>&#169; 2026 LG Subscribe Malaysia | All Rights Reserved</p>
+        </div>
+    
+    </div>
+
+
+<!-- Footer -->
+<!-- Privacy Policy Section -->
+<div class="legal-section" id="privacySection">
+    <div class="legal-nav-top">
+        <a href="#" onclick="showMainContent(); return false;">&#8592; Home</a>
+        <span>Privacy Policy</span>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="effective-date"><strong>Effective Date:</strong> 3 May 2026 | <strong>Last Updated:</strong> 3 May 2026</p>
+
+    <div class="legal-toc">
+        <h4>Table of Contents</h4>
+        <a href="#" onclick="document.getElementById('pp-info').scrollIntoView({behavior:'smooth'}); return false;">1. Information We Collect</a>
+        <a href="#" onclick="document.getElementById('pp-use').scrollIntoView({behavior:'smooth'}); return false;">2. How We Use Your Information</a>
+        <a href="#" onclick="document.getElementById('pp-google').scrollIntoView({behavior:'smooth'}); return false;">3. Google Services & Cookies</a>
+        <a href="#" onclick="document.getElementById('pp-rights').scrollIntoView({behavior:'smooth'}); return false;">4. Your Rights (PDPA)</a>
+        <a href="#" onclick="document.getElementById('pp-security').scrollIntoView({behavior:'smooth'}); return false;">5. Data Security</a>
+        <a href="#" onclick="document.getElementById('pp-contact').scrollIntoView({behavior:'smooth'}); return false;">6. Contact Us</a>
+    </div>
+
+    <div class="highlight-box">
+        This Privacy Policy explains how we collect, use, and protect your personal data in compliance with the <strong>Malaysian Personal Data Protection Act 2010 (PDPA)</strong> and <strong>Google Ads policies</strong>.
+    </div>
+
+    <h2 id="pp-info">1. Information We Collect</h2>
+    <p>When you visit our website or contact us, we may collect:</p>
+    <ul>
+        <li><strong>Personal Information:</strong> Name, phone number, email address, and mailing address (when you voluntarily provide them via WhatsApp, phone, or contact forms)</li>
+        <li><strong>Device &amp; Usage Data:</strong> IP address, browser type, operating system, pages visited, time spent on pages, and referring website</li>
+        <li><strong>Cookies &amp; Tracking Data:</strong> Information collected through cookies to improve user experience and deliver relevant advertisements</li>
+    </ul>
+
+    <h2 id="pp-use">2. How We Use Your Information</h2>
+    <p>We use your personal data for:</p>
+    <ul>
+        <li>Responding to your inquiries and providing product consultation services</li>
+        <li>Processing and managing LG Subscribe service applications</li>
+        <li>Improving our website performance and user experience</li>
+        <li>Running marketing campaigns and showing relevant advertisements via Google Ads</li>
+        <li>Analyzing website traffic and conversion data</li>
+    </ul>
+
+    <h2 id="pp-google">3. Google Services &amp; Cookies</h2>
+    <p>We use the following Google services:</p>
+    <ul>
+        <li><strong>Google Ads:</strong> Displaying relevant advertisements and measuring ad performance</li>
+        <li><strong>Google Analytics:</strong> Analyzing website traffic and user behavior</li>
+        <li><strong>Google Tag Manager:</strong> Managing website tags and tracking pixels</li>
+        <li><strong>Google Remarketing:</strong> Showing ads to previous visitors across Google's advertising network</li>
+    </ul>
+    <p><strong>Opt-Out:</strong> You can opt out of personalized advertising by visiting <a href="https://adssettings.google.com" target="_blank">Google Ads Settings</a>, <a href="https://www.networkadvertising.org/choices/" target="_blank">NAI opt-out page</a>, or disabling cookies in your browser.</p>
+
+    <h3>Cookies We Use</h3>
+    <ul>
+        <li><strong>Essential Cookies:</strong> Required for the website to function</li>
+        <li><strong>Analytics Cookies:</strong> Help us understand visitor interactions</li>
+        <li><strong>Marketing Cookies:</strong> Used for personalized advertisements</li>
+    </ul>
+
+    <h2 id="pp-rights">4. Your Rights Under PDPA Malaysia</h2>
+    <p>Under the Malaysian Personal Data Protection Act 2010, you have the right to:</p>
+    <ul>
+        <li><strong>Access:</strong> Request a copy of your personal data we hold</li>
+        <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data</li>
+        <li><strong>Withdraw Consent:</strong> Withdraw your consent for data processing</li>
+        <li><strong>Deletion:</strong> Request deletion of your personal data (subject to legal obligations)</li>
+        <li><strong>Object:</strong> Object to processing for direct marketing purposes</li>
+    </ul>
+
+    <h2 id="pp-security">5. Data Security &amp; Retention</h2>
+    <p><strong>Security Measures:</strong> We use SSL encryption, secure hosting, and limit data access to authorized personnel only. However, no internet transmission is 100% secure.</p>
+    <p><strong>Data Retention:</strong> We retain customer inquiry data for <strong>2 years</strong> from the date of last interaction, or as required by law.</p>
+    <p><strong>Data Sharing:</strong> We do NOT sell your personal data. We only share data with LG Electronics for subscription processing, Google for analytics/advertising, and when required by law.</p>
+
+    <h2 id="pp-contact">6. Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy or wish to exercise your data protection rights:</p>
+    <ul>
+        <li><strong>Email:</strong> kelvin89mun@gmail.com</li>
+        <li><strong>WhatsApp:</strong> +60 11-7606 0833</li>
+        <li><strong>Business:</strong> LG Subscribe Malaysia (Kelvin Chan, M260389)</li>
+        <li><strong>Location:</strong> LOT T-328A, Starling Mall, Jalan SS21/37, Damansara Utama, 47400 Petaling Jaya, Selangor</li>
+    </ul>
+    <p>We will respond to your request within <strong>14 business days</strong>.</p>
+
+    <div class="legal-nav-top" style="margin-top: 40px;">
+        <a href="#" onclick="showMainContent(); return false;">&#8592; Home</a>
+        <span>Privacy Policy</span>
+    </div>
+    <div style="border-top: 1px solid rgba(0,0,0,0.08); margin-top: 40px; padding-top: 24px; text-align: center; color: #888; font-size: 0.7rem;">
+        <p style="margin-bottom: 8px;"><a href="#" onclick="showPrivacy(); return false;" style="color: #c41e3a; text-decoration: none;">Privacy Policy</a> | <a href="#" onclick="showTerms(); return false;" style="color: #c41e3a; text-decoration: none;">Terms &amp; Conditions</a></p>
+        <p style="margin: 12px auto 0; max-width: 700px; color: #aaa; font-size: 0.65rem; line-height: 1.5;">This website is operated by an independent authorised LG Subscribe consultant (Kelvin Chan, M260389). This is NOT the official LG Electronics website. LG and LG Subscribe are trademarks of LG Electronics Inc.</p>
+        <p>&#169; 2026 LG Subscribe Malaysia | All Rights Reserved</p>
+    </div>
+
+</div>
+<!-- Terms & Conditions Section -->
+<div class="legal-section" id="termsSection">
+<h1>Terms &amp; Conditions</h1>
+<p class="effective-date"><strong>Effective Date:</strong> 3 May 2026 | <strong>Last Updated:</strong> 3 May 2026</p>
+<div class="highlight-box">
+            Please read these Terms &amp; Conditions carefully before using our services. By engaging with LG Subscribe Malaysia, you agree to these terms.
+        </div>
+<h2>1. Definitions</h2>
+<ul>
+<li><strong>"We", "Us", "Our"</strong> refers to LG Subscribe Malaysia, operated by Kelvin Chan (M260389), an independent authorised LG Subscribe consultant.</li>
+<li><strong>"You", "Customer"</strong> refers to the individual or entity engaging our services.</li>
+<li><strong>"LG Subscribe"</strong> refers to the subscription-based appliance rental service provided by LG Electronics.</li>
+<li><strong>"Service"</strong> refers to our consultation, application assistance, and after-sales support services.</li>
+</ul>
+<h2>2. About Our Business</h2>
+<p><strong>LG Subscribe Malaysia</strong> is an independent authorised consultant service operated by:</p>
+<ul>
+<li><strong>Consultant:</strong> Kelvin Chan</li>
+<li><strong>Authorisation Code:</strong> M260389</li>
+<li><strong>Location:</strong> LOT T-328A, Starling Mall, Jalan SS21/37, Damansara Utama, 47400 Petaling Jaya, Selangor</li>
+<li><strong>Contact:</strong> +60 11-7606 0833 | kelvin89mun@gmail.com</li>
+</ul>
+<div class="warning-box">
+<strong>Important Disclaimer:</strong> This website and our services are NOT operated by LG Electronics. We are an independent authorised consultant who assists customers with LG Subscribe applications. LG and LG Subscribe are registered trademarks of LG Electronics Inc.
+        </div>
+<h2>3. LG Subscribe Subscription Service</h2>
+<p>LG Subscribe is a rental/subscription program where customers pay a monthly fee to use LG appliances. Key terms:</p>
+<h3>3.1 Subscription Period</h3>
+<ul>
+<li>Minimum subscription period: <strong>7 years</strong> for most appliances (as indicated on each product)</li>
+<li>Some products may have different subscription terms (e.g., 5 years for Cat Tower Air Purifier)</li>
+<li>Early termination may be subject to penalties as per LG Electronics' policy</li>
+</ul>
+<h3>3.2 Monthly Fees</h3>
+<ul>
+<li>Monthly subscription fees vary by product (ranging from RM 50 to RM 110 per month as displayed)</li>
+<li>Promotional rates (e.g., "9 months 50% Off") are subject to specific terms and conditions set by LG Electronics</li>
+<li>All prices are in Malaysian Ringgit (MYR) and inclusive of applicable taxes unless stated otherwise</li>
+</ul>
+<h3>3.3 What's Included</h3>
+<ul>
+<li>Appliance rental for the subscription period</li>
+<li>Regular maintenance and filter service (as specified per product: "Self Service" or "Regular Service")</li>
+<li>Warranty coverage for the subscription period</li>
+<li>Free installation (within serviceable areas)</li>
+</ul>
+<h2>4. Our Services</h2>
+<p>As your authorised consultant, we provide:</p>
+<ul>
+<li><strong>Product Consultation:</strong> Helping you choose the right LG appliance for your needs</li>
+<li><strong>Application Assistance:</strong> Guiding you through the LG Subscribe application process</li>
+<li><strong>After-Sales Support:</strong> Coordinating with LG Electronics for service, maintenance, and warranty claims</li>
+<li><strong>Product Education:</strong> Explaining product features, usage, and care instructions</li>
+</ul>
+<p><strong>Note:</strong> The actual subscription contract is between you and LG Electronics. We act as an intermediary consultant to facilitate the process.</p>
+<h2>5. Service Area</h2>
+<p>We provide consultation services <strong>nationwide across Malaysia</strong>. However, LG Subscribe installation and maintenance services may be subject to LG Electronics' service area coverage. Please confirm service availability for your location before applying.</p>
+<h2>6. Payments &amp; Fees</h2>
+<ul>
+<li><strong>Consultation:</strong> Our initial consultation is FREE of charge</li>
+<li><strong>LG Subscribe Fees:</strong> All subscription payments are made directly to LG Electronics as per their billing system</li>
+<li><strong>No Hidden Fees:</strong> We do not charge additional fees for application assistance</li>
+</ul>
+<h2>7. Cancellation &amp; Refund Policy</h2>
+<h3>7.1 Before Application Submission</h3>
+<p>You may cancel your application at any time before submission to LG Electronics without penalty.</p>
+<h3>7.2 After Application Approval</h3>
+<p>Once your LG Subscribe application is approved by LG Electronics, cancellation and refund terms are governed by <strong>LG Electronics' official cancellation policy</strong>. Please refer to your subscription agreement for specific terms.</p>
+<h3>7.3 Cooling-Off Period</h3>
+<p>Malaysian consumer protection laws may provide a cooling-off period for certain contracts. Please contact us for clarification based on your specific situation.</p>
+<h2>8. Warranty &amp; Maintenance</h2>
+<ul>
+<li>All appliances come with warranty as specified on each product page (typically 7 years or 5 years)</li>
+<li>Warranty claims must be directed to LG Electronics' official service center</li>
+<li>We can assist in coordinating warranty claims but do not provide direct warranty service</li>
+<li>Filter replacement schedules vary by product - please refer to your product manual</li>
+</ul>
+<h2>9. Promotional Offers</h2>
+<p>Promotional offers displayed on our website (e.g., "9 months 50% Off") are:</p>
+<ul>
+<li>Subject to LG Electronics' official promotional terms</li>
+<li>Available while stocks last or during promotional periods</li>
+<li>May require specific eligibility criteria (e.g., credit approval, location)</li>
+<li>We reserve the right to correct any promotional display errors</li>
+</ul>
+<h2>10. Intellectual Property</h2>
+<ul>
+<li>All LG trademarks, logos, and product images are property of <strong>LG Electronics Inc.</strong></li>
+<li>We use these materials under our authorised consultant agreement</li>
+<li>Website content created by us is protected by copyright</li>
+<li>You may not reproduce, distribute, or modify our content without written permission</li>
+</ul>
+<h2>11. Limitation of Liability</h2>
+<ul>
+<li>We are not liable for product defects, malfunctions, or performance issues - these are the responsibility of LG Electronics under their warranty</li>
+<li>We are not liable for delays in LG Electronics' service delivery, installation, or maintenance scheduling</li>
+<li>Our maximum liability is limited to the value of our consultation services (which are provided free)</li>
+<li>We do not guarantee credit approval for LG Subscribe applications</li>
+</ul>
+<h2>12. Privacy &amp; Data Protection</h2>
+<p>Your personal data is handled in accordance with our <a href="#" onclick="showPrivacy(); return false;" style="color: #e31837;">Privacy Policy</a> and the Malaysian PDPA 2010. By using our services, you consent to the collection and use of your data as described in our Privacy Policy.</p>
+<h2>13. Governing Law</h2>
+<p>These Terms &amp; Conditions are governed by the laws of <strong>Malaysia</strong>. Any disputes shall be resolved through negotiation or, if necessary, through the Malaysian legal system.</p>
+<h2>14. Changes to Terms</h2>
+<p>We may update these Terms &amp; Conditions from time to time. Changes will be posted on this page with an updated effective date. Continued use of our services constitutes acceptance of the updated terms.</p>
+<h2>15. Contact Information</h2>
+<p>For questions about these Terms &amp; Conditions:</p>
+<ul>
+<li><strong>WhatsApp:</strong> +60 11-7606 0833</li>
+<li><strong>Email:</strong> kelvin89mun@gmail.com</li>
+<li><strong>Business:</strong> LG Subscribe Malaysia (Kelvin Chan, M260389)</li>
+<li><strong>Location:</strong> LOT T-328A, Starling Mall, Jalan SS21/37, Damansara Utama, 47400 Petaling Jaya, Selangor</li>
+</ul>
+<div class="legal-nav-top">
+<a href="#" onclick="showMainContent(); return false;">&#8592; Home</a>
+<span>Terms &amp; Conditions</span>
+</div>
+    <div style="border-top: 1px solid rgba(0,0,0,0.08); margin-top: 40px; padding-top: 24px; text-align: center; color: #888; font-size: 0.7rem;">
+        <p style="margin-bottom: 8px;"><a href="#" onclick="showPrivacy(); return false;" style="color: #c41e3a; text-decoration: none;">Privacy Policy</a> | <a href="#" onclick="showTerms(); return false;" style="color: #c41e3a; text-decoration: none;">Terms &amp; Conditions</a></p>
+        <p style="margin: 12px auto 0; max-width: 700px; color: #aaa; font-size: 0.65rem; line-height: 1.5;">This website is operated by an independent authorised LG Subscribe consultant (Kelvin Chan, M260389). This is NOT the official LG Electronics website. LG and LG Subscribe are trademarks of LG Electronics Inc.</p>
+        <p>&#169; 2026 LG Subscribe Malaysia | All Rights Reserved</p>
+    </div>
+
+</div>
+
+<!-- About Section -->
+<div class="legal-section" id="aboutSection">
+<div class="legal-nav-top">
+<a href="#" onclick="showMainContent(); return false;">&#8592; Home</a>
+<span>About</span>
+</div>
+<h1>About Me</h1>
+<p class="effective-date"><strong>Kelvin Chan</strong> | Authorised LG Subscribe Consultant</p>
+<div class="highlight-box">
+    Hi, I'm Kelvin Chan (M260389), an independent authorised consultant for LG Subscribe Malaysia. I help homeowners discover the right LG appliances for their needs through personalised guidance and the flexible LG Subscribe programme.
+</div>
+
+<h2>What I Do</h2>
+<p>I provide end-to-end consultation for LG's subscription-based appliance services, including:</p>
+<ul>
+<li><strong>Product Guidance:</strong> Helping you choose the right water purifier, air purifier, washing machine, refrigerator, air conditioner, or TV for your home</li>
+<li><strong>Subscription Plans:</strong> Explaining the flexible LG Subscribe options - from 5 to 7 years, self-service or regular maintenance visits</li>
+<li><strong>Installation Support:</strong> Coordinating smooth delivery and professional installation</li>
+<li><strong>After-Sales Service:</strong> Being your point of contact for any questions during your subscription period</li>
+</ul>
+
+<h2>Why Choose LG Subscribe?</h2>
+<ul>
+<li><strong>Zero Upfront Cost:</strong> Start using premium LG appliances with affordable monthly payments</li>
+<li><strong>All-Inclusive Maintenance:</strong> Regular servicing included - no surprise repair bills</li>
+<li><strong>Flexible Plans:</strong> Choose self-service or professional maintenance visits based on your preference</li>
+<li><strong>Premium Products:</strong> Access to LG's latest and most advanced home appliances</li>
+<li><strong>7-Year Coverage:</strong> Long-term peace of mind with extended warranty options</li>
+</ul>
+
+<h2>Why Work With Me?</h2>
+<ul>
+<li><strong>Personalised Service:</strong> I take time to understand your needs and recommend the best solutions</li>
+<li><strong>No Hard Selling:</strong> My focus is finding what's right for you, not pushing products</li>
+<li><strong>Quick Response:</strong> Reach me easily via WhatsApp for fast answers</li>
+<li><strong>Local Expertise:</strong> Based in Petaling Jaya, serving the Klang Valley area</li>
+<li><strong>Authorised Consultant:</strong> Registered LG Subscribe consultant (M260389)</li>
+</ul>
+
+<h2>Get In Touch</h2>
+<p>Have questions about LG Subscribe or want to know which appliance is right for your home? Feel free to reach out:</p>
+<ul>
+<li><strong>WhatsApp:</strong> <a href="https://api.whatsapp.com/send?phone=601176060833">+60 11-7606 0833</a></li>
+<li><strong>Email:</strong> <a href="mailto:kelvin89mun@gmail.com">kelvin89mun@gmail.com</a></li>
+<li><strong>Location:</strong> LOT T-328A, Starling Mall, Jalan SS21/37, Damansara Utama, 47400 Petaling Jaya, Selangor</li>
+<li><strong>Business Hours:</strong> Monday - Saturday, 10:00 AM - 8:00 PM</li>
+</ul>
+<div class="legal-nav-top">
+<a href="#" onclick="showMainContent(); return false;">&#8592; Home</a>
+<span>About</span>
+</div>
+    <div style="border-top: 1px solid rgba(0,0,0,0.08); margin-top: 40px; padding-top: 24px; text-align: center; color: #888; font-size: 0.7rem;">
+        <p style="margin-bottom: 8px;"><a href="#" onclick="showPrivacy(); return false;" style="color: #c41e3a; text-decoration: none;">Privacy Policy</a> | <a href="#" onclick="showTerms(); return false;" style="color: #c41e3a; text-decoration: none;">Terms &amp; Conditions</a></p>
+        <p style="margin: 12px auto 0; max-width: 700px; color: #aaa; font-size: 0.65rem; line-height: 1.5;">This website is operated by an independent authorised LG Subscribe consultant (Kelvin Chan, M260389). This is NOT the official LG Electronics website. LG and LG Subscribe are trademarks of LG Electronics Inc.</p>
+        <p>&#169; 2026 LG Subscribe Malaysia | All Rights Reserved</p>
+    </div>
+
+</div>
+
+
+<!-- ===== FAQ ===== -->
+<div class="faq-section">
+    <div class="faq-inner">
+        <h2>Frequently Asked Questions</h2>
+        <p class="subhead">Everything you need to know before subscribing</p>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                How does LG Subscribe work?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>It is simple: choose your appliance, apply online, and we will deliver and install it at your home for FREE. You pay a fixed monthly fee that covers the appliance, all maintenance, and repairs. No surprises, no hidden charges.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                Is there any deposit or upfront payment?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>No! LG Subscribe requires ZERO deposit and ZERO down payment. You only start paying the monthly fee after installation is complete. First month is prorated based on your installation date.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                What happens if the appliance breaks down?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>All repairs are fully covered under your subscription. Simply contact us via WhatsApp and our technician will be dispatched within 48 hours. No repair fees, no parts charges - it is all included in your monthly fee.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                Who pays for filter replacements and servicing?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>We do! All routine maintenance, filter replacements, and servicing are completely FREE for the entire subscription period. For water purifiers, filters are replaced every 6 months. For air conditioners, servicing is done every 3-4 months.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                Can I upgrade to a newer model later?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Absolutely! You can upgrade to the latest model anytime after 12 months. When LG launches a new model, just let us know and we will swap it for you. No need to sell your old unit or deal with second-hand buyers.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                What if I move house?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>No problem at all! Just give us 2 weeks notice and we will relocate your appliance to your new home for FREE. This applies within Peninsular Malaysia. Your subscription continues seamlessly at the new location.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                What is the minimum subscription period?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>The minimum commitment is 3 years for most appliances. After the minimum period, you can continue subscribing, upgrade to a new model, or even purchase the appliance outright at a discounted price. Early termination fees may apply.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                How do I apply? How long does approval take?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Click "Enquire" or "Chat on WhatsApp" on any product. Our consultant Kelvin will guide you through the application. Most applications are approved within 1-2 working days. Once approved, installation is scheduled within 3-5 days.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer" id="contact">
+    <h3>LG Subscribe Malaysia</h3>
+    <p>Authorised Consultant | Kelvin Chan (M260389)</p>
+    <p style="margin: 8px 0; color: rgba(255,255,255,0.8);">LOT T-328A, Starling Mall, Jalan SS21/37, Damansara Utama, 47400 Petaling Jaya, Selangor</p>
+    <div class="footer-contact">
+        <a href="tel:+601176060833">+60 11-7606 0833</a>
+        <a href="mailto:kelvin89mun@gmail.com">kelvin89mun@gmail.com</a>
+    </div>
+    <div class="footer-links-bar" style="display: flex; gap: 16px; justify-content: center; margin: 12px 0; flex-wrap: wrap;">
+        <a href="#" onclick="showPrivacy(); return false;" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.75rem; transition: color 0.2s;">Privacy Policy</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="#" onclick="showTerms(); return false;" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.75rem; transition: color 0.2s;">Terms &amp; Conditions</a>
+    </div>
+    <p class="footer-disclaimer">
+        This website is operated by an independent authorised LG Subscribe consultant (Kelvin Chan, M260389). 
+        This is NOT the official LG Electronics website. LG and LG Subscribe are trademarks of LG Electronics Inc.
+    </p>
+    <p style="margin-top: 15px; font-size: 0.75rem;">&#169; 2026 LG Subscribe Malaysia | All Rights Reserved</p>
+</div>
+<script>
+        function showPrivacy() {
+            document.getElementById('heroVideoSection').style.display = 'none';
+            document.querySelector('.category-bar').style.display = 'none';
+            document.querySelector('.products-section').style.display = 'none';
+            document.querySelector('.navbar').style.display = 'none';
+            document.getElementById('privacySection').classList.add('active');
+            document.getElementById('termsSection').classList.remove('active');
+            document.getElementById('aboutSection').classList.remove('active');
+            document.getElementById('detailSubpage').classList.remove('active');
+            setTimeout(function() { window.scrollTo(0, 0); }, 50);
+        }
+
+        function showTerms() {
+            document.getElementById('heroVideoSection').style.display = 'none';
+            document.querySelector('.category-bar').style.display = 'none';
+            document.querySelector('.products-section').style.display = 'none';
+            document.querySelector('.navbar').style.display = 'none';
+            document.getElementById('privacySection').classList.remove('active');
+            document.getElementById('termsSection').classList.add('active');
+            document.getElementById('aboutSection').classList.remove('active');
+            document.getElementById('detailSubpage').classList.remove('active');
+            setTimeout(function() { window.scrollTo(0, 0); }, 50);
+        }
+
+        function showAbout() {
+            document.getElementById('heroVideoSection').style.display = 'none';
+            document.querySelector('.category-bar').style.display = 'none';
+            document.querySelector('.products-section').style.display = 'none';
+            document.querySelector('.navbar').style.display = 'none';
+            document.getElementById('privacySection').classList.remove('active');
+            document.getElementById('termsSection').classList.remove('active');
+            document.getElementById('aboutSection').classList.add('active');
+            document.getElementById('detailSubpage').classList.remove('active');
+            setTimeout(function() { window.scrollTo(0, 0); }, 50);
+        }
+
+        function showMainContent() {
+            document.getElementById('heroVideoSection').style.display = 'block';
+            document.querySelector('.category-bar').style.display = 'block';
+            document.querySelector('.products-section').style.display = 'block';
+            document.querySelector('.footer').style.display = 'block';
+            document.querySelector('.navbar').style.display = 'block';
+            document.getElementById('privacySection').classList.remove('active');
+            document.getElementById('termsSection').classList.remove('active');
+            document.getElementById('aboutSection').classList.remove('active');
+            // Ensure main content sections are visible when returning
+            var vb = document.querySelector('.value-bar');
+            var ws = document.querySelector('.why-subscribe');
+            var ts = document.querySelector('.trust-section');
+            var fs = document.querySelector('.faq-section');
+            if (vb) vb.style.display = 'block';
+            if (ws) ws.style.display = 'block';
+            if (ts) ts.style.display = 'block';
+            if (fs) fs.style.display = 'block';
+            document.getElementById('detailSubpage').classList.remove('active');
+            setTimeout(function() { window.scrollTo(0, 0); }, 50);
+        }
+
+        // Handle browser back button - works with browser back/forward
+        window.addEventListener('popstate', function(e) {
+            var subpage = document.getElementById('detailSubpage');
+            var hash = window.location.hash;
+            
+            // If detail subpage is active, close it
+            if (subpage.classList.contains('active')) {
+                subpage.classList.remove('active');
+                document.getElementById('heroVideoSection').style.display = 'block';
+                document.querySelector('.category-bar').style.display = 'block';
+                document.querySelector('.products-section').style.display = 'block';
+                document.querySelector('.footer').style.display = 'block';
+                document.querySelector('.navbar').style.display = 'block';
+            }
+            
+            // Handle category hash from back button
+            if (hash && hash.startsWith('#') && !hash.startsWith('#detail-')) {
+                var cat = hash.replace('#', '');
+                if (['all','water','air','washer','fridge','ac','tv','other'].includes(cat)) {
+                    filterProducts(cat);
+                    document.getElementById('products').scrollIntoView({ behavior: 'instant' });
+                }
+            } else if (!hash || hash === '' || hash === '#') {
+                // No hash = show all
+                filterProducts('all');
+            }
+        });
+
+        // Handle initial page load with URL hash
+        window.addEventListener('DOMContentLoaded', function() {
+            var hash = window.location.hash;
+            if (!hash || hash === '' || hash === '#') return;
+            
+            if (hash.startsWith('#detail-')) {
+                var idx = parseInt(hash.replace('#detail-', ''));
+                if (!isNaN(idx) && productData[idx]) {
+                    showProductDetail(idx);
+                }
+            } else {
+                // Category hash like #water, #air
+                var cat = hash.replace('#', '');
+                if (['all','water','air','washer','fridge','ac','tv','other'].includes(cat)) {
+                    filterProducts(cat);
+                    setTimeout(function() {
+                        document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+                    }, 300);
+                }
+            }
+        });
+    
+
+        // Google Ads Conversion Tracking - WhatsApp clicks
+        document.addEventListener('click', function(e) {
+            var target = e.target.closest('a') || e.target.closest('.btn-wa-flyer') || e.target.closest('.btn-wa-exclusive') || e.target.closest('.wa-benefit-item');
+            if (target && target.href && target.href.indexOf('api.whatsapp.com') !== -1) {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-11021213892/6MwxCNmlrqgcEMTBqYcp',
+                        'value': 1.0,
+                        'currency': 'MYR'
+                    });
+                }
+            }
+        });
+
+        // Sticky CTA - show after scrolling past hero
+        (function() {
+            var stickyCta = document.getElementById('stickyCta');
+            if (!stickyCta) return;
+            var heroSection = document.getElementById('heroVideoSection');
+            var heroBottom = heroSection ? heroSection.offsetTop + heroSection.offsetHeight : 500;
+
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > heroBottom) {
+                    stickyCta.classList.add('show');
+                } else {
+                    stickyCta.classList.remove('show');
+                }
+            });
+        })();
+</script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://api.whatsapp.com/send?phone=601176060833" class="floating-whatsapp" title="Chat with us on WhatsApp">
+        &#128172; Chat
+    </a>
