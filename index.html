@@ -797,7 +797,7 @@
 
         /* Responsive Hero */
         @media (max-width: 768px) {
-            .hero-video-section { height: auto; min-height: 340px; max-height: none; padding: 70px 16px 28px; flex-direction: column; align-items: center; justify-content: flex-start; }
+            .hero-video-section { height: auto; min-height: 340px; max-height: none; padding: 82px 16px 28px; flex-direction: column; align-items: center; justify-content: flex-start; }
             .hero-video-section h1 { font-size: 1.5rem !important; }
             .hero-video-section p { font-size: 0.8rem !important; margin-bottom: 6px !important; }
             .hero-video-section a { padding: 10px 20px !important; font-size: 0.8rem !important; }
@@ -808,7 +808,7 @@
         }
 
         @media (max-width: 480px) {
-            .hero-video-section { min-height: 300px; padding-top: 56px; padding-bottom: 20px; }
+            .hero-video-section { min-height: 300px; padding-top: 74px; padding-bottom: 20px; }
             .hero-video-caption h2 { font-size: 15px; margin-bottom: 6px; margin-top: 4px; }
             .hero-video-caption p { font-size: 12px !important; line-height: 1.4; margin-bottom: 4px !important; }
             .hero-video-caption a { padding: 8px 14px !important; font-size: 12px !important; border-radius: 20px; }
@@ -2274,15 +2274,30 @@
                 }
             });
             const cards = document.querySelectorAll('.product-card');
+            let firstVisibleCard = null;
             cards.forEach(card => {
                 if (category === 'all' || card.dataset.category === category) {
                     card.style.display = 'block';
+                    if (!firstVisibleCard) {
+                        firstVisibleCard = card;
+                    }
                 } else {
                     card.style.display = 'none';
                 }
             });
             // Update URL hash for sharing
             history.pushState({ category: category }, '', '#' + category);
+            // Scroll to first visible product card, offset for fixed navbar + category bar
+            if (firstVisibleCard) {
+                setTimeout(function() {
+                    var navbarHeight = 64;
+                    var categoryBar = document.querySelector('.category-bar');
+                    var categoryBarHeight = categoryBar ? categoryBar.offsetHeight : 0;
+                    var offset = navbarHeight + categoryBarHeight + 12;
+                    var cardTop = firstVisibleCard.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: cardTop, behavior: 'smooth' });
+                }, 50);
+            }
         }
 
         function showProductDetail(index) {
