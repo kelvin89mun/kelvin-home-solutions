@@ -101,13 +101,11 @@
         /* Category Filter */
         .category-bar {
             background: white;
-            padding: 12px 20px;
+            padding: 12px 16px;
             position: sticky;
             top: 65px;
             z-index: 100;
             border-bottom: 1px solid rgba(0,0,0,0.05);
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
         }
 
         .category-container {
@@ -117,31 +115,8 @@
             gap: 8px;
             justify-content: center;
             flex-wrap: wrap;
-            min-width: max-content;
             position: relative;
         }
-        .category-scroll-hint {
-            display: none;
-            position: absolute;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            width: 50px;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.9));
-            pointer-events: none;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 8px;
-            font-size: 1rem;
-            color: #999;
-            animation: scrollHintPulse 2s ease-in-out infinite;
-            z-index: 2;
-        }
-        @keyframes scrollHintPulse {
-            0%, 100% { opacity: 0.4; }
-            50% { opacity: 1; }
-        }
-
         .category-btn {
             padding: 10px 24px;
             background: white;
@@ -374,7 +349,8 @@
             .btn-enquire { padding: 7px 0 !important; font-size: 0.7rem !important; flex-shrink: 0 !important; white-space: nowrap !important; min-width: 85px !important; width: 85px !important; justify-content: center !important; gap: 3px !important; background: #25D366 !important; color: white !important; box-shadow: 0 3px 12px rgba(37,211,102,0.3) !important; }
             .product-badge { top: 6px; left: 6px; padding: 3px 8px; font-size: 0.55rem; }
             .nav-links { display: none; }
-            .category-container { justify-content: flex-start; padding: 0 10px; }
+            .category-container { justify-content: center; padding: 0; gap: 6px; }
+            .category-bar { padding: 10px 12px; }
             .products-section { padding: 24px 12px 40px; }
             .section-title { margin-bottom: 16px; }
             .section-title h2 { font-size: 1.2rem; }
@@ -477,55 +453,6 @@
         .close-btn:hover {
             background: rgba(196, 30, 58, 0.1);
             color: #c41e3a;
-        }
-
-        .search-box {
-            padding: 15px 20px;
-            display: flex;
-            gap: 10px;
-            background: white;
-            margin: 15px 15px 10px;
-            border-radius: 25px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .search-box input {
-            flex: 1;
-            padding: 8px 12px;
-            border-radius: 20px;
-            border: 1px solid #eee;
-            background: #ffffff;
-            color: #333;
-            font-size: 0.9rem;
-            outline: none;
-        }
-
-        .search-box input::placeholder {
-            color: #aaa;
-        }
-
-        .search-box input:focus {
-            border-color: #c41e3a;
-        }
-
-        .search-box button {
-            background: #c41e3a;
-            border: none;
-            color: white;
-            font-size: 1rem;
-            cursor: pointer;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-
-        .search-box button:hover {
-            background: #a01729;
-            transform: scale(1.1);
         }
 
         .menu-items {
@@ -1439,8 +1366,8 @@
             .wa-exclusive-section h3 { font-size: 1.1rem; }
             .wa-benefits { grid-template-columns: 1fr; }
             .gallery-nav { width: 36px; height: 36px; font-size: 1rem; }
-            .category-container { justify-content: flex-start; }
-            .category-scroll-hint { display: flex; }
+            .category-container { justify-content: center; }
+
         }
 
 
@@ -1784,6 +1711,7 @@
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.08); }
         }
+
 </style>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-11021213892"></script>
@@ -1825,33 +1753,7 @@
             }
         }
 
-        function searchProducts() {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-            const cards = document.querySelectorAll('.product-card');
-
-            cards.forEach(card => {
-                const name = card.querySelector('h3').textContent.toLowerCase();
-                const desc = card.querySelector('.product-desc').textContent.toLowerCase();
-
-                if (name.includes(query) || desc.includes(query)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            closeMenu();
-        }
-
         document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.getElementById('searchInput');
-            if (searchInput) {
-                searchInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        searchProducts();
-                    }
-                });
-            }
             // Hide clutter elements for cleaner look
             document.querySelectorAll('.btn-detail, .product-desc, .product-features').forEach(function(el) {
                 el.style.display = 'none';
@@ -1865,10 +1767,7 @@
 <div class="menu-header">
 <button class="close-btn" onclick="closeMenu()">✕</button>
 </div>
-<div class="search-box">
-<input id="searchInput" placeholder="Search products" type="text"/>
-<button onclick="searchProducts()">🔍</button>
-</div>
+
 <div class="menu-items">
 <a class="menu-item" href="#" onclick="closeMenu(); showAbout(); return false;">About</a>
 <div class="menu-item has-submenu" onclick="toggleSubmenu(this)">
@@ -1884,8 +1783,7 @@
 <a href="#products" onclick="event.preventDefault(); showMainContent(); filterProducts('other'); document.getElementById('products').scrollIntoView({behavior:'smooth'}); closeMenu();">Others</a>
 </div>
 </div>
-<a class="menu-item" href="#promo" onclick="closeMenu()">Promo</a>
-<a class="menu-item" href="#news" onclick="closeMenu()">Latest News</a>
+
 <a class="menu-item" href="#" onclick="closeMenu(); showPrivacy(); return false;">Privacy Policy</a>
 <a class="menu-item" href="#" onclick="closeMenu(); showTerms(); return false;">Terms &amp; Conditions</a>
 <a class="menu-item" href="#contact" onclick="closeMenu()">Contact</a>
@@ -1928,7 +1826,7 @@
 </div>
 
 <!-- ===== VALUE BAR (subtle, no promo language) ===== -->
-<div class="value-bar">
+<div class="value-bar" id="valueBar">
     <div class="value-bar-inner">
         <div class="value-row">
             <span class="value-item value-bullet">&#128230; Delivery &amp; Setup Included</span>
@@ -1956,7 +1854,7 @@
 <button class="category-btn" data-category="ac" onclick="filterProducts('ac')">AC</button>
 <button class="category-btn" data-category="tv" onclick="filterProducts('tv')">TV</button>
 <button class="category-btn" data-category="other" onclick="filterProducts('other')">Others</button>
-<div class="category-scroll-hint">&#8250;</div>
+
 </div>
 </div>
 <script>
@@ -2226,13 +2124,16 @@
             document.querySelector('.category-bar').style.display = 'none';
             document.querySelector('.products-section').style.display = 'none';
             document.querySelector('.footer').style.display = 'none';
+            document.querySelector('.navbar').style.display = 'none';
+            var db = document.getElementById('dealerBar');
+            var vb = document.getElementById('valueBar');
+            if (db) db.style.display = 'none';
+            if (vb) vb.style.display = 'none';
             // Hide conversion optimization sections
-            var vb = document.querySelector('.value-bar');
             var ws = document.querySelector('.why-subscribe');
             var ts = document.querySelector('.trust-section');
             var fs = document.querySelector('.faq-section');
             var sc = document.getElementById('stickyCta');
-            if (vb) vb.style.display = 'none';
             if (ws) ws.style.display = 'none';
             if (ts) ts.style.display = 'none';
             if (fs) fs.style.display = 'none';
@@ -2240,17 +2141,9 @@
             document.getElementById('privacySection').classList.remove('active');
             document.getElementById('termsSection').classList.remove('active');
             document.getElementById('aboutSection').classList.remove('active');
-            // Ensure main content sections are visible when returning
-            var vb = document.querySelector('.value-bar');
-            var ws = document.querySelector('.why-subscribe');
-            var ts = document.querySelector('.trust-section');
-            var fs = document.querySelector('.faq-section');
-            if (vb) vb.style.display = 'block';
-            if (ws) ws.style.display = 'block';
-            if (ts) ts.style.display = 'block';
-            if (fs) fs.style.display = 'block';
 
             var subpage = document.getElementById('detailSubpage');
+            subpage.style.paddingTop = '20px';
             subpage.classList.add('active');
             history.pushState({ detail: index }, '', '#detail-' + index);
             setTimeout(function() { window.scrollTo(0, 0); }, 50);
@@ -3100,36 +2993,6 @@
 </div>
 </section>
 
-<!-- ===== WHY SUBSCRIBE ===== -->
-<div class="why-subscribe">
-    <div class="why-subscribe-inner">
-        <h2>Why LG Subscribe is Smarter Than Buying</h2>
-        <p class="subhead">Join thousands of Malaysian families who switched to worry-free appliance subscription</p>
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon">&#128176;</div>
-                <h3>Zero Upfront Cost</h3>
-                <p>No deposit, no down payment. Affordable monthly plans to get premium LG appliances immediately.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">&#128295;</div>
-                <h3>Free Maintenance</h3>
-                <p>All repairs, servicing &amp; filter replacements included. We come to you, zero hassle.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">&#128170;</div>
-                <h3>5-7 Year Warranty</h3>
-                <p>Longer coverage than standard purchases. If it breaks, we fix or replace it for free.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">&#128260;</div>
-                <h3>Upgrade Anytime</h3>
-                <p>Technology changes? Upgrade to the latest model anytime. No need to sell your old unit.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Product Detail Subpage -->
     <div class="detail-subpage" id="detailSubpage">
         <!-- Top Navigation -->
@@ -3336,8 +3199,12 @@
 </div>
 <!-- Terms & Conditions Section -->
 <div class="legal-section" id="termsSection">
-<h1>Terms &amp; Conditions</h1>
-<p class="effective-date"><strong>Effective Date:</strong> 3 May 2026 | <strong>Last Updated:</strong> 3 May 2026</p>
+    <div class="legal-nav-top">
+        <a href="#" onclick="showMainContent(); return false;">&#8592; Home</a>
+        <span>Terms &amp; Conditions</span>
+    </div>
+    <h1>Terms &amp; Conditions</h1>
+    <p class="effective-date"><strong>Effective Date:</strong> 3 May 2026 | <strong>Last Updated:</strong> 3 May 2026</p>
 <div class="highlight-box">
             Please read these Terms &amp; Conditions carefully before using our services. By engaging with LG Subscribe Malaysia, you agree to these terms.
         </div>
@@ -3660,6 +3527,10 @@
             document.querySelector('.category-bar').style.display = 'none';
             document.querySelector('.products-section').style.display = 'none';
             document.querySelector('.navbar').style.display = 'none';
+            var db = document.getElementById('dealerBar');
+            var vb = document.getElementById('valueBar');
+            if (db) db.style.display = 'none';
+            if (vb) vb.style.display = 'none';
             document.getElementById('privacySection').classList.add('active');
             document.getElementById('termsSection').classList.remove('active');
             document.getElementById('aboutSection').classList.remove('active');
@@ -3672,6 +3543,10 @@
             document.querySelector('.category-bar').style.display = 'none';
             document.querySelector('.products-section').style.display = 'none';
             document.querySelector('.navbar').style.display = 'none';
+            var db = document.getElementById('dealerBar');
+            var vb = document.getElementById('valueBar');
+            if (db) db.style.display = 'none';
+            if (vb) vb.style.display = 'none';
             document.getElementById('privacySection').classList.remove('active');
             document.getElementById('termsSection').classList.add('active');
             document.getElementById('aboutSection').classList.remove('active');
@@ -3684,6 +3559,10 @@
             document.querySelector('.category-bar').style.display = 'none';
             document.querySelector('.products-section').style.display = 'none';
             document.querySelector('.navbar').style.display = 'none';
+            var db = document.getElementById('dealerBar');
+            var vb = document.getElementById('valueBar');
+            if (db) db.style.display = 'none';
+            if (vb) vb.style.display = 'none';
             document.getElementById('privacySection').classList.remove('active');
             document.getElementById('termsSection').classList.remove('active');
             document.getElementById('aboutSection').classList.add('active');
@@ -3721,11 +3600,16 @@
             // If detail subpage is active, close it
             if (subpage.classList.contains('active')) {
                 subpage.classList.remove('active');
+                subpage.style.paddingTop = '85px';
                 document.getElementById('heroVideoSection').style.display = 'block';
                 document.querySelector('.category-bar').style.display = 'block';
                 document.querySelector('.products-section').style.display = 'block';
                 document.querySelector('.footer').style.display = 'block';
                 document.querySelector('.navbar').style.display = 'block';
+                var db = document.getElementById('dealerBar');
+                var vb = document.getElementById('valueBar');
+                if (db) db.style.display = 'block';
+                if (vb) vb.style.display = 'block';
             }
             
             // Handle category hash from back button
