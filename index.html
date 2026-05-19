@@ -254,7 +254,7 @@
         }
 
         .product-info {
-            padding: 14px 16px;
+            padding: 14px 16px 22px;
         }
 
         .product-info h3 {
@@ -293,7 +293,7 @@
         }
 
         .btn-enquire {
-            padding: 12px 0;
+            padding: 14px 0;
             background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             color: white;
             text-decoration: none;
@@ -312,6 +312,7 @@
             width: 120px;
             text-align: center;
             letter-spacing: 0.3px;
+            line-height: 1.2;
         }
 
         .btn-enquire:hover {
@@ -363,13 +364,13 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .products-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
             .product-image { padding: 0; aspect-ratio: 4 / 5; }
-            .product-info { padding: 8px 10px 10px; }
-            .product-info h3 { font-size: 0.78rem; margin-bottom: 8px; line-height: 1.3; }
-            .product-price { font-size: 0.9rem; flex-shrink: 1; }
-            .product-footer { gap: 6px; padding-top: 6px; }
-            .btn-enquire { padding: 10px 0 !important; font-size: 0.75rem !important; flex-shrink: 0 !important; white-space: nowrap !important; min-width: 100px !important; width: 100px !important; justify-content: center !important; gap: 3px !important; background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important; color: white !important; box-shadow: 0 4px 15px rgba(37,211,102,0.4) !important; font-weight: 700 !important; letter-spacing: 0.5px !important; }
+            .product-info { padding: 10px 10px 22px; }
+            .product-info h3 { font-size: 0.78rem; margin-bottom: 10px; line-height: 1.3; }
+            .product-price { font-size: 0.88rem; flex-shrink: 1; }
+            .product-footer { gap: 8px; padding-top: 10px; }
+            .btn-enquire { padding: 12px 0 !important; font-size: 0.78rem !important; flex-shrink: 0 !important; white-space: nowrap !important; min-width: 90px !important; width: 90px !important; justify-content: center !important; gap: 3px !important; background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important; color: white !important; box-shadow: 0 4px 15px rgba(37,211,102,0.4) !important; font-weight: 700 !important; letter-spacing: 0.3px !important; line-height: 1.2 !important; }
             .product-badge { top: 6px; left: 6px; padding: 3px 8px; font-size: 0.55rem; }
             .nav-links { display: none; }
             .category-container { justify-content: center; padding: 0; gap: 6px; }
@@ -381,11 +382,13 @@
         }
 
         @media (max-width: 480px) {
-            .products-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
             .product-image { aspect-ratio: 4 / 5; padding: 0; }
             .product-card { border-radius: 10px; }
-            .product-info { padding: 6px 8px 8px; }
-            .product-info h3 { font-size: 0.68rem; }
+            .product-info { padding: 8px 8px 20px; }
+            .product-info h3 { font-size: 0.72rem; margin-bottom: 8px; }
+            .product-footer { gap: 6px; padding-top: 8px; }
+            .btn-enquire { padding: 11px 0 !important; font-size: 0.72rem !important; min-width: 80px !important; width: 80px !important; line-height: 1.2 !important; }
             .products-section { padding: 20px 8px 32px; }
         }
 
@@ -1805,7 +1808,7 @@
 
 <!-- ===== STICKY BOTTOM CTA ===== -->
 <div class="sticky-cta" id="stickyCta">
-    <a class="btn-primary" href="https://api.whatsapp.com/send?phone=601176060833">&#128172; Chat on WhatsApp</a>
+    <a class="btn-primary" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20saw%20your%20LG%20subscription%20from%20RM50%2Fmonth.%20Can%20I%20know%20more%20about%20the%20plan%20and%20contract%20period%3F">Get Free Quote</a>
 </div>
 
 <div class="category-bar">
@@ -2206,7 +2209,6 @@
 <div class="products-grid" id="productsGrid">
 <div class="product-card" data-category="water">
 <div class="product-image" onclick="showProductDetail(0)" style="cursor: pointer;">
-
             <img alt="LG PuriCare Water Purifier WD516AN" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/WaterPurifiers.jpg"/>
             
 </div>
@@ -2224,7 +2226,6 @@
 </div>
 <div class="product-card" data-category="water">
 <div class="product-image" onclick="showProductDetail(1)" style="cursor: pointer;">
-
             <img alt="LG Objet Collection Water Purifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/ObjetCollection.jpg"/>
             
 </div>
@@ -2242,7 +2243,6 @@
 </div>
 <div class="product-card" data-category="water">
 <div class="product-image" onclick="showProductDetail(2)" style="cursor: pointer;">
-
             <img alt="LG Undersink Water Purifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/Undersink.jpg"/>
             
 </div>
@@ -2260,7 +2260,6 @@
 </div>
 <div class="product-card" data-category="water">
 <div class="product-image" onclick="showProductDetail(3)" style="cursor: pointer;">
-
             <img alt="LG Objet Collection (4 Colors)" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/ObjetCollection2.jpg"/>
             
 </div>
@@ -2278,7 +2277,7 @@
 </div>
 <div class="product-card" data-category="air">
 <div class="product-image" onclick="showProductDetail(4)" style="cursor: pointer;">
-<img alt="16L Dual Inverter Dehumidifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/16LDualInvertorDehumidifier.png"/>
+            <img alt="16L Dual Inverter Dehumidifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/16LDualInvertorDehumidifier.png"/>
 
 </div>
 <div class="product-info">
@@ -2295,7 +2294,6 @@
 </div>
 <div class="product-card" data-category="air">
 <div class="product-image" onclick="showProductDetail(5)" style="cursor: pointer;">
-
             <img alt="LG Aero Booster Air Purifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/AeroBooster.jpg"/>
             
 </div>
@@ -2313,7 +2311,6 @@
 </div>
 <div class="product-card" data-category="air">
 <div class="product-image" onclick="showProductDetail(6)" style="cursor: pointer;">
-
             <img alt="LG Aero Furniture Air Purifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/AeroFuniture.jpg"/>
             
 </div>
@@ -2331,7 +2328,6 @@
 </div>
 <div class="product-card" data-category="air">
 <div class="product-image" onclick="showProductDetail(7)" style="cursor: pointer;">
-
             <img alt="LG HIT Air Purifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/HitAirPurifier.jpg"/>
             
 </div>
@@ -2349,7 +2345,6 @@
 </div>
 <div class="product-card" data-category="air">
 <div class="product-image" onclick="showProductDetail(8)" style="cursor: pointer;">
-
             <img alt="LG Aero Hit Air Purifier" loading="lazy" src="https://subscribe-smarthome.com/images/AeroHitAirPurifier.jpg"/>
             
 </div>
@@ -2367,7 +2362,6 @@
 </div>
 <div class="product-card" data-category="air">
 <div class="product-image" onclick="showProductDetail(9)" style="cursor: pointer;">
-
             <img alt="LG Alpha Pet Single Booster" loading="lazy" src="https://subscribe-smarthome.com/images/AlphaPetAirPurifierSingleBooster.jpg"/>
             
 </div>
@@ -2385,7 +2379,6 @@
 </div>
 <div class="product-card" data-category="air">
 <div class="product-image" onclick="showProductDetail(10)" style="cursor: pointer;">
-
             <img alt="LG Alpha Pet Double Booster" loading="lazy" src="https://subscribe-smarthome.com/images/AlphaPetAirPurifierDoubleBooster.jpg"/>
             
 </div>
@@ -2403,7 +2396,6 @@
 </div>
 <div class="product-card" data-category="air">
 <div class="product-image" onclick="showProductDetail(11)" style="cursor: pointer;">
-
             <img alt="LG Cat Tower Air Purifier" loading="lazy" src="https://subscribe-smarthome.com/images/CatTowerAirPurifier.jpg"/>
             
 </div>
@@ -2421,7 +2413,6 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(12)" style="cursor: pointer;">
-
             <img alt="LG WashTower 14KG/10KG" loading="lazy" src="https://subscribe-smarthome.com/images/WashTower14KGW10KWD.jpg"/>
             
 </div>
@@ -2439,7 +2430,6 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(13)" style="cursor: pointer;">
-
             <img alt="LG WashTower 25KG/20KG" loading="lazy" src="https://subscribe-smarthome.com/images/WashTower25KGW20KGD.jpg"/>
             
 </div>
@@ -2457,7 +2447,6 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(14)" style="cursor: pointer;">
-
             <img alt="LG Washer Dryer Combo" loading="lazy" src="https://subscribe-smarthome.com/images/WasherDryerComboSet.jpg"/>
             
 </div>
@@ -2475,8 +2464,7 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(15)" style="cursor: pointer;">
-
-            <img alt="LG AI DD 9KG Wash 5KG Dry" loading="lazy" src="https://subscribe-smarthome.com/images/WashMachine_AIDD9KGW5KWD.jpg"/>
+            <img alt="LG AI DD 9KG Wash 5KG Dry" loading="lazy" src="https://subscribe-smarthome.com/images/WashMachine AIDD9KGW5KWD.jpg"/>
             
 </div>
 <div class="product-info">
@@ -2493,8 +2481,7 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(16)" style="cursor: pointer;">
-
-            <img alt="LG AI DD 10KG Wash 6KG Dry" loading="lazy" src="https://subscribe-smarthome.com/images/WashMachine_AIDD10KGW6KWD.jpg"/>
+            <img alt="LG AI DD 10KG Wash 6KG Dry" loading="lazy" src="https://subscribe-smarthome.com/images/WashMachine AIDD10KGW6KWD.jpg"/>
             
 </div>
 <div class="product-info">
@@ -2511,8 +2498,7 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(17)" style="cursor: pointer;">
-
-            <img alt="LG AI DD 15KG Wash 8KG Dry" loading="lazy" src="https://subscribe-smarthome.com/images/WashMachine_AIDD15KGW8KWD.jpg"/>
+            <img alt="LG AI DD 15KG Wash 8KG Dry" loading="lazy" src="https://subscribe-smarthome.com/images/WashMachine AIDD15KGW8KWD.jpg"/>
             
 </div>
 <div class="product-info">
@@ -2529,8 +2515,7 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(18)" style="cursor: pointer;">
-
-            <img alt="LG AI DD 20KG Washing Machine" loading="lazy" src="https://subscribe-smarthome.com/images/WashMachine_AIDD20KW.jpg"/>
+            <img alt="LG AI DD 20KG Washing Machine" loading="lazy" src="https://subscribe-smarthome.com/images/WashMachine AIDD20KW.jpg"/>
             
 </div>
 <div class="product-info">
@@ -2547,7 +2532,6 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(19)" style="cursor: pointer;">
-
             <img alt="LG AI DD Washing Machine 10.5KG" loading="lazy" src="https://subscribe-smarthome.com/images/WashingMachineAIDD10.5KG.jpg"/>
             
 </div>
@@ -2565,7 +2549,6 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(20)" style="cursor: pointer;">
-
             <img alt="LG AI DD 17KG Top Load" loading="lazy" src="https://subscribe-smarthome.com/images/WashingMachineDual17KG.jpg"/>
             
 </div>
@@ -2583,7 +2566,6 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(21)" style="cursor: pointer;">
-
             <img alt="LG AI DD 20KG Top Load" loading="lazy" src="https://subscribe-smarthome.com/images/WashingMachineDual20KG.jpg"/>
             
 </div>
@@ -2601,7 +2583,6 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(22)" style="cursor: pointer;">
-
             <img alt="LG Dual Inverter Dryer 9KG" loading="lazy" src="https://subscribe-smarthome.com/images/WashingMachineDualImverter9KG.jpg"/>
             
 </div>
@@ -2619,7 +2600,6 @@
 </div>
 <div class="product-card" data-category="other">
 <div class="product-image" onclick="showProductDetail(23)" style="cursor: pointer;">
-
             <img alt="LG CordZero Vacuum" loading="lazy" src="https://subscribe-smarthome.com/images/CordZero.jpg"/>
             
 </div>
@@ -2637,7 +2617,6 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(24)" style="cursor: pointer;">
-
             <img alt="LG Multi Door InstaView 614L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeInstaview614L.jpg"/>
             
 </div>
@@ -2655,7 +2634,6 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(25)" style="cursor: pointer;">
-
             <img alt="LG InstaView Fridge 508L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeFrenchDoor508L.jpg"/>
             
 </div>
@@ -2673,7 +2651,6 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(26)" style="cursor: pointer;">
-
             <img alt="LG French Door Fridge 665L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeFrenchDoor665L.jpg"/>
             
 </div>
@@ -2691,7 +2668,6 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(27)" style="cursor: pointer;">
-
             <img alt="LG Door In Door Fridge 635L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeDoorInDoor635L.jpg"/>
             
 </div>
@@ -2709,7 +2685,6 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(28)" style="cursor: pointer;">
-
             <img alt="LG Side By Side Fridge 641L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeSideBySide641L.jpg"/>
             
 </div>
@@ -2727,7 +2702,6 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(29)" style="cursor: pointer;">
-
             <img alt="LG Top Freezer Fridge 493L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeTopFreezer493L.jpg"/>
             
 </div>
@@ -2745,7 +2719,6 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(30)" style="cursor: pointer;">
-
             <img alt="LG Top Freezer Fridge 603L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeTopFreezer603L.jpg"/>
             
 </div>
@@ -2763,7 +2736,6 @@
 </div>
 <div class="product-card" data-category="other">
 <div class="product-image" onclick="showProductDetail(31)" style="cursor: pointer;">
-
             <img alt="LG QuadWash Dishwasher Silver" loading="lazy" src="https://subscribe-smarthome.com/images/DishwasherQuadWash.jpg"/>
             
 </div>
@@ -2781,8 +2753,7 @@
 </div>
 <div class="product-card" data-category="other">
 <div class="product-image" onclick="showProductDetail(32)" style="cursor: pointer;">
-
-            <img alt="LG QuadWash Dishwasher" loading="lazy" src="https://subscribe-smarthome.com/images/DishwasherQuadWash_(2).jpg"/>
+            <img alt="LG QuadWash Dishwasher" loading="lazy" src="https://subscribe-smarthome.com/images/DishwasherQuadWash (2).jpg"/>
             
 </div>
 <div class="product-info">
@@ -2799,7 +2770,6 @@
 </div>
 <div class="product-card" data-category="ac">
 <div class="product-image" onclick="showProductDetail(33)" style="cursor: pointer;">
-
             <img alt="LG ArtCool 1.5 HP" loading="lazy" src="https://subscribe-smarthome.com/images/ArtCool1.5HP.jpg"/>
             
 </div>
@@ -2817,7 +2787,6 @@
 </div>
 <div class="product-card" data-category="ac">
 <div class="product-image" onclick="showProductDetail(34)" style="cursor: pointer;">
-
             <img alt="LG ArtCool 2.5 HP" loading="lazy" src="https://subscribe-smarthome.com/images/ArtCool2.5HP.jpg"/>
             
 </div>
@@ -2835,7 +2804,6 @@
 </div>
 <div class="product-card" data-category="ac">
 <div class="product-image" onclick="showProductDetail(35)" style="cursor: pointer;">
-
             <img alt="LG DUALCOOL 1.0 HP" loading="lazy" src="https://subscribe-smarthome.com/images/DualCoolWithPurifier1HP.jpg"/>
             
 </div>
@@ -2853,7 +2821,7 @@
 </div>
 <div class="product-card" data-category="ac">
 <div class="product-image" onclick="showProductDetail(36)" style="cursor: pointer;">
-<img alt="LG DUALCOOL 1.5 HP" loading="lazy" src="https://subscribe-smarthome.com/images/DualCoolWithPurifier1.5HP.png"/>
+            <img alt="LG DUALCOOL 1.5 HP" loading="lazy" src="https://subscribe-smarthome.com/images/DualCoolWithPurifier1.5HP.png"/>
 
 </div>
 <div class="product-info">
@@ -2870,7 +2838,6 @@
 </div>
 <div class="product-card" data-category="ac">
 <div class="product-image" onclick="showProductDetail(37)" style="cursor: pointer;">
-
             <img alt="LG DUALCOOL Premium 2.0 HP" loading="lazy" src="https://subscribe-smarthome.com/images/DualCoolWithPurifier2HP.jpg"/>
             
 </div>
@@ -2888,7 +2855,6 @@
 </div>
 <div class="product-card" data-category="ac">
 <div class="product-image" onclick="showProductDetail(38)" style="cursor: pointer;">
-
             <img alt="LG DUALCOOL Premium 2.5 HP" loading="lazy" src="https://subscribe-smarthome.com/images/DualCoolWithPurifier2.5HP.jpg"/>
             
 </div>
@@ -2906,7 +2872,6 @@
 </div>
 <div class="product-card" data-category="tv">
 <div class="product-image" onclick="showProductDetail(39)" style="cursor: pointer;">
-
             <img alt="LG Sound Bar Dolby Atmos" loading="lazy" src="https://subscribe-smarthome.com/images/SoundBarWithDolbyAtmos.jpg"/>
             
 </div>
@@ -2924,7 +2889,7 @@
 </div>
 <div class="product-card" data-category="tv">
 <div class="product-image" onclick="showProductDetail(40)" style="cursor: pointer;">
-<img "="" alt="LG OLED B5 TV 77" loading="lazy" src="https://subscribe-smarthome.com/images/OledAiTv77.jpg"/>
+            <img "="" alt="LG OLED B5 TV 77" loading="lazy" src="https://subscribe-smarthome.com/images/OledAiTv77.jpg"/>
 
 </div>
 <div class="product-info">
@@ -2941,7 +2906,7 @@
 </div>
 <div class="product-card" data-category="tv">
 <div class="product-image" onclick="showProductDetail(41)" style="cursor: pointer;">
-<img "="" alt="LG NanoCell AI TV 75" loading="lazy" src="https://subscribe-smarthome.com/images/NanoCellAiTv65.jpg"/>
+            <img "="" alt="LG NanoCell AI TV 75" loading="lazy" src="https://subscribe-smarthome.com/images/NanoCellAiTv65.jpg"/>
 
 </div>
 <div class="product-info">
@@ -2958,7 +2923,7 @@
 </div>
 <div class="product-card" data-category="tv">
 <div class="product-image" onclick="showProductDetail(42)" style="cursor: pointer;">
-<img "="" alt="LG QNED Evo AI TV 65" loading="lazy" src="https://subscribe-smarthome.com/images/QnedEvoAiTv65.jpg"/>
+            <img "="" alt="LG QNED Evo AI TV 65" loading="lazy" src="https://subscribe-smarthome.com/images/QnedEvoAiTv65.jpg"/>
 
 </div>
 <div class="product-info">
@@ -2975,7 +2940,6 @@
 </div>
 <div class="product-card" data-category="other">
 <div class="product-image" onclick="showProductDetail(43)" style="cursor: pointer;">
-
             <img alt="LG Styler" loading="lazy" src="https://subscribe-smarthome.com/images/Styler.jpg"/>
             
 </div>
