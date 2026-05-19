@@ -52,8 +52,6 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             padding: 12px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.03);
         }
 
         .nav-container {
@@ -103,9 +101,8 @@
             background: white;
             padding: 12px 16px;
             position: sticky;
-            top: 65px;
+            top: 48px;
             z-index: 100;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
         .category-container {
@@ -197,9 +194,39 @@
             aspect-ratio: 4 / 5;
             overflow: hidden;
             background: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .product-image .mask-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 20%;
+            background: linear-gradient(to bottom, rgba(245,245,245,0.97) 0%, rgba(245,245,245,0.9) 40%, rgba(245,245,245,0) 100%);
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .product-image .mask-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 15%;
+            background: linear-gradient(to top, rgba(245,245,245,0.97) 0%, rgba(245,245,245,0.9) 40%, rgba(245,245,245,0) 100%);
+            z-index: 100;
+            pointer-events: none;
         }
 
         .product-image img {
@@ -238,19 +265,7 @@
         }
 
         .product-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            padding: 4px 10px;
-            background: linear-gradient(135deg, #c41e3a 0%, #e31837 100%);
-            color: white;
-            font-size: 0.65rem;
-            font-weight: 700;
-            border-radius: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 2px 8px rgba(196,30,58,0.3);
-            z-index: 5;
+            display: none !important;
         }
 
         .product-info {
@@ -368,9 +383,9 @@
             .product-image { padding: 0; aspect-ratio: 4 / 5; }
             .product-info { padding: 10px 10px 22px; }
             .product-info h3 { font-size: 0.78rem; margin-bottom: 10px; line-height: 1.3; }
-            .product-price { font-size: 0.88rem; flex-shrink: 1; }
+            .product-price { font-size: 0.82rem; flex-shrink: 1; min-width: 0; }
             .product-footer { gap: 8px; padding-top: 10px; }
-            .btn-enquire { padding: 12px 0 !important; font-size: 0.78rem !important; flex-shrink: 0 !important; white-space: nowrap !important; min-width: 90px !important; width: 90px !important; justify-content: center !important; gap: 3px !important; background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important; color: white !important; box-shadow: 0 4px 15px rgba(37,211,102,0.4) !important; font-weight: 700 !important; letter-spacing: 0.3px !important; line-height: 1.2 !important; }
+            .btn-enquire { padding: 12px 0 !important; font-size: 0.75rem !important; flex-shrink: 0 !important; white-space: nowrap !important; min-width: 82px !important; width: 82px !important; justify-content: center !important; gap: 3px !important; background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important; color: white !important; box-shadow: 0 4px 15px rgba(37,211,102,0.4) !important; font-weight: 700 !important; letter-spacing: 0.3px !important; line-height: 1.2 !important; }
             .product-badge { top: 6px; left: 6px; padding: 3px 8px; font-size: 0.55rem; }
             .nav-links { display: none; }
             .category-container { justify-content: center; padding: 0; gap: 6px; }
@@ -594,6 +609,7 @@
             overflow: hidden;
             background: #1a1a1a;
             margin-top: 0;
+            margin-bottom: -1px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -690,7 +706,7 @@
 
         /* Responsive Hero */
         @media (max-width: 768px) {
-            .hero-video-section { height: auto; min-height: 340px; max-height: none; padding: 82px 16px 28px; flex-direction: column; align-items: center; justify-content: flex-start; }
+            .hero-video-section { height: auto; min-height: 280px; max-height: none; padding: 82px 16px 0; flex-direction: column; align-items: center; justify-content: flex-start; }
             .hero-video-section h1 { font-size: 1.5rem !important; }
             .hero-video-section p { font-size: 0.8rem !important; margin-bottom: 6px !important; }
             .hero-video-section a { padding: 10px 20px !important; font-size: 0.8rem !important; }
@@ -701,7 +717,7 @@
         }
 
         @media (max-width: 480px) {
-            .hero-video-section { min-height: 300px; padding-top: 74px; padding-bottom: 20px; }
+            .hero-video-section { min-height: 280px; padding-top: 74px; padding-bottom: 0; }
             .hero-video-caption h2 { font-size: 15px; margin-bottom: 6px; margin-top: 4px; }
             .hero-video-caption p { font-size: 12px !important; line-height: 1.4; margin-bottom: 4px !important; }
             .hero-video-caption a { padding: 8px 14px !important; font-size: 12px !important; border-radius: 20px; }
@@ -1652,41 +1668,6 @@
         }
 
         /* ===== STICKY CTA ===== */
-        .sticky-cta {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            padding: 12px 20px;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
-            z-index: 999;
-            justify-content: center;
-            gap: 10px;
-            border-top: 1px solid rgba(0,0,0,0.05);
-        }
-        .sticky-cta.show { display: flex; }
-        .sticky-cta a {
-            flex: 1;
-            max-width: 280px;
-            padding: 12px 20px;
-            border-radius: 12px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.2s;
-        }
-        .sticky-cta .btn-primary {
-            background: #25D366;
-            color: white;
-        }
-        .sticky-cta .btn-primary:hover {
-            background: #128C7E;
-            transform: translateY(-2px);
-        }
-
         @keyframes wa-bounce {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.08); }
@@ -1803,14 +1784,6 @@
         </div>
     </div>
 </div>
-
-
-
-<!-- ===== STICKY BOTTOM CTA ===== -->
-<div class="sticky-cta" id="stickyCta">
-    <a class="btn-primary" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20saw%20your%20LG%20subscription%20from%20RM50%2Fmonth.%20Can%20I%20know%20more%20about%20the%20plan%20and%20contract%20period%3F">Get Free Quote</a>
-</div>
-
 <div class="category-bar">
 <div class="category-container">
 <button class="category-btn active" data-category="all" onclick="filterProducts('all')">All</button>
@@ -1870,7 +1843,8 @@
         {category:'tv',badge:'TV',title:'LG OLED B5 TV 77\"',img:'https://subscribe-smarthome.com/images/OledAiTv77.jpg',gallery:['https://subscribe-smarthome.com/images/OledAiTv77.jpg'],imgAlt:'LG OLED B5 TV 77',desc:'77\" OLED B5 TV with AI technology. World\'s No.1 OLED TV for 12 years.',features:["OLED", "AI", "77\" Screen", "5-Year Warranty"],price:'RM280',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20OLED%20B5%20TV%2077%22'},
         {category:'tv',badge:'TV',title:'LG NanoCell AI TV 75\"',img:'https://subscribe-smarthome.com/images/NanoCellAiTv65.jpg',gallery:['https://subscribe-smarthome.com/images/NanoCellAiTv65.jpg'],imgAlt:'LG NanoCell AI TV 75',desc:'75\" 4K UHD NanoCell TV with AI technology. Vibrant colors and sharp details.',features:["4K UHD", "NanoCell", "AI", "75\" Screen"],price:'RM110',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20NanoCell%20AI%20TV%2075%22'},
         {category:'tv',badge:'TV',title:'LG QNED Evo AI TV 65\"',img:'https://subscribe-smarthome.com/images/QnedEvoAiTv65.jpg',gallery:['https://subscribe-smarthome.com/images/QnedEvoAiTv65.jpg'],imgAlt:'LG QNED Evo AI TV 65',desc:'65\" QNED Mini LED TV with AI technology. Enhanced brightness and contrast.',features:["QNED Mini LED", "AI", "65\" Screen", "5-Year Warranty"],price:'RM135',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20QNED%20Evo%20AI%20TV%2065%22'},
-        {category:'other',badge:'OTHER',title:'LG Styler',img:'https://subscribe-smarthome.com/images/Styler.jpg',gallery:['https://subscribe-smarthome.com/images/Styler.jpg'],imgAlt:'LG Styler',desc:'Smart clothing care system with TrueSteam technology. Refresh & sanitize clothes.',features:["TrueSteam", "Dehumidify", "Sanitary", "7-Year Warranty"],price:'RM90',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20Styler'}
+        {category:'other',badge:'OTHER',title:'LG Styler',img:'https://subscribe-smarthome.com/images/Styler.jpg',gallery:['https://subscribe-smarthome.com/images/Styler.jpg'],imgAlt:'LG Styler',desc:'Smart clothing care system with TrueSteam technology. Refresh & sanitize clothes.',features:["TrueSteam", "Dehumidify", "Sanitary", "7-Year Warranty"],price:'RM90',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20Styler'},
+        {category:'tv',badge:'TV',title:'LG SMART Monitor 32U889SA-W',img:'/images/LGSmartMonitorSwing.jpg',gallery:['/images/LGSmartMonitorSwing.jpg'],imgAlt:'LG SMART Monitor 32U889SA-W',desc:'LG 31.5" 4K UHD IPS Smart Monitor Swing with Touchscreen, Rolling Stand. Outright RM3,599.',features:["31.5\" 4K UHD IPS", "Touchscreen", "Rolling Stand", "5-Year Warranty"],price:'RM60',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20SMART%20Monitor%2032U889SA-W'}
         ];
 
         // Brand mapping by category
@@ -2098,11 +2072,9 @@
             var ws = document.querySelector('.why-subscribe');
             var ts = document.querySelector('.trust-section');
             var fs = document.querySelector('.faq-section');
-            var sc = document.getElementById('stickyCta');
             if (ws) ws.style.display = 'none';
             if (ts) ts.style.display = 'none';
             if (fs) fs.style.display = 'none';
-            if (sc) sc.classList.remove('show');
             document.getElementById('privacySection').classList.remove('active');
             document.getElementById('termsSection').classList.remove('active');
             document.getElementById('aboutSection').classList.remove('active');
@@ -2209,9 +2181,11 @@
 <div class="products-grid" id="productsGrid">
 <div class="product-card" data-category="water">
 <div class="product-image" onclick="showProductDetail(0)" style="cursor: pointer;">
-            <img alt="LG PuriCare Water Purifier WD516AN" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/WaterPurifiers.jpg"/>
             
-</div>
+<img alt="LG PuriCare Water Purifier WD516AN" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/WaterPurifiers.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG PuriCare Water Purifier WD516AN</h3>
 <p class="product-desc">Tankless design with 4-stage filtration and UV sterilization. Hot, cold &amp; ambient water.</p>
@@ -2226,9 +2200,11 @@
 </div>
 <div class="product-card" data-category="water">
 <div class="product-image" onclick="showProductDetail(1)" style="cursor: pointer;">
-            <img alt="LG Objet Collection Water Purifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/ObjetCollection.jpg"/>
             
-</div>
+<img alt="LG Objet Collection Water Purifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/ObjetCollection.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG Objet Collection Water Purifier</h3>
 <p class="product-desc">Stylish wall-mounted design. WQA Gold Seal certified with auto sterilization.</p>
@@ -2243,9 +2219,11 @@
 </div>
 <div class="product-card" data-category="water">
 <div class="product-image" onclick="showProductDetail(2)" style="cursor: pointer;">
-            <img alt="LG Undersink Water Purifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/Undersink.jpg"/>
             
-</div>
+<img alt="LG Undersink Water Purifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/Undersink.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG Undersink Water Purifier</h3>
 <p class="product-desc">Sleek undersink design with modern faucet. 4-stage filtration.</p>
@@ -2260,9 +2238,11 @@
 </div>
 <div class="product-card" data-category="water">
 <div class="product-image" onclick="showProductDetail(3)" style="cursor: pointer;">
-            <img alt="LG Objet Collection (4 Colors)" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/ObjetCollection2.jpg"/>
             
-</div>
+<img alt="LG Objet Collection (4 Colors)" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/ObjetCollection2.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG Objet Collection (4 Colors)</h3>
 <p class="product-desc">Premium wall-mounted water purifier available in 4 elegant colors.</p>
@@ -2277,9 +2257,11 @@
 </div>
 <div class="product-card" data-category="air">
 <div class="product-image" onclick="showProductDetail(4)" style="cursor: pointer;">
-            <img alt="16L Dual Inverter Dehumidifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/16LDualInvertorDehumidifier.png"/>
+            
+<img alt="16L Dual Inverter Dehumidifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/16LDualInvertorDehumidifier.png"/>
 
-</div>
+
+        </div>
 <div class="product-info">
 <h3>16L Dual Inverter Dehumidifier</h3>
 <p class="product-desc">Dual Inverter Compressor with compact design. Hidden handle &amp; cord.</p>
@@ -2294,9 +2276,11 @@
 </div>
 <div class="product-card" data-category="air">
 <div class="product-image" onclick="showProductDetail(5)" style="cursor: pointer;">
-            <img alt="LG Aero Booster Air Purifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/AeroBooster.jpg"/>
             
-</div>
+<img alt="LG Aero Booster Air Purifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/AeroBooster.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG Aero Booster Air Purifier</h3>
 <p class="product-desc">Advanced air purifier with PM 1.0 filtration. 360° purification covers 550sf.</p>
@@ -2311,9 +2295,11 @@
 </div>
 <div class="product-card" data-category="air">
 <div class="product-image" onclick="showProductDetail(6)" style="cursor: pointer;">
-            <img alt="LG Aero Furniture Air Purifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/AeroFuniture.jpg"/>
             
-</div>
+<img alt="LG Aero Furniture Air Purifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/AeroFuniture.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG Aero Furniture Air Purifier</h3>
 <p class="product-desc">Innovative air purifier that doubles as furniture with built-in table surface.</p>
@@ -2328,9 +2314,11 @@
 </div>
 <div class="product-card" data-category="air">
 <div class="product-image" onclick="showProductDetail(7)" style="cursor: pointer;">
-            <img alt="LG HIT Air Purifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/HitAirPurifier.jpg"/>
             
-</div>
+<img alt="LG HIT Air Purifier" loading="eager" decoding="async" src="https://subscribe-smarthome.com/images/HitAirPurifier.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG HIT Air Purifier</h3>
 <p class="product-desc">High-performance air purifier. 360° purification covers 600sf for large rooms.</p>
@@ -2345,9 +2333,11 @@
 </div>
 <div class="product-card" data-category="air">
 <div class="product-image" onclick="showProductDetail(8)" style="cursor: pointer;">
-            <img alt="LG Aero Hit Air Purifier" loading="lazy" src="https://subscribe-smarthome.com/images/AeroHitAirPurifier.jpg"/>
             
-</div>
+<img alt="LG Aero Hit Air Purifier" loading="lazy" src="https://subscribe-smarthome.com/images/AeroHitAirPurifier.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG Aero Hit Air Purifier</h3>
 <p class="product-desc">Compact air purifier with PM 1.0 filtration. 360° purification technology.</p>
@@ -2362,9 +2352,11 @@
 </div>
 <div class="product-card" data-category="air">
 <div class="product-image" onclick="showProductDetail(9)" style="cursor: pointer;">
-            <img alt="LG Alpha Pet Single Booster" loading="lazy" src="https://subscribe-smarthome.com/images/AlphaPetAirPurifierSingleBooster.jpg"/>
             
-</div>
+<img alt="LG Alpha Pet Single Booster" loading="lazy" src="https://subscribe-smarthome.com/images/AlphaPetAirPurifierSingleBooster.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG Alpha Pet Single Booster</h3>
 <p class="product-desc">Air purifier for pet owners with Single Booster technology. Pet Mode for hair &amp; odor removal.</p>
@@ -2379,9 +2371,11 @@
 </div>
 <div class="product-card" data-category="air">
 <div class="product-image" onclick="showProductDetail(10)" style="cursor: pointer;">
-            <img alt="LG Alpha Pet Double Booster" loading="lazy" src="https://subscribe-smarthome.com/images/AlphaPetAirPurifierDoubleBooster.jpg"/>
             
-</div>
+<img alt="LG Alpha Pet Double Booster" loading="lazy" src="https://subscribe-smarthome.com/images/AlphaPetAirPurifierDoubleBooster.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG Alpha Pet Double Booster</h3>
 <p class="product-desc">Advanced air purifier for pet owners with Double Booster technology.</p>
@@ -2396,9 +2390,11 @@
 </div>
 <div class="product-card" data-category="air">
 <div class="product-image" onclick="showProductDetail(11)" style="cursor: pointer;">
-            <img alt="LG Cat Tower Air Purifier" loading="lazy" src="https://subscribe-smarthome.com/images/CatTowerAirPurifier.jpg"/>
             
-</div>
+<img alt="LG Cat Tower Air Purifier" loading="lazy" src="https://subscribe-smarthome.com/images/CatTowerAirPurifier.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG Cat Tower Air Purifier</h3>
 <p class="product-desc">Unique air purifier with built-in cat resting platform. 550sf coverage.</p>
@@ -2413,9 +2409,11 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(12)" style="cursor: pointer;">
-            <img alt="LG WashTower 14KG/10KG" loading="lazy" src="https://subscribe-smarthome.com/images/WashTower14KGW10KWD.jpg"/>
             
-</div>
+<img alt="LG WashTower 14KG/10KG" loading="lazy" src="https://subscribe-smarthome.com/images/WashTower14KGW10KWD.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG WashTower 14KG/10KG</h3>
 <p class="product-desc">Premium stacked washer dryer tower with AI DD technology. TurboWash 360°.</p>
@@ -2430,9 +2428,11 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(13)" style="cursor: pointer;">
-            <img alt="LG WashTower 25KG/20KG" loading="lazy" src="https://subscribe-smarthome.com/images/WashTower25KGW20KGD.jpg"/>
             
-</div>
+<img alt="LG WashTower 25KG/20KG" loading="lazy" src="https://subscribe-smarthome.com/images/WashTower25KGW20KGD.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG WashTower 25KG/20KG</h3>
 <p class="product-desc">Extra large capacity washer dryer tower. 25KG wash &amp; 20KG dry capacity.</p>
@@ -2447,9 +2447,11 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(14)" style="cursor: pointer;">
-            <img alt="LG Washer Dryer Combo" loading="lazy" src="https://subscribe-smarthome.com/images/WasherDryerComboSet.jpg"/>
             
-</div>
+<img alt="LG Washer Dryer Combo" loading="lazy" src="https://subscribe-smarthome.com/images/WasherDryerComboSet.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG Washer Dryer Combo</h3>
 <p class="product-desc">Complete laundry solution with AI DD washer and Dual Inverter Heat Pump dryer.</p>
@@ -2464,9 +2466,11 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(15)" style="cursor: pointer;">
-            <img alt="LG AI DD 9KG Wash 5KG Dry" loading="lazy" src="https://subscribe-smarthome.com/images/WashMachine AIDD9KGW5KWD.jpg"/>
             
-</div>
+<img alt="LG AI DD 9KG Wash 5KG Dry" loading="lazy" src="https://subscribe-smarthome.com/images/WashMachine AIDD9KGW5KWD.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG AI DD 9KG Wash 5KG Dry</h3>
 <p class="product-desc">2-in-1 washer dryer with AI DD technology. 9KG wash &amp; 5KG dry capacity.</p>
@@ -2481,9 +2485,11 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(16)" style="cursor: pointer;">
-            <img alt="LG AI DD 10KG Wash 6KG Dry" loading="lazy" src="https://subscribe-smarthome.com/images/WashMachine AIDD10KGW6KWD.jpg"/>
             
-</div>
+<img alt="LG AI DD 10KG Wash 6KG Dry" loading="lazy" src="https://subscribe-smarthome.com/images/WashMachine AIDD10KGW6KWD.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG AI DD 10KG Wash 6KG Dry</h3>
 <p class="product-desc">2-in-1 washer dryer with AI DD technology. 10KG wash &amp; 6KG dry capacity.</p>
@@ -2498,9 +2504,11 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(17)" style="cursor: pointer;">
-            <img alt="LG AI DD 15KG Wash 8KG Dry" loading="lazy" src="https://subscribe-smarthome.com/images/WashMachine AIDD15KGW8KWD.jpg"/>
             
-</div>
+<img alt="LG AI DD 15KG Wash 8KG Dry" loading="lazy" src="https://subscribe-smarthome.com/images/WashMachine AIDD15KGW8KWD.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG AI DD 15KG Wash 8KG Dry</h3>
 <p class="product-desc">Large capacity 2-in-1 washer dryer. 15KG wash &amp; 8KG dry for big families.</p>
@@ -2515,9 +2523,11 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(18)" style="cursor: pointer;">
-            <img alt="LG AI DD 20KG Washing Machine" loading="lazy" src="https://subscribe-smarthome.com/images/WashMachine AIDD20KW.jpg"/>
             
-</div>
+<img alt="LG AI DD 20KG Washing Machine" loading="lazy" src="https://subscribe-smarthome.com/images/WashMachine AIDD20KW.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG AI DD 20KG Washing Machine</h3>
 <p class="product-desc">Extra large capacity washing machine with AI DD technology. 20KG capacity.</p>
@@ -2532,9 +2542,11 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(19)" style="cursor: pointer;">
-            <img alt="LG AI DD Washing Machine 10.5KG" loading="lazy" src="https://subscribe-smarthome.com/images/WashingMachineAIDD10.5KG.jpg"/>
             
-</div>
+<img alt="LG AI DD Washing Machine 10.5KG" loading="lazy" src="https://subscribe-smarthome.com/images/WashingMachineAIDD10.5KG.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG AI DD Washing Machine 10.5KG</h3>
 <p class="product-desc">Advanced washing machine with AI DD technology. 10.5KG capacity with TurboWash 360°.</p>
@@ -2549,9 +2561,11 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(20)" style="cursor: pointer;">
-            <img alt="LG AI DD 17KG Top Load" loading="lazy" src="https://subscribe-smarthome.com/images/WashingMachineDual17KG.jpg"/>
             
-</div>
+<img alt="LG AI DD 17KG Top Load" loading="lazy" src="https://subscribe-smarthome.com/images/WashingMachineDual17KG.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG AI DD 17KG Top Load</h3>
 <p class="product-desc">Large capacity top load washing machine with AI DD. 17KG capacity.</p>
@@ -2566,9 +2580,11 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(21)" style="cursor: pointer;">
-            <img alt="LG AI DD 20KG Top Load" loading="lazy" src="https://subscribe-smarthome.com/images/WashingMachineDual20KG.jpg"/>
             
-</div>
+<img alt="LG AI DD 20KG Top Load" loading="lazy" src="https://subscribe-smarthome.com/images/WashingMachineDual20KG.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG AI DD 20KG Top Load</h3>
 <p class="product-desc">Extra large capacity top load washing machine with AI DD. 20KG capacity.</p>
@@ -2583,9 +2599,11 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(22)" style="cursor: pointer;">
-            <img alt="LG Dual Inverter Dryer 9KG" loading="lazy" src="https://subscribe-smarthome.com/images/WashingMachineDualImverter9KG.jpg"/>
             
-</div>
+<img alt="LG Dual Inverter Dryer 9KG" loading="lazy" src="https://subscribe-smarthome.com/images/WashingMachineDualImverter9KG.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG Dual Inverter Dryer 9KG</h3>
 <p class="product-desc">Energy-efficient dryer with Dual Inverter Heat Pump technology. 9KG capacity.</p>
@@ -2600,9 +2618,11 @@
 </div>
 <div class="product-card" data-category="other">
 <div class="product-image" onclick="showProductDetail(23)" style="cursor: pointer;">
-            <img alt="LG CordZero Vacuum" loading="lazy" src="https://subscribe-smarthome.com/images/CordZero.jpg"/>
             
-</div>
+<img alt="LG CordZero Vacuum" loading="lazy" src="https://subscribe-smarthome.com/images/CordZero.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG CordZero Vacuum</h3>
 <p class="product-desc">Cordless vacuum with dual battery packs. Auto Empty with UVC LED.</p>
@@ -2617,9 +2637,11 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(24)" style="cursor: pointer;">
-            <img alt="LG Multi Door InstaView 614L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeInstaview614L.jpg"/>
             
-</div>
+<img alt="LG Multi Door InstaView 614L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeInstaview614L.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG Multi Door InstaView 614L</h3>
 <p class="product-desc">Premium multi-door refrigerator with InstaView glass panel. Knock twice to see inside.</p>
@@ -2634,9 +2656,11 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(25)" style="cursor: pointer;">
-            <img alt="LG InstaView Fridge 508L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeFrenchDoor508L.jpg"/>
             
-</div>
+<img alt="LG InstaView Fridge 508L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeFrenchDoor508L.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG InstaView Fridge 508L</h3>
 <p class="product-desc">Premium French door refrigerator with InstaView glass panel. 508L capacity.</p>
@@ -2651,9 +2675,11 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(26)" style="cursor: pointer;">
-            <img alt="LG French Door Fridge 665L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeFrenchDoor665L.jpg"/>
             
-</div>
+<img alt="LG French Door Fridge 665L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeFrenchDoor665L.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG French Door Fridge 665L</h3>
 <p class="product-desc">Large capacity French door refrigerator with 665L space. Multi-door design.</p>
@@ -2668,9 +2694,11 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(27)" style="cursor: pointer;">
-            <img alt="LG Door In Door Fridge 635L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeDoorInDoor635L.jpg"/>
             
-</div>
+<img alt="LG Door In Door Fridge 635L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeDoorInDoor635L.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG Door In Door Fridge 635L</h3>
 <p class="product-desc">Premium side-by-side refrigerator with Door In Door convenience. 635L capacity.</p>
@@ -2685,9 +2713,11 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(28)" style="cursor: pointer;">
-            <img alt="LG Side By Side Fridge 641L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeSideBySide641L.jpg"/>
             
-</div>
+<img alt="LG Side By Side Fridge 641L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeSideBySide641L.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG Side By Side Fridge 641L</h3>
 <p class="product-desc">Large capacity side-by-side refrigerator with 641L space. Modern design.</p>
@@ -2702,9 +2732,11 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(29)" style="cursor: pointer;">
-            <img alt="LG Top Freezer Fridge 493L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeTopFreezer493L.jpg"/>
             
-</div>
+<img alt="LG Top Freezer Fridge 493L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeTopFreezer493L.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG Top Freezer Fridge 493L</h3>
 <p class="product-desc">Classic top freezer refrigerator with 493L capacity. Smart Inverter technology.</p>
@@ -2719,9 +2751,11 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(30)" style="cursor: pointer;">
-            <img alt="LG Top Freezer Fridge 603L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeTopFreezer603L.jpg"/>
             
-</div>
+<img alt="LG Top Freezer Fridge 603L" loading="lazy" src="https://subscribe-smarthome.com/images/FridgeTopFreezer603L.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG Top Freezer Fridge 603L</h3>
 <p class="product-desc">Large capacity top freezer refrigerator with 603L space. Smart Inverter technology.</p>
@@ -2736,9 +2770,11 @@
 </div>
 <div class="product-card" data-category="other">
 <div class="product-image" onclick="showProductDetail(31)" style="cursor: pointer;">
-            <img alt="LG QuadWash Dishwasher Silver" loading="lazy" src="https://subscribe-smarthome.com/images/DishwasherQuadWash.jpg"/>
             
-</div>
+<img alt="LG QuadWash Dishwasher Silver" loading="lazy" src="https://subscribe-smarthome.com/images/DishwasherQuadWash.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG QuadWash Dishwasher Silver</h3>
 <p class="product-desc">Advanced dishwasher with QuadWash technology. TrueSteam for hygienic results.</p>
@@ -2753,9 +2789,11 @@
 </div>
 <div class="product-card" data-category="other">
 <div class="product-image" onclick="showProductDetail(32)" style="cursor: pointer;">
-            <img alt="LG QuadWash Dishwasher" loading="lazy" src="https://subscribe-smarthome.com/images/DishwasherQuadWash (2).jpg"/>
             
-</div>
+<img alt="LG QuadWash Dishwasher" loading="lazy" src="https://subscribe-smarthome.com/images/DishwasherQuadWash (2).jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG QuadWash Dishwasher</h3>
 <p class="product-desc">Advanced dishwasher with QuadWash technology. TrueSteam for hygienic results.</p>
@@ -2770,9 +2808,11 @@
 </div>
 <div class="product-card" data-category="ac">
 <div class="product-image" onclick="showProductDetail(33)" style="cursor: pointer;">
-            <img alt="LG ArtCool 1.5 HP" loading="lazy" src="https://subscribe-smarthome.com/images/ArtCool1.5HP.jpg"/>
             
-</div>
+<img alt="LG ArtCool 1.5 HP" loading="lazy" src="https://subscribe-smarthome.com/images/ArtCool1.5HP.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG ArtCool 1.5 HP</h3>
 <p class="product-desc">Premium wall-mounted AC with sleek mirror glass design. Plasmaster Ionizer++.</p>
@@ -2787,9 +2827,11 @@
 </div>
 <div class="product-card" data-category="ac">
 <div class="product-image" onclick="showProductDetail(34)" style="cursor: pointer;">
-            <img alt="LG ArtCool 2.5 HP" loading="lazy" src="https://subscribe-smarthome.com/images/ArtCool2.5HP.jpg"/>
             
-</div>
+<img alt="LG ArtCool 2.5 HP" loading="lazy" src="https://subscribe-smarthome.com/images/ArtCool2.5HP.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG ArtCool 2.5 HP</h3>
 <p class="product-desc">Premium wall-mounted AC with sleek mirror glass design. For larger rooms.</p>
@@ -2804,9 +2846,11 @@
 </div>
 <div class="product-card" data-category="ac">
 <div class="product-image" onclick="showProductDetail(35)" style="cursor: pointer;">
-            <img alt="LG DUALCOOL 1.0 HP" loading="lazy" src="https://subscribe-smarthome.com/images/DualCoolWithPurifier1HP.jpg"/>
             
-</div>
+<img alt="LG DUALCOOL 1.0 HP" loading="lazy" src="https://subscribe-smarthome.com/images/DualCoolWithPurifier1HP.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG DUALCOOL 1.0 HP</h3>
 <p class="product-desc">Wall-mounted AC with built-in air purification. Plasmaster Ionizer++.</p>
@@ -2821,9 +2865,11 @@
 </div>
 <div class="product-card" data-category="ac">
 <div class="product-image" onclick="showProductDetail(36)" style="cursor: pointer;">
-            <img alt="LG DUALCOOL 1.5 HP" loading="lazy" src="https://subscribe-smarthome.com/images/DualCoolWithPurifier1.5HP.png"/>
+            
+<img alt="LG DUALCOOL 1.5 HP" loading="lazy" src="https://subscribe-smarthome.com/images/DualCoolWithPurifier1.5HP.png"/>
 
-</div>
+
+        </div>
 <div class="product-info">
 <h3>LG DUALCOOL 1.5 HP</h3>
 <p class="product-desc">Wall-mounted AC with built-in air purification. Plasmaster Ionizer++.</p>
@@ -2838,9 +2884,11 @@
 </div>
 <div class="product-card" data-category="ac">
 <div class="product-image" onclick="showProductDetail(37)" style="cursor: pointer;">
-            <img alt="LG DUALCOOL Premium 2.0 HP" loading="lazy" src="https://subscribe-smarthome.com/images/DualCoolWithPurifier2HP.jpg"/>
             
-</div>
+<img alt="LG DUALCOOL Premium 2.0 HP" loading="lazy" src="https://subscribe-smarthome.com/images/DualCoolWithPurifier2HP.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG DUALCOOL Premium 2.0 HP</h3>
 <p class="product-desc">Premium wall-mounted AC with built-in air purification for larger spaces.</p>
@@ -2855,9 +2903,11 @@
 </div>
 <div class="product-card" data-category="ac">
 <div class="product-image" onclick="showProductDetail(38)" style="cursor: pointer;">
-            <img alt="LG DUALCOOL Premium 2.5 HP" loading="lazy" src="https://subscribe-smarthome.com/images/DualCoolWithPurifier2.5HP.jpg"/>
             
-</div>
+<img alt="LG DUALCOOL Premium 2.5 HP" loading="lazy" src="https://subscribe-smarthome.com/images/DualCoolWithPurifier2.5HP.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG DUALCOOL Premium 2.5 HP</h3>
 <p class="product-desc">Premium wall-mounted AC with built-in air purification for large spaces.</p>
@@ -2872,9 +2922,11 @@
 </div>
 <div class="product-card" data-category="tv">
 <div class="product-image" onclick="showProductDetail(39)" style="cursor: pointer;">
-            <img alt="LG Sound Bar Dolby Atmos" loading="lazy" src="https://subscribe-smarthome.com/images/SoundBarWithDolbyAtmos.jpg"/>
             
-</div>
+<img alt="LG Sound Bar Dolby Atmos" loading="lazy" src="https://subscribe-smarthome.com/images/SoundBarWithDolbyAtmos.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG Sound Bar Dolby Atmos</h3>
 <p class="product-desc">Premium sound bar with Dolby Atmos. 3-Upfiring speakers for 3D audio.</p>
@@ -2889,9 +2941,11 @@
 </div>
 <div class="product-card" data-category="tv">
 <div class="product-image" onclick="showProductDetail(40)" style="cursor: pointer;">
-            <img "="" alt="LG OLED B5 TV 77" loading="lazy" src="https://subscribe-smarthome.com/images/OledAiTv77.jpg"/>
+            
+<img "="" alt="LG OLED B5 TV 77" loading="lazy" src="https://subscribe-smarthome.com/images/OledAiTv77.jpg"/>
 
-</div>
+
+        </div>
 <div class="product-info">
 <h3>LG OLED B5 TV 77"</h3>
 <p class="product-desc">77" OLED B5 TV with AI technology. World's No.1 OLED TV for 12 years.</p>
@@ -2906,9 +2960,11 @@
 </div>
 <div class="product-card" data-category="tv">
 <div class="product-image" onclick="showProductDetail(41)" style="cursor: pointer;">
-            <img "="" alt="LG NanoCell AI TV 75" loading="lazy" src="https://subscribe-smarthome.com/images/NanoCellAiTv65.jpg"/>
+            
+<img "="" alt="LG NanoCell AI TV 75" loading="lazy" src="https://subscribe-smarthome.com/images/NanoCellAiTv65.jpg"/>
 
-</div>
+
+        </div>
 <div class="product-info">
 <h3>LG NanoCell AI TV 75"</h3>
 <p class="product-desc">75" 4K UHD NanoCell TV with AI technology. Vibrant colors and sharp details.</p>
@@ -2923,9 +2979,11 @@
 </div>
 <div class="product-card" data-category="tv">
 <div class="product-image" onclick="showProductDetail(42)" style="cursor: pointer;">
-            <img "="" alt="LG QNED Evo AI TV 65" loading="lazy" src="https://subscribe-smarthome.com/images/QnedEvoAiTv65.jpg"/>
+            
+<img "="" alt="LG QNED Evo AI TV 65" loading="lazy" src="https://subscribe-smarthome.com/images/QnedEvoAiTv65.jpg"/>
 
-</div>
+
+        </div>
 <div class="product-info">
 <h3>LG QNED Evo AI TV 65"</h3>
 <p class="product-desc">65" QNED Mini LED TV with AI technology. Enhanced brightness and contrast.</p>
@@ -2940,9 +2998,11 @@
 </div>
 <div class="product-card" data-category="other">
 <div class="product-image" onclick="showProductDetail(43)" style="cursor: pointer;">
-            <img alt="LG Styler" loading="lazy" src="https://subscribe-smarthome.com/images/Styler.jpg"/>
             
-</div>
+<img alt="LG Styler" loading="lazy" src="https://subscribe-smarthome.com/images/Styler.jpg"/>
+            
+
+        </div>
 <div class="product-info">
 <h3>LG Styler</h3>
 <p class="product-desc">Smart clothing care system with TrueSteam technology. Refresh &amp; sanitize clothes.</p>
@@ -2952,6 +3012,25 @@
 <div class="product-footer">
 <div class="product-price">RM90<span>/month</span></div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20Styler" >Order Now</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="tv">
+<div class="product-image" onclick="showProductDetail(44)" style="cursor: pointer;">
+            
+<img alt="LG SMART Monitor 32U889SA-W" loading="lazy" src="/images/LGSmartMonitorSwing.jpg"/>
+            
+
+        </div>
+<div class="product-info">
+<h3>LG SMART Monitor 32U889SA-W</h3>
+<p class="product-desc">31.5" 4K UHD IPS Smart Monitor Swing with Touchscreen, Rolling Stand.</p>
+<div class="product-features">
+<span class="feature-tag">31.5" 4K UHD IPS</span><span class="feature-tag">Touchscreen</span><span class="feature-tag">Rolling Stand</span><span class="feature-tag">5-Year Warranty</span>
+</div>
+<div class="product-footer">
+<div class="product-price">RM60<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20SMART%20Monitor%2032U889SA-W" >Order Now</a>
 </div>
 </div>
 </div>
@@ -3616,22 +3695,6 @@
                 }
             }
         });
-
-        // Sticky CTA - show after scrolling past hero
-        (function() {
-            var stickyCta = document.getElementById('stickyCta');
-            if (!stickyCta) return;
-            var heroSection = document.getElementById('heroVideoSection');
-            var heroBottom = heroSection ? heroSection.offsetTop + heroSection.offsetHeight : 500;
-
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > heroBottom) {
-                    stickyCta.classList.add('show');
-                } else {
-                    stickyCta.classList.remove('show');
-                }
-            });
-        })();
 </script>
 
     <!-- Floating WhatsApp Button -->
