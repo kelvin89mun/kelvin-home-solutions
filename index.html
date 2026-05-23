@@ -1818,6 +1818,7 @@
 
 
 <base target="_blank">
+<base target="_blank">
 </head>
 <body>
 <script>
@@ -2149,7 +2150,10 @@
             var scroll = document.getElementById('galleryScroll');
             scroll.scrollTo({ left: index * scroll.offsetWidth, behavior: 'smooth' });
         }
-        document.getElementById('galleryScroll').addEventListener('scroll', galleryScroll);
+        var galleryScrollEl = document.getElementById('galleryScroll');
+        if (galleryScrollEl) {
+            galleryScrollEl.addEventListener('scroll', galleryScroll);
+        }
 
         function showProductDetail(index) {
             var p = productData[index];
@@ -3816,7 +3820,11 @@
             });
             console.log('Visible cards:', visibleCount);
             // Update URL hash
-            history.pushState({ category: category }, '', '#' + category);
+            try {
+                history.pushState({ category: category }, '', '#' + category);
+            } catch (e) {
+                // Silently fail if pushState is not allowed (e.g. file:// protocol)
+            }
             // Scroll to first visible
             if (firstVisibleCard) {
                 setTimeout(function() {
