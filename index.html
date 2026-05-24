@@ -72,6 +72,40 @@
             text-decoration: none;
         }
 
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 2px;
+            background: #fafafa;
+        }
+        .lang-btn {
+            padding: 4px 8px;
+            border: none;
+            background: transparent;
+            color: #888;
+            font-size: 0.7rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s;
+            font-family: inherit;
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+        }
+        .lang-btn.active {
+            background: #c41e3a;
+            color: white;
+            box-shadow: 0 1px 4px rgba(196,30,58,0.25);
+        }
+        .lang-btn:hover:not(.active) {
+            color: #333;
+            background: #f0f0f0;
+        }
+
         .logo img {
             height: 40px;
             width: auto;
@@ -435,14 +469,14 @@
 
         .btn-enquire {
             padding: 14px 0;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            background: #25D366;
             color: white;
             text-decoration: none;
             border-radius: 25px;
             font-size: 0.9rem;
-            font-weight: 700;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            font-weight: 600;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -452,14 +486,13 @@
             min-width: 120px;
             width: 120px;
             text-align: center;
-            letter-spacing: 0.3px;
             line-height: 1.2;
         }
 
         .btn-enquire:hover {
-            background: #128C7E;
+            background: #22c75e;
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.45);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
         }
 
 
@@ -511,7 +544,7 @@
             .product-info h3 { font-size: 0.78rem; margin-bottom: 10px; line-height: 1.3; }
             .product-price { font-size: 0.82rem; flex-shrink: 1; min-width: 0; }
             .product-footer { gap: 8px; padding-top: 10px; }
-            .btn-enquire { padding: 12px 0 !important; font-size: 0.75rem !important; flex-shrink: 0 !important; white-space: nowrap !important; min-width: 82px !important; width: 82px !important; justify-content: center !important; gap: 3px !important; background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important; color: white !important; box-shadow: 0 4px 15px rgba(37,211,102,0.4) !important; font-weight: 700 !important; letter-spacing: 0.3px !important; line-height: 1.2 !important; }
+            .btn-enquire { padding: 12px 0 !important; font-size: 0.75rem !important; flex-shrink: 0 !important; white-space: nowrap !important; min-width: 82px !important; width: 82px !important; justify-content: center !important; gap: 3px !important; background: #25D366 !important; color: white !important; box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important; font-weight: 600 !important; line-height: 1.2 !important; }
             .product-badge { top: 6px; left: 6px; padding: 3px 8px; font-size: 0.55rem; }
             .nav-links { display: none; }
             .category-container { justify-content: center; padding: 0; gap: 6px; }
@@ -1096,6 +1129,228 @@
             cursor: zoom-in;
         }
 
+        /* Help Choosing Section */
+        .help-section {
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 48px 36px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+            border-radius: 24px;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        .help-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .help-section > p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 24px;
+        }
+        .help-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 32px 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px 20px;
+            text-align: left;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .help-list li {
+            font-size: 0.9rem;
+            color: #444;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .help-list li span:first-child {
+            color: #25D366;
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .help-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 40px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .help-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            background: #22c75e;
+        }
+        @media (max-width: 768px) {
+            .help-section {
+                margin: 36px 16px;
+                padding: 36px 24px;
+            }
+            .help-section h2 {
+                font-size: 1.2rem;
+            }
+            .help-list {
+                grid-template-columns: 1fr;
+                max-width: 280px;
+            }
+            .help-btn {
+                padding: 14px 28px;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Advisor Section */
+        .advisor-section {
+            max-width: 720px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+        .advisor-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+        .advisor-photo {
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f5f0eb 0%, #e8e0d8 100%);
+        }
+        .advisor-photo img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+        .advisor-info {
+            padding: 36px 40px 44px;
+            text-align: left;
+        }
+        .advisor-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #c41e3a;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+        }
+        .advisor-info h2 {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .advisor-info h2 strong {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .advisor-divider {
+            width: 40px;
+            height: 2px;
+            background: #c41e3a;
+            margin-bottom: 24px;
+        }
+        .advisor-info > p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .advisor-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px 24px;
+        }
+        .advisor-list li {
+            font-size: 0.85rem;
+            color: #444;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 0;
+            border-bottom: 1px dotted #e0e0e0;
+        }
+        .advisor-list li::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            background: #c41e3a;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .advisor-note {
+            font-size: 0.82rem;
+            color: #888;
+            margin: 20px 0 28px;
+            padding-left: 12px;
+            border-left: 2px solid #e0e0e0;
+            line-height: 1.5;
+        }
+        .advisor-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 36px;
+            background: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.25s;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.3px;
+        }
+        .advisor-btn:hover {
+            background: #c41e3a;
+            transform: translateY(-1px);
+        }
+        @media (max-width: 768px) {
+            .advisor-section {
+                margin: 0 auto 40px;
+                padding: 0 16px;
+            }
+            .advisor-info {
+                padding: 28px 24px 36px;
+            }
+            .advisor-info h2 {
+                font-size: 1.3rem;
+            }
+            .advisor-list {
+                gap: 6px 16px;
+            }
+            .advisor-btn {
+                padding: 14px 28px;
+                font-size: 0.85rem;
+            }
+        }
+
         /* Lightbox */
         .lightbox-overlay {
             position: fixed;
@@ -1553,23 +1808,21 @@
             gap: 10px;
             width: 100%;
             padding: 16px 24px;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            background: #25D366;
             color: white;
             text-decoration: none;
             border-radius: 14px;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 1rem;
-            transition: all 0.3s;
-            box-shadow: 0 4px 20px rgba(37,211,102,0.35);
-            position: relative;
-            z-index: 1;
+            transition: all 0.2s;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
             border: none;
             cursor: pointer;
         }
         .btn-wa-exclusive:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(37,211,102,0.5);
-            background: linear-gradient(135deg, #22c75e 0%, #0fa070 100%);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            background: #22c75e;
         }
         .btn-wa-exclusive svg {
             width: 22px;
@@ -1603,28 +1856,25 @@
             position: fixed;
             bottom: 20px;
             right: 16px;
-            padding: 16px 28px;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            padding: 14px 24px;
+            background: #25D366;
             color: white;
             border-radius: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            font-size: 1rem;
-            font-weight: 700;
+            font-size: 0.95rem;
+            font-weight: 600;
             white-space: nowrap;
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
             z-index: 9999;
-            transition: all 0.3s ease;
-            border: 2px solid white;
-            animation: wa-bounce 2s ease-in-out infinite;
-            letter-spacing: 0.3px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            gap: 6px;
         }
         .floating-whatsapp:hover {
-            animation: none;
-            transform: scale(1.05) translateY(-3px);
-            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
         }
         @media (max-width: 768px) {
             .floating-whatsapp {
@@ -1632,12 +1882,7 @@
                 right: 12px;
                 padding: 12px 18px;
                 font-size: 0.85rem;
-                border: 2px solid white;
             }
-        }
-        @keyframes wa-bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
         }
 
 
@@ -1876,7 +2121,6 @@
 
 <base target="_blank">
 <base target="_blank">
-<base target="_blank">
 </head>
 <body>
 <script>
@@ -1955,7 +2199,11 @@
 <a class="logo" href="index.html">
 <img alt="LG Subscribe Malaysia" src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/LG-Subscribe-AI-Logo.png.PNG" style="height:40px;width:auto;" onerror="this.parentElement.innerHTML='<span style=font-weight:800;color:#c41e3a;font-size:1.2rem;>LG Subscribe</span>'"/>
 </a>
-<div style="width: 40px;"></div>
+<div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('en')" data-lang="en">EN</button>
+    <button class="lang-btn" onclick="setLang('zh')" data-lang="zh">&#20013;&#25991;</button>
+    <button class="lang-btn" onclick="setLang('ms')" data-lang="ms">BM</button>
+</div>
 </div>
 </nav>
 <!-- ===== HERO BANNER ===== -->
@@ -1966,10 +2214,10 @@
     </video>
     <div class="hero-video-overlay"></div>
     <div class="hero-video-caption">
-        <h2>LG Appliances Subscription</h2>
-        <p>From RM50/month · Zero Deposit · Free Installation</p>
+        <h2 data-i18n="hero_title">LG Appliances Subscription</h2>
+        <p data-i18n="hero_subtitle">From RM50/month · Zero Deposit · Free Installation</p>
         <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px;">
-            <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20saw%20your%20LG%20subscription%20from%20RM50%2Fmonth.%20Can%20I%20know%20more%20about%20the%20plan%20and%20contract%20period%3F" style="padding:16px 36px;background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);color:white;border-radius:30px;text-decoration:none;font-weight:700;font-size:1rem;box-shadow:0 8px 30px rgba(37,211,102,0.5);white-space:nowrap;display:inline-flex;align-items:center;gap:8px;letter-spacing:0.3px;">Get Free Quote on WhatsApp</a>
+            <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20saw%20your%20LG%20subscription%20from%20RM50%2Fmonth.%20Can%20I%20know%20more%20about%20the%20plan%20and%20contract%20period%3F" style="padding:14px 32px;background:#25D366;color:white;border-radius:30px;text-decoration:none;font-weight:600;font-size:1rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);white-space:nowrap;display:inline-flex;align-items:center;gap:8px;" data-i18n="hero_cta">Compare Monthly Plans</a>
         </div>
     </div>
 </div>
@@ -2571,8 +2819,10 @@
 
             // Prices
             document.getElementById('spPrice').innerHTML = p.price + '<span>/month</span>';
-            document.getElementById('spPriceNote').textContent = 'Subscription from ' + p.price + '/month';
-            document.getElementById('spPriceMain').innerHTML = p.price + '<span style="font-size:0.72rem;font-weight:400;color:#999;">/month</span>';
+            var i18n_dict = {en:{sub_from:'Subscription from',per_month:'/month'},zh:{sub_from:'每月订阅从',per_month:'/月'},ms:{sub_from:'Langganan dari',per_month:'/bulan'}};
+            var d = i18n_dict[currentLang||'en'];
+            document.getElementById('spPriceNote').textContent = d.sub_from + ' ' + p.price + d.per_month;
+            document.getElementById('spPriceMain').innerHTML = p.price + '<span style="font-size:0.72rem;font-weight:400;color:#999;">' + d.per_month + '</span>';
             document.getElementById('spPriceOutright').textContent = p.outright;
 
             // Features
@@ -2598,8 +2848,8 @@
 </script>
 <section class="products-section" id="products">
 <div class="section-title">
-<h2>Our Collection</h2>
-<p>44 premium appliances for your modern home</p>
+<h2 data-i18n="our_collection">Our Collection</h2>
+<p id="collectionSubtitle">44 premium appliances for your modern home</p>
 </div>
 <div class="products-grid" id="productsGrid">
 <div class="product-card" data-category="water">
@@ -3460,12 +3710,49 @@
 </div>
 </section>
 
+<!-- ===== Help Choosing Section ===== -->
+<div class="help-section" id="helpSection">
+    <h2 data-i18n="help_title">Still Not Sure Which Model Fits Your Home?</h2>
+    <p data-i18n="help_subtitle">We can recommend based on:</p>
+    <ul class="help-list">
+        <li><span>&#10003;</span> <span data-i18n="help_kitchen">Kitchen space</span></li>
+        <li><span>&#10003;</span> <span data-i18n="help_family">Family size</span></li>
+        <li><span>&#10003;</span> <span data-i18n="help_budget">Monthly budget</span></li>
+        <li><span>&#10003;</span> <span data-i18n="help_usage">Water usage</span></li>
+    </ul>
+    <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20need%20help%20choosing%20the%20right%20LG%20model%20for%20my%20home.%20Can%20you%20recommend%20based%20on%20my%20needs%3F" class="help-btn" target="_blank" data-i18n="help_cta">Ask on WhatsApp</a>
+</div>
+
+<!-- ===== Advisor Section ===== -->
+<div class="advisor-section" id="advisorSection">
+    <div class="advisor-card">
+        <div class="advisor-photo">
+            <img src="https://qwueglqmwnge4.kimi.page/images/kelvin-advisor.png" alt="Kelvin - LG Subscription Advisor"/>
+        </div>
+        <div class="advisor-info">
+            <div class="advisor-label" data-i18n="advisor_badge">Personal Consultant</div>
+            <h2 data-i18n="advisor_title">Need Help Deciding?<br><strong>Talk to Kelvin</strong></h2>
+            <div class="advisor-divider"></div>
+            <div class="advisor-divider"></div>
+            <p data-i18n="advisor_desc">Get a personalized recommendation based on your home setup and needs.</p>
+            <ul class="advisor-list">
+                <li data-i18n="advisor_home">Home size</li>
+                <li data-i18n="advisor_family">Family usage</li>
+                <li data-i18n="advisor_budget">Monthly budget</li>
+                <li data-i18n="advisor_kitchen">Kitchen space</li>
+            </ul>
+            <p class="advisor-note" data-i18n="advisor_note">Free consultation. No obligation to subscribe.</p>
+            <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%20Kelvin%2C%20I%20saw%20your%20LG%20subscription%20website%20and%20I%20need%20some%20advice%20on%20choosing%20the%20right%20model.%20Can%20you%20help%3F" class="advisor-btn" target="_blank" data-i18n="advisor_cta">Chat With Kelvin</a>
+        </div>
+    </div>
+</div>
+
 <!-- Product Detail Subpage -->
     <div class="detail-subpage" id="detailSubpage">
         <!-- Top Navigation -->
         <div class="detail-nav-top">
-            <a href="#" onclick="history.back(); return false;">&#8592; Back</a>
-            <span>Product Details</span>
+            <a href="#" onclick="history.back(); return false;" data-i18n="back">&#8592; Back</a>
+            <span data-i18n="product_details">Product Details</span>
         </div>
 
         <!-- Image Gallery - Swipeable -->
@@ -3474,7 +3761,7 @@
             <button class="gallery-nav prev" onclick="galleryPrev()">&#8249;</button>
             <button class="gallery-nav next" onclick="galleryNext()">&#8250;</button>
             <div class="gallery-dots" id="galleryDots"></div>
-            <div class="gallery-hint" id="galleryHint">&#8596; Swipe to see more</div>
+            <div class="gallery-hint" id="galleryHint" data-i18n="swipe_hint">&#8596; Swipe to see more</div>
         </div>
 
         <!-- Product Info -->
@@ -3490,13 +3777,13 @@
             <div class="detail-info-block">
                 <!-- Price Summary -->
                 <div style="background:white;border-radius:16px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.04);">
-                    <h3 style="font-size:0.75rem;font-weight:700;color:#1a1a1a;margin-bottom:14px;text-transform:uppercase;letter-spacing:1px;">Price Options</h3>
+                    <h3 style="font-size:0.75rem;font-weight:700;color:#1a1a1a;margin-bottom:14px;text-transform:uppercase;letter-spacing:1px;" data-i18n="price_options">Price Options</h3>
                     <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f0f0f0;">
-                        <span style="font-size:0.8rem;color:#666;">Monthly Subscription</span>
+                        <span style="font-size:0.8rem;color:#666;" data-i18n="monthly_subscription">Monthly Subscription</span>
                         <span style="font-size:1.1rem;font-weight:800;color:#c41e3a;" id="spPriceMain">RM70<span style="font-size:0.72rem;font-weight:400;color:#999;">/month</span></span>
                     </div>
                     <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;">
-                        <span style="font-size:0.8rem;color:#666;">Outright Purchase</span>
+                        <span style="font-size:0.8rem;color:#666;" data-i18n="outright_purchase">Outright Purchase</span>
                         <span style="font-size:1.1rem;font-weight:800;color:#333;" id="spPriceOutright">RM3,200</span>
                     </div>
                 </div>
@@ -3505,7 +3792,7 @@
 
         <!-- Features -->
         <div class="detail-features-section">
-            <h3>Key Features</h3>
+            <h3 data-i18n="key_features">Key Features</h3>
             <div class="detail-features-grid" id="spFeatures"></div>
         </div>
 
@@ -3513,16 +3800,16 @@
         <div class="detail-cta-group">
             <a href="#" class="btn-wa-flyer" id="spWA" target="_blank">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Enquire on WhatsApp
+                <span data-i18n="enquire_whatsapp">Enquire on WhatsApp</span>
             </a>
         </div>
 
         <!-- WhatsApp More Info Section -->
         <div class="wa-exclusive-section">
             <div class="wa-exclusive-badge">
-                <span class="blink">&#128172;</span> Chat with Us on WhatsApp
+                <span data-i18n="chat_whatsapp">Chat on WhatsApp</span>
             </div>
-            <h3>Need More Information?</h3>
+            <h3 data-i18n="need_more_info">Need More Information?</h3>
             <p class="subtitle">Our product specialist is here to help you</p>
             <div class="wa-benefits">
                 <a class="wa-benefit-item" id="spBenefitVideo" href="#" target="_blank">
@@ -3544,13 +3831,13 @@
             </div>
             <a href="#" class="btn-wa-exclusive" id="spWAExclusive" target="_blank">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Chat with Product Specialist
+                <span data-i18n="chat_with_us">Chat with Us</span>
             </a>
         </div>
 
         <div class="detail-nav-top" style="margin-top: 40px;">
-            <a href="#" onclick="history.back(); return false;">&#8592; Back</a>
-            <span>Product Details</span>
+            <a href="#" onclick="history.back(); return false;" data-i18n="back">&#8592; Back</a>
+            <span data-i18n="product_details">Product Details</span>
         </div>
         <div style="border-top: 1px solid rgba(0,0,0,0.08); margin-top: 40px; padding-top: 24px; text-align: center; color: #888; font-size: 0.7rem;">
             <p style="margin-bottom: 8px;"><a href="#" onclick="showPrivacy(); return false;" style="color: #c41e3a; text-decoration: none;">Privacy Policy</a> | <a href="#" onclick="showTerms(); return false;" style="color: #c41e3a; text-decoration: none;">Terms &amp; Conditions</a></p>
@@ -4112,12 +4399,289 @@
         });
 </script>
 
+
+<!-- ===== i18n Language System ===== -->
+<script>
+(function() {
+    'use strict';
+
+    // Translation dictionary
+    var i18n = {
+        en: {
+            // Category buttons
+            cat_all: 'All', cat_water: 'Water', cat_air: 'Air', cat_washer: 'Washer',
+            cat_fridge: 'Fridge', cat_ac: 'AC', cat_tv: 'TV', cat_other: 'Other',
+            // Hero
+            hero_title: 'LG Appliances Subscription',
+            hero_subtitle: 'From RM50/month · Zero Deposit · Free Installation',
+            hero_cta: 'Compare Monthly Plans',
+            // Section titles
+            our_collection: 'Our Collection',
+            collection_subtitle: 'premium appliances for your modern home',
+            // Product card
+            order_now: 'Order Now',
+            // Detail page
+            back: '← Back',
+            product_details: 'Product Details',
+            swipe_hint: '↔ Swipe to see more',
+            price_options: 'Price Options',
+            monthly_subscription: 'Monthly Subscription',
+            outright_purchase: 'Outright Purchase',
+            subscription_from: 'Subscription from',
+            per_month: '/month',
+            key_features: 'Key Features',
+            enquire_whatsapp: 'Enquire on WhatsApp',
+            chat_whatsapp: 'Chat on WhatsApp',
+            need_more_info: 'Need More Information?',
+            chat_with_us: 'Chat with Us',
+            video: 'Video',
+            photos: 'Photos',
+            compare: 'Compare',
+            consult: 'Consult',
+            // Menu
+            menu_products: 'Products',
+            menu_water: 'Water Purifiers',
+            menu_air: 'Air Purifiers',
+            menu_washer: 'Washing Machines',
+            menu_fridge: 'Refrigerators',
+            menu_ac: 'Air Conditioners',
+            menu_tv: 'TV & Audio',
+            menu_other: 'Other',
+            // Footer
+            footer_authorized: 'Authorized LG Subscribe Dealer',
+            footer_location: 'Location',
+            footer_hours: 'Business Hours',
+            footer_contact: 'Contact',
+            footer_follow: 'Follow Us',
+            footer_copyright: 'All Rights Reserved',
+            // Floating button
+            floating_cta: 'Need Help Choosing? \uD83D\uDCAC',
+            // Help section
+            help_title: 'Still Not Sure Which Model Fits Your Home?',
+            help_subtitle: 'We can recommend based on:',
+            help_kitchen: 'Kitchen space',
+            help_family: 'Family size',
+            help_budget: 'Monthly budget',
+            help_usage: 'Water usage',
+            help_cta: 'Ask on WhatsApp',
+            // Advisor section
+            advisor_badge: 'Personal Consultant',
+            advisor_title: 'Need Help Deciding?<br><strong>Talk to Kelvin</strong>',
+            advisor_desc: 'Get a personalized recommendation based on your home setup and needs.',
+            advisor_home: 'Home size',
+            advisor_family: 'Family usage',
+            advisor_budget: 'Monthly budget',
+            advisor_kitchen: 'Kitchen space',
+            advisor_note: 'Free consultation. No obligation to subscribe.',
+            advisor_cta: 'Chat With Kelvin'
+        },
+        zh: {
+            // Category buttons
+            cat_all: '全部', cat_water: '净水器', cat_air: '空气净化', cat_washer: '洗衣机',
+            cat_fridge: '冰箱', cat_ac: '冷气机', cat_tv: '电视', cat_other: '其他',
+            // Hero
+            hero_title: 'LG 家电订阅服务',
+            hero_subtitle: '每月 RM50 起 · 零押金 · 免费安装',
+            hero_cta: '比较月租配套',
+            // Section titles
+            our_collection: '我们的产品',
+            collection_subtitle: '款高端家电供您选择',
+            // Product card
+            order_now: '立即订阅',
+            // Detail page
+            back: '← 返回',
+            product_details: '产品详情',
+            swipe_hint: '↔ 滑动查看更多',
+            price_options: '价格方案',
+            monthly_subscription: '每月订阅',
+            outright_purchase: '一次性购买',
+            subscription_from: '每月订阅从',
+            per_month: '/月',
+            key_features: '主要功能',
+            enquire_whatsapp: 'WhatsApp 咨询',
+            chat_whatsapp: 'WhatsApp 咨询',
+            need_more_info: '需要更多信息？',
+            chat_with_us: '联系我们',
+            video: '视频',
+            photos: '照片',
+            compare: '比较',
+            consult: '咨询',
+            // Menu
+            menu_products: '产品分类',
+            menu_water: '净水器',
+            menu_air: '空气净化器',
+            menu_washer: '洗衣机',
+            menu_fridge: '冰箱',
+            menu_ac: '冷气机',
+            menu_tv: '电视与音响',
+            menu_other: '其他产品',
+            // Footer
+            footer_authorized: 'LG 授权订阅经销商',
+            footer_location: '地址',
+            footer_hours: '营业时间',
+            footer_contact: '联系方式',
+            footer_follow: '关注我们',
+            footer_copyright: '版权所有',
+            // Floating button
+            floating_cta: '需要帮助选择？ \uD83D\uDCAC',
+            // Help section
+            help_title: '还不确定哪个型号适合您家？',
+            help_subtitle: '我们可以根据以下推荐：',
+            help_kitchen: '厨房空间',
+            help_family: '家庭人数',
+            help_budget: '每月预算',
+            help_usage: '用水量',
+            help_cta: 'WhatsApp 咨询',
+            // Advisor section
+            advisor_badge: '专属顾问',
+            advisor_title: '需要帮助选择？<br><strong>咨询 Kelvin</strong>',
+            advisor_desc: '根据您的家居情况，获取专业的产品推荐。',
+            advisor_home: '家居空间',
+            advisor_family: '家庭用量',
+            advisor_budget: '每月预算',
+            advisor_kitchen: '厨房空间',
+            advisor_note: '免费咨询。无订阅义务。',
+            advisor_cta: '与 Kelvin 聊聊'
+        },
+        ms: {
+            // Category buttons
+            cat_all: 'Semua', cat_water: 'Penapis Air', cat_air: 'Penapis Udara', cat_washer: 'Mesin Basuh',
+            cat_fridge: 'Peti Sejuk', cat_ac: 'Penghawa Dingin', cat_tv: 'TV', cat_other: 'Lain-lain',
+            // Hero
+            hero_title: 'Langganan Perkakasan LG',
+            hero_subtitle: 'Dari RM50/sebulan · Tiada Deposit · Pemasangan Percuma',
+            hero_cta: 'Lihat Pelan',
+            // Section titles
+            our_collection: 'Koleksi Kami',
+            collection_subtitle: 'perkakasan premium untuk rumah moden anda',
+            // Product card
+            order_now: 'Langgan',
+            // Detail page
+            back: '← Kembali',
+            product_details: 'Butiran Produk',
+            swipe_hint: '↔ Geser untuk lihat lebih',
+            price_options: 'Pilihan Harga',
+            monthly_subscription: 'Langganan Bulanan',
+            outright_purchase: 'Pembelian Terus',
+            subscription_from: 'Langganan dari',
+            per_month: '/bulan',
+            key_features: 'Ciri-ciri Utama',
+            enquire_whatsapp: 'Pertanyaan WhatsApp',
+            chat_whatsapp: 'WhatsApp Kami',
+            need_more_info: 'Perlukan Maklumat Lanjut?',
+            chat_with_us: 'Hubungi Kami',
+            video: 'Video',
+            photos: 'Gambar',
+            compare: 'Bandingkan',
+            consult: 'Rundingan',
+            // Menu
+            menu_products: 'Produk',
+            menu_water: 'Penapis Air',
+            menu_air: 'Penapis Udara',
+            menu_washer: 'Mesin Basuh',
+            menu_fridge: 'Peti Sejuk',
+            menu_ac: 'Penghawa Dingin',
+            menu_tv: 'TV & Audio',
+            menu_other: 'Lain-lain',
+            // Footer
+            footer_authorized: 'Pengedar Berlesen LG Subscribe',
+            footer_location: 'Lokasi',
+            footer_hours: 'Waktu Perniagaan',
+            footer_contact: 'Hubungi',
+            footer_follow: 'Ikuti Kami',
+            footer_copyright: 'Hak Cipta Terpelihara',
+            // Floating button
+            floating_cta: 'Perlu Bantuan? \uD83D\uDCAC',
+            // Help section
+            help_title: 'Masih Tidak Pasti Model Mana Sesuai?',
+            help_subtitle: 'Kami boleh cadangkan berdasarkan:',
+            help_kitchen: 'Ruang dapur',
+            help_family: 'Saiz keluarga',
+            help_budget: 'Bajet bulanan',
+            help_usage: 'Penggunaan air',
+            help_cta: 'Tanya di WhatsApp',
+            // Advisor section
+            advisor_badge: 'Perunding Peribadi',
+            advisor_title: 'Perlukan Bantuan Memilih?<br><strong>Bercakap Dengan Kelvin</strong>',
+            advisor_desc: 'Dapatkan cadangan yang disesuaikan berdasarkan kediaman dan keperluan anda.',
+            advisor_home: 'Saiz rumah',
+            advisor_family: 'Penggunaan keluarga',
+            advisor_budget: 'Bajet bulanan',
+            advisor_kitchen: 'Ruang dapur',
+            advisor_note: 'Rundingan percuma. Tiada obligasi untuk melanggan.',
+            advisor_cta: 'Sembang Dengan Kelvin'
+        }
+    };
+
+    var currentLang = localStorage.getItem('lg-lang') || 'en';
+
+    window.setLang = function(lang) {
+        currentLang = lang;
+        localStorage.setItem('lg-lang', lang);
+        applyLang();
+
+        // Update active button
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+    };
+
+    function applyLang() {
+        var dict = i18n[currentLang];
+        if (!dict) return;
+
+        // Update all elements with data-i18n
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+            var key = el.dataset.i18n;
+            if (dict[key]) {
+                // Use innerHTML to support <br> tags in translations
+                el.innerHTML = dict[key];
+            }
+        });
+
+        // Update category buttons
+        var catMap = { all: 'cat_all', water: 'cat_water', air: 'cat_air', washer: 'cat_washer', fridge: 'cat_fridge', ac: 'cat_ac', tv: 'cat_tv', other: 'cat_other' };
+        document.querySelectorAll('.category-btn').forEach(function(btn) {
+            var cat = btn.dataset.category;
+            if (cat && catMap[cat] && dict[catMap[cat]]) {
+                btn.textContent = dict[catMap[cat]];
+            }
+        });
+
+        // Update floating button
+        var floatBtn = document.querySelector('.floating-whatsapp');
+        if (floatBtn) {
+            var svg = floatBtn.querySelector('svg');
+            floatBtn.textContent = dict.floating_cta || i18n.en.floating_cta;
+            if (svg) floatBtn.insertBefore(svg, floatBtn.firstChild);
+        }
+
+        // Update order_now buttons
+        document.querySelectorAll('.btn-enquire').forEach(function(btn) {
+            btn.textContent = dict.order_now || 'Order Now';
+        });
+        
+        // Update collection subtitle with product count
+        var cs = document.getElementById('collectionSubtitle');
+        if (cs && typeof productData !== 'undefined') {
+            cs.textContent = productData.length + ' ' + dict.collection_subtitle;
+        }
+    }
+
+    // Apply on load
+    document.addEventListener('DOMContentLoaded', function() {
+        setLang(currentLang);
+    });
+
+})();
+</script>
+
     <!-- Floating WhatsApp Button -->
     <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20saw%20your%20LG%20subscription%20from%20RM50%2Fmonth.%20Can%20I%20know%20more%20about%20the%20plan%20and%20contract%20period%3F" class="floating-whatsapp" " target="_blank">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="white" style="margin-right:6px;">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
-        Get Free Quote
+        Need Help Choosing? &#128172;
     </a>
 
 
@@ -4198,4 +4762,4 @@ document.addEventListener('keydown', function(e) {
 });
 </script>
 </body>
-</html>
+       </html>
