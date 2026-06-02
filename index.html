@@ -565,14 +565,15 @@
         .product-price-original s { color: #bbb; }
         .product-price-note { font-size: 0.68rem; color: #888; font-weight: 400; line-height: 1.3; }
         .product-price {
-            font-size: 1.3rem;
-            font-weight: 700;
+            font-size: 1.6rem;
+            font-weight: 800;
             color: #c41e3a;
+            line-height: 1;
         }
 
         .product-price span {
-            font-size: 0.8rem;
-            font-weight: 400;
+            font-size: 0.75rem;
+            font-weight: 500;
             color: #999;
         }
 
@@ -656,7 +657,7 @@
         .product-price-original { font-size: 0.78rem; color: #999; font-weight: 500; }
         .product-price-original s { color: #bbb; }
         .product-price-note { font-size: 0.68rem; color: #888; font-weight: 400; line-height: 1.3; }
-        .product-price { font-size: 0.82rem; flex-shrink: 1; min-width: 0; }
+        .product-price { font-size: 1.3rem; flex-shrink: 1; min-width: 0; font-weight: 800; }
             .product-footer { gap: 8px; padding-top: 10px; }
             .btn-enquire { padding: 12px 0 !important; font-size: 0.75rem !important; flex-shrink: 0 !important; white-space: nowrap !important; min-width: 82px !important; width: 82px !important; justify-content: center !important; gap: 3px !important; background: #25D366 !important; color: white !important; box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important; font-weight: 600 !important; line-height: 1.2 !important; }
             .product-badge { top: 6px; left: 6px; padding: 3px 8px; font-size: 0.55rem; }
@@ -2961,7 +2962,8 @@
             document.getElementById('spPrice').innerHTML = p.price + '<span>/month</span>';
             var i18n_dict = {en:{sub_from:'Subscription from',per_month:'/month'},zh:{sub_from:'每月订阅从',per_month:'/月'},ms:{sub_from:'Langganan dari',per_month:'/bulan'}};
             var d = i18n_dict[currentLang||'en'];
-            document.getElementById('spPriceNote').textContent = d.sub_from + ' ' + p.price + d.per_month;
+            var warrantyYears = p.features && p.features.some(f => f.includes('7-Year')) ? '7' : '5';
+            document.getElementById('spPriceNote').textContent = warrantyYears + ' Years Plan · ' + p.price + '/month';
             document.getElementById('spPriceMain').innerHTML = p.price + '<span style="font-size:0.72rem;font-weight:400;color:#999;">' + d.per_month + '</span>';
             document.getElementById('spPriceOutright').textContent = p.outright;
 
@@ -3032,7 +3034,7 @@
 </div>
 <div class="product-card" data-category="water">
 <div class="product-image" onclick="showProductDetail(2)" style="cursor: pointer; position:relative;">
-            <div style="position:absolute;top:10px;left:10px;z-index:5;background:linear-gradient(135deg,#ff4444,#c41e3a);color:white;font-size:0.6rem;font-weight:800;padding:4px 10px;border-radius:20px;letter-spacing:0.5px;box-shadow:0 2px 8px rgba(196,30,58,0.4);">🔥 LIMITED OFFER</div>
+            <div style="position:absolute;top:8px;left:8px;z-index:5;font-size:1.6rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">🔥</div>
             
 <img alt="LG Undersink Water Purifier WU525BS" loading="eager" decoding="async" src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/52.png"/>
             
@@ -3223,7 +3225,7 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(12)" style="cursor: pointer; position:relative;">
-            <div style="position:absolute;top:10px;left:10px;z-index:5;background:linear-gradient(135deg,#ff4444,#c41e3a);color:white;font-size:0.6rem;font-weight:800;padding:4px 10px;border-radius:20px;letter-spacing:0.5px;box-shadow:0 2px 8px rgba(196,30,58,0.4);">🔥 LIMITED OFFER</div>
+            <div style="position:absolute;top:8px;left:8px;z-index:5;font-size:1.6rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">🔥</div>
             
 <img alt="LG WashTower 14KG/10KG WT1410NHB" loading="lazy" src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/54.png"/>
             
@@ -3243,7 +3245,7 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(13)" style="cursor: pointer; position:relative;">
-            <div style="position:absolute;top:10px;left:10px;z-index:5;background:linear-gradient(135deg,#ff4444,#c41e3a);color:white;font-size:0.6rem;font-weight:800;padding:4px 10px;border-radius:20px;letter-spacing:0.5px;box-shadow:0 2px 8px rgba(196,30,58,0.4);">🔥 LIMITED OFFER</div>
+            <div style="position:absolute;top:8px;left:8px;z-index:5;font-size:1.6rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">🔥</div>
             
 <img alt="LG WashTower 25KG/20KG WT2520NHEGR" loading="lazy" src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/53.png"/>
             
@@ -3282,7 +3284,7 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(15)" style="cursor: pointer; position:relative;">
-            <div style="position:absolute;top:10px;left:10px;z-index:5;background:linear-gradient(135deg,#ff4444,#c41e3a);color:white;font-size:0.6rem;font-weight:800;padding:4px 10px;border-radius:20px;letter-spacing:0.5px;box-shadow:0 2px 8px rgba(196,30,58,0.4);">🔥 LIMITED OFFER</div>
+            <div style="position:absolute;top:8px;left:8px;z-index:5;font-size:1.6rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">🔥</div>
             
 <img alt="LG AI DD 9KG Wash 5KG Dry FV1209D4W" loading="lazy" src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/58.png"/>
             
@@ -3302,7 +3304,7 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(16)" style="cursor: pointer; position:relative;">
-            <div style="position:absolute;top:10px;left:10px;z-index:5;background:linear-gradient(135deg,#ff4444,#c41e3a);color:white;font-size:0.6rem;font-weight:800;padding:4px 10px;border-radius:20px;letter-spacing:0.5px;box-shadow:0 2px 8px rgba(196,30,58,0.4);">🔥 LIMITED OFFER</div>
+            <div style="position:absolute;top:8px;left:8px;z-index:5;font-size:1.6rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">🔥</div>
             
 <img alt="LG AI DD 10KG Wash 6KG Dry FV1410H3P" loading="lazy" src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/59.png"/>
             
@@ -3322,7 +3324,7 @@
 </div>
 <div class="product-card" data-category="washer">
 <div class="product-image" onclick="showProductDetail(17)" style="cursor: pointer; position:relative;">
-            <div style="position:absolute;top:10px;left:10px;z-index:5;background:linear-gradient(135deg,#ff4444,#c41e3a);color:white;font-size:0.6rem;font-weight:800;padding:4px 10px;border-radius:20px;letter-spacing:0.5px;box-shadow:0 2px 8px rgba(196,30,58,0.4);">🔥 LIMITED OFFER</div>
+            <div style="position:absolute;top:8px;left:8px;z-index:5;font-size:1.6rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">🔥</div>
             
 <img alt="LG AI DD 15KG Wash 8KG Dry F2515RNTKAR" loading="lazy" src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/58.png"/>
             
@@ -3475,7 +3477,7 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(25)" style="cursor: pointer; position:relative;">
-            <div style="position:absolute;top:10px;left:10px;z-index:5;background:linear-gradient(135deg,#ff4444,#c41e3a);color:white;font-size:0.6rem;font-weight:800;padding:4px 10px;border-radius:20px;letter-spacing:0.5px;box-shadow:0 2px 8px rgba(196,30,58,0.4);">🔥 LIMITED OFFER</div>
+            <div style="position:absolute;top:8px;left:8px;z-index:5;font-size:1.6rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">🔥</div>
             
 <img alt="LG InstaView Fridge 508L" loading="lazy" src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/48.png"/>
             
@@ -3495,7 +3497,7 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(26)" style="cursor: pointer; position:relative;">
-            <div style="position:absolute;top:10px;left:10px;z-index:5;background:linear-gradient(135deg,#ff4444,#c41e3a);color:white;font-size:0.6rem;font-weight:800;padding:4px 10px;border-radius:20px;letter-spacing:0.5px;box-shadow:0 2px 8px rgba(196,30,58,0.4);">🔥 LIMITED OFFER</div>
+            <div style="position:absolute;top:8px;left:8px;z-index:5;font-size:1.6rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">🔥</div>
             
 <img alt="LG French Door Fridge 665L" loading="lazy" src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/47.png"/>
             
@@ -3515,7 +3517,7 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(27)" style="cursor: pointer; position:relative;">
-            <div style="position:absolute;top:10px;left:10px;z-index:5;background:linear-gradient(135deg,#ff4444,#c41e3a);color:white;font-size:0.6rem;font-weight:800;padding:4px 10px;border-radius:20px;letter-spacing:0.5px;box-shadow:0 2px 8px rgba(196,30,58,0.4);">🔥 LIMITED OFFER</div>
+            <div style="position:absolute;top:8px;left:8px;z-index:5;font-size:1.6rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">🔥</div>
             
 <img alt="LG Door In Door Fridge 635L" loading="lazy" src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/50.png"/>
             
@@ -3535,7 +3537,7 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(28)" style="cursor: pointer; position:relative;">
-            <div style="position:absolute;top:10px;left:10px;z-index:5;background:linear-gradient(135deg,#ff4444,#c41e3a);color:white;font-size:0.6rem;font-weight:800;padding:4px 10px;border-radius:20px;letter-spacing:0.5px;box-shadow:0 2px 8px rgba(196,30,58,0.4);">🔥 LIMITED OFFER</div>
+            <div style="position:absolute;top:8px;left:8px;z-index:5;font-size:1.6rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">🔥</div>
             
 <img alt="LG Side By Side Fridge 641L" loading="lazy" src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/46.png"/>
             
@@ -3555,7 +3557,7 @@
 </div>
 <div class="product-card" data-category="fridge">
 <div class="product-image" onclick="showProductDetail(29)" style="cursor: pointer; position:relative;">
-            <div style="position:absolute;top:10px;left:10px;z-index:5;background:linear-gradient(135deg,#ff4444,#c41e3a);color:white;font-size:0.6rem;font-weight:800;padding:4px 10px;border-radius:20px;letter-spacing:0.5px;box-shadow:0 2px 8px rgba(196,30,58,0.4);">🔥 LIMITED OFFER</div>
+            <div style="position:absolute;top:8px;left:8px;z-index:5;font-size:1.6rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">🔥</div>
             
 <img alt="LG Top Freezer Fridge 493L" loading="lazy" src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/49.png"/>
             
@@ -3689,7 +3691,7 @@
 </div>
 <div class="product-card" data-category="ac">
 <div class="product-image" onclick="showProductDetail(36)" style="cursor: pointer; position:relative;">
-            <div style="position:absolute;top:10px;left:10px;z-index:5;background:linear-gradient(135deg,#ff4444,#c41e3a);color:white;font-size:0.6rem;font-weight:800;padding:4px 10px;border-radius:20px;letter-spacing:0.5px;box-shadow:0 2px 8px rgba(196,30,58,0.4);">🔥 LIMITED OFFER</div>
+            <div style="position:absolute;top:8px;left:8px;z-index:5;font-size:1.6rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">🔥</div>
             
 <img alt="LG DUALCOOL 1.5 HP" loading="lazy" src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/62.png"/>
 
@@ -3728,7 +3730,7 @@
 </div>
 <div class="product-card" data-category="ac">
 <div class="product-image" onclick="showProductDetail(38)" style="cursor: pointer; position:relative;">
-            <div style="position:absolute;top:10px;left:10px;z-index:5;background:linear-gradient(135deg,#ff4444,#c41e3a);color:white;font-size:0.6rem;font-weight:800;padding:4px 10px;border-radius:20px;letter-spacing:0.5px;box-shadow:0 2px 8px rgba(196,30,58,0.4);">🔥 LIMITED OFFER</div>
+            <div style="position:absolute;top:8px;left:8px;z-index:5;font-size:1.6rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">🔥</div>
             
 <img alt="LG DUALCOOL Premium 2.5 HP" loading="lazy" src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/61.png"/>
             
