@@ -418,29 +418,6 @@
             transform: scale(1.7);
         }
 
-        .product-image img[src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/58.png"] {
-            transform: scale(1.6);
-        }
-
-        .product-card:hover .product-image img[src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/58.png"] {
-            transform: scale(1.7);
-        }
-
-        .product-image img[src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/56.png"] {
-            transform: scale(1.6);
-        }
-
-        .product-card:hover .product-image img[src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/56.png"] {
-            transform: scale(1.7);
-        }
-
-        .product-image img[src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/60.png"] {
-            transform: scale(1.6);
-        }
-
-        .product-card:hover .product-image img[src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/60.png"] {
-            transform: scale(1.7);
-        }
 
         .product-image img[src="https://subscribe-smarthome.com/images/AIDD20KG.jpg"] {
             transform: scale(1.6);
@@ -1057,15 +1034,10 @@
         }
 
 
-        /* Bottom nav in legal pages */
-        .legal-nav-bottom {
-            display: flex; align-items: center; gap: 12px;
-            padding: 20px 0; margin-top: 40px;
-            border-top: 1px solid rgba(0,0,0,0.06);
-        }
-        .legal-nav-bottom a { color: #c41e3a; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-        .legal-nav-bottom a:hover { color: #a01830; }
-        .legal-nav-bottom span { color: #999; font-size: 0.85rem; }
+        .legal-nav-bottom{display:flex;align-items:center;gap:12px;padding:20px 0;margin-top:40px;border-top:1px solid rgba(0,0,0,0.06);}
+        .legal-nav-bottom a{color:#c41e3a;text-decoration:none;font-weight:600;font-size:0.9rem;}
+        .legal-nav-bottom a:hover{color:#a01830;}
+        .legal-nav-bottom span{color:#999;font-size:0.85rem;}
 
         /* Privacy Policy & Terms Sections */
         .legal-section {
@@ -3343,7 +3315,7 @@
 <div class="product-image" onclick="showProductDetail(17)" style="cursor: pointer; position:relative;">
             <div style="position:absolute;top:8px;left:8px;z-index:5;font-size:1.6rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">🔥</div>
             
-<img alt="LG AI DD 15KG Wash 8KG Dry F2515RNTKAR" loading="lazy" src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/58.png"/>
+<img alt="LG AI DD 15KG Wash 8KG Dry F2515RNTKAR" loading="lazy" src="https://raw.githubusercontent.com/kelvin89mun/kelvin-home-solutions/main/images/60.png"/>
             
 
         </div>
@@ -4342,7 +4314,16 @@
             document.querySelector('.category-bar').style.display = 'none';
             document.querySelector('.products-section').style.display = 'none';
             document.querySelector('.navbar').style.display = 'none';
+            document.querySelector('.footer').style.display = 'none';
+            var ws = document.querySelector('.why-subscribe');
+            var ts = document.querySelector('.trust-section');
+            var fs = document.querySelector('.faq-section');
+            var adv = document.getElementById('advisorSection');
             var db = document.getElementById('dealerBar');
+            if (ws) ws.style.display = 'none';
+            if (ts) ts.style.display = 'none';
+            if (fs) fs.style.display = 'none';
+            if (adv) adv.style.display = 'none';
             if (db) db.style.display = 'none';
             document.getElementById('privacySection').classList.add('active');
             document.getElementById('termsSection').classList.remove('active');
@@ -4356,7 +4337,16 @@
             document.querySelector('.category-bar').style.display = 'none';
             document.querySelector('.products-section').style.display = 'none';
             document.querySelector('.navbar').style.display = 'none';
+            document.querySelector('.footer').style.display = 'none';
+            var ws = document.querySelector('.why-subscribe');
+            var ts = document.querySelector('.trust-section');
+            var fs = document.querySelector('.faq-section');
+            var adv = document.getElementById('advisorSection');
             var db = document.getElementById('dealerBar');
+            if (ws) ws.style.display = 'none';
+            if (ts) ts.style.display = 'none';
+            if (fs) fs.style.display = 'none';
+            if (adv) adv.style.display = 'none';
             if (db) db.style.display = 'none';
             document.getElementById('privacySection').classList.remove('active');
             document.getElementById('termsSection').classList.add('active');
@@ -4370,7 +4360,16 @@
             document.querySelector('.category-bar').style.display = 'none';
             document.querySelector('.products-section').style.display = 'none';
             document.querySelector('.navbar').style.display = 'none';
+            document.querySelector('.footer').style.display = 'none';
+            var ws = document.querySelector('.why-subscribe');
+            var ts = document.querySelector('.trust-section');
+            var fs = document.querySelector('.faq-section');
+            var adv = document.getElementById('advisorSection');
             var db = document.getElementById('dealerBar');
+            if (ws) ws.style.display = 'none';
+            if (ts) ts.style.display = 'none';
+            if (fs) fs.style.display = 'none';
+            if (adv) adv.style.display = 'none';
             if (db) db.style.display = 'none';
             document.getElementById('privacySection').classList.remove('active');
             document.getElementById('termsSection').classList.remove('active');
@@ -4388,15 +4387,16 @@
             document.getElementById('privacySection').classList.remove('active');
             document.getElementById('termsSection').classList.remove('active');
             document.getElementById('aboutSection').classList.remove('active');
-            // Ensure main content sections are visible when returning
             var ws = document.querySelector('.why-subscribe');
             var ts = document.querySelector('.trust-section');
             var fs = document.querySelector('.faq-section');
             var adv = document.getElementById('advisorSection');
+            var db = document.getElementById('dealerBar');
             if (ws) ws.style.display = '';
             if (ts) ts.style.display = '';
             if (fs) fs.style.display = '';
             if (adv) adv.style.display = '';
+            if (db) db.style.display = 'block';
             document.getElementById('detailSubpage').classList.remove('active');
             setTimeout(function() { window.scrollTo(0, 0); }, 50);
         }
@@ -4415,10 +4415,16 @@
                 document.querySelector('.products-section').style.display = 'block';
                 document.querySelector('.footer').style.display = 'block';
                 document.querySelector('.navbar').style.display = 'block';
-                var db = document.getElementById('dealerBar');
+                var ws2 = document.querySelector('.why-subscribe');
+                var ts2 = document.querySelector('.trust-section');
+                var fs2 = document.querySelector('.faq-section');
                 var adv = document.getElementById('advisorSection');
-                if (db) db.style.display = 'block';
+                var db = document.getElementById('dealerBar');
+                if (ws2) ws2.style.display = '';
+                if (ts2) ts2.style.display = '';
+                if (fs2) fs2.style.display = '';
                 if (adv) adv.style.display = '';
+                if (db) db.style.display = 'block';
             }
             
             // Handle category hash from back button
@@ -4838,10 +4844,7 @@ document.addEventListener('keydown', function(e) {
 <!-- ===== COOKIE CONSENT BANNER ===== -->
 <div id="cookieConsent" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:99998;background:#1a1a1a;color:white;padding:14px 20px;box-shadow:0 -4px 20px rgba(0,0,0,0.2);">
   <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
-    <p style="margin:0;font-size:0.78rem;color:rgba(255,255,255,0.85);line-height:1.5;flex:1;min-width:220px;">
-      We use cookies to improve your experience and show relevant ads. By continuing, you agree to our
-      <a href="#" onclick="showPrivacy();document.getElementById('cookieConsent').style.display='none';return false;" style="color:#c41e3a;text-decoration:underline;">Privacy Policy</a>.
-    </p>
+    <p style="margin:0;font-size:0.78rem;color:rgba(255,255,255,0.85);line-height:1.5;flex:1;min-width:220px;">We use cookies to improve your experience and show relevant ads. By continuing, you agree to our <a href="#" onclick="showPrivacy();document.getElementById('cookieConsent').style.display='none';return false;" style="color:#c41e3a;text-decoration:underline;">Privacy Policy</a>.</p>
     <div style="display:flex;gap:10px;flex-shrink:0;">
       <button onclick="acceptCookies()" style="padding:8px 20px;background:#c41e3a;color:white;border:none;border-radius:20px;font-size:0.8rem;font-weight:600;cursor:pointer;font-family:inherit;">Accept All</button>
       <button onclick="declineCookies()" style="padding:8px 20px;background:transparent;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.3);border-radius:20px;font-size:0.8rem;cursor:pointer;font-family:inherit;">Essential Only</button>
@@ -4849,11 +4852,7 @@ document.addEventListener('keydown', function(e) {
   </div>
 </div>
 <script>
-(function(){
-  var cc=localStorage.getItem('cookieConsent');
-  if(!cc){setTimeout(function(){var b=document.getElementById('cookieConsent');if(b)b.style.display='block';},800);}
-  else if(cc==='declined'){window['ga-disable-AW-11021213892']=true;}
-})();
+(function(){var cc=localStorage.getItem('cookieConsent');if(!cc){setTimeout(function(){var b=document.getElementById('cookieConsent');if(b)b.style.display='block';},800);}else if(cc==='declined'){window['ga-disable-AW-11021213892']=true;}})();
 function acceptCookies(){localStorage.setItem('cookieConsent','accepted');document.getElementById('cookieConsent').style.display='none';}
 function declineCookies(){localStorage.setItem('cookieConsent','declined');window['ga-disable-AW-11021213892']=true;document.getElementById('cookieConsent').style.display='none';}
 </script>
