@@ -13,7 +13,7 @@
 <meta http-equiv="Pragma" content="no-cache"/>
 <meta http-equiv="Expires" content="0"/>
 <title>Kelvin Chan LG Consultant</title>
-<meta content="Subscribe to LG home appliances with zero deposit. Free installation and maintenance included. Water purifiers, air conditioners, washers, fridges and more. Authorized LG dealer." name="description"/>
+<meta content="Kelvin Chan (M260389), Authorised LG Subscribe Consultant. Helping you subscribe to LG home appliances — water purifiers, air conditioners, washers, fridges and more — with zero deposit and free installation." name="description"/>
 <meta content="Kelvin Chan LG Consultant, LG subscription, rent LG appliances, LG water purifier rental, LG air conditioner subscription, home appliance rental Malaysia, zero deposit LG, free installation" name="keywords"/>
 <meta content="Kelvin Chan LG Consultant" name="author"/>
 <meta content="index, follow" name="robots"/>
@@ -2240,10 +2240,6 @@
 
 
 <base target="_blank">
-
-
-<base target="_blank">
-<base target="_blank">
 </head>
 <body>
 <script>
@@ -4075,7 +4071,7 @@
 </ul>
 <h3>3.2 Monthly Fees</h3>
 <ul>
-<li>Monthly subscription fees vary by product and plan selected (from RM 19/month as displayed). Prices shown reflect the lowest available promotional rate for each product</li>
+<li>Monthly subscription fees vary by product (ranging from RM 50 to RM 110 per month as displayed)</li>
 <li>Promotional rates (e.g., "9 months 50% Off") are subject to specific terms and conditions set by LG Electronics</li>
 <li>All prices are in Malaysian Ringgit (MYR) and inclusive of applicable taxes unless stated otherwise</li>
 </ul>
@@ -4832,5 +4828,43 @@ document.addEventListener('keydown', function(e) {
     }
 });
 </script>
+
+<!-- ===== COOKIE CONSENT BANNER ===== -->
+<div id="cookieConsent" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:99998;background:#1a1a1a;color:white;padding:14px 20px;box-shadow:0 -4px 20px rgba(0,0,0,0.2);">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+        <p style="margin:0;font-size:0.78rem;color:rgba(255,255,255,0.85);line-height:1.5;flex:1;min-width:220px;">
+            🍪 We use cookies to improve your experience and show relevant ads. By continuing to use this site, you agree to our 
+            <a href="#" onclick="showPrivacy();document.getElementById('cookieConsent').style.display='none';return false;" style="color:#c41e3a;text-decoration:underline;">Privacy Policy</a>.
+        </p>
+        <div style="display:flex;gap:10px;flex-shrink:0;">
+            <button onclick="acceptCookies()" style="padding:8px 20px;background:#c41e3a;color:white;border:none;border-radius:20px;font-size:0.8rem;font-weight:600;cursor:pointer;font-family:inherit;">Accept All</button>
+            <button onclick="declineCookies()" style="padding:8px 20px;background:transparent;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.3);border-radius:20px;font-size:0.8rem;cursor:pointer;font-family:inherit;">Essential Only</button>
+        </div>
+    </div>
+</div>
+<script>
+(function() {
+    var consent = localStorage.getItem('cookieConsent');
+    if (!consent) {
+        setTimeout(function() {
+            var banner = document.getElementById('cookieConsent');
+            if (banner) banner.style.display = 'block';
+        }, 800);
+    } else if (consent === 'declined') {
+        // Disable Google Ads tracking if declined
+        window['ga-disable-AW-11021213892'] = true;
+    }
+})();
+function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    document.getElementById('cookieConsent').style.display = 'none';
+}
+function declineCookies() {
+    localStorage.setItem('cookieConsent', 'declined');
+    window['ga-disable-AW-11021213892'] = true;
+    document.getElementById('cookieConsent').style.display = 'none';
+}
+</script>
+
 </body>
        </html>
