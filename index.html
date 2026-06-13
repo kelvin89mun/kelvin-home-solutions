@@ -857,7 +857,7 @@
             height: 50vh;
             min-height: 300px;
             max-height: 520px;
-            overflow: hidden;
+            overflow: visible;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             background-size: cover;
             background-position: center;
@@ -959,22 +959,22 @@
 
         /* Responsive Hero */
         @media (max-width: 768px) {
-            .hero-video-section { height: auto; min-height: 280px; max-height: none; padding: 82px 16px 0; flex-direction: column; align-items: center; justify-content: flex-start; }
+            .hero-video-section { height: auto; min-height: 380px; max-height: none; padding: 64px 16px 24px; flex-direction: column; align-items: center; justify-content: center; overflow: visible; }
             .hero-video-section h1 { font-size: 1.5rem !important; }
             .hero-video-section p { font-size: 0.8rem !important; margin-bottom: 6px !important; }
             .hero-video-section a { padding: 10px 20px !important; font-size: 0.8rem !important; }
             .hero-video-caption h2 { font-size: 22px; margin-bottom: 8px; }
             .hero-video-caption p { font-size: 14px; }
-            .hero-video-caption { position: relative; width: 95%; margin-top: 20px; }
+            .hero-video-caption { position: relative; width: 95%; margin-top: 0; }
             .pulse-cta-btn { font-size: 14px; padding: 14px 20px; }
         }
 
         @media (max-width: 480px) {
-            .hero-video-section { min-height: 280px; padding-top: 74px; padding-bottom: 0; }
+            .hero-video-section { min-height: 360px; padding-top: 64px; padding-bottom: 20px; overflow: visible; }
             .hero-video-caption h2 { font-size: 15px; margin-bottom: 6px; margin-top: 4px; }
             .hero-video-caption p { font-size: 12px !important; line-height: 1.4; margin-bottom: 4px !important; }
             .hero-video-caption a { padding: 8px 14px !important; font-size: 12px !important; border-radius: 20px; }
-            .hero-video-caption { margin-top: 16px; gap: 6px; }
+            .hero-video-caption { margin-top: 0; gap: 4px; }
 
             .pulse-cta-container { max-width: 320px; }
             .pulse-cta-btn { font-size: 13px; padding: 12px 16px; }
