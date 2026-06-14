@@ -2336,7 +2336,7 @@
 <!-- ===== CONSULTANT DISCLAIMER BANNER ===== -->
 <div style="background:#fff8f0;border-bottom:1px solid #f0e0cc;padding:10px 20px;">
   <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 18px;text-align:center;">
-    <span style="font-size:0.78rem;font-weight:700;color:#1a1a1a;">Kelvin Chan (M260389)</span>
+    <span style="font-size:0.78rem;font-weight:700;color:#1a1a1a;">Chan Kar Mun (Kelvin Chan)</span>
     <span style="color:#ccc;font-size:0.75rem;">|</span>
     <span style="font-size:0.75rem;color:#555;">Independent Smart Home Consultant</span>
     <span style="color:#ccc;font-size:0.75rem;">|</span>
@@ -3796,7 +3796,7 @@
             <h2 data-i18n="advisor_title">Need Help Deciding?<br><strong>Talk to Kelvin</strong></h2>
             <div class="advisor-divider"></div>
             <div class="advisor-divider"></div>
-            <p data-i18n="advisor_desc">Hi, I'm Kelvin Chan (M260389). I help customers choose suitable LG subscription plans for water purifiers, air conditioners, refrigerators and home appliances throughout Malaysia.</p>
+            <p data-i18n="advisor_desc">Hi, I'm Chan Kar Mun (Kelvin Chan). I help customers choose suitable LG subscription plans for water purifiers, air conditioners, refrigerators and home appliances throughout Malaysia.</p>
             <ul class="advisor-list">
                 <li data-i18n="advisor_home">Home size</li>
                 <li data-i18n="advisor_family">Family usage</li>
@@ -3998,7 +3998,7 @@
     <ul>
         <li><strong>Email:</strong> kelvin89mun@gmail.com</li>
         <li><strong>WhatsApp:</strong> +60 11-7606 0833</li>
-        <li><strong>Business:</strong> Chan Kar Mun Smart Home (Kelvin Chan, M260389)</li>
+        <li><strong>Business:</strong> Chan Kar Mun Smart Home</li>
         <li><strong>Location:</strong> Ipoh, Perak</li>
     </ul>
     <p>We will respond to your request within <strong>14 business days</strong>.</p>
@@ -4027,7 +4027,7 @@
         </div>
 <h2>1. Definitions</h2>
 <ul>
-<li><strong>"We", "Us", "Our"</strong> refers to Chan Kar Mun Smart Home, operated by Kelvin Chan (M260389), an independent independent smart home consultant.</li>
+<li><strong>"We", "Us", "Our"</strong> refers to Chan Kar Mun Smart Home, operated by Chan Kar Mun (Kelvin Chan), an independent smart home consultant.</li>
 <li><strong>"You", "Customer"</strong> refers to the individual or entity engaging our services.</li>
 <li><strong>"LG Subscribe"</strong> refers to the subscription-based appliance rental service provided by LG Electronics.</li>
 <li><strong>"Service"</strong> refers to our consultation, application assistance, and after-sales support services.</li>
@@ -4036,7 +4036,6 @@
 <p><strong>Chan Kar Mun Smart Home</strong> is an independent smart home consultation service operated by:</p>
 <ul>
 <li><strong>Consultant:</strong> Kelvin Chan</li>
-<li><strong>Consultant ID:</strong> M260389</li>
 <li><strong>Location:</strong> Ipoh, Perak</li>
 <li><strong>Contact:</strong> +60 11-7606 0833 | kelvin89mun@gmail.com</li>
 </ul>
@@ -4129,7 +4128,7 @@
 <ul>
 <li><strong>WhatsApp:</strong> +60 11-7606 0833</li>
 <li><strong>Email:</strong> kelvin89mun@gmail.com</li>
-<li><strong>Business:</strong> Chan Kar Mun Smart Home (Kelvin Chan, M260389)</li>
+<li><strong>Business:</strong> Chan Kar Mun Smart Home</li>
 <li><strong>Location:</strong> Ipoh, Perak</li>
 </ul>
 <div class="legal-nav-bottom">
@@ -4151,7 +4150,7 @@
 <span>About</span>
 </div>
 <h1>About Me</h1>
-<p class="effective-date"><strong>Kelvin Chan</strong> | Independent Smart Home Consultant</p>
+<p class="effective-date"><strong>Chan Kar Mun (Kelvin Chan)</strong> | Independent Smart Home Consultant</p>
 <div class="highlight-box">
     Hi, I'm Kelvin Chan, an Independent Smart Home Consultant behind Chan Kar Mun Smart Home. I help homeowners discover the right LG appliances for their needs through personalised guidance and the flexible LG Subscribe programme.
 </div>
@@ -4179,7 +4178,7 @@
 <li><strong>Personalised Service:</strong> I take time to understand your needs and recommend the best solutions</li>
 <li><strong>No Hard Selling:</strong> My focus is finding what's right for you, not pushing products</li>
 <li><strong>Quick Response:</strong> Reach me easily via WhatsApp for fast answers</li>
-<li><strong>Local Expertise:</strong> Based in Petaling Jaya, serving the Malaysia</li>
+<li><strong>Local Expertise:</strong> Based in Ipoh, Perak, serving customers across Malaysia</li>
 <li><strong>Smart Home Consultant:</strong> Independent Smart Home Consultant</li>
 </ul>
 
@@ -4550,7 +4549,7 @@
             // Advisor section
             advisor_badge: 'Personal Consultant',
             advisor_title: 'Need Help Deciding?<br><strong>Talk to Kelvin</strong>',
-            advisor_desc: 'Hi, I\'m Kelvin Chan (M260389). I help customers choose suitable LG subscription plans for water purifiers, air conditioners, refrigerators and home appliances throughout Malaysia.',
+            advisor_desc: 'Hi, I\'m Chan Kar Mun (Kelvin Chan). I help customers choose suitable LG subscription plans for water purifiers, air conditioners, refrigerators and home appliances throughout Malaysia.',
             advisor_home: 'Home size',
             advisor_family: 'Family usage',
             advisor_budget: 'Monthly budget',
@@ -4599,7 +4598,7 @@
             menu_tv: '电视与音响',
             menu_other: '其他产品',
             // Footer
-            footer_authorized: 'LG 授权订阅顾问',
+            footer_authorized: '独立智能家居顾问',
             footer_location: '地址',
             footer_hours: '营业时间',
             footer_contact: '联系方式',
@@ -4667,7 +4666,7 @@
             menu_tv: 'TV & Audio',
             menu_other: 'Lain-lain',
             // Footer
-            footer_authorized: 'Konsultan Berlesen LG Subscribe',
+            footer_authorized: 'Konsultan Rumah Pintar Bebas',
             footer_location: 'Lokasi',
             footer_hours: 'Waktu Perniagaan',
             footer_contact: 'Hubungi',
@@ -4686,7 +4685,7 @@
             // Advisor section
             advisor_badge: 'Perunding Peribadi',
             advisor_title: 'Perlukan Bantuan Memilih?<br><strong>Bercakap Dengan Kelvin</strong>',
-            advisor_desc: 'Saya Kelvin Chan (M260389). Saya membantu pelanggan di seluruh Malaysia memilih pelan langganan LG yang sesuai.',
+            advisor_desc: 'Saya Chan Kar Mun (Kelvin Chan). Saya membantu pelanggan di seluruh Malaysia memilih pelan langganan LG yang sesuai.',
             advisor_home: 'Saiz rumah',
             advisor_family: 'Penggunaan keluarga',
             advisor_budget: 'Bajet bulanan',
