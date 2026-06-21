@@ -2366,13 +2366,13 @@
                 Products
                 <span class="arrow">▼</span>
 <div class="submenu">
-<a href="#products" onclick="event.preventDefault(); showMainContent(); filterProducts('water'); document.getElementById('products').scrollIntoView({behavior:'smooth'}); closeMenu();">Water Purifiers</a>
-<a href="#products" onclick="event.preventDefault(); showMainContent(); filterProducts('air'); document.getElementById('products').scrollIntoView({behavior:'smooth'}); closeMenu();">Air Purifiers</a>
-<a href="#products" onclick="event.preventDefault(); showMainContent(); filterProducts('washer'); document.getElementById('products').scrollIntoView({behavior:'smooth'}); closeMenu();">Washing Machines</a>
-<a href="#products" onclick="event.preventDefault(); showMainContent(); filterProducts('fridge'); document.getElementById('products').scrollIntoView({behavior:'smooth'}); closeMenu();">Refrigerators</a>
-<a href="#products" onclick="event.preventDefault(); showMainContent(); filterProducts('ac'); document.getElementById('products').scrollIntoView({behavior:'smooth'}); closeMenu();">Air Conditioners</a>
-<a href="#products" onclick="event.preventDefault(); showMainContent(); filterProducts('tv'); document.getElementById('products').scrollIntoView({behavior:'smooth'}); closeMenu();">TV &amp; Audio</a>
-<a href="#products" onclick="event.preventDefault(); showMainContent(); filterProducts('other'); document.getElementById('products').scrollIntoView({behavior:'smooth'}); closeMenu();">Other</a>
+<a href="#products" onclick="event.preventDefault(); showMainContent(); filterProducts('water'); closeMenu();">Water Purifiers</a>
+<a href="#products" onclick="event.preventDefault(); showMainContent(); filterProducts('air'); closeMenu();">Air Purifiers</a>
+<a href="#products" onclick="event.preventDefault(); showMainContent(); filterProducts('washer'); closeMenu();">Washing Machines</a>
+<a href="#products" onclick="event.preventDefault(); showMainContent(); filterProducts('fridge'); closeMenu();">Refrigerators</a>
+<a href="#products" onclick="event.preventDefault(); showMainContent(); filterProducts('ac'); closeMenu();">Air Conditioners</a>
+<a href="#products" onclick="event.preventDefault(); showMainContent(); filterProducts('tv'); closeMenu();">TV &amp; Audio</a>
+<a href="#products" onclick="event.preventDefault(); showMainContent(); filterProducts('other'); closeMenu();">Other</a>
 </div>
 </div>
 
@@ -2422,13 +2422,13 @@
         <p data-i18n="hero_subtitle" style="font-size:clamp(13px,2.5vw,17px);opacity:0.92;margin-bottom:4px;">✅ Zero Deposit &nbsp;✅ Free Installation &nbsp;✅ Free Maintenance <span style="font-size:0.7em;opacity:0.65;">&middot; T&amp;C apply</span></p>
         <p style="font-size:clamp(11px,2vw,14px);opacity:0.75;margin-bottom:14px;">Fridge · Washer · Air Cond · Water Purifier · Air Purifier</p>
         <div class="hero-trust-row">
-            <span><img class="hero-trust-avatar" src="images/kelvin-advisor.png" alt="Kelvin Chan" loading="lazy"/> <span data-i18n="hero_trust1">LG Authorized Consultant</span></span>
+            <span><img class="hero-trust-avatar" src="images/kelvin-advisor.png" alt="Kelvin Chan" onerror="this.style.display='none'"/> <span data-i18n="hero_trust1">LG Authorized Consultant</span></span>
         </div>
         <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center;margin-top:6px;">
             <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%20Kelvin%2C%20I%20saw%20LG%20Subscribe%20from%20RM19%2Fmonth.%20Can%20you%20share%20more%20details%3F" style="padding:14px 30px;background:#25D366;color:white;border-radius:30px;text-decoration:none;font-weight:700;font-size:1rem;box-shadow:0 4px 20px rgba(0,0,0,0.25);white-space:nowrap;display:inline-flex;align-items:center;gap:8px;" data-i18n="hero_cta">
                 💬 Get Free Quote
             </a>
-            <a href="#products" class="hero-cta-secondary" onclick="event.preventDefault(); filterProducts('all'); document.getElementById('products').scrollIntoView({behavior:'smooth'});" data-i18n="hero_cta_secondary">
+            <a href="#products" class="hero-cta-secondary" onclick="event.preventDefault(); filterProducts('all');" data-i18n="hero_cta_secondary">
                 View All Products →
             </a>
         </div>
@@ -4535,12 +4535,11 @@
             if (hash && hash.startsWith('#') && !hash.startsWith('#detail-')) {
                 var cat = hash.replace('#', '');
                 if (['all','water','air','washer','fridge','ac','tv','other'].includes(cat)) {
-                    filterProducts(cat);
-                    document.getElementById('products').scrollIntoView({ behavior: 'instant' });
+                    filterProducts(cat, true);
                 }
             } else if (!hash || hash === '' || hash === '#') {
                 // No hash = show all
-                filterProducts('all');
+                filterProducts('all', true);
             }
         });
 
@@ -4558,10 +4557,7 @@
                 // Category hash like #water, #air
                 var cat = hash.replace('#', '');
                 if (['all','water','air','washer','fridge','ac','tv','other'].includes(cat)) {
-                    filterProducts(cat);
-                    setTimeout(function() {
-                        document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
-                    }, 300);
+                    filterProducts(cat, true);
                 }
             }
         });
@@ -4888,7 +4884,7 @@
 
     <!-- Standalone filter script - loads early for reliability -->
     <script>
-        function filterProducts(category) {
+        function filterProducts(category, skipHistory) {
             console.log('filterProducts called:', category);
             const buttons = document.querySelectorAll('.category-btn');
             buttons.forEach(btn => {
@@ -4912,11 +4908,14 @@
                 }
             });
             console.log('Visible cards:', visibleCount);
-            // Update URL hash
-            try {
-                history.pushState({ category: category }, '', '#' + category);
-            } catch (e) {
-                // Silently fail if pushState is not allowed (e.g. file:// protocol)
+            // Update URL hash (skip when this call is itself a response to back/forward navigation,
+            // otherwise every popstate would push a new state and corrupt browser history)
+            if (!skipHistory) {
+                try {
+                    history.pushState({ category: category }, '', '#' + category);
+                } catch (e) {
+                    // Silently fail if pushState is not allowed (e.g. file:// protocol)
+                }
             }
             // Scroll to first visible
             if (firstVisibleCard) {
