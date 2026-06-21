@@ -866,9 +866,18 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1.25fr 0.75fr;
-            align-items: center;
-            gap: 40px;
+            grid-template-areas:
+                "intro   photo"
+                "actions photo"
+                "actions note";
+            align-items: start;
+            gap: 12px 40px;
         }
+        .hero-split-intro { grid-area: intro; }
+        .hero-split-actions { grid-area: actions; align-self: center; }
+        .hero-split-photo { grid-area: photo; justify-self: center; align-self: center; }
+        .hero-mini-card { grid-area: note; justify-self: center; }
+
         .hero-eyebrow {
             display: inline-flex;
             align-items: center;
@@ -881,7 +890,7 @@
             font-weight: 700;
             margin-bottom: 16px;
         }
-        .hero-split-copy h2 {
+        .hero-split-intro h2 {
             font-size: clamp(28px, 4.4vw, 44px);
             font-weight: 800;
             line-height: 1.12;
@@ -901,7 +910,7 @@
             gap: 14px;
             flex-wrap: wrap;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
         .btn-whatsapp-primary {
             display: inline-flex;
@@ -930,7 +939,6 @@
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
-            margin-bottom: 4px;
         }
         .hero-split-points div {
             background: white;
@@ -941,13 +949,9 @@
             font-weight: 700;
             color: #334155;
             box-shadow: 0 6px 16px rgba(15,23,42,0.04);
+            white-space: nowrap;
         }
 
-        .hero-split-side {
-            display: grid;
-            gap: 14px;
-            justify-items: center;
-        }
         .hero-profile-card {
             width: 100%;
             max-width: 260px;
@@ -1018,33 +1022,46 @@
             from { opacity: 0; transform: translateY(14px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .hero-split-copy > * {
+        .hero-split-intro, .hero-split-actions, .hero-split-photo, .hero-mini-card {
             animation: heroFadeUp 0.6s ease both;
         }
-        .hero-split-copy > *:nth-child(1) { animation-delay: 0.05s; }
-        .hero-split-copy > *:nth-child(2) { animation-delay: 0.12s; }
-        .hero-split-copy > *:nth-child(3) { animation-delay: 0.19s; }
-        .hero-split-copy > *:nth-child(4) { animation-delay: 0.26s; }
-        .hero-split-copy > *:nth-child(5) { animation-delay: 0.33s; }
-        .hero-split-side {
-            animation: heroFadeUp 0.7s ease 0.2s both;
-        }
+        .hero-split-intro { animation-delay: 0.05s; }
+        .hero-split-actions { animation-delay: 0.18s; }
+        .hero-split-photo { animation-delay: 0.12s; }
+        .hero-mini-card { animation-delay: 0.3s; }
         @media (prefers-reduced-motion: reduce) {
-            .hero-split-copy > *, .hero-split-side { animation: none; }
+            .hero-split-intro, .hero-split-actions, .hero-split-photo, .hero-mini-card { animation: none; }
         }
 
-        /* Responsive Hero */
+        /* Responsive Hero — photo shrinks to top-right, WhatsApp + points sit on the left */
         @media (max-width: 860px) {
-            .hero-split { padding: 90px 16px 36px; }
-            .hero-split-grid { grid-template-columns: 1fr; gap: 26px; text-align: center; }
-            .hero-eyebrow, .hero-split-lead, .hero-split-cta-row, .hero-split-points { margin-left: auto; margin-right: auto; justify-content: center; }
-            .hero-split-side { order: 2; }
+            .hero-split { padding: 90px 16px 32px; }
+            .hero-split-grid {
+                grid-template-columns: 1fr auto;
+                grid-template-areas:
+                    "intro   intro"
+                    "actions photo"
+                    "note    note";
+                gap: 18px 14px;
+            }
+            .hero-split-intro { text-align: center; }
+            .hero-eyebrow, .hero-split-lead { margin-left: auto; margin-right: auto; }
+            .hero-split-actions { align-self: start; }
+            .hero-split-cta-row { flex-direction: column; align-items: stretch; margin-bottom: 14px; }
+            .btn-whatsapp-primary { justify-content: center; padding: 13px 18px; font-size: 0.92rem; }
+            .btn-ghost-secondary { justify-content: center; font-size: 0.82rem; }
+            .hero-split-points { flex-direction: column; gap: 8px; }
+            .hero-split-points div { font-size: 12px; padding: 8px 12px; white-space: normal; }
+            .hero-split-photo { justify-self: end; align-self: start; }
+            .hero-profile-card { max-width: 92px; padding: 5px; border-radius: 16px; box-shadow: 0 8px 20px rgba(15,23,42,0.10); }
+            .hero-profile-card img, .hero-profile-card .img-fallback { border-radius: 12px; }
+            .hero-profile-card .img-fallback { font-size: 22px; }
+            .hero-profile-caption { display: none; }
+            .hero-mini-card { max-width: none; }
         }
 
         @media (max-width: 480px) {
-            .hero-split-copy h2 { font-size: 26px; }
-            .hero-split-cta-row { flex-direction: column; align-items: stretch; }
-            .btn-whatsapp-primary, .btn-ghost-secondary { justify-content: center; }
+            .hero-split-intro h2 { font-size: 26px; }
         }
     
         /* Legal Table of Contents */
@@ -2376,10 +2393,12 @@
 <!-- ===== HERO BANNER (split layout, no video) ===== -->
 <div class="hero-split" id="heroVideoSection">
     <div class="hero-split-grid">
-        <div class="hero-split-copy">
+        <div class="hero-split-intro">
             <div class="hero-eyebrow" data-i18n="hero_eyebrow">Authorized LG Subscription Consultant</div>
             <h2 data-i18n="hero_title">LG Appliances Subscription</h2>
             <p class="hero-split-lead" data-i18n="hero_subtitle">Compare current promotions and monthly plans for fridges, washers, air conditioners, water and air purifiers — built for Malaysian homes.</p>
+        </div>
+        <div class="hero-split-actions">
             <div class="hero-split-cta-row">
                 <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%20Kelvin%2C%20I%20saw%20LG%20Subscribe%20from%20RM19%2Fmonth.%20Can%20you%20share%20more%20details%3F" class="btn-whatsapp-primary" data-i18n="hero_cta">
                     💬 Get Free Quote
@@ -2394,7 +2413,7 @@
                 <div data-i18n="hero_point3">✓ Free Maintenance</div>
             </div>
         </div>
-        <div class="hero-split-side">
+        <div class="hero-split-photo">
             <div class="hero-profile-card">
                 <img src="images/kelvin-chan.png" alt="Kelvin Chan" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
                 <div class="img-fallback" style="display:none;">KC</div>
@@ -2403,10 +2422,10 @@
                     <span data-i18n="hero_trust1">LG Authorized Consultant</span>
                 </div>
             </div>
-            <div class="hero-mini-card">
-                <strong data-i18n="hero_minicard_title">Need help choosing?</strong>
-                <span data-i18n="hero_minicard_desc">Send Kelvin your room size or house type for a quick recommendation.</span>
-            </div>
+        </div>
+        <div class="hero-mini-card">
+            <strong data-i18n="hero_minicard_title">Need help choosing?</strong>
+            <span data-i18n="hero_minicard_desc">Send Kelvin your room size or house type for a quick recommendation.</span>
         </div>
     </div>
 </div>
@@ -2755,7 +2774,9 @@
         {category:'other',badge:'OTHER',title:'LG Styler',img:'https://subscribe-smarthome.com/images/Styler.jpg',gallery:[
             'https://subscribe-smarthome.com/images/Styler.jpg'
         ],imgAlt:'LG Styler',desc:'Smart clothing care system with TrueSteam technology. Refresh & sanitize clothes.',features:["TrueSteam", "Dehumidify", "Sanitary", "7-Year Warranty"],price:'RM90',outright:'RM5,899',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20Styler'},
-        {category:'tv',badge:'TV',title:'LG SMART Monitor 32U889SA-W',img:'https://subscribe-smarthome.com/images/LGSmartMonitorSwing.jpg',gallery:['https://subscribe-smarthome.com/images/LGSmartMonitorSwing.jpg'],imgAlt:'LG SMART Monitor 32U889SA-W',desc:'LG 31.5\" 4K UHD IPS Smart Monitor Swing with Touchscreen, Rolling Stand.',features:["31.5\" 4K UHD IPS", "Touchscreen", "Rolling Stand", "5-Year Warranty"],price:'RM60',outright:'RM3,599',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20SMART%20Monitor%2032U889SA-W'}
+        {category:'tv',badge:'TV',title:'LG SMART Monitor 32U889SA-W',img:'https://subscribe-smarthome.com/images/LGSmartMonitorSwing.jpg',gallery:['https://subscribe-smarthome.com/images/LGSmartMonitorSwing.jpg'],imgAlt:'LG SMART Monitor 32U889SA-W',desc:'LG 31.5\" 4K UHD IPS Smart Monitor Swing with Touchscreen, Rolling Stand.',features:["31.5\" 4K UHD IPS", "Touchscreen", "Rolling Stand", "5-Year Warranty"],price:'RM60',outright:'RM3,599',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20SMART%20Monitor%2032U889SA-W'},
+        {category:'tv',badge:'TV',title:'LG NANO 4K UHD Smart TV 55" AI',img:'images/37.png',gallery:['images/37.png'],imgAlt:'LG NANO 4K UHD Smart TV 55 inch AI',desc:'55" 4K UHD NanoCell Smart TV with AI picture & sound. 9-month 50% off promo (RM55 → RM28/month), plus free 5-year extended warranty. T&C apply.',features:["55\" 4K UHD NanoCell", "AI Picture & Sound", "9-Month 50% Off", "Free 5-Year Extended Warranty"],price:'RM28',outright:'RM2,599',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20NANO%204K%20UHD%20Smart%20TV%2055%20inch%2C%20saw%20the%20RM28%2Fmonth%20promo'},
+        {category:'tv',badge:'TV',title:'LG NANO 4K UHD Smart TV 50" AI',img:'images/36.png',gallery:['images/36.png'],imgAlt:'LG NANO 4K UHD Smart TV 50 inch AI',desc:'50" 4K UHD NanoCell Smart TV with AI picture & sound. 9-month 50% off promo (RM50 → RM25/month), plus free 5-year extended warranty. T&C apply.',features:["50\" 4K UHD NanoCell", "AI Picture & Sound", "9-Month 50% Off", "Free 5-Year Extended Warranty"],price:'RM25',outright:'RM2,299',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20NANO%204K%20UHD%20Smart%20TV%2050%20inch%2C%20saw%20the%20RM25%2Fmonth%20promo'}
         ];
 
         // Brand mapping by category
@@ -3821,7 +3842,7 @@
 
 
 <div class="product-card" data-category="other">
-<div class="product-image" onclick="showProductDetail(43)" style="cursor: pointer;">
+<div class="product-image" onclick="showProductDetail(39)" style="cursor: pointer;">
             
 <img alt="LG Styler" loading="lazy" src="https://subscribe-smarthome.com/images/Styler.jpg"/>
             
@@ -3840,7 +3861,7 @@
 </div>
 </div>
 <div class="product-card" data-category="tv">
-<div class="product-image" onclick="showProductDetail(44)" style="cursor: pointer;">
+<div class="product-image" onclick="showProductDetail(40)" style="cursor: pointer;">
             
 <img alt="LG SMART Monitor 32U889SA-W" loading="lazy" src="https://subscribe-smarthome.com/images/LGSmartMonitorSwing.jpg"/>
             
@@ -3855,6 +3876,44 @@
 <div class="product-footer">
 <div class="product-price">RM60<span>/month</span></div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20SMART%20Monitor%2032U889SA-W" >💬 Ask Us</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="tv">
+<div class="product-image" onclick="showProductDetail(41)" style="cursor: pointer;">
+            
+<img alt="LG NANO 4K UHD Smart TV 55 inch AI" loading="lazy" src="images/37.png"/>
+            
+
+        </div>
+<div class="product-info">
+<h3>LG NANO 4K UHD Smart TV 55" AI</h3>
+<p class="product-desc">9-month 50% off promo: RM55 → RM28/month. Free 5-year extended warranty. T&C apply.</p>
+<div class="product-features">
+<span class="feature-tag">55" 4K UHD NanoCell</span><span class="feature-tag">AI Picture & Sound</span><span class="feature-tag">9-Month 50% Off</span><span class="feature-tag">Free 5-Year Warranty</span>
+</div>
+<div class="product-footer">
+<div class="product-price">RM28<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20NANO%204K%20UHD%20Smart%20TV%2055%20inch%2C%20saw%20the%20RM28%2Fmonth%20promo" >💬 Ask Us</a>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="tv">
+<div class="product-image" onclick="showProductDetail(42)" style="cursor: pointer;">
+            
+<img alt="LG NANO 4K UHD Smart TV 50 inch AI" loading="lazy" src="images/36.png"/>
+            
+
+        </div>
+<div class="product-info">
+<h3>LG NANO 4K UHD Smart TV 50" AI</h3>
+<p class="product-desc">9-month 50% off promo: RM50 → RM25/month. Free 5-year extended warranty. T&C apply.</p>
+<div class="product-features">
+<span class="feature-tag">50" 4K UHD NanoCell</span><span class="feature-tag">AI Picture & Sound</span><span class="feature-tag">9-Month 50% Off</span><span class="feature-tag">Free 5-Year Warranty</span>
+</div>
+<div class="product-footer">
+<div class="product-price">RM25<span>/month</span></div>
+<a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20NANO%204K%20UHD%20Smart%20TV%2050%20inch%2C%20saw%20the%20RM25%2Fmonth%20promo" >💬 Ask Us</a>
 </div>
 </div>
 </div>
