@@ -637,8 +637,32 @@
         .product-price-original s { color: #bbb; }
         .product-price-note { font-size: 0.68rem; color: #888; font-weight: 400; line-height: 1.3; }
         .product-price { font-size: 1.3rem; flex-shrink: 1; min-width: 0; font-weight: 800; }
-            .product-footer { gap: 8px; padding-top: 10px; }
-            .btn-enquire { padding: 12px 0 !important; font-size: 0.75rem !important; flex-shrink: 0 !important; white-space: nowrap !important; min-width: 82px !important; width: 82px !important; justify-content: center !important; gap: 3px !important; background: #25D366 !important; color: white !important; box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important; font-weight: 600 !important; line-height: 1.2 !important; }
+            .product-footer { 
+                gap: 8px; 
+                padding-top: 10px; 
+                flex-direction: column; 
+                align-items: stretch; 
+            }
+            .product-price-wrapper,
+            .product-price {
+                width: 100%;
+                text-align: left;
+            }
+            .btn-enquire { 
+                padding: 12px 0 !important; 
+                font-size: 0.75rem !important; 
+                flex-shrink: 0 !important; 
+                white-space: nowrap !important; 
+                min-width: 0 !important; 
+                width: 100% !important; 
+                justify-content: center !important; 
+                gap: 3px !important; 
+                background: #25D366 !important; 
+                color: white !important; 
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important; 
+                font-weight: 600 !important; 
+                line-height: 1.2 !important; 
+            }
             .product-badge { top: 6px; left: 6px; padding: 3px 8px; font-size: 0.55rem; }
             .nav-links { display: none; }
             .category-container { justify-content: center; padding: 0; gap: 6px; }
@@ -655,8 +679,20 @@
             .product-card { border-radius: 10px; }
             .product-info { padding: 8px 8px 20px; }
             .product-info h3 { font-size: 0.72rem; margin-bottom: 8px; }
-            .product-footer { gap: 6px; padding-top: 8px; }
-            .btn-enquire { padding: 11px 0 !important; font-size: 0.72rem !important; min-width: 80px !important; width: 80px !important; line-height: 1.2 !important; }
+            .product-footer { 
+                gap: 7px; 
+                padding-top: 8px; 
+                flex-direction: column; 
+                align-items: stretch; 
+            }
+            .product-price { font-size: 1.2rem; }
+            .btn-enquire { 
+                padding: 10px 0 !important; 
+                font-size: 0.7rem !important; 
+                min-width: 0 !important; 
+                width: 100% !important; 
+                line-height: 1.2 !important; 
+            }
             .products-section { padding: 20px 8px 32px; }
             .logo img { height: 26px; }
         }
@@ -3055,13 +3091,23 @@
             galleryHint.style.display = totalSlides > 1 ? 'block' : 'none';
 
             // Prices
-            document.getElementById('spPrice').innerHTML = p.price + '<span>/month</span>';
             var i18n_dict = {en:{sub_from:'Subscription from',per_month:'/month'},zh:{sub_from:'每月订阅从',per_month:'/月'},ms:{sub_from:'Langganan dari',per_month:'/bulan'}};
-            var d = i18n_dict[currentLang||'en'];
-            var warrantyYears = p.features && p.features.some(f => f.includes('7-Year')) ? '7' : '5';
-            document.getElementById('spPriceNote').textContent = warrantyYears + ' Years Plan · ' + p.price + '/month';
-            document.getElementById('spPriceMain').innerHTML = p.price + '<span style="font-size:0.72rem;font-weight:400;color:#999;">' + d.per_month + '</span>';
-            document.getElementById('spPriceOutright').textContent = p.outright;
+            // V5 FIX: Do not use currentLang directly here. It may be scoped inside another script.
+            // Read active language safely, then update BOTH detail price and price summary from p.price.
+            var activeLang = (localStorage.getItem('lg-lang') || document.documentElement.lang || 'en').toLowerCase();
+            var d = i18n_dict[activeLang] || i18n_dict.en;
+            var warrantyYears = (p.features && p.features.some(function(f){ return String(f).indexOf('7-Year') !== -1; })) ? '7' : '5';
+            var selectedPrice = (p.price || '').toString().trim();
+            var priceText = selectedPrice || 'Ask for price';
+            var suffixHtml = selectedPrice ? '<span>' + d.per_month + '</span>' : '';
+            var suffixHtmlSmall = selectedPrice ? '<span style="font-size:0.72rem;font-weight:400;color:#999;">' + d.per_month + '</span>' : '';
+
+            document.getElementById('spPrice').innerHTML = priceText + suffixHtml;
+            document.getElementById('spPriceNote').textContent = selectedPrice ? (warrantyYears + ' Years Plan · ' + selectedPrice + d.per_month) : 'Please WhatsApp us for the latest monthly plan.';
+            document.getElementById('spPriceMain').innerHTML = priceText + suffixHtmlSmall;
+
+            var outrightEl = document.getElementById('spPriceOutright');
+            if (outrightEl) outrightEl.textContent = p.outright || '';
 
             // Features
             document.getElementById('spFeatures').innerHTML = p.features.map(function(f) {
@@ -3973,8 +4019,8 @@
                 <h1 id="spTitle">Product Title</h1>
                 <div class="detail-model" id="spModel">Model No.</div>
                 <p class="detail-desc" id="spDesc">Description</p>
-                <div class="detail-price-value" id="spPrice">RM70<span>/month</span></div>
-                <div class="detail-price-note" id="spPriceNote">7 Years Self-Service</div>
+                <div class="detail-price-value" id="spPrice">--<span>/month</span></div>
+                <div class="detail-price-note" id="spPriceNote">Select a product to view price</div>
             </div>
             <div class="detail-info-block">
                 <!-- Price Summary -->
@@ -3982,7 +4028,7 @@
                     <h3 style="font-size:0.75rem;font-weight:700;color:#1a1a1a;margin-bottom:14px;text-transform:uppercase;letter-spacing:1px;" data-i18n="price_options">Price Options</h3>
                     <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;">
                         <span style="font-size:0.8rem;color:#666;" data-i18n="monthly_subscription">Monthly Subscription</span>
-                        <span style="font-size:1.1rem;font-weight:800;color:#c41e3a;" id="spPriceMain">RM70<span style="font-size:0.72rem;font-weight:400;color:#999;">/month</span></span>
+                        <span style="font-size:1.1rem;font-weight:800;color:#c41e3a;" id="spPriceMain">--<span style="font-size:0.72rem;font-weight:400;color:#999;">/month</span></span>
                     </div>
                 </div>
             </div>
