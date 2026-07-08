@@ -245,6 +245,26 @@
             justify-content: center;
         }
 
+        /* Soft "floor" shadow beneath the product so it reads as floating/3D rather than a flat sticker */
+        .product-image::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 9%;
+            transform: translateX(-50%);
+            width: 58%;
+            height: 13%;
+            background: radial-gradient(ellipse at center, rgba(20,20,30,0.16) 0%, rgba(20,20,30,0.07) 45%, transparent 72%);
+            filter: blur(2px);
+            transition: all 0.4s ease;
+            z-index: 0;
+        }
+        .product-card:hover .product-image::before {
+            width: 64%;
+            bottom: 7%;
+            background: radial-gradient(ellipse at center, rgba(20,20,30,0.20) 0%, rgba(20,20,30,0.08) 45%, transparent 72%);
+        }
+
         /* Category-tinted backdrops + icon watermark so the grid doesn't read as flat/repetitive white tiles */
         .product-card[data-category="water"] .product-image { background: radial-gradient(circle at 26% 20%, #e4f2ff 0%, #ffffff 62%); }
         .product-card[data-category="air"] .product-image { background: radial-gradient(circle at 26% 20%, #e5faf0 0%, #ffffff 62%); }
@@ -269,6 +289,7 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.07);
             pointer-events: none;
             line-height: 1;
+            z-index: 1;
         }
         .product-card[data-category="water"] .product-image::after { content: "💧"; }
         .product-card[data-category="air"] .product-image::after { content: "🍃"; }
@@ -282,14 +303,17 @@
         }
 
         .product-image img {
+            position: relative;
+            z-index: 1;
             width: 100%;
             height: 100%;
             display: block;
             padding: 16px;
             box-sizing: border-box;
-            transition: transform 0.4s;
-            transform: scale(1);
+            transition: transform 0.4s ease, filter 0.4s ease;
+            transform: scale(1) translateY(0);
             object-fit: contain;
+            filter: drop-shadow(0 10px 14px rgba(0,0,0,0.12)) drop-shadow(0 3px 5px rgba(0,0,0,0.06));
         }
 
         /* On-image price display (data-driven from productData) */
@@ -297,6 +321,7 @@
             position: absolute;
             left: 10px;
             bottom: 8px;
+            z-index: 2;
             display: flex;
             flex-direction: column;
             line-height: 1.15;
@@ -333,7 +358,8 @@
         }
 
         .product-card:hover .product-image img {
-            transform: scale(1.08);
+            transform: scale(1.08) translateY(-4px);
+            filter: drop-shadow(0 18px 22px rgba(0,0,0,0.16)) drop-shadow(0 5px 8px rgba(0,0,0,0.08));
         }
 
         .product-badge {
@@ -508,7 +534,8 @@
             }
             .product-badge { top: 6px; left: 6px; padding: 3px 8px; font-size: 0.55rem; }
             .nav-links { display: none; }
-            .category-container { justify-content: center; padding: 0; gap: 6px; }
+            .category-container { display: grid; grid-template-columns: repeat(4, 1fr); justify-content: stretch; padding: 0; gap: 7px; }
+            .category-btn { width: 100%; text-align: center; padding: 8px 6px; box-sizing: border-box; }
             .category-bar { padding: 10px 12px; }
             .products-section { padding: 24px 12px 40px; }
             .section-title { margin-bottom: 16px; }
@@ -750,15 +777,13 @@
             grid-template-columns: 1.25fr 0.75fr;
             grid-template-areas:
                 "intro   photo"
-                "actions photo"
-                "actions note";
+                "actions photo";
             align-items: start;
             gap: 12px 40px;
         }
         .hero-split-intro { grid-area: intro; }
         .hero-split-actions { grid-area: actions; align-self: center; }
         .hero-split-photo { grid-area: photo; justify-self: center; align-self: center; }
-        .hero-mini-card { grid-area: note; justify-self: center; }
 
         .hero-eyebrow {
             display: inline-flex;
@@ -832,24 +857,6 @@
             color: #334155;
             box-shadow: 0 6px 16px rgba(15,23,42,0.04);
             text-align: center;
-        }
-
-        /* ===== Hero Promo Strip (competitor-style deal messaging) ===== */
-        .hero-promo-strip {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: linear-gradient(90deg, #c41e3a, #e8452c);
-            color: #fff;
-            border-radius: 10px;
-            padding: 9px 16px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 18px;
-            box-shadow: 0 8px 20px rgba(196,30,58,0.25);
-        }
-        @media (max-width: 860px) {
-            .hero-promo-strip { font-size: 0.74rem; padding: 8px 12px; margin-left: auto; margin-right: auto; }
         }
 
         /* ===== Subscribe vs Outright Comparison ===== */
@@ -961,8 +968,7 @@
                 grid-template-columns: 1fr 1fr;
                 grid-template-areas:
                     "intro   intro"
-                    "actions photo"
-                    "note    note";
+                    "actions photo";
                 gap: 18px 14px;
             }
             .hero-split-intro { text-align: center; }
@@ -979,7 +985,6 @@
             .hero-profile-card .img-fallback { flex: 1; border-radius: 14px; }
             .hero-profile-card .img-fallback { font-size: 30px; }
             .hero-profile-caption { display: none; }
-            .hero-mini-card { max-width: none; }
         }
 
         @media (max-width: 480px) {
@@ -2319,7 +2324,6 @@
         <div class="hero-split-intro">
             <div class="hero-eyebrow" data-i18n="hero_eyebrow">Authorized LG Subscription Consultant</div>
             <h2 data-i18n="hero_title">LG Home Appliances from RM12/month</h2>
-            <div class="hero-promo-strip" data-i18n="hero_promo_strip">&#128293; Up to 77% Off for the first 9&ndash;12 months &middot; Zero Deposit &middot; T&amp;C apply</div>
             <p class="hero-split-lead" data-i18n="hero_subtitle">Fridges, washers, air conditioners, TVs, water &amp; air purifiers &mdash; free installation and free maintenance included, built for Malaysian homes.</p>
         </div>
         <div class="hero-split-actions">
@@ -2346,10 +2350,6 @@
                     <span data-i18n="hero_trust1">LG Authorized Consultant</span>
                 </div>
             </div>
-        </div>
-        <div class="hero-mini-card">
-            <strong data-i18n="hero_minicard_title">Need help choosing?</strong>
-            <span data-i18n="hero_minicard_desc">Send Kelvin your room size or house type for a quick recommendation.</span>
         </div>
     </div>
 </div>
@@ -3074,11 +3074,6 @@
 <div class="section-title">
 <h2 data-i18n="our_collection">Our Collection</h2>
 <p id="collectionSubtitle">48 premium appliances for your modern home</p>
-<div style="background:#fafafa;border:1px solid #eee;border-radius:10px;padding:12px 18px;margin:16px auto 0;max-width:680px;text-align:left;">
-  <strong style="font-size:12.5px;color:#1a1a1a;">💡 Why so cheap?</strong>
-  <span style="font-size:12.5px;color:#555;"> Prices shown are LG Subscribe official promo rates (up to 77% off) for the first 9–12 months — normal rate resumes after. <strong>T&amp;C apply</strong> · WhatsApp us for the full plan table.</span>
-</div>
-
 </div>
 <div class="products-grid" id="productsGrid">
 <div class="product-card" data-category="water">
