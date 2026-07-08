@@ -245,6 +245,42 @@
             justify-content: center;
         }
 
+        /* Category-tinted backdrops + icon watermark so the grid doesn't read as flat/repetitive white tiles */
+        .product-card[data-category="water"] .product-image { background: radial-gradient(circle at 26% 20%, #e4f2ff 0%, #ffffff 62%); }
+        .product-card[data-category="air"] .product-image { background: radial-gradient(circle at 26% 20%, #e5faf0 0%, #ffffff 62%); }
+        .product-card[data-category="washer"] .product-image { background: radial-gradient(circle at 26% 20%, #f1ecfc 0%, #ffffff 62%); }
+        .product-card[data-category="fridge"] .product-image { background: radial-gradient(circle at 26% 20%, #fff1ea 0%, #ffffff 62%); }
+        .product-card[data-category="ac"] .product-image { background: radial-gradient(circle at 26% 20%, #e4fbfd 0%, #ffffff 62%); }
+        .product-card[data-category="tv"] .product-image { background: radial-gradient(circle at 26% 20%, #f2eefd 0%, #ffffff 62%); }
+        .product-card[data-category="other"] .product-image { background: radial-gradient(circle at 26% 20%, #fff7e3 0%, #ffffff 62%); }
+
+        .product-image::after {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            pointer-events: none;
+            line-height: 1;
+        }
+        .product-card[data-category="water"] .product-image::after { content: "💧"; }
+        .product-card[data-category="air"] .product-image::after { content: "🍃"; }
+        .product-card[data-category="washer"] .product-image::after { content: "🌀"; }
+        .product-card[data-category="fridge"] .product-image::after { content: "🧊"; }
+        .product-card[data-category="ac"] .product-image::after { content: "❄️"; }
+        .product-card[data-category="tv"] .product-image::after { content: "📺"; }
+        .product-card[data-category="other"] .product-image::after { content: "🏠"; }
+        @media (max-width: 480px) {
+            .product-image::after { width: 20px; height: 20px; font-size: 10px; top: 5px; right: 5px; }
+        }
+
         .product-image img {
             width: 100%;
             height: 100%;
@@ -296,59 +332,9 @@
             .ip-now { font-size: 18px; }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         .product-card:hover .product-image img {
             transform: scale(1.08);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         .product-badge {
             display: none !important;
@@ -846,6 +832,45 @@
             color: #334155;
             box-shadow: 0 6px 16px rgba(15,23,42,0.04);
             text-align: center;
+        }
+
+        /* ===== Hero Promo Strip (competitor-style deal messaging) ===== */
+        .hero-promo-strip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(90deg, #c41e3a, #e8452c);
+            color: #fff;
+            border-radius: 10px;
+            padding: 9px 16px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            box-shadow: 0 8px 20px rgba(196,30,58,0.25);
+        }
+        @media (max-width: 860px) {
+            .hero-promo-strip { font-size: 0.74rem; padding: 8px 12px; margin-left: auto; margin-right: auto; }
+        }
+
+        /* ===== Subscribe vs Outright Comparison ===== */
+        .compare-section { background: #ffffff; padding: 56px 20px; }
+        .compare-inner { max-width: 860px; margin: 0 auto; }
+        .compare-section h2 { text-align: center; font-size: 1.6rem; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
+        .compare-section .subhead { text-align: center; color: #888; font-size: 0.9rem; margin-bottom: 28px; }
+        .compare-table-wrap { overflow-x: auto; border-radius: 16px; box-shadow: 0 2px 16px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05); }
+        .compare-table { width: 100%; border-collapse: collapse; background: white; font-size: 0.85rem; }
+        .compare-table th, .compare-table td { padding: 13px 16px; text-align: left; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+        .compare-table thead th { background: #1a1a1a; color: #fff; font-size: 0.8rem; letter-spacing: 0.5px; }
+        .compare-table thead th.col-sub { background: #c41e3a; }
+        .compare-table td:first-child { font-weight: 600; color: #333; width: 26%; }
+        .compare-table td.good { color: #1a7f37; font-weight: 600; background: rgba(37,211,102,0.05); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-tnc { font-size: 0.72rem; color: #999; margin-top: 12px; text-align: center; line-height: 1.5; }
+        @media (max-width: 768px) {
+            .compare-section { padding: 36px 12px; }
+            .compare-section h2 { font-size: 1.2rem; }
+            .compare-table { font-size: 0.72rem; }
+            .compare-table th, .compare-table td { padding: 10px 10px; }
         }
 
         .hero-profile-card {
@@ -2293,12 +2318,13 @@
     <div class="hero-split-grid">
         <div class="hero-split-intro">
             <div class="hero-eyebrow" data-i18n="hero_eyebrow">Authorized LG Subscription Consultant</div>
-            <h2 data-i18n="hero_title">LG Appliances Subscription</h2>
-            <p class="hero-split-lead" data-i18n="hero_subtitle">Compare current promotions and monthly plans for fridges, washers, air conditioners, water and air purifiers — built for Malaysian homes.</p>
+            <h2 data-i18n="hero_title">LG Home Appliances from RM12/month</h2>
+            <div class="hero-promo-strip" data-i18n="hero_promo_strip">&#128293; Up to 77% Off for the first 9&ndash;12 months &middot; Zero Deposit &middot; T&amp;C apply</div>
+            <p class="hero-split-lead" data-i18n="hero_subtitle">Fridges, washers, air conditioners, TVs, water &amp; air purifiers &mdash; free installation and free maintenance included, built for Malaysian homes.</p>
         </div>
         <div class="hero-split-actions">
             <div class="hero-split-cta-row">
-                <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%20Kelvin%2C%20I%20saw%20LG%20Subscribe%20from%20RM19%2Fmonth.%20Can%20you%20share%20more%20details%3F" class="btn-whatsapp-primary" data-i18n="hero_cta">
+                <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%20Kelvin%2C%20I%20saw%20LG%20Subscribe%20up%20to%2077%25%20off%20from%20RM12%2Fmonth.%20Can%20you%20share%20more%20details%3F" class="btn-whatsapp-primary" data-i18n="hero_cta">
                     💬 Get Free Quote
                 </a>
                 <a href="#products" class="btn-ghost-secondary" onclick="event.preventDefault(); filterProducts('all');" data-i18n="hero_cta_secondary">
@@ -2872,10 +2898,12 @@
             var ws = document.querySelector('.why-subscribe');
             var ts = document.querySelector('.trust-section');
             var fs = document.querySelector('.faq-section');
+            var cmp = document.getElementById('compareSection');
             var adv = document.getElementById('advisorSection');
             if (ws) ws.style.display = 'none';
             if (ts) ts.style.display = 'none';
             if (fs) fs.style.display = 'none';
+            if (cmp) cmp.style.display = 'none';
             if (adv) adv.style.display = 'none';
             document.getElementById('privacySection').classList.remove('active');
             document.getElementById('termsSection').classList.remove('active');
@@ -3024,11 +3052,10 @@
                 var p = productData[parseInt(m[1], 10)];
                 if (!p) return;
 
-                // price overlay on the image
+                // price overlay on the image — monthly price only, outright is not shown up front
                 var h = '<div class="img-price">';
                 if (p.oldPrice) h += '<span class="ip-old">' + p.oldPrice + '/mth</span>';
                 h += '<span class="ip-now">' + p.price + '<small>/mth</small></span>';
-                if (p.outright && p.outright !== 'N/A') h += '<span class="ip-outright">Outright: ' + p.outright + '</span>';
                 h += '</div>';
                 el.insertAdjacentHTML('beforeend', h);
 
@@ -4061,15 +4088,15 @@
                         <span style="font-size:0.8rem;color:#666;" data-i18n="monthly_subscription">Promo Monthly Rate</span>
                         <span style="font-size:1.1rem;font-weight:800;color:#c41e3a;" id="spPriceMain">--<span style="font-size:0.72rem;font-weight:400;color:#999;">/month</span></span>
                     </div>
-                    <div id="spRowOutright" style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed #eee;">
-                        <span style="font-size:0.8rem;color:#666;">Outright (One-Time)</span>
-                        <span style="font-size:0.95rem;font-weight:700;color:#1a1a1a;" id="spPriceOutright">--</span>
-                    </div>
                     <div id="spPlansWrap" style="display:none;margin-top:10px;">
                         <div style="font-size:0.7rem;font-weight:700;color:#1a1a1a;text-transform:uppercase;letter-spacing:.5px;margin:4px 0 2px;">Plan Options</div>
                         <div id="spPlans"></div>
                     </div>
                     <p style="margin:10px 0 0;font-size:0.7rem;color:#999;line-height:1.5;">Promo rate applies during the promotional period only, then the normal rate resumes. Plans: 5 / 7-Year · Self-Service / Regular Visit / Combine. <strong>T&amp;C apply</strong> — WhatsApp us for the full plan table.</p>
+                    <div id="spRowOutright" style="display:flex;justify-content:space-between;align-items:center;padding:8px 0 0;margin-top:8px;border-top:1px solid #f4f4f4;">
+                        <span style="font-size:0.68rem;color:#aaa;">Outright (one-time, if not subscribing)</span>
+                        <span style="font-size:0.75rem;font-weight:600;color:#aaa;" id="spPriceOutright">--</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -4143,7 +4170,6 @@
         </div>
     
     </div>
-
 
 <!-- Footer -->
 <!-- Privacy Policy Section -->
@@ -4428,6 +4454,60 @@
 
 </div>
 
+<!-- ===== LG SUBSCRIBE vs BUY OUTRIGHT COMPARISON ===== -->
+<div class="compare-section" id="compareSection">
+    <div class="compare-inner">
+        <h2>LG Subscribe vs Buy Outright</h2>
+        <p class="subhead">See why more Malaysian households are switching to subscription</p>
+        <div class="compare-table-wrap">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th class="col-sub">LG Subscribe</th>
+                        <th>Buy Outright</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Upfront Cost</td>
+                        <td class="good">RM0 — Zero Deposit</td>
+                        <td>Full price paid upfront</td>
+                    </tr>
+                    <tr>
+                        <td>Credit Card Limit</td>
+                        <td class="good">Not blocked — small monthly fee only</td>
+                        <td>One big charge locks up your limit</td>
+                    </tr>
+                    <tr>
+                        <td>Installation</td>
+                        <td class="good">Free</td>
+                        <td>Often charged separately</td>
+                    </tr>
+                    <tr>
+                        <td>Maintenance &amp; Filters</td>
+                        <td class="good">Included, free</td>
+                        <td>You pay as needed</td>
+                    </tr>
+                    <tr>
+                        <td>Repairs</td>
+                        <td class="good">Fully covered</td>
+                        <td>Out of pocket after warranty</td>
+                    </tr>
+                    <tr>
+                        <td>Warranty</td>
+                        <td class="good">5–7 years</td>
+                        <td>Usually 1–2 years</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="compare-tnc">Promo rates apply during the promotional period only, then normal rate resumes. <strong>T&amp;C apply</strong> — WhatsApp us for the full plan table.</p>
+        <div style="text-align:center;margin-top:20px;">
+            <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%20Kelvin%2C%20I%20saw%20the%20LG%20Subscribe%20vs%20Buy%20Outright%20comparison.%20Can%20you%20explain%20more%3F" class="btn-whatsapp-primary" style="display:inline-flex;">💬 Ask Kelvin About This</a>
+        </div>
+    </div>
+</div>
 
 <!-- ===== FAQ ===== -->
 <div class="faq-section">
@@ -4514,6 +4594,56 @@
                 <p>Click "Enquire" or "Chat on WhatsApp" on any product. Our consultant Kelvin will guide you through the application. Most applications are approved within 1-2 working days. Once approved, installation is scheduled within 3-5 days.</p>
             </div>
         </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                Does subscribing lock up my credit card limit?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>No. There is no lump sum charge to your card — only the small monthly fee is billed each month, so the rest of your credit limit stays free for other spending.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                Can I pay with a debit card?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>It depends on your bank and LG's current billing policy. WhatsApp us your bank and we will confirm whether debit card payment is accepted for your plan.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                Are the appliances brand new?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, 100%. Every unit is brand new, sealed from LG Electronics — never refurbished or second-hand.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                Who is the contract actually with?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Your subscription contract is directly with LG Electronics. Kelvin is an independent authorized consultant who helps you choose the right plan and handles the application on your behalf — not a third-party reseller.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                What documents do I need to apply?
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Just your IC and a valid payment card. The whole application is done online — no branch visit needed. WhatsApp Kelvin and he will guide you step by step.</p>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -4546,11 +4676,13 @@
             var ws = document.querySelector('.why-subscribe');
             var ts = document.querySelector('.trust-section');
             var fs = document.querySelector('.faq-section');
+            var cmp = document.getElementById('compareSection');
             var adv = document.getElementById('advisorSection');
             var db = document.getElementById('dealerBar');
             if (ws) ws.style.display = 'none';
             if (ts) ts.style.display = 'none';
             if (fs) fs.style.display = 'none';
+            if (cmp) cmp.style.display = 'none';
             if (adv) adv.style.display = 'none';
             if (db) db.style.display = 'none';
             document.getElementById('privacySection').classList.add('active');
@@ -4569,11 +4701,13 @@
             var ws = document.querySelector('.why-subscribe');
             var ts = document.querySelector('.trust-section');
             var fs = document.querySelector('.faq-section');
+            var cmp = document.getElementById('compareSection');
             var adv = document.getElementById('advisorSection');
             var db = document.getElementById('dealerBar');
             if (ws) ws.style.display = 'none';
             if (ts) ts.style.display = 'none';
             if (fs) fs.style.display = 'none';
+            if (cmp) cmp.style.display = 'none';
             if (adv) adv.style.display = 'none';
             if (db) db.style.display = 'none';
             document.getElementById('privacySection').classList.remove('active');
@@ -4592,11 +4726,13 @@
             var ws = document.querySelector('.why-subscribe');
             var ts = document.querySelector('.trust-section');
             var fs = document.querySelector('.faq-section');
+            var cmp = document.getElementById('compareSection');
             var adv = document.getElementById('advisorSection');
             var db = document.getElementById('dealerBar');
             if (ws) ws.style.display = 'none';
             if (ts) ts.style.display = 'none';
             if (fs) fs.style.display = 'none';
+            if (cmp) cmp.style.display = 'none';
             if (adv) adv.style.display = 'none';
             if (db) db.style.display = 'none';
             document.getElementById('privacySection').classList.remove('active');
@@ -4618,11 +4754,13 @@
             var ws = document.querySelector('.why-subscribe');
             var ts = document.querySelector('.trust-section');
             var fs = document.querySelector('.faq-section');
+            var cmp = document.getElementById('compareSection');
             var adv = document.getElementById('advisorSection');
             var db = document.getElementById('dealerBar');
             if (ws) ws.style.display = '';
             if (ts) ts.style.display = '';
             if (fs) fs.style.display = '';
+            if (cmp) cmp.style.display = '';
             if (adv) adv.style.display = '';
             if (db) db.style.display = 'block';
             document.getElementById('detailSubpage').classList.remove('active');
@@ -4646,11 +4784,13 @@
                 var ws2 = document.querySelector('.why-subscribe');
                 var ts2 = document.querySelector('.trust-section');
                 var fs2 = document.querySelector('.faq-section');
+                var cmp2 = document.getElementById('compareSection');
                 var adv = document.getElementById('advisorSection');
                 var db = document.getElementById('dealerBar');
                 if (ws2) ws2.style.display = '';
                 if (ts2) ts2.style.display = '';
                 if (fs2) fs2.style.display = '';
+                if (cmp2) cmp2.style.display = '';
                 if (adv) adv.style.display = '';
                 if (db) db.style.display = 'block';
             }
@@ -4715,14 +4855,15 @@
             cat_all: 'All', cat_water: 'Water', cat_air: 'Air', cat_washer: 'Washer',
             cat_fridge: 'Fridge', cat_ac: 'AC', cat_tv: 'TV', cat_other: 'Other',
             // Hero
-            hero_title: 'LG Appliances Subscription',
+            hero_title: 'LG Home Appliances from RM12/month',
             hero_eyebrow: 'Authorized LG Subscription Consultant',
+            hero_promo_strip: '🔥 Up to 77% Off for the first 9–12 months · Zero Deposit · T&C apply',
             hero_promo: 'June Promo · Limited Slots',
             hero_price_label: 'From as low as',
             hero_price_suffix: '/month',
             hero_trust1: 'LG Authorized Consultant',
             hero_trust2: '500+ Happy Customers',
-            hero_subtitle: 'Compare current promotions and monthly plans for fridges, washers, air conditioners, water and air purifiers — built for Malaysian homes.',
+            hero_subtitle: 'Fridges, washers, air conditioners, TVs, water & air purifiers — free installation and free maintenance included, built for Malaysian homes.',
             hero_point1: '✓ Zero Deposit',
             hero_point2: '✓ Free Installation',
             hero_point3: '✓ Free Maintenance',
@@ -4795,14 +4936,15 @@
             cat_all: '全部', cat_water: '净水器', cat_air: '空气净化', cat_washer: '洗衣机',
             cat_fridge: '冰箱', cat_ac: '冷气机', cat_tv: '电视', cat_other: '其他',
             // Hero
-            hero_title: 'LG 家电订阅服务',
+            hero_title: 'LG家电订阅 · 每月RM12起',
             hero_eyebrow: 'LG授权家电订阅顾问',
+            hero_promo_strip: '🔥 首9–12个月最高77%折扣 · 零押金 · 条款与条件适用',
             hero_promo: '6月限时优惠 · 名额有限',
             hero_price_label: '月费低至',
             hero_price_suffix: '/月起',
             hero_trust1: 'LG授权顾问',
             hero_trust2: '500+客户信赖',
-            hero_subtitle: '比较最新优惠和每月配套，涵盖冰箱、洗衣机、冷气、净水器、空气清新机，专为马来西亚家庭设计。',
+            hero_subtitle: '冰箱、洗衣机、冷气、电视、净水器、空气净化器 — 免费安装和保养，专为马来西亚家庭设计。',
             hero_point1: '✓ 零押金',
             hero_point2: '✓ 免费安装',
             hero_point3: '✓ 免费维修保养',
@@ -4875,14 +5017,15 @@
             cat_all: 'Semua', cat_water: 'Penapis Air', cat_air: 'Penapis Udara', cat_washer: 'Mesin Basuh',
             cat_fridge: 'Peti Sejuk', cat_ac: 'Penghawa Dingin', cat_tv: 'TV', cat_other: 'Lain-lain',
             // Hero
-            hero_title: 'Langganan Perkakasan LG',
+            hero_title: 'Perkakas LG dari RM12/bulan',
             hero_eyebrow: 'Perunding Langganan LG Yang Sah',
+            hero_promo_strip: '🔥 Diskaun sehingga 77% untuk 9–12 bulan pertama · Tiada Deposit · Tertakluk pada T&C',
             hero_promo: 'Promosi Jun · Slot Terhad',
             hero_price_label: 'Serendah',
             hero_price_suffix: '/bulan',
             hero_trust1: 'Perunding Sah LG',
             hero_trust2: '500+ Pelanggan Berpuas Hati',
-            hero_subtitle: 'Bandingkan promosi semasa dan pelan bulanan untuk peti sejuk, mesin basuh, penghawa dingin, penapis air dan udara — direka untuk rumah di Malaysia.',
+            hero_subtitle: 'Peti sejuk, mesin basuh, penghawa dingin, TV, penapis air dan udara — pemasangan dan penyelenggaraan percuma, direka untuk rumah di Malaysia.',
             hero_point1: '✓ Tiada Deposit',
             hero_point2: '✓ Pemasangan Percuma',
             hero_point3: '✓ Penyelenggaraan Percuma',
@@ -5016,7 +5159,7 @@
 </script>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20saw%20your%20LG%20subscription%20from%20RM19%2Fmonth.%20Can%20I%20know%20more%20about%20the%20plan%20and%20contract%20period%3F" class="floating-whatsapp" target="_blank">
+    <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20saw%20your%20LG%20subscription%20up%20to%2077%25%20off%20from%20RM12%2Fmonth.%20Can%20I%20know%20more%20about%20the%20plan%20and%20contract%20period%3F" class="floating-whatsapp" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="white" style="flex-shrink:0;">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
