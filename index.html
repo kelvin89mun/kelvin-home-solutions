@@ -236,33 +236,21 @@
 
         .product-image {
             position: relative;
-            width: 100%;
+            margin: 10px 10px 6px;
+            width: calc(100% - 20px);
             aspect-ratio: 1 / 1;
             overflow: hidden;
             background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 8px 16px rgba(20,20,30,0.10), 0 2px 5px rgba(20,20,30,0.06);
+            transition: box-shadow 0.35s ease, transform 0.35s ease;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-
-        /* Soft "floor" shadow beneath the product so it reads as floating/3D rather than a flat sticker */
-        .product-image::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 9%;
-            transform: translateX(-50%);
-            width: 58%;
-            height: 13%;
-            background: radial-gradient(ellipse at center, rgba(20,20,30,0.16) 0%, rgba(20,20,30,0.07) 45%, transparent 72%);
-            filter: blur(2px);
-            transition: all 0.4s ease;
-            z-index: 0;
-        }
-        .product-card:hover .product-image::before {
-            width: 64%;
-            bottom: 7%;
-            background: radial-gradient(ellipse at center, rgba(20,20,30,0.20) 0%, rgba(20,20,30,0.08) 45%, transparent 72%);
+        .product-card:hover .product-image {
+            box-shadow: 0 16px 26px rgba(20,20,30,0.16), 0 4px 8px rgba(20,20,30,0.08);
+            transform: translateY(-3px);
         }
 
         /* Category-tinted backdrops + icon watermark so the grid doesn't read as flat/repetitive white tiles */
@@ -308,12 +296,11 @@
             width: 100%;
             height: 100%;
             display: block;
-            padding: 16px;
+            padding: 14px;
             box-sizing: border-box;
-            transition: transform 0.4s ease, filter 0.4s ease;
-            transform: scale(1) translateY(0);
+            transition: transform 0.4s ease;
+            transform: scale(1);
             object-fit: contain;
-            filter: drop-shadow(0 10px 14px rgba(0,0,0,0.12)) drop-shadow(0 3px 5px rgba(0,0,0,0.06));
         }
 
         /* On-image price display (data-driven from productData) */
@@ -358,8 +345,7 @@
         }
 
         .product-card:hover .product-image img {
-            transform: scale(1.08) translateY(-4px);
-            filter: drop-shadow(0 18px 22px rgba(0,0,0,0.16)) drop-shadow(0 5px 8px rgba(0,0,0,0.08));
+            transform: scale(1.05);
         }
 
         .product-badge {
@@ -2323,12 +2309,12 @@
     <div class="hero-split-grid">
         <div class="hero-split-intro">
             <div class="hero-eyebrow" data-i18n="hero_eyebrow">Authorized LG Subscription Consultant</div>
-            <h2 data-i18n="hero_title">LG Home Appliances from RM12/month</h2>
+            <h2 data-i18n="hero_title">LG Home Appliances Subscription</h2>
             <p class="hero-split-lead" data-i18n="hero_subtitle">Fridges, washers, air conditioners, TVs, water &amp; air purifiers &mdash; free installation and free maintenance included, built for Malaysian homes.</p>
         </div>
         <div class="hero-split-actions">
             <div class="hero-split-cta-row">
-                <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%20Kelvin%2C%20I%20saw%20LG%20Subscribe%20up%20to%2077%25%20off%20from%20RM12%2Fmonth.%20Can%20you%20share%20more%20details%3F" class="btn-whatsapp-primary" data-i18n="hero_cta">
+                <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%20Kelvin%2C%20I%20saw%20LG%20Subscribe%20on%20your%20website.%20Can%20you%20share%20more%20details%3F" class="btn-whatsapp-primary" data-i18n="hero_cta">
                     💬 Get Free Quote
                 </a>
                 <a href="#products" class="btn-ghost-secondary" onclick="event.preventDefault(); filterProducts('all');" data-i18n="hero_cta_secondary">
@@ -4850,7 +4836,7 @@
             cat_all: 'All', cat_water: 'Water', cat_air: 'Air', cat_washer: 'Washer',
             cat_fridge: 'Fridge', cat_ac: 'AC', cat_tv: 'TV', cat_other: 'Other',
             // Hero
-            hero_title: 'LG Home Appliances from RM12/month',
+            hero_title: 'LG Home Appliances Subscription',
             hero_eyebrow: 'Authorized LG Subscription Consultant',
             hero_promo_strip: '🔥 Up to 77% Off for the first 9–12 months · Zero Deposit · T&C apply',
             hero_promo: 'June Promo · Limited Slots',
@@ -4931,7 +4917,7 @@
             cat_all: '全部', cat_water: '净水器', cat_air: '空气净化', cat_washer: '洗衣机',
             cat_fridge: '冰箱', cat_ac: '冷气机', cat_tv: '电视', cat_other: '其他',
             // Hero
-            hero_title: 'LG家电订阅 · 每月RM12起',
+            hero_title: 'LG家电订阅服务',
             hero_eyebrow: 'LG授权家电订阅顾问',
             hero_promo_strip: '🔥 首9–12个月最高77%折扣 · 零押金 · 条款与条件适用',
             hero_promo: '6月限时优惠 · 名额有限',
@@ -5012,7 +4998,7 @@
             cat_all: 'Semua', cat_water: 'Penapis Air', cat_air: 'Penapis Udara', cat_washer: 'Mesin Basuh',
             cat_fridge: 'Peti Sejuk', cat_ac: 'Penghawa Dingin', cat_tv: 'TV', cat_other: 'Lain-lain',
             // Hero
-            hero_title: 'Perkakas LG dari RM12/bulan',
+            hero_title: 'Langganan Perkakas LG',
             hero_eyebrow: 'Perunding Langganan LG Yang Sah',
             hero_promo_strip: '🔥 Diskaun sehingga 77% untuk 9–12 bulan pertama · Tiada Deposit · Tertakluk pada T&C',
             hero_promo: 'Promosi Jun · Slot Terhad',
@@ -5154,7 +5140,7 @@
 </script>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20saw%20your%20LG%20subscription%20up%20to%2077%25%20off%20from%20RM12%2Fmonth.%20Can%20I%20know%20more%20about%20the%20plan%20and%20contract%20period%3F" class="floating-whatsapp" target="_blank">
+    <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20saw%20your%20LG%20subscription%20promotions.%20Can%20I%20know%20more%20about%20the%20plan%20and%20contract%20period%3F" class="floating-whatsapp" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="white" style="flex-shrink:0;">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
