@@ -194,19 +194,61 @@
         .section-title {
             text-align: center;
             margin-bottom: 45px;
+            position: relative;
+        }
+
+        .section-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 14px;
+            background: linear-gradient(135deg, rgba(196,30,58,0.10), rgba(255,140,66,0.10));
+            border: 1px solid rgba(196,30,58,0.18);
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #c41e3a;
+            margin-bottom: 12px;
+            animation: kickerPulse 2.4s ease-in-out infinite;
+        }
+
+        @keyframes kickerPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(196,30,58,0.18); }
+            50% { box-shadow: 0 0 0 6px rgba(196,30,58,0); }
         }
 
         .section-title h2 {
             font-family: 'Inter', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #1a1a1a;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(120deg, #1a1a1a 40%, #c41e3a 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             margin-bottom: 10px;
         }
 
         .section-title p {
             color: #888;
             font-size: 0.9rem;
+        }
+
+        .section-title-underline {
+            width: 56px;
+            height: 4px;
+            margin: 14px auto 0;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #c41e3a, #ff8c42);
+            background-size: 200% 100%;
+            animation: underlineFlow 3s ease-in-out infinite;
+        }
+
+        @keyframes underlineFlow {
+            0% { background-position: 0% 0; }
+            50% { background-position: 100% 0; }
+            100% { background-position: 0% 0; }
         }
 
         .products-grid {
@@ -221,17 +263,30 @@
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-            transition: all 0.3s;
+            transition: transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s cubic-bezier(.2,.8,.2,1), border-color 0.35s;
             border: 1px solid rgba(0,0,0,0.04);
             contain: layout style;
             display: flex;
             flex-direction: column;
             height: 100%;
+            opacity: 0;
+            transform: translateY(18px);
+            animation: cardRise 0.6s cubic-bezier(.2,.8,.2,1) forwards;
+            animation-play-state: paused;
+        }
+
+        .product-card.in-view {
+            animation-play-state: running;
+        }
+
+        @keyframes cardRise {
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .product-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+            transform: translateY(-7px) scale(1.015);
+            box-shadow: 0 18px 38px rgba(196,30,58,0.12), 0 6px 14px rgba(0,0,0,0.06);
+            border-color: rgba(196,30,58,0.15);
         }
 
         .product-image {
@@ -251,6 +306,24 @@
         .product-card:hover .product-image {
             box-shadow: 0 16px 26px rgba(20,20,30,0.16), 0 4px 8px rgba(20,20,30,0.08);
             transform: translateY(-3px);
+        }
+
+        /* Diagonal light sweep across the image on hover, for a livelier feel */
+        .product-image::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -60%;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.55) 50%, transparent 100%);
+            z-index: 2;
+            pointer-events: none;
+            transform: skewX(-18deg);
+            transition: left 0.7s ease;
+        }
+        .product-card:hover .product-image::before {
+            left: 130%;
         }
 
         /* Category-tinted backdrops + icon watermark so the grid doesn't read as flat/repetitive white tiles */
@@ -277,7 +350,11 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.07);
             pointer-events: none;
             line-height: 1;
-            z-index: 1;
+            z-index: 3;
+            transition: transform 0.35s ease;
+        }
+        .product-card:hover .product-image::after {
+            transform: translateY(-2px) rotate(-8deg) scale(1.1);
         }
         .product-card[data-category="water"] .product-image::after { content: "💧"; }
         .product-card[data-category="air"] .product-image::after { content: "🍃"; }
@@ -403,6 +480,11 @@
             font-weight: 800;
             color: #c41e3a;
             line-height: 1;
+            display: inline-block;
+            transition: transform 0.25s ease;
+        }
+        .product-card:hover .product-price {
+            transform: scale(1.06);
         }
 
         .product-price span {
@@ -3058,8 +3140,10 @@
 </script>
 <section class="products-section" id="products">
 <div class="section-title">
+<span class="section-kicker" data-i18n="section_kicker">⚡ Handpicked For You</span>
 <h2 data-i18n="our_collection">Our Collection</h2>
 <p id="collectionSubtitle">48 premium appliances for your modern home</p>
+<div class="section-title-underline"></div>
 </div>
 <div class="products-grid" id="productsGrid">
 <div class="product-card" data-category="water">
@@ -4853,8 +4937,9 @@
             hero_cta: '💬 Get Free Quote',
             hero_cta_secondary: 'View All Products →',
             // Section titles
-            our_collection: 'Our Collection',
-            collection_subtitle: 'premium appliances for your modern home',
+            section_kicker: '⚡ Handpicked For You',
+            our_collection: 'Find Your Perfect Match',
+            collection_subtitle: 'premium LG appliances, ready to subscribe today',
             // Product card
             order_now: '💬 Ask Us',
             // Detail page
@@ -4934,8 +5019,9 @@
             hero_cta: '💬 免费咨询报价',
             hero_cta_secondary: '查看全部产品 →',
             // Section titles
-            our_collection: '我们的产品',
-            collection_subtitle: '款高端家电供您选择',
+            section_kicker: '⚡ 精选好物',
+            our_collection: '找到你的心动之选',
+            collection_subtitle: '款高端家电，即刻订阅入住新生活',
             // Product card
             order_now: '💬 咨询我们',
             // Detail page
@@ -5015,8 +5101,9 @@
             hero_cta: '💬 Dapatkan Sebutan Harga',
             hero_cta_secondary: 'Lihat Semua Produk →',
             // Section titles
-            our_collection: 'Koleksi Kami',
-            collection_subtitle: 'perkakasan premium untuk rumah moden anda',
+            section_kicker: '⚡ Pilihan Terbaik Untuk Anda',
+            our_collection: 'Cari Yang Sesuai Untuk Anda',
+            collection_subtitle: 'perkakasan premium LG, sedia untuk dilanggan hari ini',
             // Product card
             order_now: '💬 Tanya Kami',
             // Detail page
@@ -5147,6 +5234,49 @@
         💬 Free Quote · Ask Us Now
     </a>
 
+
+    <!-- Scroll-triggered entrance animation for product cards -->
+    <script>
+        (function() {
+            function revealAll() {
+                document.querySelectorAll('.product-card').forEach(function(c) {
+                    c.classList.add('in-view');
+                });
+            }
+            if (!('IntersectionObserver' in window)) {
+                revealAll();
+                return;
+            }
+            var io = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry, i) {
+                    if (entry.isIntersecting) {
+                        var card = entry.target;
+                        var delay = (i % 4) * 60;
+                        card.style.animationDelay = delay + 'ms';
+                        card.classList.add('in-view');
+                        io.unobserve(card);
+                    }
+                });
+            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+            function observeCards() {
+                document.querySelectorAll('.product-card:not(.in-view)').forEach(function(c) {
+                    io.observe(c);
+                });
+            }
+            document.addEventListener('DOMContentLoaded', observeCards);
+            // Re-observe after category filtering swaps visibility
+            document.addEventListener('DOMContentLoaded', function() {
+                var grid = document.getElementById('productsGrid');
+                if (grid) {
+                    var mo = new MutationObserver(observeCards);
+                    mo.observe(grid, { attributes: true, subtree: true, attributeFilter: ['style'] });
+                }
+            });
+            // Safety net: if something goes wrong, reveal everything after 2.5s
+            setTimeout(revealAll, 2500);
+        })();
+    </script>
 
     <!-- Standalone filter script - loads early for reliability -->
     <script>
