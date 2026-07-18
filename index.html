@@ -35,16 +35,32 @@
 
 <!-- Canonical -->
 <link href="https://subscribe-smarthome.com/" rel="canonical"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        :root {
+            --font-display: 'Space Grotesk', 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            --font-body: 'Manrope', 'Inter', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            --lg-red: #c41e3a;
+            --lg-red-deep: #9a1029;
+            --cream: #f6f0e4;
+            --cream-soft: #faf5ec;
+        }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #ffffff;
+            font-family: var(--font-body);
+            background: var(--cream);
             color: #2d2d2d;
-            line-height: 1.5;
+            line-height: 1.55;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, .product-price, .btn-enquire, .btn-whatsapp-primary, .category-btn, .lang-btn, .hero-eyebrow, .section-kicker {
+            font-family: var(--font-display);
         }
 
         /* Cozy Navigation */
@@ -54,7 +70,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(250, 245, 236, 0.92);
             backdrop-filter: blur(20px);
             padding: 12px 0;
             height: 64px;
@@ -140,7 +156,8 @@
 
         /* Category Filter */
         .category-bar {
-            background: white;
+            background: rgba(246, 240, 228, 0.95);
+            backdrop-filter: blur(12px);
             padding: 12px 16px;
             position: sticky;
             top: 64px;
@@ -157,13 +174,13 @@
             position: relative;
         }
         .category-btn {
-            padding: 7px 16px;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 20px;
-            font-size: 0.78rem;
-            font-weight: 500;
-            color: #777;
+            padding: 8px 18px;
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #666;
             cursor: pointer;
             transition: all 0.2s;
             white-space: nowrap;
@@ -178,10 +195,11 @@
         }
 
         .category-btn.active {
-            background: #c41e3a;
-            border-color: #c41e3a;
+            background: linear-gradient(135deg, var(--lg-red), #e33d58);
+            border-color: transparent;
             color: white;
-            box-shadow: 0 3px 12px rgba(196,30,58,0.25);
+            box-shadow: 0 4px 14px rgba(196,30,58,0.30);
+            transform: translateY(-1px);
         }
 
         /* Products Grid - Airy Breathing Cards */
@@ -219,10 +237,10 @@
         }
 
         .section-title h2 {
-            font-family: 'Inter', sans-serif;
-            font-size: 2rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+            font-weight: 700;
+            letter-spacing: -1px;
             background: linear-gradient(120deg, #1a1a1a 40%, #c41e3a 100%);
             -webkit-background-clip: text;
             background-clip: text;
@@ -260,7 +278,7 @@
 
         .product-card {
             background: white;
-            border-radius: 16px;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 2px 12px rgba(0,0,0,0.04);
             transition: transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s cubic-bezier(.2,.8,.2,1), border-color 0.35s;
@@ -477,8 +495,12 @@
         .product-price-note { font-size: 0.68rem; color: #888; font-weight: 400; line-height: 1.3; }
         .product-price {
             font-size: 1.6rem;
-            font-weight: 800;
-            color: #c41e3a;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(120deg, var(--lg-red), #ff5470);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             line-height: 1;
             display: inline-block;
             transition: transform 0.25s ease;
@@ -494,15 +516,18 @@
         }
 
         .btn-enquire {
+            position: relative;
+            overflow: hidden;
             padding: 14px 0;
-            background: #25D366;
+            background: linear-gradient(135deg, #2ee06f, #1fb959);
             color: white;
             text-decoration: none;
             border-radius: 25px;
             font-size: 0.9rem;
             font-weight: 600;
-            transition: all 0.2s;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            letter-spacing: 0.2px;
+            transition: all 0.25s cubic-bezier(.2,.8,.2,1);
+            box-shadow: 0 4px 12px rgba(37,211,102,0.22);
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -516,10 +541,19 @@
         }
 
         .btn-enquire:hover {
-            background: #22c75e;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 8px 20px rgba(37,211,102,0.35);
         }
+        .btn-enquire::after {
+            content: "";
+            position: absolute;
+            top: 0; left: -80%;
+            width: 45%; height: 100%;
+            background: linear-gradient(105deg, transparent, rgba(255,255,255,0.35), transparent);
+            transform: skewX(-20deg);
+            transition: left 0.5s ease;
+        }
+        .btn-enquire:hover::after { left: 130%; }
 
 
         /* Footer */
@@ -573,7 +607,7 @@
         .product-price-original { font-size: 0.78rem; color: #999; font-weight: 500; }
         .product-price-original s { color: #bbb; }
         .product-price-note { font-size: 0.68rem; color: #888; font-weight: 400; line-height: 1.3; }
-        .product-price { font-size: 1.3rem; flex-shrink: 1; min-width: 0; font-weight: 800; }
+        .product-price { font-size: 1.3rem; flex-shrink: 1; min-width: 0; font-weight: 700; }
             .product-footer { 
                 gap: 8px; 
                 padding-top: 10px; 
@@ -832,12 +866,38 @@
             position: relative;
             width: 100%;
             padding: 110px 20px 56px;
-            background:
-                radial-gradient(circle at 12% 18%, rgba(196,30,58,0.10), transparent 30%),
-                radial-gradient(circle at 88% 14%, rgba(37,211,102,0.08), transparent 26%),
-                linear-gradient(180deg, #ffffff 0%, #fff7f8 55%, #ffffff 100%);
+            background: linear-gradient(180deg, var(--cream-soft) 0%, #f2e9d8 55%, var(--cream) 100%);
             overflow: hidden;
         }
+        .hero-split::before,
+        .hero-split::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .hero-split::before {
+            width: 420px; height: 420px;
+            top: -120px; left: -100px;
+            background: radial-gradient(circle, rgba(196,30,58,0.16), transparent 70%);
+            animation: blobDrift 14s ease-in-out infinite alternate;
+        }
+        .hero-split::after {
+            width: 380px; height: 380px;
+            top: -60px; right: -120px;
+            background: radial-gradient(circle, rgba(37,211,102,0.14), transparent 70%);
+            animation: blobDrift 18s ease-in-out infinite alternate-reverse;
+        }
+        @keyframes blobDrift {
+            from { transform: translate(0, 0) scale(1); }
+            to   { transform: translate(50px, 36px) scale(1.15); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-split::before, .hero-split::after { animation: none; }
+        }
+        .hero-split-grid { position: relative; z-index: 1; }
         .hero-split-grid {
             max-width: 1200px;
             margin: 0 auto;
@@ -866,12 +926,24 @@
             margin-bottom: 16px;
         }
         .hero-split-intro h2 {
-            font-size: clamp(28px, 4.4vw, 44px);
-            font-weight: 800;
-            line-height: 1.12;
-            letter-spacing: -1px;
-            color: #1a1a2e;
+            font-size: clamp(30px, 4.8vw, 50px);
+            font-weight: 700;
+            line-height: 1.08;
+            letter-spacing: -1.5px;
+            background: linear-gradient(115deg, #16161f 30%, var(--lg-red) 75%, #ff5c76 100%);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: heroGradientShift 7s ease-in-out infinite alternate;
             margin-bottom: 14px;
+        }
+        @keyframes heroGradientShift {
+            from { background-position: 0% 0; }
+            to   { background-position: 100% 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-split-intro h2 { animation: none; }
         }
         .hero-split-lead {
             font-size: 17px;
@@ -888,18 +960,47 @@
             margin-bottom: 16px;
         }
         .btn-whatsapp-primary {
+            position: relative;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: #25D366;
+            background: linear-gradient(135deg, #2ee06f, #1fb959);
             color: white;
             padding: 15px 30px;
             border-radius: 999px;
             font-weight: 700;
             font-size: 1rem;
+            letter-spacing: 0.2px;
             text-decoration: none;
-            box-shadow: 0 10px 24px rgba(37,211,102,0.28);
+            box-shadow: 0 10px 24px rgba(37,211,102,0.30);
             white-space: nowrap;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            animation: waPulse 2.6s ease-in-out infinite;
+        }
+        .btn-whatsapp-primary::after {
+            content: "";
+            position: absolute;
+            top: 0; left: -80%;
+            width: 50%; height: 100%;
+            background: linear-gradient(105deg, transparent, rgba(255,255,255,0.35), transparent);
+            transform: skewX(-20deg);
+            animation: btnShine 3.2s ease-in-out infinite;
+        }
+        @keyframes btnShine {
+            0%, 55% { left: -80%; }
+            85%, 100% { left: 130%; }
+        }
+        @keyframes waPulse {
+            0%, 100% { box-shadow: 0 10px 24px rgba(37,211,102,0.30), 0 0 0 0 rgba(37,211,102,0.35); }
+            50% { box-shadow: 0 10px 24px rgba(37,211,102,0.30), 0 0 0 10px rgba(37,211,102,0); }
+        }
+        .btn-whatsapp-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 16px 32px rgba(37,211,102,0.38);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .btn-whatsapp-primary, .btn-whatsapp-primary::after { animation: none; }
         }
         .btn-ghost-secondary {
             display: inline-flex;
@@ -928,7 +1029,7 @@
         }
 
         /* ===== Subscribe vs Outright Comparison ===== */
-        .compare-section { background: #ffffff; padding: 56px 20px; }
+        .compare-section { background: var(--cream-soft); padding: 56px 20px; }
         .compare-inner { max-width: 860px; margin: 0 auto; }
         .compare-section h2 { text-align: center; font-size: 1.6rem; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
         .compare-section .subhead { text-align: center; color: #888; font-size: 0.9rem; margin-bottom: 28px; }
@@ -2070,7 +2171,7 @@
 
         /* ===== WHY SUBSCRIBE ===== */
         .why-subscribe {
-            background: white;
+            background: var(--cream-soft);
             padding: 60px 20px;
             position: relative;
         }
@@ -2150,7 +2251,7 @@
 
         /* ===== TRUST BADGES ===== */
         .trust-section {
-            background: white;
+            background: var(--cream);
             padding: 50px 20px;
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
@@ -2193,7 +2294,7 @@
 
         /* ===== FAQ ===== */
         .faq-section {
-            background: #ffffff;
+            background: var(--cream-soft);
             padding: 60px 20px;
         }
         .faq-inner {
