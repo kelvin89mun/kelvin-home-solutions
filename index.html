@@ -515,6 +515,50 @@
             color: #999;
         }
 
+        /* Auto-injected: shows the normal rate that resumes after the promo window ends */
+        .product-price-note {
+            font-size: 0.68rem;
+            color: #999;
+            font-weight: 500;
+            margin-top: 2px;
+            line-height: 1.3;
+        }
+
+        /* Auto-injected: repeating mid-scroll consultation banner inside the product grid */
+        .mid-scroll-cta {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(196,30,58,0.06), rgba(255,140,66,0.08));
+            border: 1px dashed rgba(196,30,58,0.28);
+            border-radius: 16px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .mid-scroll-cta p {
+            margin: 0;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .mid-scroll-cta a {
+            background: #25D366;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        @media (max-width: 600px) {
+            .mid-scroll-cta { flex-direction: column; align-items: flex-start; padding: 14px 16px; }
+            .mid-scroll-cta p { font-size: 0.85rem; }
+        }
+
         .btn-enquire {
             position: relative;
             overflow: hidden;
@@ -1819,6 +1863,44 @@
             margin-top: 6px;
         }
 
+        /* Auto-injected: surfaces existing-but-unused productData fields (save / limited / badges) */
+        .detail-save-badge {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 14px;
+            background: rgba(37,211,102,0.12);
+            color: #1a8a4a;
+            font-size: 0.82rem;
+            font-weight: 700;
+            border-radius: 8px;
+        }
+        .detail-urgent-tag {
+            display: inline-block;
+            margin-left: 8px;
+            padding: 3px 10px;
+            background: rgba(196,30,58,0.1);
+            color: #c41e3a;
+            font-size: 0.68rem;
+            font-weight: 700;
+            border-radius: 20px;
+            letter-spacing: .3px;
+            vertical-align: middle;
+        }
+        .detail-trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 10px 0 4px;
+        }
+        .detail-trust-badges span {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #555;
+            background: #f2f2f2;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
         /* Features */
         .detail-features-section {
             padding: 24px 0;
@@ -1838,6 +1920,43 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
+        }
+
+        /* Auto-injected: "You Might Also Like" section on the detail page */
+        .detail-related-section {
+            padding: 24px 0 28px;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            margin-bottom: 28px;
+        }
+        .detail-related-section h3 {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .detail-related-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+        .detail-related-card {
+            display: block;
+            text-decoration: none;
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+        }
+        .detail-related-card:hover { transform: translateY(-3px); }
+        .detail-related-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; background: #f4f4f4; }
+        .detail-related-card .drc-body { padding: 10px 12px 12px; }
+        .detail-related-card .drc-title { font-size: 0.75rem; font-weight: 600; color: #1a1a1a; line-height: 1.3; margin-bottom: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .detail-related-card .drc-price { font-size: 0.8rem; font-weight: 800; color: #c41e3a; }
+        @media (max-width: 700px) {
+            .detail-related-grid { grid-template-columns: repeat(2, 1fr); }
         }
         .detail-feature-card {
             text-align: center;
@@ -3111,7 +3230,11 @@
                     '</div>');
             });
             // Add video slides if available
-            if (p.videos && p.videos.length > 0) {
+            // No real demo video files exist yet — don't render video slides
+            // (some productData entries still have leftover video URLs from an
+            // earlier draft; keep this flipped to true once real files are uploaded).
+            var DEMO_VIDEOS_READY = false;
+            if (DEMO_VIDEOS_READY && p.videos && p.videos.length > 0) {
                 var videoLabels = ['Air Purification', 'DUAL Inverter Tech', 'Smart Voice Control', '4-Stage Filtration', 'Instant Hot Water'];
                 var videoEmojis = ['&#127807;', '&#9889;', '&#128241;', '&#128167;', '&#127800;'];
                 p.videos.forEach(function(vSrc, vIdx) {
@@ -3162,6 +3285,23 @@
             document.getElementById('spPriceNote').textContent = selectedPrice ? (warrantyYears + ' Years Plan · ' + selectedPrice + d.per_month) : 'Please WhatsApp us for the latest monthly plan.';
             document.getElementById('spPriceMain').innerHTML = priceText + suffixHtmlSmall;
 
+            // Auto-injected: surface save / limited / badges fields when a product has them
+            var saveEl = document.getElementById('spSaveBadge');
+            if (p.save) { saveEl.style.display = 'inline-block'; saveEl.textContent = '💰 ' + p.save; }
+            else { saveEl.style.display = 'none'; }
+
+            var urgentEl = document.getElementById('spUrgentTag');
+            urgentEl.style.display = p.limited ? 'inline-block' : 'none';
+
+            var trustEl = document.getElementById('spTrustBadges');
+            if (p.badges && p.badges.length) {
+                trustEl.style.display = 'flex';
+                trustEl.innerHTML = p.badges.map(function(b) { return '<span>' + b + '</span>'; }).join('');
+            } else {
+                trustEl.style.display = 'none';
+                trustEl.innerHTML = '';
+            }
+
             var normRow = document.getElementById('spRowNormal');
             var normEl = document.getElementById('spPriceNormal');
             if (normRow && normEl) {
@@ -3201,10 +3341,41 @@
                     '<div class="feat-desc">' + desc + '</div></div></div>';
             }).join('');
 
+            // Auto-injected: "You Might Also Like" — keeps browsing visitors on-site
+            // instead of hitting a dead end after they've read this product's details.
+            var relatedSection = document.getElementById('spRelatedSection');
+            var relatedGrid = document.getElementById('spRelatedGrid');
+            var related = productData
+                .map(function(item, i) { return { item: item, i: i }; })
+                .filter(function(o) { return o.item.category === p.category && o.i !== index; })
+                .slice(0, 4);
+            if (related.length) {
+                relatedSection.style.display = 'block';
+                relatedGrid.innerHTML = related.map(function(o) {
+                    var r = o.item;
+                    var priceHtml = r.price ? r.price + '<span style="font-size:0.65rem;color:#999;font-weight:500;">/mo</span>' : 'Ask price';
+                    return '<a class="detail-related-card" href="#" onclick="showProductDetail(' + o.i + '); return false;">' +
+                        '<img src="' + r.img + '" alt="' + (r.imgAlt || r.title) + '" loading="lazy">' +
+                        '<div class="drc-body"><div class="drc-title">' + r.title + '</div>' +
+                        '<div class="drc-price">' + priceHtml + '</div></div></a>';
+                }).join('');
+            } else {
+                relatedSection.style.display = 'none';
+                relatedGrid.innerHTML = '';
+            }
+
             // WhatsApp links
             document.getElementById('spWA').href = p.wa.replace("wa.me", "api.whatsapp.com/send?phone=");
             document.getElementById('spWAExclusive').href = p.wa.replace("wa.me", "api.whatsapp.com/send?phone=");
-            document.getElementById('spBenefitVideo').href = 'https://api.whatsapp.com/send?phone=601176060833&text=' + encodeURIComponent('Hi, I\'m interested in ' + p.title + '. Could you share the product demo video with me?');
+
+            // Product Demo Video: no real demo video files exist yet, so always
+            // ask honestly via WhatsApp rather than implying one's ready to watch.
+            var videoBenefitEl = document.getElementById('spBenefitVideo');
+            videoBenefitEl.target = '_blank';
+            videoBenefitEl.onclick = null;
+            videoBenefitEl.href = 'https://api.whatsapp.com/send?phone=601176060833&text=' + encodeURIComponent('Hi, I\'m interested in ' + p.title + '. Do you have a demo video you could share?');
+            videoBenefitEl.querySelector('.benf-text').innerHTML = 'Product Demo Video<small>Ask us \u2014 we\'ll send one if available</small>';
+
             document.getElementById('spBenefitPhoto').href = 'https://api.whatsapp.com/send?phone=601176060833&text=' + encodeURIComponent('Hi, I\'m looking at ' + p.title + '. Do you have any real customer installation photos you could share?');
             document.getElementById('spBenefitCompare').href = 'https://api.whatsapp.com/send?phone=601176060833&text=' + encodeURIComponent('Hi, I want to learn more about ' + p.title + ' and see how it compares with other models. Can you help?');
             document.getElementById('spBenefitConsult').href = 'https://api.whatsapp.com/send?phone=601176060833&text=' + encodeURIComponent('Hi, I have some questions about ' + p.title + '. Can I get a one-on-one consultation?');
@@ -4235,12 +4406,14 @@
         <!-- Product Info -->
         <div class="detail-content-grid">
             <div class="detail-info-block">
-                <span class="detail-badge" id="spBadge">WATER</span>
+                <span class="detail-badge" id="spBadge">WATER</span><span class="detail-urgent-tag" id="spUrgentTag" style="display:none;">🔥 Hot Seller</span>
                 <h1 id="spTitle">Product Title</h1>
                 <div class="detail-model" id="spModel">Model No.</div>
                 <p class="detail-desc" id="spDesc">Description</p>
+                <div class="detail-trust-badges" id="spTrustBadges" style="display:none;"></div>
                 <div class="detail-price-value" id="spPrice">--<span>/month</span></div>
                 <div class="detail-price-note" id="spPriceNote">Select a product to view price</div>
+                <div class="detail-save-badge" id="spSaveBadge" style="display:none;"></div>
             </div>
             <div class="detail-info-block">
                 <!-- Price Summary -->
@@ -4271,6 +4444,12 @@
         <div class="detail-features-section">
             <h3 data-i18n="key_features">Key Features</h3>
             <div class="detail-features-grid" id="spFeatures"></div>
+        </div>
+
+        <!-- Auto-injected: keeps visitors browsing instead of hitting a dead end here -->
+        <div class="detail-related-section" id="spRelatedSection" style="display:none;">
+            <h3>You Might Also Like</h3>
+            <div class="detail-related-grid" id="spRelatedGrid"></div>
         </div>
 
         <!-- Still Not Sure Section (inside detail) -->
@@ -4304,11 +4483,11 @@
             <div class="wa-benefits">
                 <a class="wa-benefit-item" id="spBenefitVideo" href="#" target="_blank">
                     <div class="benf-icon">&#127909;</div>
-                    <div class="benf-text">Product Demo Video<small>See it in action before deciding</small></div>
+                    <div class="benf-text">Product Demo Video<small>Ask us — we'll send one if available</small></div>
                 </a>
                 <a class="wa-benefit-item" id="spBenefitPhoto" href="#" target="_blank">
                     <div class="benf-icon">&#128248;</div>
-                    <div class="benf-text">Real Customer Photos<small>Actual installs in real homes</small></div>
+                    <div class="benf-text">Real Customer Photos<small>Ask us — we'll send real install photos</small></div>
                 </a>
                 <a class="wa-benefit-item" id="spBenefitCompare" href="#" target="_blank">
                     <div class="benf-icon">&#128161;</div>
@@ -5405,6 +5584,11 @@
                 }
             });
             console.log('Visible cards:', visibleCount);
+            // Only show the mid-scroll CTA banners when browsing the full "all" list —
+            // in a filtered category they'd create odd gaps between a handful of cards.
+            document.querySelectorAll('.mid-scroll-cta').forEach(function(banner) {
+                banner.style.display = (category === 'all') ? '' : 'none';
+            });
             // Update URL hash (skip when this call is itself a response to back/forward navigation,
             // otherwise every popstate would push a new state and corrupt browser history)
             if (!skipHistory) {
@@ -5427,6 +5611,101 @@
             }
         }
     </script>
+<!-- Auto-injected: promo price clarity note + repeating mid-scroll CTA -->
+<script>
+(function() {
+    var COPY = {
+        en: { note: 'then RM{p}/month after promo', ctaText: "Scrolled past a few models already? Kelvin can match one to your home in under a minute.", ctaBtn: '💬 Ask Kelvin' },
+        zh: { note: '促销期后恢复 RM{p}/月', ctaText: '看了几款还没决定?让Kelvin用1分钟帮你配对最合适的型号。', ctaBtn: '💬 问Kelvin' },
+        bm: { note: 'selepas promosi RM{p}/bulan', ctaText: 'Dah tengok beberapa model? Kelvin boleh cadangkan yang paling sesuai untuk rumah anda.', ctaBtn: '💬 Tanya Kelvin' }
+    };
+    var WA_LINK = 'https://api.whatsapp.com/send?phone=601176060833&text=Hi%20Kelvin%2C%20I%27m%20comparing%20a%20few%20LG%20Subscribe%20models.%20Can%20you%20help%20me%20pick%3F';
+    var BANNER_EVERY = 12; // insert one CTA after every 12 product cards
+
+    function currentLang() {
+        return (window.localStorage && localStorage.getItem('lg-lang')) || 'en';
+    }
+
+    // 1) Price clarity: append a small note under any price whose description
+    //    states a promo arrow ("RM60 → RM30/month"), showing what it reverts to.
+    function addPriceNotes() {
+        document.querySelectorAll('.product-card').forEach(function(card) {
+            var priceEl = card.querySelector('.product-price');
+            if (!priceEl || priceEl.dataset.noteAdded) return;
+            var descEl = card.querySelector('.product-desc');
+            var text = descEl ? descEl.textContent : '';
+            var m = text.match(/RM\s*([\d,]+(?:\.\d+)?)\s*(?:→|->)\s*RM\s*[\d,]+(?:\.\d+)?/);
+            if (!m) return;
+            var normalPrice = m[1];
+            var wrapper = document.createElement('div');
+            wrapper.className = 'product-price-wrapper';
+            priceEl.parentNode.insertBefore(wrapper, priceEl);
+            wrapper.appendChild(priceEl);
+            var note = document.createElement('div');
+            note.className = 'product-price-note';
+            note.dataset.normalPrice = normalPrice;
+            wrapper.appendChild(note);
+            priceEl.dataset.noteAdded = '1';
+        });
+        applyPriceNoteLang();
+    }
+
+    function applyPriceNoteLang() {
+        var dict = COPY[currentLang()] || COPY.en;
+        document.querySelectorAll('.product-price-note').forEach(function(note) {
+            note.textContent = dict.note.replace('{p}', note.dataset.normalPrice);
+        });
+    }
+
+    // 2) Repeating mid-scroll CTA banner, inserted every N product cards.
+    function insertMidScrollBanners() {
+        var grid = document.getElementById('productsGrid');
+        if (!grid) return;
+        var cards = Array.prototype.filter.call(grid.children, function(el) {
+            return el.classList.contains('product-card');
+        });
+        for (var i = BANNER_EVERY; i < cards.length; i += BANNER_EVERY) {
+            if (cards[i].dataset.bannerBefore) continue;
+            var banner = document.createElement('div');
+            banner.className = 'mid-scroll-cta';
+            banner.innerHTML = '<p></p><a class="cta-link" target="_blank"></a>';
+            grid.insertBefore(banner, cards[i]);
+            cards[i].dataset.bannerBefore = '1';
+        }
+        applyBannerLang();
+    }
+
+    function applyBannerLang() {
+        var dict = COPY[currentLang()] || COPY.en;
+        document.querySelectorAll('.mid-scroll-cta').forEach(function(banner) {
+            banner.querySelector('p').textContent = dict.ctaText;
+            var a = banner.querySelector('.cta-link');
+            a.textContent = dict.ctaBtn;
+            a.href = WA_LINK;
+        });
+    }
+
+    function init() {
+        addPriceNotes();
+        insertMidScrollBanners();
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+    // Safety net in case product cards are still being laid out
+    setTimeout(init, 1200);
+
+    // Keep our injected text in sync when the visitor switches EN / 中文 / BM
+    if (window.setLang) {
+        var originalSetLang = window.setLang;
+        window.setLang = function(lang) {
+            originalSetLang(lang);
+            applyPriceNoteLang();
+            applyBannerLang();
+        };
+    }
+})();
+</script>
+
 <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox(event)">
     <button class="lightbox-close" onclick="closeLightboxBtn(event)">&#10005;</button>
     <img alt="" id="lightboxImg" src=""/>
