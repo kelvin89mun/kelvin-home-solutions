@@ -2693,22 +2693,24 @@
             .floating-whatsapp:active, .mid-scroll-cta a:active,
             .detail-related-card:active, .wa-benefit-item:active, .lang-btn:active { transform: none; }
         }
-        /* Auto-injected: images fade in gradually as they load instead of popping
-           in abruptly — driven by the native `load` event per image, not scroll,
-           so it stays smooth and never feels janky. */
+        /* Auto-injected: images pop into place as they scroll into view — triggered
+           by scroll position (IntersectionObserver), not by image load, and using a
+           springy "overshoot" easing so it visibly bounces rather than just fades. */
         .product-image img,
         .gallery-slide img,
         .detail-related-card img {
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transform: scale(0.82) translateY(18px);
+            transition: opacity 0.55s cubic-bezier(.34,1.56,.64,1), transform 0.55s cubic-bezier(.34,1.56,.64,1);
         }
         .product-image img.img-fade-in,
         .gallery-slide img.img-fade-in,
         .detail-related-card img.img-fade-in {
             opacity: 1;
+            transform: scale(1) translateY(0);
         }
         @media (prefers-reduced-motion: reduce) {
-            .product-image img, .gallery-slide img, .detail-related-card img { opacity: 1; transition: none; }
+            .product-image img, .gallery-slide img, .detail-related-card img { opacity: 1; transform: none; transition: none; }
         }
 </style>
 <!-- Google tag (gtag.js) -->
@@ -5806,31 +5808,28 @@
             }
             document.addEventListener('DOMContentLoaded', observeReveals);
 
-            // Auto-injected: gradual image fade-in, driven by each image's own
-            // `load` event (cheap, no scroll listener involved — stays smooth).
-            function revealImg(img) {
-                // Force the browser to paint one frame at opacity:0 before flipping
-                // to visible — without this, an already-cached image (very common
-                // on a second visit / repeat test) would report "complete" instantly
-                // and the fade would be skipped entirely, looking like it never fired.
-                requestAnimationFrame(function() {
-                    requestAnimationFrame(function() {
-                        img.classList.add('img-fade-in');
-                    });
+            // Auto-injected: images pop into place as they scroll into the viewport
+            // (not when they finish loading — that could happen off-screen and the
+            // visitor would never see the animation at all).
+            var imgPopIo = ('IntersectionObserver' in window) ? new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry, i) {
+                    if (entry.isIntersecting) {
+                        var el = entry.target;
+                        el.style.transitionDelay = ((i % 4) * 55) + 'ms';
+                        el.classList.add('img-fade-in');
+                        imgPopIo.unobserve(el);
+                    }
                 });
-            }
-            function fadeInImg(img) {
-                if (img.complete && img.naturalWidth > 0) {
-                    revealImg(img);
-                } else {
-                    img.addEventListener('load', function() { revealImg(img); }, { once: true });
-                    img.addEventListener('error', function() { revealImg(img); }, { once: true });
-                }
-            }
+            }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }) : null;
             window.initImgFade = function(root) {
-                (root || document).querySelectorAll(
+                var imgs = (root || document).querySelectorAll(
                     '.product-image img:not(.img-fade-in), .gallery-slide img:not(.img-fade-in), .detail-related-card img:not(.img-fade-in)'
-                ).forEach(fadeInImg);
+                );
+                if (!imgPopIo) {
+                    imgs.forEach(function(img) { img.classList.add('img-fade-in'); });
+                    return;
+                }
+                imgs.forEach(function(img) { imgPopIo.observe(img); });
             };
             document.addEventListener('DOMContentLoaded', function() { window.initImgFade(document); });
 
