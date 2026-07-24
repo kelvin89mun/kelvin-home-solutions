@@ -12,7 +12,6 @@
 <link rel="icon" type="image/png" href="images/favicon.png">
 <title>Kelvin Chan | Authorized LG Subscribe Independent Consultant Malaysia</title>
 <meta name="description" content="Kelvin Chan — authorized independent LG Subscribe consultant (ID: M260389) serving Malaysia. Genuine LG home appliance subscriptions: water purifiers, air purifiers, washers, fridges, air conditioners, TVs. This is an independent dealer website, not the official LG website."/>
-<meta content="Chan Kar Mun Smart Home Solutions Malaysia. Operated by Chan Kar Mun (Kelvin Chan), an independent smart home consultant helping customers with home appliance subscription and smart home solutions." name="description"/>
 <meta content="Chan Kar Mun, Chan Kar Mun Smart Home, Kelvin Chan, smart home consultant Malaysia, home appliance subscription, water purifier rental, air conditioner subscription, home appliance rental Malaysia, zero deposit, free installation" name="keywords"/>
 <meta content="Chan Kar Mun" name="author"/>
 <meta content="index, follow" name="robots"/>
@@ -490,8 +489,6 @@
 
 
         .product-price-wrapper { display: flex; flex-direction: column; gap: 1px; }
-        .product-price-original { font-size: 0.78rem; color: #999; font-weight: 500; }
-        .product-price-original s { color: #bbb; }
         .product-price-note { font-size: 0.68rem; color: #888; font-weight: 400; line-height: 1.3; }
         .product-price {
             font-size: 1.6rem;
@@ -648,8 +645,6 @@
             .product-info h3 { font-size: 0.78rem; margin-bottom: 10px; line-height: 1.3; }
     
         .product-price-wrapper { display: flex; flex-direction: column; gap: 1px; }
-        .product-price-original { font-size: 0.78rem; color: #999; font-weight: 500; }
-        .product-price-original s { color: #bbb; }
         .product-price-note { font-size: 0.68rem; color: #888; font-weight: 400; line-height: 1.3; }
         .product-price { font-size: 1.3rem; flex-shrink: 1; min-width: 0; font-weight: 700; }
             .product-footer { 
@@ -2861,14 +2856,14 @@
 </div>
 <div class="category-bar">
 <div class="category-container">
-<button class="category-btn active" data-category="all" onclick="console.log('Button clicked: all'); filterProducts('all')">All</button>
-<button class="category-btn" data-category="water" onclick="console.log('Button clicked: water'); filterProducts('water')">Water</button>
-<button class="category-btn" data-category="air" onclick="console.log('Button clicked: air'); filterProducts('air')">Air</button>
-<button class="category-btn" data-category="washer" onclick="console.log('Button clicked: washer'); filterProducts('washer')">Washer</button>
-<button class="category-btn" data-category="fridge" onclick="console.log('Button clicked: fridge'); filterProducts('fridge')">Fridge</button>
-<button class="category-btn" data-category="ac" onclick="console.log('Button clicked: ac'); filterProducts('ac')">AC</button>
-<button class="category-btn" data-category="tv" onclick="console.log('Button clicked: tv'); filterProducts('tv')">TV</button>
-<button class="category-btn" data-category="other" onclick="console.log('Button clicked: other'); filterProducts('other')">Other</button>
+<button class="category-btn active" data-category="all" onclick="filterProducts('all')">All</button>
+<button class="category-btn" data-category="water" onclick="filterProducts('water')">Water</button>
+<button class="category-btn" data-category="air" onclick="filterProducts('air')">Air</button>
+<button class="category-btn" data-category="washer" onclick="filterProducts('washer')">Washer</button>
+<button class="category-btn" data-category="fridge" onclick="filterProducts('fridge')">Fridge</button>
+<button class="category-btn" data-category="ac" onclick="filterProducts('ac')">AC</button>
+<button class="category-btn" data-category="tv" onclick="filterProducts('tv')">TV</button>
+<button class="category-btn" data-category="other" onclick="filterProducts('other')">Other</button>
 
 </div>
 </div>
@@ -5850,7 +5845,6 @@
     <!-- Standalone filter script - loads early for reliability -->
     <script>
         function filterProducts(category, skipHistory) {
-            console.log('filterProducts called:', category);
             const buttons = document.querySelectorAll('.category-btn');
             buttons.forEach(btn => {
                 btn.classList.remove('active');
@@ -5878,7 +5872,6 @@
                     setTimeout(function() { card.style.display = 'none'; }, 180);
                 }
             });
-            console.log('Visible cards:', visibleCount);
             // Only show the mid-scroll CTA banners when browsing the full "all" list —
             // in a filtered category they'd create odd gaps between a handful of cards.
             document.querySelectorAll('.mid-scroll-cta').forEach(function(banner) {
@@ -5893,7 +5886,10 @@
                     // Silently fail if pushState is not allowed (e.g. file:// protocol)
                 }
             }
-            // Scroll to first visible
+            // Scroll to first visible — wait until the 180ms hide-timeout above has
+            // actually removed the other cards from layout first, otherwise this
+            // reads a stale position (cards that are about to disappear are still
+            // taking up space) and lands in the wrong spot.
             if (firstVisibleCard) {
                 setTimeout(function() {
                     var navbarHeight = 64;
@@ -5902,7 +5898,7 @@
                     var offset = navbarHeight + categoryBarHeight + 12;
                     var cardTop = firstVisibleCard.getBoundingClientRect().top + window.pageYOffset - offset;
                     window.scrollTo({ top: cardTop, behavior: 'smooth' });
-                }, 50);
+                }, 200);
             }
         }
     </script>
