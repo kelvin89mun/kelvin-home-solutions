@@ -2543,6 +2543,116 @@
             50% { transform: scale(1.08); }
         }
 
+        /* ═══════════════════════════════════════════════════════════
+           MODERN TECH RESKIN — visual layer only, no content changes.
+           Shifts the canvas from warm cream to a cool, precise
+           "smart-home tech" scheme. Delete this whole block to revert.
+           ═══════════════════════════════════════════════════════════ */
+
+        :root {
+            --cream: #f3f5f9;          /* canvas: cool platinum */
+            --cream-soft: #f8fafd;     /* raised surfaces */
+            --ink: #10131c;            /* primary text: near-black with blue undertone */
+            --ink-soft: #4c5566;       /* secondary text */
+            --tech-blue: #0a84ff;      /* secondary tech accent */
+            --line-cool: rgba(16,19,28,0.08);
+        }
+
+        body {
+            color: var(--ink);
+            letter-spacing: 0.1px;
+        }
+
+        /* Nav + category bar: cool frosted glass */
+        .navbar {
+            background: rgba(248, 250, 253, 0.85);
+            border-bottom: 1px solid var(--line-cool);
+        }
+        .category-bar {
+            background: rgba(243, 245, 249, 0.9);
+            border-bottom: 1px solid var(--line-cool);
+        }
+
+        /* Hero: cool-light gradient + fine engineering grid (the "tech" signature) */
+        .hero-split {
+            background:
+                linear-gradient(180deg, #fbfcfe 0%, #eef2f8 60%, var(--cream) 100%);
+        }
+        .hero-split-grid::before {
+            content: "";
+            position: absolute;
+            inset: -110px -20px 0;
+            background-image:
+                linear-gradient(var(--line-cool) 1px, transparent 1px),
+                linear-gradient(90deg, var(--line-cool) 1px, transparent 1px);
+            background-size: 44px 44px;
+            -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 30%, #000 30%, transparent 75%);
+            mask-image: radial-gradient(ellipse 75% 65% at 50% 30%, #000 30%, transparent 75%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        .hero-split::after {
+            background: radial-gradient(circle, rgba(10,132,255,0.13), transparent 70%);
+        }
+        .hero-split-intro h2 {
+            background: linear-gradient(115deg, #0c1226 30%, var(--lg-red) 75%, #ff5c76 100%);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            letter-spacing: -2px;
+        }
+        .hero-split-lead { color: var(--ink-soft); }
+
+        /* Type: sharper technical voice for labels and headings */
+        .hero-eyebrow, .section-kicker {
+            text-transform: uppercase;
+            letter-spacing: 1.6px;
+            font-size: 0.68rem;
+        }
+        .section-title h2 {
+            background: linear-gradient(120deg, #0c1226 40%, var(--lg-red) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            letter-spacing: -1.4px;
+        }
+        .product-price, .detail-price-value {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Cards: crisper edges, cool shadows, blue-tinted hover glow */
+        .product-card {
+            border: 1px solid var(--line-cool);
+            box-shadow: 0 1px 3px rgba(16,19,28,0.04), 0 8px 24px rgba(16,19,28,0.04);
+        }
+        .product-card:hover {
+            border-color: rgba(10,132,255,0.25);
+            box-shadow: 0 18px 40px rgba(12,18,38,0.12), 0 4px 12px rgba(10,132,255,0.08);
+        }
+        .product-image {
+            box-shadow: 0 6px 16px rgba(12,18,38,0.08), 0 1px 4px rgba(12,18,38,0.05);
+        }
+
+        /* Buttons & pills: precision borders */
+        .category-btn {
+            border: 1px solid var(--line-cool);
+            color: var(--ink-soft);
+        }
+        .category-btn:hover { border-color: rgba(10,132,255,0.4); color: var(--tech-blue); background: rgba(10,132,255,0.04); }
+        .lang-switcher { background: #ffffff; border-color: var(--line-cool); }
+
+        /* Detail page + sections inherit the cool canvas via the variables above */
+        .mid-scroll-cta {
+            background: linear-gradient(135deg, rgba(10,132,255,0.05), rgba(196,30,58,0.05));
+            border: 1px dashed rgba(10,132,255,0.3);
+        }
+        .specs-group h4 { color: var(--tech-blue); }
+        .specs-row { border-bottom: 1px solid var(--line-cool); }
+        .specs-row .specs-label { color: var(--ink-soft); }
+
+        @media (max-width: 700px) {
+            .hero-split-grid::before { background-size: 34px 34px; }
+        }
+        /* ═══════════ END MODERN TECH RESKIN ═══════════ */
 </style>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-11021213892"></script>
@@ -2805,7 +2915,7 @@
             'https://subscribe-smarthome.com/images/washtower-1.jpg',
             'https://subscribe-smarthome.com/images/washtower-2.jpg',
             'https://subscribe-smarthome.com/images/washtower-3.jpg'
-        ],imgAlt:'LG WashTower 14KG/10KG WT1410NHB',desc:'Premium stacked washer dryer tower with AI DD technology. TurboWash 360°.',features:["AI DD", "TurboWash 360\u00b0", "Steam+", "5-Year Warranty"],price:'RM169',oldPrice:'RM210',outright:'RM8,899',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20WashTower%2014KG/10KG%20WT1410NHB'},
+        ],imgAlt:'LG WashTower 14KG/10KG WT1410NHB',desc:'Premium stacked washer dryer tower with AI DD technology. TurboWash 360°.',features:["AI DD", "TurboWash 360\u00b0", "Steam+", "5-Year Warranty"],price:'RM169',oldPrice:'RM210',outright:'RM8,899',specs:{'CAPACITY':[['Max Wash Capacity (kg)','14'],['Max Dry Capacity (kg)','10']],'CONTROL & DISPLAY':[['Display Type','Full Touch LED'],['Door Lock Indication (Washer)','Yes'],['Delay Timer','No']],'DIMENSIONS & WEIGHTS':[['Product Dimensions (WxHxD, mm)','600 x 1655 x 660'],['Weight (kg)','128.0']],'FEATURES (WASHER)':[['Type','Front Load Washer'],['6 Motion DD','Yes'],['AI DD','Yes'],['Inverter Direct Drive','Yes'],['Steam','Yes'],['TurboWash 360°','Yes'],['Stainless Steel Drum','Yes'],['Water Level','Auto'],['Water Feed','Cold Only'],['Auto Restart','Yes']],'FEATURES (DRYER)':[['Type','Condenser Dryer (Ventless)'],['DUAL Inverter Heat Pump','Yes'],['Heat Source Type','Heat Pump Electric'],['Dual Dry','Yes'],['Sensor Dry','Yes'],['Auto Cleaning Condenser','Yes'],['Dual Lint Filter','Yes']],'AVAILABLE PROGRAMS (WASHER)':[['Programs','Cotton, AI Wash, Delicates, Duvet, Easy Care, Gentle Care, Mix (Mixed Fabric), Quick Wash, Rinse+Spin, Tub Clean, Wool (Hand/Wool), Downloaded Cycle']],'AVAILABLE PROGRAMS (DRYER)':[['Programs','Cotton, Allergy Care, Delicates, Downloaded Cycle, Duvet, Mix (Mixed Fabric), Quick Dry, Refresh']],'MATERIAL & FINISH':[['Body Color','Platinum Black'],['Door Type','Black Tinted Tempered Glass Cover']],'SMART TECHNOLOGY':[['ThinQ (Wi-Fi)','Yes'],['Smart Diagnosis','Yes'],['Remote Start and Cycle Monitor','Yes'],['Tub Clean Coach (Washer)','Yes'],['WashTower Smart Pairing','Yes']]},wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20WashTower%2014KG/10KG%20WT1410NHB'},
         {category:'washer',badge:'WASHER',title:'LG WashTower 25KG/20KG WT2520NHEGR',img:'https://subscribe-smarthome.com/images/LG%20WashTower%2025KG%2020KG%20WT2520NHEGR.jpeg',gallery:[
             'https://subscribe-smarthome.com/images/LG%20WashTower%2025KG%2020KG%20WT2520NHEGR.jpeg',
             'https://subscribe-smarthome.com/images/WashTower25KGW20KGD.jpg',
@@ -2814,7 +2924,7 @@
         ],imgAlt:'LG WashTower 25KG/20KG WT2520NHEGR',desc:'Extra large capacity washer dryer tower. 25KG wash & 20KG dry capacity.',features:["AI DD", "25KG Wash", "20KG Dry", "5-Year Warranty"],price:'RM199',oldPrice:'RM280',outright:'RM11,999',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20WashTower%2025KG/20KG%20WT2520NHEGR'},
         {category:'washer',badge:'WASHER',title:'LG 10.5kg Front Load Washer with AI DD & Steam FV1450S2W',img:'https://subscribe-smarthome.com/images/LG%2010.5kg%20Front%20Load%20Washer%20with%20AI%20DD%20%26%20Steam%20FV1450S2W.jpg',gallery:[
             'https://subscribe-smarthome.com/images/LG%2010.5kg%20Front%20Load%20Washer%20with%20AI%20DD%20%26%20Steam%20FV1450S2W.jpg'
-        ],imgAlt:'LG 10.5kg Front Load Washer with AI DD & Steam FV1450S2W',desc:'10.5KG front load washer with AI DD technology and Steam function. 7-Year Warranty.',features:["AI DD", "10.5KG Capacity", "Steam", "7-Year Warranty"],price:'RM70',outright:'RM3,599',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%2010.5kg%20Front%20Load%20Washer%20with%20AI%20DD%20%26%20Steam%20FV1450S2W'},
+        ],imgAlt:'LG 10.5kg Front Load Washer with AI DD & Steam FV1450S2W',desc:'10.5KG front load washer with AI DD technology and Steam function. 7-Year Warranty.',features:["AI DD", "10.5KG Capacity", "Steam", "7-Year Warranty"],price:'RM70',outright:'RM3,599',specs:{'CAPACITY':[['Max Wash Capacity (kg)','10.5']],'FEATURES':[['6 Motion DD','Yes'],['AI DD','Yes'],['Steam','Yes'],['Steam+','Yes'],['TurboWash','Yes'],['Add Item','Yes']],'PROGRAMS':[['Available Programs','Cotton, Cotton+, Mixed Fabric, Easy Care, Duvet, Allergy Care, Silent Wash, Quick 30, Wool (Hand/Wool), Sportswear, Delicates, Rinse+Spin, Tub Clean, Download Cycle']],'DIMENSIONS & WEIGHTS':[['Product Dimensions (WxHxD, mm)','600 x 850 x 560'],['Weight (kg)','70']],'MATERIAL & FINISH':[['Body Color','Blue White']],'OPTIONS/ACCESSORIES':[['LG TWINWash Compatible','Yes']],'SMART TECHNOLOGY':[['Wi-Fi','Yes'],['Smart Diagnosis','Yes'],['Download Cycle','Yes']]},wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%2010.5kg%20Front%20Load%20Washer%20with%20AI%20DD%20%26%20Steam%20FV1450S2W'},
         {category:'washer',badge:'WASHER',title:'LG AI DD 9KG Wash 5KG Dry FV1209D4W',img:'https://subscribe-smarthome.com/images/LG%20AI%20DD%209KG%20Wash%205KG%20Dry%20FV1209D4W.jpeg',gallery:[
             'https://subscribe-smarthome.com/images/LG%20AI%20DD%209KG%20Wash%205KG%20Dry%20FV1209D4W.jpeg',
             'images/56.png',
@@ -2872,7 +2982,7 @@
             'https://subscribe-smarthome.com/images/aidd20kg-top-2.jpg',
             'https://subscribe-smarthome.com/images/aidd20kg-top-1.jpg',
             'https://subscribe-smarthome.com/images/aidd20kg-top-3.jpg'
-        ],imgAlt:'LG AI DD 20KG Top Load TV2520SV9KR',desc:'Promo: RM100 → RM60/mth, T&C apply. Multiple plans available — WhatsApp for the full plan table.',features:["AI DD", "20KG Capacity", "TurboDrum", "5-Year Warranty"],price:'RM60',oldPrice:'RM100',outright:'RM4,800',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20AI%20DD%2020KG%20Top%20Load%20TV2520SV9KR'},
+        ],imgAlt:'LG AI DD 20KG Top Load TV2520SV9KR',desc:'Promo: RM100 → RM60/mth, T&C apply. Multiple plans available — WhatsApp for the full plan table.',features:["AI DD", "20KG Capacity", "TurboDrum", "5-Year Warranty"],price:'RM60',oldPrice:'RM100',outright:'RM4,800',specs:{'CAPACITY':[['Max Wash Capacity (kg)','20']],'CONTROL & DISPLAY':[['Display Type','Hard Buttons & LED Display'],['Delay Timer','3–19 hours'],['Door Lock Indication','Yes']],'FEATURES':[['Type','Top Load Washer'],['6 Motion DD','Yes'],['AI DD','Yes'],['TurboWash','Yes'],['TurboDrum','Yes'],['Inverter Direct Drive','Yes'],['Steam','Yes'],['Stainless Steel Drum','Yes'],['LoadSense','Yes'],['JetSpray','Yes'],['Soft Closing Door','Yes'],['Auto Restart','Yes'],['Water Feed','Cold Only']],'PROGRAMS':[['Available Programs','AI Wash, Duvet, Quick Wash, Download Cycle, Tub Clean, Allergy Care']],'DIMENSIONS & WEIGHTS':[['Product Dimensions (WxHxD, mm)','632 x 1040 x 670'],['Product Height with Lid Open (mm)','1355'],['Weight (kg)','46.0']],'MATERIAL & FINISH':[['Body Color','Platinum Black'],['Lid Type','Tempered Glass']],'SMART TECHNOLOGY':[['ThinQ (Wi-Fi)','Yes'],['Smart Diagnosis','Yes'],['Download Cycle','Yes'],['Remote Start and Cycle Monitor','Yes'],['Tub Clean Coach','Yes'],['Smart Pairing','Yes']]},wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20AI%20DD%2020KG%20Top%20Load%20TV2520SV9KR'},
         {category:'washer',badge:'WASHER',title:'LG Dual Inverter Dryer 9KG VD-H9066WSR',img:'https://subscribe-smarthome.com/images/LG%20Dual%20Inverter%20Dryer%209KG%20VD-H9066WSR.jpeg',gallery:[
             'https://subscribe-smarthome.com/images/LG%20Dual%20Inverter%20Dryer%209KG%20VD-H9066WSR.jpeg',
             'https://subscribe-smarthome.com/images/DualInverterDryer9KG.jpg',
@@ -2880,7 +2990,7 @@
             'https://subscribe-smarthome.com/images/dryer9kg-2.jpg',
             'https://subscribe-smarthome.com/images/dryer9kg-3.jpg',
             'https://subscribe-smarthome.com/images/dryer9kg-4.jpg'
-        ],imgAlt:'LG Dual Inverter Dryer 9KG VD-H9066WSR',desc:'Energy-efficient dryer with Dual Inverter Heat Pump technology. 9KG capacity.',features:["Heat Pump", "9KG Capacity", "Auto Cleaning", "5-Year Warranty"],price:'RM80',oldPrice:'RM100',outright:'RM3,899',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Dual%20Inverter%20Dryer%209KG%20VD-H9066WSR'},
+        ],imgAlt:'LG Dual Inverter Dryer 9KG VD-H9066WSR',desc:'Energy-efficient dryer with Dual Inverter Heat Pump technology. 9KG capacity.',features:["Heat Pump", "9KG Capacity", "Auto Cleaning", "5-Year Warranty"],price:'RM80',oldPrice:'RM100',outright:'RM3,899',specs:{'CAPACITY':[['Max Dry Capacity (kg)','9']],'CONTROL & DISPLAY':[['Display Type','Dial+Touch+Hard Buttons & LED Display'],['Delay Timer','3–19 hours'],['Door Lock Indication','No']],'FEATURES':[['Type','Condenser Dryer (Ventless)'],['DUAL Inverter Heat Pump','Yes'],['Heat Source Type','Heat Pump Electric'],['Dual Dry (EcoHybrid)','Yes'],['Sensor Dry','Yes'],['Inverter Motor','Yes'],['Auto Cleaning Condenser','Yes'],['Dual Lint Filter','Yes'],['Reversible Door','Yes'],['Drum Light','Yes']],'PROGRAMS':[['Available Programs','Allergy Care, Cotton, Cotton+, Delicates, Download Cycle, Duvet, Easy Care, Mixed Fabric, Quick 30, Rack Dry, Towels, Warm Air, Wool, Activewear (Sportswear)']],'DIMENSIONS & WEIGHTS':[['Product Dimensions (WxHxD, mm)','600 x 850 x 660'],['Product Depth with Door Open 90°(mm)','1115'],['Weight (kg)','56.0']],'MATERIAL & FINISH':[['Body Color','White'],['Door Type','Black Tinted Tempered Glass Cover']],'SMART TECHNOLOGY':[['ThinQ (Wi-Fi)','Yes'],['Smart Diagnosis','Yes'],['Download Cycle','Yes'],['Remote Start and Cycle Monitor','Yes'],['Smart Pairing','Yes']]},wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Dual%20Inverter%20Dryer%209KG%20VD-H9066WSR'},
         {category:'other',badge:'OTHER',title:'LG CordZero Vacuum A9X-RSTEAM',img:'https://subscribe-smarthome.com/images/LG%20CordZero%20Vacuum%20A9X-RSTEAM.jpeg',gallery:[
             'https://subscribe-smarthome.com/images/LG%20CordZero%20Vacuum%20A9X-RSTEAM.jpeg',
             'https://subscribe-smarthome.com/images/CordZeroVacuum.jpg',
@@ -2893,16 +3003,16 @@
         {category:'fridge',badge:'FRIDGE',title:'LG InstaView Fridge 508L GC-G22FFQAB',img:'https://subscribe-smarthome.com/images/LG%20InstaView%20Fridge%20508L%20GC-G22FFQAB.jpeg',gallery:[
             'https://subscribe-smarthome.com/images/LG%20InstaView%20Fridge%20508L%20GC-G22FFQAB.jpeg',
             'https://subscribe-smarthome.com/images/FridgeFrenchDoor508L.jpg'
-        ],imgAlt:'LG InstaView Fridge 508L GC-G22FFQAB',desc:'9-month 50% off promo: RM160 → RM80/month, T&C apply. Premium French door refrigerator with InstaView glass panel. 508L capacity.',features:["9-Month 50% Off", "InstaView", "508L Capacity", "French Door"],price:'RM80',oldPrice:'RM160',outright:'RM5,899',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20InstaView%20Fridge%20508L'},
+        ],imgAlt:'LG InstaView Fridge 508L GC-G22FFQAB',desc:'9-month 50% off promo: RM160 → RM80/month, T&C apply. Premium French door refrigerator with InstaView glass panel. 508L capacity.',features:["9-Month 50% Off", "InstaView", "508L Capacity", "French Door"],price:'RM80',oldPrice:'RM160',outright:'RM5,899',specs:{'BASIC SPEC':[['Product Type','Multi Door']],'CONTROL & DISPLAY':[['Door Alarm','Yes'],['Internal LED Display','Button — 88, White'],['Express Freeze','Yes']],'DIMENSIONS & WEIGHT':[['Product Dimension (WxHxD, mm)','835 x 1787 x 730'],['Product Weight (kg)','126'],['Packing Weight (kg)','136']],'FEATURES':[['Door Cooling+','Yes'],['Door-in-Door','No'],['LINEAR Cooling','Yes'],['InstaView','Yes']],'ICE & WATER SYSTEM':[['Ice & Water Dispenser','Cube & Crushed Ice'],['Automatic Ice Maker','Yes (Slim Spaceplus)'],['Plumbing','No plumbing required']],'MATERIAL & FINISH':[['Door (Material)','VCM'],['Finish (Door)','Essence Matte Black']],'PERFORMANCE':[['Compressor Type','Smart Inverter Compressor (BLDC)'],['Energy Consumption (kWh/Year)','682']],'REFRIGERATOR COMPARTMENT':[['Door Basket (Transparent)','5'],['Shelf (Tempered Glass)','2'],['Vegetable Box','Yes (2)'],['Hygiene Fresh+','Yes'],['Refrigerator Light','Top LED']],'FREEZER COMPARTMENT':[['Drawer (Freezer)','6 / 2 Piece (Clear)'],['Freezer Light','Top LED']],'SMART TECHNOLOGY':[['ThinQ (Wi-Fi)','Yes'],['Smart Diagnosis','Yes']]},wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20InstaView%20Fridge%20508L'},
         {category:'fridge',badge:'FRIDGE',title:'LG French Door Fridge 665L GC-B24FFCPB',img:'https://subscribe-smarthome.com/images/LG%20French%20Door%20Fridge%20665L%20GC-B24FFCPB.jpeg',gallery:[
             'https://subscribe-smarthome.com/images/LG%20French%20Door%20Fridge%20665L%20GC-B24FFCPB.jpeg',
             'https://subscribe-smarthome.com/images/FridgeFrenchDoor665L.jpg'
-        ],imgAlt:'LG French Door Fridge 665L GC-B24FFCPB',desc:'77% off first 12 months: RM110 → RM26/mth (7-Year plan) or RM130 → RM30 (5-Year plan), T&C apply.',features:["12-Month 77% Off", "French Door", "665L Capacity", "Multi-Door"],price:'RM26',oldPrice:'RM110',outright:'RM5,899',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20French%20Door%20Fridge%20665L'},
+        ],imgAlt:'LG French Door Fridge 665L GC-B24FFCPB',desc:'77% off first 12 months: RM110 → RM26/mth (7-Year plan) or RM130 → RM30 (5-Year plan), T&C apply.',features:["12-Month 77% Off", "French Door", "665L Capacity", "Multi-Door"],price:'RM26',oldPrice:'RM110',outright:'RM5,899',specs:{'BASIC SPEC':[['Product Type','Multi Door']],'CONTROL & DISPLAY':[['Door Alarm','Yes'],['Internal LED Display','Inner Top Display'],['Express Freeze','Yes']],'DIMENSIONS & WEIGHT':[['Product Dimension (WxHxD, mm)','914 x 1787 x 725'],['Product Weight (kg)','112'],['Packing Weight (kg)','122']],'FEATURES':[['Door Cooling+','No'],['Door-in-Door','No'],['LINEAR Cooling','Yes'],['InstaView','No']],'ICE & WATER SYSTEM':[['Ice & Water Dispenser','No'],['Automatic Ice Maker','No']],'MATERIAL & FINISH':[['Door (Material)','VCM'],['Finish (Door)','Essence Black Steel']],'PERFORMANCE':[['Compressor Type','Smart Inverter Compressor (BLDC)'],['Energy Consumption (kWh/Year)','N/A']],'REFRIGERATOR COMPARTMENT':[['Door Basket (Transparent)','6'],['Shelf (Tempered Glass)','4'],['Vegetable Box','Yes (2)'],['Hygiene Fresh+','No'],['Refrigerator Light','Top LED']],'FREEZER COMPARTMENT':[['Door Basket (Transparent)','6'],['Drawer (Freezer)','6 Transparent'],['Freezer Light','Top LED']],'SMART TECHNOLOGY':[['ThinQ (Wi-Fi)','Yes'],['Smart Diagnosis','Yes']]},wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20French%20Door%20Fridge%20665L'},
         {category:'fridge',badge:'FRIDGE',title:'LG Door In Door Fridge 635L GC-J257SQNW',img:'https://subscribe-smarthome.com/images/LG%20Door%20In%20Door%20Fridge%20635L%20GC-J257SQNW.jpeg',gallery:[
             'https://subscribe-smarthome.com/images/LG%20Door%20In%20Door%20Fridge%20635L%20GC-J257SQNW.jpeg',
             'images/51.png',
             'https://subscribe-smarthome.com/images/FridgeDoorInDoor635L.jpg'
-        ],imgAlt:'LG Door In Door Fridge 635L GC-J257SQNW',desc:'9-month 50% off promo: RM130 → RM65/month, T&C apply. Premium side-by-side refrigerator with Door In Door convenience. 635L capacity.',features:["9-Month 50% Off", "Door In Door", "635L Capacity", "Water Dispenser"],price:'RM65',oldPrice:'RM130',outright:'RM5,299',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Door%20In%20Door%20Fridge%20635L'},
+        ],imgAlt:'LG Door In Door Fridge 635L GC-J257SQNW',desc:'9-month 50% off promo: RM130 → RM65/month, T&C apply. Premium side-by-side refrigerator with Door In Door convenience. 635L capacity.',features:["9-Month 50% Off", "Door In Door", "635L Capacity", "Water Dispenser"],price:'RM65',oldPrice:'RM130',outright:'RM5,299',specs:{'BASIC SPEC':[['Product Type','Side by Side']],'CONTROL & DISPLAY':[['Door Alarm','Yes'],['Internal LED Display','LED Display'],['Express Freeze','Yes']],'DIMENSIONS & WEIGHT':[['Product Dimension (WxHxD, mm)','913 x 1790 x 735'],['Product Weight (kg)','121'],['Packing Weight (kg)','131']],'FEATURES':[['Door Cooling+','Yes'],['Door-in-Door','Yes'],['LINEAR Cooling','Yes'],['InstaView','No']],'ICE & WATER SYSTEM':[['Ice & Water Dispenser','Cube & Crushed Ice'],['Water Only Dispenser','External'],['Automatic Ice Maker','Yes (Spaceplus)'],['Plumbing','No plumbing required']],'MATERIAL & FINISH':[['Door (Material)','PET'],['Finish (Door)','Matte Black PCM'],['Handle Type','Pocket (Clad)']],'PERFORMANCE':[['Compressor Type','Smart Inverter Compressor (BLDC)'],['Energy Consumption (kWh/Year)','N/A']],'REFRIGERATOR COMPARTMENT':[['Door Basket (Transparent)','4'],['Shelf (Tempered Glass)','3'],['Vegetable Box','Yes (2)'],['Hygiene Fresh+','Yes'],['Refrigerator Light','Top LED']],'FREEZER COMPARTMENT':[['Door Basket (Transparent)','2'],['Shelf (Tempered Glass)','3'],['Drawer (Freezer)','2 Transparent'],['Freezer Light','Top LED']],'SMART TECHNOLOGY':[['ThinQ (Wi-Fi)','Yes'],['Smart Diagnosis','Yes']]},wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Door%20In%20Door%20Fridge%20635L'},
         {category:'fridge',badge:'FRIDGE',title:'LG Side By Side Fridge 641L GR-B227SSJ',img:'https://subscribe-smarthome.com/images/LG%20Side%20By%20Side%20Fridge%20641L%20GR-B227SSJ.jpeg',gallery:[
             'https://subscribe-smarthome.com/images/LG%20Side%20By%20Side%20Fridge%20641L%20GR-B227SSJ.jpeg',
             'https://subscribe-smarthome.com/images/FridgeSideBySide641L.jpg'
@@ -2910,10 +3020,10 @@
         {category:'fridge',badge:'FRIDGE',title:'LG Top Freezer Fridge 493L GN-B452PQBK',img:'https://subscribe-smarthome.com/images/LG%20Top%20Freezer%20Fridge%20493L%20GN-B452PQBK.jpeg',gallery:[
             'https://subscribe-smarthome.com/images/LG%20Top%20Freezer%20Fridge%20493L%20GN-B452PQBK.jpeg',
             'https://subscribe-smarthome.com/images/FridgeTopFreezer493L.jpg'
-        ],imgAlt:'LG Top Freezer Fridge 493L GN-B452PQBK',desc:'50% off promo: RM80 → RM40/mth (24-mth promo) or RM100 → RM50/mth (12-mth promo), T&C apply.',features:["Top Freezer", "493L Capacity", "Smart Inverter", "5-Year Warranty"],price:'RM40',oldPrice:'RM80',outright:'RM2,899',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Top%20Freezer%20Fridge%20493L'},
+        ],imgAlt:'LG Top Freezer Fridge 493L GN-B452PQBK',desc:'50% off promo: RM80 → RM40/mth (24-mth promo) or RM100 → RM50/mth (12-mth promo), T&C apply.',features:["Top Freezer", "493L Capacity", "Smart Inverter", "5-Year Warranty"],price:'RM40',oldPrice:'RM80',outright:'RM2,899',specs:{'BASIC SPEC':[['Product Type','Top Mount'],['Energy Consumption Grade','4 Star']],'CONTROL & DISPLAY':[['Door Alarm','Yes'],['External LED Display','Yes'],['Express Freeze','Yes'],['Express Cool','No']],'DIMENSIONS & WEIGHT':[['Product Dimension (WxHxD, mm)','700 x 1845 x 725'],['Product Weight (kg)','73'],['Packing Weight (kg)','80']],'FEATURES':[['Door Cooling+','Yes'],['Door-in-Door','No'],['LINEAR Cooling','Yes']],'ICE & WATER SYSTEM':[['Water Only Dispenser','External'],['Automatic Ice Maker','Yes (Spaceplus)']],'MATERIAL & FINISH':[['Door (Material)','VCM'],['Finish (Door)','Essence Matte Black'],['Handle Type','Horizontal Pocket with Chrome']],'PERFORMANCE':[['Compressor Type','Smart Inverter Compressor (BLDC)'],['Energy Consumption (kWh/Year)','397']],'REFRIGERATOR COMPARTMENT':[['Door Basket (Transparent)','1 Water Tank + 2 Full'],['Shelf (Tempered Glass)','2'],['Vegetable Box','Yes (1)'],['Hygiene Fresh+','No'],['Refrigerator Light','Top LED']],'FREEZER COMPARTMENT':[['Door Basket (Transparent)','2'],['Shelf (Tempered Glass)','1'],['Freezer Light','Top LED']],'SMART TECHNOLOGY':[['ThinQ (Wi-Fi)','Yes'],['Smart Diagnosis','Yes']]},wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Top%20Freezer%20Fridge%20493L'},
         {category:'fridge',badge:'FRIDGE',title:'LG Top Freezer Fridge 603L GRTF622PQHR',img:'https://subscribe-smarthome.com/images/LG%20Top%20Freezer%20Fridge%20603L%20GRTF622PQHR.jpeg',gallery:[
             'https://subscribe-smarthome.com/images/LG%20Top%20Freezer%20Fridge%20603L%20GRTF622PQHR.jpeg'
-        ],imgAlt:'LG Top Freezer Fridge 603L GRTF622PQHR',desc:'Large capacity top freezer refrigerator with 603L space. Smart Inverter technology.',features:["Top Freezer", "603L Capacity", "Smart Inverter", "5-Year Warranty"],price:'RM50',oldPrice:'RM100',outright:'RM3,499',wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Top%20Freezer%20Fridge%20603L'},
+        ],imgAlt:'LG Top Freezer Fridge 603L GRTF622PQHR',desc:'Large capacity top freezer refrigerator with 603L space. Smart Inverter technology.',features:["Top Freezer", "603L Capacity", "Smart Inverter", "5-Year Warranty"],price:'RM50',oldPrice:'RM100',outright:'RM3,499',specs:{'BASIC SPEC':[['Product Type','Top Mount'],['Energy Consumption Grade','3 Star']],'CONTROL & DISPLAY':[['Door Alarm','Yes'],['External LED Display','Touch — 88, White'],['Express Freeze','Yes'],['Express Cool','No']],'DIMENSIONS & WEIGHT':[['Product Dimension (WxHxD, mm)','831 x 1860 x 741'],['Product Weight (kg)','86'],['Packing Weight (kg)','95']],'FEATURES':[['Door Cooling+','Yes'],['Door-in-Door','No'],['LINEAR Cooling','Yes']],'ICE & WATER SYSTEM':[['Ice Maker (Manual)','1 Lever, 1 Tray'],['Water Only Dispenser','No'],['Automatic Ice Maker','No']],'MATERIAL & FINISH':[['Door (Material)','PCM'],['Finish (Door)','Essence Matte Black'],['Handle Type','Horizontal Pocket']],'PERFORMANCE':[['Compressor Type','Smart Inverter Compressor (BLDC)'],['Energy Consumption (kWh/Year)','508.13']],'REFRIGERATOR COMPARTMENT':[['Door Basket (Transparent)','1 Water Tank + 2 Full'],['Shelf (Tempered Glass)','2'],['Vegetable Box','Yes (2)'],['Fresh 0 Zone','Yes'],['Hygiene Fresh+','No'],['Refrigerator Light','Top LED']],'FREEZER COMPARTMENT':[['Door Basket (Transparent)','2'],['Shelf (Tempered Glass)','1'],['Freezer Light','Top LED']],'SMART TECHNOLOGY':[['ThinQ (Wi-Fi)','Yes'],['Smart Diagnosis','Yes']]},wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Top%20Freezer%20Fridge%20603L'},
         {category:'other',badge:'DISHWASHER',title:'LG QuadWash Dishwasher Silver DFC533FV',img:'https://subscribe-smarthome.com/images/LG%20QuadWash%20Dishwasher%20Silver%20DFC533FV.jpeg',gallery:[
             'https://subscribe-smarthome.com/images/LG%20QuadWash%20Dishwasher%20Silver%20DFC533FV.jpeg',
             'https://subscribe-smarthome.com/images/QuadWashSilver.jpg',
