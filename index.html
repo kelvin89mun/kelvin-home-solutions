@@ -2653,6 +2653,46 @@
             .hero-split-grid::before { background-size: 34px 34px; }
         }
         /* ═══════════ END MODERN TECH RESKIN ═══════════ */
+        /* ═══════════════════════════════════════════════════════════
+           MOBILE MOTION LAYER — extra movement for phone browsing:
+           section reveals on scroll, tap feedback (since phones have
+           no hover), and a smooth fade when switching categories.
+           ═══════════════════════════════════════════════════════════ */
+
+        /* Section-level scroll reveal (product cards already animate separately) */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.6s cubic-bezier(.2,.8,.2,1), transform 0.6s cubic-bezier(.2,.8,.2,1);
+        }
+        .reveal-up.in-view { opacity: 1; transform: translateY(0); }
+
+        /* Tap feedback — phones have no :hover, so give every tappable
+           element its own press-down response instead of relying on hover CSS */
+        @media (hover: none) {
+            .product-card:active { transform: scale(0.975); transition: transform 0.15s ease; }
+            .category-btn:active { transform: scale(0.94); }
+            .btn-enquire:active,
+            .btn-whatsapp-primary:active,
+            .btn-ghost-secondary:active,
+            .floating-whatsapp:active,
+            .mid-scroll-cta a:active,
+            .detail-related-card:active,
+            .wa-benefit-item:active { transform: scale(0.96); transition: transform 0.15s ease; }
+            .lang-btn:active { transform: scale(0.9); }
+        }
+
+        /* Smooth fade instead of an instant cut when switching category filters */
+        .product-card { transition: transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s cubic-bezier(.2,.8,.2,1), border-color 0.35s, opacity 0.22s ease; }
+        .product-card.filtering-out { opacity: 0 !important; transform: scale(0.94) !important; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-up { opacity: 1; transform: none; transition: none; }
+            .product-card:active, .category-btn:active, .btn-enquire:active,
+            .btn-whatsapp-primary:active, .btn-ghost-secondary:active,
+            .floating-whatsapp:active, .mid-scroll-cta a:active,
+            .detail-related-card:active, .wa-benefit-item:active, .lang-btn:active { transform: none; }
+        }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-11021213892"></script>
@@ -3489,18 +3529,28 @@
                     '<div class="feat-desc">' + desc + '</div></div></div>';
             }).join('');
 
+            // Auto-injected: fades a block in every time it's (re)shown, instead of
+            // depending on scroll position — used for the two dynamic sections below
+            // since they're re-populated each time a product opens.
+            function revealBlock(el) {
+                el.style.display = 'block';
+                el.classList.remove('in-view');
+                void el.offsetWidth; // force reflow so the transition fires
+                requestAnimationFrame(function() { el.classList.add('in-view'); });
+            }
+
             // Auto-injected: full specifications table — only shown for products
             // that have real spec data filled in (p.specs); hidden otherwise.
             var specsSection = document.getElementById('spSpecsSection');
             var specsBody = document.getElementById('spSpecsBody');
             if (p.specs) {
-                specsSection.style.display = 'block';
                 specsBody.innerHTML = Object.keys(p.specs).map(function(group) {
                     var rows = p.specs[group].map(function(row) {
                         return '<div class="specs-row"><div class="specs-label">' + row[0] + '</div><div class="specs-value">' + row[1] + '</div></div>';
                     }).join('');
                     return '<div class="specs-group"><h4>' + group + '</h4>' + rows + '</div>';
                 }).join('');
+                revealBlock(specsSection);
             } else {
                 specsSection.style.display = 'none';
                 specsBody.innerHTML = '';
@@ -3515,7 +3565,6 @@
                 .filter(function(o) { return o.item.category === p.category && o.i !== index; })
                 .slice(0, 4);
             if (related.length) {
-                relatedSection.style.display = 'block';
                 relatedGrid.innerHTML = related.map(function(o) {
                     var r = o.item;
                     var priceHtml = r.price ? r.price + '<span style="font-size:0.65rem;color:#999;font-weight:500;">/mo</span>' : 'Ask price';
@@ -3524,6 +3573,7 @@
                         '<div class="drc-body"><div class="drc-title">' + r.title + '</div>' +
                         '<div class="drc-price">' + priceHtml + '</div></div></a>';
                 }).join('');
+                revealBlock(relatedSection);
             } else {
                 relatedSection.style.display = 'none';
                 relatedGrid.innerHTML = '';
@@ -3576,7 +3626,7 @@
 
 </script>
 <section class="products-section" id="products">
-<div class="section-title">
+<div class="section-title reveal-up">
 <span class="section-kicker" data-i18n="section_kicker">⚡ Handpicked For You</span>
 <h2 data-i18n="our_collection">Our Collection</h2>
 <p id="collectionSubtitle">48 premium appliances for your modern home</p>
@@ -4612,19 +4662,19 @@
         </div>
 
         <!-- Auto-injected: full specifications, shown when a product has spec data -->
-        <div class="detail-specs-section" id="spSpecsSection" style="display:none;">
+        <div class="detail-specs-section reveal-up" id="spSpecsSection" style="display:none;">
             <h3>Full Specifications</h3>
             <div id="spSpecsBody"></div>
         </div>
 
         <!-- Auto-injected: keeps visitors browsing instead of hitting a dead end here -->
-        <div class="detail-related-section" id="spRelatedSection" style="display:none;">
+        <div class="detail-related-section reveal-up" id="spRelatedSection" style="display:none;">
             <h3>You Might Also Like</h3>
             <div class="detail-related-grid" id="spRelatedGrid"></div>
         </div>
 
         <!-- Still Not Sure Section (inside detail) -->
-        <div class="help-section" id="helpSectionDetail" style="margin:32px auto 16px;">
+        <div class="help-section reveal-up" id="helpSectionDetail" style="margin:32px auto 16px;">
             <h2 data-i18n="help_title">Still Not Sure Which Model Fits Your Home?</h2>
             <p data-i18n="help_subtitle">We can recommend based on:</p>
             <ul class="help-list">
@@ -4645,7 +4695,7 @@
         </div>
 
         <!-- WhatsApp More Info Section -->
-        <div class="wa-exclusive-section">
+        <div class="wa-exclusive-section reveal-up">
             <div class="wa-exclusive-badge">
                 <span data-i18n="chat_whatsapp">Chat on WhatsApp</span>
             </div>
@@ -5716,6 +5766,27 @@
                 });
             }
             document.addEventListener('DOMContentLoaded', observeCards);
+
+            // Generic scroll-reveal for section-level blocks (section titles,
+            // help/CTA sections) — same pattern, separate from product cards.
+            function observeReveals() {
+                var els = document.querySelectorAll('.reveal-up:not(.in-view)');
+                if (!('IntersectionObserver' in window)) {
+                    els.forEach(function(el) { el.classList.add('in-view'); });
+                    return;
+                }
+                var revealIo = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+                            revealIo.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+                els.forEach(function(el) { revealIo.observe(el); });
+            }
+            document.addEventListener('DOMContentLoaded', observeReveals);
+
             // Re-observe after category filtering swaps visibility
             document.addEventListener('DOMContentLoaded', function() {
                 var grid = document.getElementById('productsGrid');
@@ -5744,14 +5815,20 @@
             let visibleCount = 0;
             let firstVisibleCard = null;
             cards.forEach(card => {
-                if (category === 'all' || card.dataset.category === category) {
-                    card.style.display = '';
-                    visibleCount++;
-                    if (!firstVisibleCard) {
-                        firstVisibleCard = card;
+                var shouldShow = (category === 'all' || card.dataset.category === category);
+                var isShown = card.style.display !== 'none';
+                if (shouldShow) {
+                    if (!isShown) {
+                        card.style.display = '';
+                        card.classList.add('filtering-out');
+                        void card.offsetWidth; // reflow so the transition below actually fires
+                        requestAnimationFrame(function() { card.classList.remove('filtering-out'); });
                     }
-                } else {
-                    card.style.display = 'none';
+                    visibleCount++;
+                    if (!firstVisibleCard) firstVisibleCard = card;
+                } else if (isShown) {
+                    card.classList.add('filtering-out');
+                    setTimeout(function() { card.style.display = 'none'; }, 180);
                 }
             });
             console.log('Visible cards:', visibleCount);
