@@ -5808,12 +5808,23 @@
 
             // Auto-injected: gradual image fade-in, driven by each image's own
             // `load` event (cheap, no scroll listener involved — stays smooth).
+            function revealImg(img) {
+                // Force the browser to paint one frame at opacity:0 before flipping
+                // to visible — without this, an already-cached image (very common
+                // on a second visit / repeat test) would report "complete" instantly
+                // and the fade would be skipped entirely, looking like it never fired.
+                requestAnimationFrame(function() {
+                    requestAnimationFrame(function() {
+                        img.classList.add('img-fade-in');
+                    });
+                });
+            }
             function fadeInImg(img) {
                 if (img.complete && img.naturalWidth > 0) {
-                    img.classList.add('img-fade-in');
+                    revealImg(img);
                 } else {
-                    img.addEventListener('load', function() { img.classList.add('img-fade-in'); }, { once: true });
-                    img.addEventListener('error', function() { img.classList.add('img-fade-in'); }, { once: true });
+                    img.addEventListener('load', function() { revealImg(img); }, { once: true });
+                    img.addEventListener('error', function() { revealImg(img); }, { once: true });
                 }
             }
             window.initImgFade = function(root) {
