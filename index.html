@@ -4613,6 +4613,7 @@
             </ul>
             <p class="advisor-note" data-i18n="advisor_note">Free consultation. No obligation to subscribe.</p>
             <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%20Kelvin%2C%20I%20saw%20your%20LG%20subscription%20website%20and%20I%20need%20some%20advice%20on%20choosing%20the%20right%20model.%20Can%20you%20help%3F" class="advisor-btn" target="_blank" data-i18n="advisor_cta">Chat With Kelvin</a>
+            <a href="https://api.whatsapp.com/send?phone=601176060833" data-wa="catalog" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;margin-left:10px;background:transparent;color:#1a1a1a;text-decoration:none;border:1.5px solid rgba(26,26,26,0.25);border-radius:8px;font-size:0.9rem;font-weight:600;transition:all 0.25s;" data-i18n="catalog_cta">📄 Get 2026 Catalogue</a>
         </div>
     </div>
 </div>
@@ -5512,7 +5513,8 @@
             advisor_budget: 'Monthly budget',
             advisor_kitchen: 'Kitchen space',
             advisor_note: 'Free consultation. No obligation to subscribe.',
-            advisor_cta: 'Chat With Kelvin'
+            advisor_cta: 'Chat With Kelvin',
+            catalog_cta: '📄 Get 2026 Catalogue'
         },
         zh: {
             // Category buttons
@@ -5594,7 +5596,8 @@
             advisor_budget: '每月预算',
             advisor_kitchen: '厨房空间',
             advisor_note: '免费咨询。无订阅义务。',
-            advisor_cta: '与 Kelvin 聊聊'
+            advisor_cta: '与 Kelvin 聊聊',
+            catalog_cta: '📄 索取2026完整目录'
         },
         ms: {
             // Category buttons
@@ -5676,7 +5679,8 @@
             advisor_budget: 'Bajet bulanan',
             advisor_kitchen: 'Ruang dapur',
             advisor_note: 'Rundingan percuma. Tiada obligasi untuk melanggan.',
-            advisor_cta: 'Sembang Dengan Kelvin'
+            advisor_cta: 'Sembang Dengan Kelvin',
+            catalog_cta: '📄 Dapatkan Katalog 2026'
         }
     };
 
@@ -5906,130 +5910,194 @@
 <script>
 (function() {
     var COPY = {
-        en: { note: 'then RM{p}/month after promo', ctaText: "Scrolled past a few models already? Kelvin can match one to your home in under a minute.", ctaBtn: '💬 Ask Kelvin' },
-        zh: { note: '促销期后恢复 RM{p}/月', ctaText: '看了几款还没决定?让Kelvin用1分钟帮你配对最合适的型号。', ctaBtn: '💬 问Kelvin' },
-        bm: { note: 'selepas promosi RM{p}/bulan', ctaText: 'Dah tengok beberapa model? Kelvin boleh cadangkan yang paling sesuai untuk rumah anda.', ctaBtn: '💬 Tanya Kelvin' }
+        en: { note: 'then RM{p}/month after promo', ctaText: "Scrolled past a few models already? Kelvin can match one to your home in under a minute.", ctaBtn: '&#128172; Ask Kelvin' },
+        zh: { note: '促销期后恢复 RM{p}/月', ctaText: '看了几款还没决定?让Kelvin用1分钟帮你配对最合适的型号。', ctaBtn: '&#128172; 问Kelvin' },
+        ms: { note: 'kemudian RM{p}/bulan selepas promosi', ctaText: 'Sudah lihat beberapa model? Kelvin boleh padankan satu untuk rumah anda dalam seminit.', ctaBtn: '&#128172; Tanya Kelvin' }
     };
-    var WA_LINK = 'https://api.whatsapp.com/send?phone=601176060833&text=Hi%20Kelvin%2C%20I%27m%20comparing%20a%20few%20LG%20Subscribe%20models.%20Can%20you%20help%20me%20pick%3F';
-    var BANNER_EVERY = 12; // insert one CTA after every 12 product cards
+
+    var WA_HELP = 'https://api.whatsapp.com/send?phone=601176060833&text=' +
+        encodeURIComponent('Hi Kelvin, too many models — which one suits my home? Help me pick one.');
 
     function currentLang() {
-        return (window.localStorage && localStorage.getItem('lg-lang')) || 'en';
+        try { return localStorage.getItem('lg-lang') || 'en'; } catch (e) { return 'en'; }
     }
 
-    // 1) Price clarity: append a small note under any price whose description
-    //    states a promo arrow ("RM60 → RM30/month"), showing what it reverts to.
-    function addPriceNotes() {
-        document.querySelectorAll('.product-card').forEach(function(card) {
-            var priceEl = card.querySelector('.product-price');
-            if (!priceEl || priceEl.dataset.noteAdded) return;
-            var descEl = card.querySelector('.product-desc');
-            var text = descEl ? descEl.textContent : '';
-            var m = text.match(/RM\s*([\d,]+(?:\.\d+)?)\s*(?:→|->)\s*RM\s*[\d,]+(?:\.\d+)?/);
-            if (!m) return;
-            var normalPrice = m[1];
-            var wrapper = document.createElement('div');
-            wrapper.className = 'product-price-wrapper';
-            priceEl.parentNode.insertBefore(wrapper, priceEl);
-            wrapper.appendChild(priceEl);
-            var note = document.createElement('div');
-            note.className = 'product-price-note';
-            note.dataset.normalPrice = normalPrice;
-            wrapper.appendChild(note);
-            priceEl.dataset.noteAdded = '1';
-        });
-        applyPriceNoteLang();
+    function cardIndex(card) {
+        var img = card.querySelector('.product-image');
+        var m = img && (img.getAttribute('onclick') || '').match(/showProductDetail\((\d+)\)/);
+        return m ? parseInt(m[1], 10) : -1;
     }
 
-    function applyPriceNoteLang() {
+    // Show the promo price on the card, with the normal rate spelled out underneath
+    // so nobody is surprised when the promo period ends.
+    function applyPromoNotes() {
+        if (typeof productData === 'undefined') return;
         var dict = COPY[currentLang()] || COPY.en;
-        document.querySelectorAll('.product-price-note').forEach(function(note) {
-            note.textContent = dict.note.replace('{p}', note.dataset.normalPrice);
+
+        document.querySelectorAll('.product-card').forEach(function(card) {
+            var idx = cardIndex(card);
+            var p = idx >= 0 ? productData[idx] : null;
+            if (!p) return;
+
+            var priceEl = card.querySelector('.product-price');
+            if (!priceEl) return;
+            if (p.price) {
+                var per = priceEl.querySelector('span');
+                priceEl.innerHTML = p.price + '<span>' + (per ? per.textContent : '/month') + '</span>';
+            }
+
+            var noteEl = card.querySelector('.product-price-note');
+            if (p.oldPrice) {
+                if (!noteEl) {
+                    noteEl = document.createElement('div');
+                    noteEl.className = 'product-price-note';
+                    priceEl.parentNode.insertBefore(noteEl, priceEl.nextSibling);
+                }
+                noteEl.textContent = dict.note.replace('{p}', String(p.oldPrice).replace(/RM\s?/i, ''));
+            } else if (noteEl) {
+                noteEl.parentNode.removeChild(noteEl);
+            }
         });
     }
 
-    // 2) Repeating mid-scroll CTA banner, inserted every N product cards.
-    function insertMidScrollBanners() {
+    // A soft nudge every 9 cards — long grids lose people before they reach the bottom CTA.
+    function insertMidScrollCTAs() {
         var grid = document.getElementById('productsGrid');
         if (!grid) return;
-        var cards = Array.prototype.filter.call(grid.children, function(el) {
-            return el.classList.contains('product-card');
-        });
-        for (var i = BANNER_EVERY; i < cards.length; i += BANNER_EVERY) {
-            if (cards[i].dataset.bannerBefore) continue;
+        var dict = COPY[currentLang()] || COPY.en;
+
+        grid.querySelectorAll('.mid-scroll-cta').forEach(function(b) { b.parentNode.removeChild(b); });
+
+        var cards = grid.querySelectorAll('.product-card');
+        for (var i = 9; i < cards.length; i += 9) {
             var banner = document.createElement('div');
             banner.className = 'mid-scroll-cta';
-            banner.innerHTML = '<p></p><a class="cta-link" target="_blank"></a>';
+            var p = document.createElement('p');
+            p.textContent = dict.ctaText;
+            var a = document.createElement('a');
+            a.href = WA_HELP;
+            a.target = '_blank';
+            a.innerHTML = dict.ctaBtn;
+            banner.appendChild(p);
+            banner.appendChild(a);
             grid.insertBefore(banner, cards[i]);
-            cards[i].dataset.bannerBefore = '1';
         }
-        applyBannerLang();
     }
 
-    function applyBannerLang() {
-        var dict = COPY[currentLang()] || COPY.en;
-        document.querySelectorAll('.mid-scroll-cta').forEach(function(banner) {
-            banner.querySelector('p').textContent = dict.ctaText;
-            var a = banner.querySelector('.cta-link');
-            a.textContent = dict.ctaBtn;
-            a.href = WA_LINK;
-        });
+    function refresh() {
+        applyPromoNotes();
+        insertMidScrollCTAs();
     }
 
-    function init() {
-        addPriceNotes();
-        insertMidScrollBanners();
-    }
+    document.addEventListener('DOMContentLoaded', refresh);
 
-    document.addEventListener('DOMContentLoaded', init);
-    // Safety net in case product cards are still being laid out
-    setTimeout(init, 1200);
-
-    // Keep our injected text in sync when the visitor switches EN / 中文 / BM
-    if (window.setLang) {
-        var originalSetLang = window.setLang;
-        window.setLang = function(lang) {
-            originalSetLang(lang);
-            applyPriceNoteLang();
-            applyBannerLang();
-        };
-    }
+    // Re-render both when the visitor switches language.
+    var origSetLang = window.setLang;
+    window.setLang = function(lang) {
+        if (typeof origSetLang === 'function') origSetLang(lang);
+        refresh();
+    };
 })();
 </script>
 
-<div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox(event)">
-    <button class="lightbox-close" onclick="closeLightboxBtn(event)">&#10005;</button>
-    <img alt="" id="lightboxImg" src=""/>
-</div>
-
+<!-- WhatsApp Prefill Engine — auto-fills model name + price, follows site language -->
 <script>
-function openLightbox(src) {
-    var lb = document.getElementById('lightboxOverlay');
-    var img = document.getElementById('lightboxImg');
-    img.src = src;
-    lb.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-function closeLightbox(e) {
-    if (e.target === e.currentTarget || e.target.id === 'lightboxImg') {
-        document.getElementById('lightboxOverlay').classList.remove('active');
-        document.body.style.overflow = '';
+(function () {
+    var PHONE = '601176060833';
+
+    var WA_COPY = {
+        en: {
+            per: '/month',
+            soft: "Hi Kelvin, I'm looking at {name}{price}. How do I apply, and when can it be installed?",
+            big: "Hi Kelvin, I'd like to know more about {name}{price}. Is maintenance and warranty included?",
+            quote: "Hi Kelvin, I'd like a free plan for my home appliances. (New house / replacing old units)",
+            pick: "Hi Kelvin, too many models — which one suits my home? Help me pick one.",
+            cat: "Hi Kelvin, may I have the latest 2026 catalogue and promo list?"
+        },
+        zh: {
+            per: '/月',
+            soft: "Hi Kelvin，我看中 {name}{price}。请问要怎样申请?几时可以安装?",
+            big: "Hi Kelvin，我想了解 {name}{price}。包保养和保修吗?",
+            quote: "Hi Kelvin，我想配置家里的家电，帮我做个免费规划?（新家 / 换旧机）",
+            pick: "Hi Kelvin，型号太多不懂选。帮我推荐一台适合我家的?",
+            cat: "Hi Kelvin，可以给我 2026 最新目录和促销表吗?"
+        },
+        ms: {
+            per: '/bulan',
+            soft: "Hi Kelvin, saya berminat dengan {name}{price}. Macam mana nak mohon, dan bila boleh pasang?",
+            big: "Hi Kelvin, saya nak tahu lebih lanjut pasal {name}{price}. Termasuk servis dan waranti?",
+            quote: "Hi Kelvin, saya nak perancangan percuma untuk perkakas rumah. (Rumah baru / ganti unit lama)",
+            pick: "Hi Kelvin, terlalu banyak model. Boleh cadangkan satu yang sesuai untuk rumah saya?",
+            cat: "Hi Kelvin, boleh dapatkan katalog 2026 terkini dan senarai promosi?"
+        }
+    };
+
+    function dict() {
+        var l = 'en';
+        try { l = localStorage.getItem('lg-lang') || 'en'; } catch (e) {}
+        return WA_COPY[l] || WA_COPY.en;
     }
-}
-function closeLightboxBtn(e) {
-    e.stopPropagation();
-    document.getElementById('lightboxOverlay').classList.remove('active');
-    document.body.style.overflow = '';
-}
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        document.getElementById('lightboxOverlay').classList.remove('active');
-        document.body.style.overflow = '';
+
+    function link(text) {
+        return 'https://api.whatsapp.com/send?phone=' + PHONE + '&text=' + encodeURIComponent(text);
     }
-});
+
+    function priceOf(el) {
+        if (!el) return '';
+        var m = (el.textContent || '').match(/RM\s?[\d,]+(\.\d+)?/);
+        return m ? m[0].replace(/\s/g, '') : '';
+    }
+
+    // Price-led items ask about promo terms and install date;
+    // big-ticket items ask about service and warranty.
+    function isSoft(name, cat) {
+        if (cat === 'water' || cat === 'air') return true;
+        return /purifier|puricare|aero|dehumidifier|objet|undersink/i.test(name || '');
+    }
+
+    function productMsg(name, price, cat) {
+        var d = dict();
+        var priceTxt = '';
+        if (price) priceTxt = (d === WA_COPY.zh) ? '（' + price + d.per + '）' : ' (' + price + d.per + ')';
+        var tpl = isSoft(name, cat) ? d.soft : d.big;
+        return tpl.replace('{name}', name || 'LG').replace('{price}', priceTxt);
+    }
+
+    document.addEventListener('click', function (e) {
+        var t = e.target;
+        if (!t || !t.closest) return;
+        var a = t.closest('a[href*="whatsapp"]');
+        if (!a) return;
+
+        var d = dict(), msg = null;
+
+        if (a.getAttribute('data-wa') === 'catalog') {
+            msg = d.cat;
+        } else if (a.classList.contains('btn-whatsapp-primary')) {
+            msg = d.quote;
+        } else if (a.classList.contains('floating-whatsapp') ||
+                   a.classList.contains('help-btn') ||
+                   a.classList.contains('advisor-btn') ||
+                   a.closest('.mid-scroll-cta')) {
+            msg = d.pick;
+        } else {
+            var card = a.closest('.product-card');
+            if (card) {
+                var h3 = card.querySelector('h3');
+                msg = productMsg(h3 ? h3.textContent.trim() : '',
+                                 priceOf(card.querySelector('.product-price')),
+                                 card.getAttribute('data-category'));
+            } else if (a.id === 'spWA' || a.closest('#productDetail')) {
+                var title = document.getElementById('spTitle');
+                msg = productMsg(title ? title.textContent.trim() : '',
+                                 priceOf(document.getElementById('spPriceMain') || document.getElementById('spPrice')),
+                                 null);
+            }
+        }
+
+        if (msg) a.href = link(msg);
+    }, true);
+})();
 </script>
-
-
-
 </body>
        </html>
