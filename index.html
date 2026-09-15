@@ -4931,11 +4931,11 @@ window.lgPromoNote = function (product, unitText) {
                     showProductDetail(idx);
                 }
             } else {
-                // Category hash like #water, #air
-                var cat = hash.replace('#', '');
-                if (['all','water','air','washer','fridge','ac','tv','other'].includes(cat)) {
-                    filterProducts(cat, true);
-                }
+                // A category hash (#air, #tv ...) sticks around on refresh, which would park
+                // every return visit inside that one category. Always open on "All" instead
+                // and clean the hash out of the address bar. Product links (#detail-N) still work.
+                try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+                filterProducts('all', true);
             }
         });
     
@@ -5812,7 +5812,6 @@ window.lgPromoNote = function (product, unitText) {
 </div>
 <script>
 (function () {
-    var PROMO_ID = 'haze-sep-2026';
     var PROMO_END = new Date('2026-10-01T00:00:00+08:00'); // stops showing by itself after 30 Sep
     var overlay = document.getElementById('promoOverlay');
     if (!overlay) return;
@@ -5832,20 +5831,9 @@ window.lgPromoNote = function (product, unitText) {
         img.src = BASE + name + EXTS[0];
     });
 
-    function seenToday() {
-        try {
-            var v = localStorage.getItem('promo-seen-' + PROMO_ID);
-            if (!v) return false;
-            return (Date.now() - parseInt(v, 10)) < 24 * 60 * 60 * 1000;
-        } catch (e) { return false; }
-    }
-    function markSeen() {
-        try { localStorage.setItem('promo-seen-' + PROMO_ID, String(Date.now())); } catch (e) {}
-    }
     function openPopup() {
         overlay.classList.add('open');
         document.body.style.overflow = 'hidden';
-        markSeen();
     }
     function closePopup() {
         overlay.classList.remove('open');
@@ -5869,10 +5857,9 @@ window.lgPromoNote = function (product, unitText) {
     });
 
     document.addEventListener('DOMContentLoaded', function () {
-        if (new Date() >= PROMO_END) return;                    // promo over, never shows again
-        if (seenToday()) return;                                // once per 24 hours per visitor
-        if (location.hash && location.hash !== '#all') return;  // arrived via a category/product link
-        setTimeout(openPopup, 2200);                            // let the page paint first
+        if (new Date() >= PROMO_END) return;                              // promo over, never shows again
+        if (location.hash && location.hash.indexOf('#detail-') === 0) return; // opened a specific product link
+        setTimeout(openPopup, 2200);                                      // let the page paint first
     });
 
     window.showPromoPopup = openPopup;   // manual trigger, in case you want a button for it later
