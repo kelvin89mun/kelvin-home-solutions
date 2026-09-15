@@ -11,8 +11,8 @@
 <meta http-equiv="Expires" content="0"/>
 <link rel="icon" type="image/png" href="images/favicon.png">
 <title>Kelvin Chan | Authorized LG Subscribe Independent Consultant Malaysia</title>
-<meta name="description" content="Kelvin Chan — authorized independent LG Subscribe consultant (ID: M260389) serving Malaysia. Genuine LG home appliance subscriptions: water purifiers, air purifiers, washers, fridges, air conditioners, TVs. This is an independent dealer website, not the official LG website."/>
-<meta content="Chan Kar Mun, Chan Kar Mun Smart Home, Kelvin Chan, smart home consultant Malaysia, home appliance subscription, water purifier rental, air conditioner subscription, home appliance rental Malaysia, zero deposit, free installation" name="keywords"/>
+<meta name="description" content="Kelvin Chan — authorized independent LG Subscribe consultant (ID: M260389) serving Malaysia. Genuine LG home appliance subscriptions: air purifiers for haze season, water purifiers, washers, fridges, air conditioners, TVs. This is an independent dealer website, not the official LG website."/>
+<meta content="air purifier Malaysia, penapis udara jerebu, air purifier haze, LG PuriCare 360, Chan Kar Mun, Chan Kar Mun Smart Home, Kelvin Chan, smart home consultant Malaysia, home appliance subscription, water purifier rental, air conditioner subscription, home appliance rental Malaysia, zero deposit, free installation" name="keywords"/>
 <meta content="Chan Kar Mun" name="author"/>
 <meta content="index, follow" name="robots"/>
 
@@ -2846,6 +2846,60 @@
     </div>
 </div>
 
+
+<!-- Shared promo-note text so the card HTML and the JS never disagree -->
+<script>
+window.lgPromoNote = function (product, unitText) {
+    if (!product || !product.oldPrice) return '';
+    var l = 'en';
+    try { l = localStorage.getItem('lg-lang') || 'en'; } catch (e) {}
+    var unit = unitText || ({ en: '/mth', zh: '/\u6708', ms: '/bulan' }[l] || '/mth');
+    var old = product.oldPrice;
+    var m = String(product.promo || '').match(/(\d+)\s*months?/i);
+    if (m) {
+        return {
+            en: 'Promo: first ' + m[1] + ' months, then ' + old + unit,
+            zh: '\u4fc3\u9500\u9996' + m[1] + '\u4e2a\u6708\uff0c\u4e4b\u540e ' + old + unit,
+            ms: 'Promosi ' + m[1] + ' bulan pertama, kemudian ' + old + unit
+        }[l] || ('Promo: first ' + m[1] + ' months, then ' + old + unit);
+    }
+    return {
+        en: 'Promo price \u00b7 then ' + old + unit,
+        zh: '\u4fc3\u9500\u4ef7 \u00b7 \u539f\u4ef7 ' + old + unit,
+        ms: 'Harga promosi \u00b7 kemudian ' + old + unit
+    }[l] || ('Promo price \u00b7 then ' + old + unit);
+};
+</script>
+<!-- ===== HAZE / AIR PURIFIER SPOTLIGHT ===== -->
+<style>
+.haze-strip{background:linear-gradient(135deg,#2f3d4a 0%,#46565f 100%);color:#fff;padding:18px 20px;}
+.haze-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;}
+.haze-copy{flex:1 1 420px;min-width:260px;}
+.haze-kicker{display:inline-block;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.28);border-radius:999px;padding:3px 10px;font-size:0.68rem;font-weight:700;letter-spacing:0.5px;margin-bottom:7px;}
+.haze-title{font-family:var(--font-display);font-size:1.15rem;font-weight:700;line-height:1.3;margin-bottom:5px;}
+.haze-desc{font-size:0.8rem;line-height:1.5;color:rgba(255,255,255,0.86);}
+.haze-actions{display:flex;flex-wrap:wrap;gap:9px;flex:0 0 auto;}
+.haze-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;font-size:0.8rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;font-family:var(--font-display);white-space:nowrap;}
+.haze-btn-primary{background:#25D366;color:#fff;}
+.haze-btn-ghost{background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.35);}
+.haze-btn:active{transform:scale(0.97);}
+@media(max-width:600px){.haze-inner{gap:12px;}.haze-actions{width:100%;}.haze-btn{flex:1 1 auto;justify-content:center;}.haze-title{font-size:1.02rem;}}
+.haze-badge{position:absolute;top:8px;left:8px;z-index:3;background:#2f3d4a;color:#fff;font-family:var(--font-display);font-size:0.6rem;font-weight:700;letter-spacing:0.5px;padding:4px 8px;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,0.2);}
+</style>
+<div class="haze-strip" id="hazeStrip">
+  <div class="haze-inner">
+    <div class="haze-copy">
+      <span class="haze-kicker" data-i18n="haze_kicker">🌫️ Haze Season</span>
+      <div class="haze-title" data-i18n="haze_title">Haze outside? Keep the air inside clean.</div>
+      <div class="haze-desc" data-i18n="haze_desc">LG PuriCare 360° air purifiers — PM 1.0 filtration, from RM35/month promo. Free installation, free filter service, 7-year warranty. T&amp;C apply.</div>
+    </div>
+    <div class="haze-actions">
+      <a href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%20Kelvin%2C%20haze%20is%20bad%20now.%20Which%20air%20purifier%20suits%20my%20house%20size%2C%20and%20what%20is%20the%20promo%3F" class="haze-btn haze-btn-primary" data-wa="haze" data-i18n="haze_cta1">💬 Ask Kelvin about haze package</a>
+      <a href="#air" class="haze-btn haze-btn-ghost" onclick="event.preventDefault(); filterProducts('air');" data-i18n="haze_cta2">View Air Purifiers →</a>
+    </div>
+  </div>
+</div>
+
 <!-- ===== CONSULTANT DISCLAIMER BANNER ===== -->
 <div style="background:#fff8f0;border-bottom:1px solid #f0e0cc;padding:10px 20px;">
   <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 18px;text-align:center;">
@@ -2911,20 +2965,20 @@
             'https://subscribe-smarthome.com/images/AlphaPetSingle.jpg',
             'https://subscribe-smarthome.com/images/alphapet-single-1.jpg',
             'https://subscribe-smarthome.com/images/alphapet-single-2.jpg'
-        ],imgAlt:'LG Alpha Pet Single Booster AS65GDBY0',desc:'50% off first 9 months: RM75 → RM38/month, T&C apply. PuriCare 360° with Pet Mode and booster fan.',features:["Pet Mode", "Single Booster", "PM 1.0 Filtration", "7-Year Warranty"],price:'RM38',oldPrice:'RM75',outright:'RM3,550',plans:[['7-Year Self-Service Plan','RM75','RM38','50% off first 9 months']],wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Alpha%20Pet%20Single%20Booster%20AS65GDBY0'},
+        ],imgAlt:'LG Alpha Pet Single Booster AS65GDBY0',desc:'50% off first 9 months: RM75 → RM38/month, T&C apply. PuriCare 360° with Pet Mode and booster fan.',features:["Covers 61 m\u00b2 (~660 sqft)", "PM 1.0 Filtration", "Single Booster", "Pet Mode", "7-Year Warranty"],price:'RM38',oldPrice:'RM75',outright:'RM3,550',plans:[['7-Year Self-Service Plan','RM75','RM38','50% off first 9 months']],wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Alpha%20Pet%20Single%20Booster%20AS65GDBY0'},
         {category:'air',badge:'AIR',title:'LG Alpha Pet Double Booster AS10GDBY0',img:'https://subscribe-smarthome.com/images/LG%20Alpha%20Pet%20Double%20Booster%20AS10GDBY0.jpeg',gallery:[
             'https://subscribe-smarthome.com/images/LG%20Alpha%20Pet%20Double%20Booster%20AS10GDBY0.jpeg',
             'https://subscribe-smarthome.com/images/AlphaPetDouble.jpg',
             'https://subscribe-smarthome.com/images/alphapet-double-1.jpg',
             'https://subscribe-smarthome.com/images/alphapet-double-2.jpg',
             'https://subscribe-smarthome.com/images/alphapet-double-3.jpg'
-        ],imgAlt:'LG Alpha Pet Double Booster AS10GDBY0',desc:'Advanced air purifier for pet owners with Double Booster technology.',features:["Pet Mode", "Double Booster", "PM 1.0 Filtration", "7-Year Warranty"],price:'RM53',oldPrice:'RM105',outright:'RM4,600',plans:[['7-Year Self-Service Plan','RM105','RM53','50% off first 9 months']],wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Alpha%20Pet%20Double%20Booster%20AS10GDBY0'},
+        ],imgAlt:'LG Alpha Pet Double Booster AS10GDBY0',desc:'Advanced air purifier for pet owners with Double Booster technology.',features:["Covers 104 m\u00b2 (~1,120 sqft)", "PM 1.0 Filtration", "Double Booster", "Pet Mode", "7-Year Warranty"],price:'RM53',oldPrice:'RM105',outright:'RM4,600',plans:[['7-Year Self-Service Plan','RM105','RM53','50% off first 9 months']],wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Alpha%20Pet%20Double%20Booster%20AS10GDBY0'},
         {category:'air',badge:'AIR',title:'LG Cat Tower Air Purifier AS25GCBZ0',img:'https://subscribe-smarthome.com/images/LG%20Cat%20Tower%20Air%20Purifier%20AS25GCBZ0.jpeg',gallery:[
             'https://subscribe-smarthome.com/images/LG%20Cat%20Tower%20Air%20Purifier%20AS25GCBZ0.jpeg',
             'https://subscribe-smarthome.com/images/CatTower.jpg',
             'https://subscribe-smarthome.com/images/cattower-1.jpg',
             'https://subscribe-smarthome.com/images/cattower-2.jpg'
-        ],imgAlt:'LG Cat Tower Air Purifier AS25GCBZ0',desc:'9-month 50% off promo: RM70 → RM35/month, T&C apply. Unique air purifier with built-in cat resting platform. 550sf coverage.',features:["9-Month 50% Off", "Cat Platform", "550sf Coverage", "PM 1.0 Filtration"],price:'RM35',oldPrice:'RM70',outright:'RM3,200',promo:'9 months 50% OFF',plans:[['7-Year Self-Service Plan','RM70','RM35','50% off first 9 months']],wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Cat%20Tower%20Air%20Purifier%20AS25GCBZ0'},
+        ],imgAlt:'LG Cat Tower Air Purifier AS25GCBZ0',desc:'9-month 50% off promo: RM70 → RM35/month, T&C apply. Unique air purifier with built-in cat resting platform. 550sf coverage.',features:["Covers 51 m\u00b2 (~550 sqft)", "PM 1.0 Filtration", "Cat Platform", "9-Month 50% Off"],price:'RM35',oldPrice:'RM70',outright:'RM3,200',promo:'9 months 50% OFF',plans:[['7-Year Self-Service Plan','RM70','RM35','50% off first 9 months']],wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Cat%20Tower%20Air%20Purifier%20AS25GCBZ0'},
         {category:'washer',badge:'WASHER',title:'LG WashTower 14KG/10KG WT1410NHB',img:'https://subscribe-smarthome.com/images/LG%20WashTower%2014KG%2010KG%20WT1410NHB.jpeg',gallery:[
             'https://subscribe-smarthome.com/images/LG%20WashTower%2014KG%2010KG%20WT1410NHB.jpeg',
             'https://subscribe-smarthome.com/images/WashTower14KGW10KWD.jpg',
@@ -3480,7 +3534,7 @@
 <div class="section-title reveal-up">
 <span class="section-kicker" data-i18n="section_kicker">⚡ Handpicked For You</span>
 <h2 data-i18n="our_collection">Our Collection</h2>
-<p id="collectionSubtitle">48 premium appliances for your modern home</p>
+<p id="collectionSubtitle">27 premium appliances for your modern home</p>
 <div class="section-title-underline"></div>
 </div>
 <div class="products-grid" id="productsGrid">
@@ -3501,7 +3555,7 @@
 <div class="product-footer">
 <div class="product-price-wrapper">
 <div class="product-price">RM17<span>/mth</span></div>
-<div class="product-price-note">First 12 months, then RM70/mth · 7-yr plan</div>
+<div class="product-price-note">Promo: first 12 months, then RM70/mth</div>
 </div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%20Kelvin%2C%20can%20you%20send%20me%20the%20full%20price%20breakdown%20for%20the%20WD516AN%20water%20purifier%3F%20(RM17%20promo%20%2B%20what%20I%20pay%20after)" >💬 Get Full Price</a>
 </div>
@@ -3525,7 +3579,7 @@
 <div class="product-footer">
 <div class="product-price-wrapper">
 <div class="product-price">RM55<span>/mth</span></div>
-<div class="product-price-note">First 9 months, then RM110/mth · 7-yr plan</div>
+<div class="product-price-note">Promo: first 9 months, then RM110/mth</div>
 </div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%20Kelvin%2C%20can%20you%20send%20me%20the%20full%20price%20breakdown%20for%20the%20WU525BS%20undersink%20purifier%3F%20(RM55%20promo%20%2B%20what%20I%20pay%20after)" >💬 Get Full Price</a>
 </div>
@@ -3548,7 +3602,7 @@
 <div class="product-footer">
 <div class="product-price-wrapper">
 <div class="product-price">RM17<span>/mth</span></div>
-<div class="product-price-note">First 12 months, then RM70/mth · 7-yr plan</div>
+<div class="product-price-note">Promo: first 12 months, then RM70/mth</div>
 </div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%20Kelvin%2C%20can%20you%20send%20me%20the%20full%20price%20breakdown%20for%20the%20WD518AN%20water%20purifier%3F%20(RM17%20promo%20%2B%20what%20I%20pay%20after)" >💬 Get Full Price</a>
 </div>
@@ -3569,7 +3623,8 @@
 <span class="feature-tag">Dual Inverter</span><span class="feature-tag">Compact Design</span><span class="feature-tag">LG ThinQ</span><span class="feature-tag">7-Year Warranty</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM70<span>/month</span></div>
+<div class="product-price">RM35<span>/mth</span></div>
+<div class="product-price-note">Promo: first 9 months, then RM70/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%2016L%20Dual%20Inverter%20Dehumidifier" >💬 Ask Us</a>
 </div>
 </div>
@@ -3587,13 +3642,14 @@
         </div>
 <div class="product-info">
 <h3>LG Alpha Pet Single Booster AS65GDBY0</h3>
-<p class="product-desc">50% off first 9 months: RM75 → RM38/month. T&C apply. Pet Mode with booster fan.</p>
+<p class="product-desc">PuriCare 360° with PM 1.0 filtration, covers up to 61 m² (~660 sqft). Booster fan + Pet Mode. T&amp;C apply.</p>
 <p class="product-tnc">Promo rate for the promo period only, then normal rate resumes. <strong>T&amp;C apply</strong>.</p>
 <div class="product-features">
-<span class="feature-tag">Pet Mode</span><span class="feature-tag">Single Booster</span><span class="feature-tag">PM 1.0 Filtration</span><span class="feature-tag">7-Year Warranty</span>
+<span class="feature-tag">Covers 61 m² (~660 sqft)</span><span class="feature-tag">PM 1.0 Filtration</span><span class="feature-tag">Single Booster</span><span class="feature-tag">Pet Mode</span><span class="feature-tag">7-Year Warranty</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM50<span>/month</span></div>
+<div class="product-price">RM38<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM75/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20Alpha%20Pet%20Single%20Booster" >💬 Ask Us</a>
 </div>
 </div>
@@ -3607,13 +3663,14 @@
         </div>
 <div class="product-info">
 <h3>LG Alpha Pet Double Booster AS10GDBY0</h3>
-<p class="product-desc">Advanced air purifier for pet owners with Double Booster technology.</p>
+<p class="product-desc">PuriCare 360° with PM 1.0 filtration, covers up to 104 m² (~1,120 sqft). Double Booster for open-plan homes. T&amp;C apply.</p>
 <p class="product-tnc"><strong>T&amp;C apply</strong> — WhatsApp us for plan details.</p>
 <div class="product-features">
-<span class="feature-tag">Pet Mode</span><span class="feature-tag">Double Booster</span><span class="feature-tag">PM 1.0 Filtration</span><span class="feature-tag">7-Year Warranty</span>
+<span class="feature-tag">Covers 104 m² (~1,120 sqft)</span><span class="feature-tag">PM 1.0 Filtration</span><span class="feature-tag">Double Booster</span><span class="feature-tag">Pet Mode</span><span class="feature-tag">7-Year Warranty</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM105<span>/month</span></div>
+<div class="product-price">RM53<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM105/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20Alpha%20Pet%20Double%20Booster" >💬 Ask Us</a>
 </div>
 </div>
@@ -3630,10 +3687,11 @@
 <p class="product-desc">9-month 50% off promo: RM70 → RM35/month, T&amp;C apply. Unique air purifier with built-in cat resting platform. 550sf coverage.</p>
 <p class="product-tnc">Promo rate for the promo period only, then normal rate resumes. <strong>T&amp;C apply</strong>.</p>
 <div class="product-features">
-<span class="feature-tag">9-Month 50% Off</span><span class="feature-tag">Cat Platform</span><span class="feature-tag">550sf Coverage</span><span class="feature-tag">PM 1.0 Filtration</span>
+<span class="feature-tag">9-Month 50% Off</span><span class="feature-tag">Cat Platform</span><span class="feature-tag">Covers 51 m² (~550 sqft)</span><span class="feature-tag">PM 1.0 Filtration</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM35<span>/month</span></div>
+<div class="product-price">RM35<span>/mth</span></div>
+<div class="product-price-note">Promo: first 9 months, then RM70/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20Cat%20Tower%20Air%20Purifier" >💬 Ask Us</a>
 </div>
 </div>
@@ -3654,6 +3712,7 @@
 </div>
 <div class="product-footer">
 <div class="product-price">RM169<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM210/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20WashTower%2014KG/10KG" >💬 Ask Us</a>
 </div>
 </div>
@@ -3674,6 +3733,7 @@
 </div>
 <div class="product-footer">
 <div class="product-price">RM199<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM280/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20WashTower%2025KG/20KG" >💬 Ask Us</a>
 </div>
 </div>
@@ -3696,7 +3756,8 @@
 <span class="feature-tag">AI DD</span><span class="feature-tag">15KG Wash</span><span class="feature-tag">8KG Dry</span><span class="feature-tag">5-Year Warranty</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM29<span>/mth</span></div>
+<div class="product-price">RM20<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM85/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20AI%20DD%2015KG%20Wash%208KG%20Dry" >💬 Ask Us</a>
 </div>
 </div>
@@ -3716,7 +3777,8 @@
 <span class="feature-tag">AI DD</span><span class="feature-tag">20KG Capacity</span><span class="feature-tag">Turbo 360°</span><span class="feature-tag">5-Year Warranty</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM120<span>/month</span></div>
+<div class="product-price">RM23<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM120/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20AI%20DD%2020KG%20Washing%20Machine" >💬 Ask Us</a>
 </div>
 </div>
@@ -3736,7 +3798,8 @@
 <span class="feature-tag">AI DD</span><span class="feature-tag">10.5KG Capacity</span><span class="feature-tag">TurboWash 360°</span><span class="feature-tag">5-Year Warranty</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM70<span>/month</span></div>
+<div class="product-price">RM65<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM140/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20AI%20DD%20Washing%20Machine%2010.5KG" >💬 Ask Us</a>
 </div>
 </div>
@@ -3762,7 +3825,8 @@
 <span class="feature-tag">Door In Door</span><span class="feature-tag">635L Capacity</span><span class="feature-tag">Water Dispenser</span><span class="feature-tag">5-Year Warranty</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM45<span>/mth</span></div>
+<div class="product-price">RM65<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM130/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20Door%20In%20Door%20Fridge%20635L" >💬 Ask Us</a>
 </div>
 </div>
@@ -3783,7 +3847,8 @@
 <span class="feature-tag">Top Freezer</span><span class="feature-tag">493L Capacity</span><span class="feature-tag">Smart Inverter</span><span class="feature-tag">5-Year Warranty</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM28<span>/mth</span></div>
+<div class="product-price">RM40<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM80/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20Top%20Freezer%20Fridge%20493L" >💬 Ask Us</a>
 </div>
 </div>
@@ -3806,7 +3871,8 @@
 <span class="feature-tag">Plasmaster Ionizer++</span><span class="feature-tag">1.5 HP</span><span class="feature-tag">Energy Saving</span><span class="feature-tag">5-Year Warranty</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM100<span>/month</span></div>
+<div class="product-price">RM50<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM100/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20ArtCool%201.5%20HP" >💬 Ask Us</a>
 </div>
 </div>
@@ -3826,7 +3892,8 @@
 <span class="feature-tag">Plasmaster Ionizer++</span><span class="feature-tag">2.5 HP</span><span class="feature-tag">Energy Saving</span><span class="feature-tag">5-Year Warranty</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM130<span>/month</span></div>
+<div class="product-price">RM65<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM130/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20ArtCool%202.5%20HP" >💬 Ask Us</a>
 </div>
 </div>
@@ -3846,7 +3913,8 @@
 <span class="feature-tag">Air Purification</span><span class="feature-tag">1.0 HP</span><span class="feature-tag">Energy Saving</span><span class="feature-tag">5-Year Warranty</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM80<span>/month</span></div>
+<div class="product-price">RM40<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM80/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20DUALCOOL%201.0%20HP" >💬 Ask Us</a>
 </div>
 </div>
@@ -3867,7 +3935,8 @@
 <span class="feature-tag">Air Purification</span><span class="feature-tag">2.0 HP</span><span class="feature-tag">Premium Design</span><span class="feature-tag">5-Year Warranty</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM110<span>/month</span></div>
+<div class="product-price">RM55<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM110/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20DUALCOOL%20Premium%202.0%20HP" >💬 Ask Us</a>
 </div>
 </div>
@@ -3888,7 +3957,8 @@
 <span class="feature-tag">AI Smart Cooling</span><span class="feature-tag">Dual Inverter</span><span class="feature-tag">Energy Saving</span><span class="feature-tag">LG ThinQ</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM48<span>/month</span></div>
+<div class="product-price">RM48<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM95/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20DUAL%20COOL%20AI%201.5%20HP%20S3NQ120AGZB" >💬 Ask Us</a>
 </div>
 </div>
@@ -3905,7 +3975,8 @@
 <span class="feature-tag">9-Month 50% Off</span><span class="feature-tag">2.5 HP</span><span class="feature-tag">Dual Inverter</span><span class="feature-tag">LG ThinQ</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM63<span>/month</span></div>
+<div class="product-price">RM63<span>/mth</span></div>
+<div class="product-price-note">Promo: first 9 months, then RM125/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20DUAL%20COOL%20AI%202.5%20HP%20S3-Q2412GZC" >💬 Ask Us</a>
 </div>
 </div>
@@ -3925,7 +3996,8 @@
 <span class="feature-tag">55" 4K UHD NanoCell</span><span class="feature-tag">AI Picture & Sound</span><span class="feature-tag">9-Month 50% Off</span><span class="feature-tag">Free 5-Year Warranty</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM28<span>/month</span></div>
+<div class="product-price">RM28<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM55/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20NANO%204K%20UHD%20Smart%20TV%2055%20inch%2C%20saw%20the%20RM28%2Fmonth%20promo" >💬 Ask Us</a>
 </div>
 </div>
@@ -3945,7 +4017,8 @@
 <span class="feature-tag">50" 4K UHD NanoCell</span><span class="feature-tag">AI Picture & Sound</span><span class="feature-tag">9-Month 50% Off</span><span class="feature-tag">Free 5-Year Warranty</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM25<span>/month</span></div>
+<div class="product-price">RM25<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM50/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20NANO%204K%20UHD%20Smart%20TV%2050%20inch%2C%20saw%20the%20RM25%2Fmonth%20promo" >💬 Ask Us</a>
 </div>
 </div>
@@ -3962,7 +4035,8 @@
 <span class="feature-tag">55" Mini LED 4K</span><span class="feature-tag">QNED evo AI</span><span class="feature-tag">9-Month 50% Off</span><span class="feature-tag">webOS Smart TV</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM50<span>/month</span></div>
+<div class="product-price">RM50<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM100/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20QNED%20evo%2055%20inch%2C%20saw%20the%20RM50%2Fmonth%20promo" >💬 Ask Us</a>
 </div>
 </div>
@@ -3979,7 +4053,8 @@
 <span class="feature-tag">65" Mini LED 4K</span><span class="feature-tag">QNED evo AI</span><span class="feature-tag">9-Month 50% Off</span><span class="feature-tag">webOS Smart TV</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM65<span>/month</span></div>
+<div class="product-price">RM58<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM115/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20QNED%20evo%2065%20inch%2C%20saw%20the%20RM58%2Fmonth%20promo" >💬 Ask Us</a>
 </div>
 </div>
@@ -3996,7 +4071,8 @@
 <span class="feature-tag">75" Mini LED 4K</span><span class="feature-tag">QNED evo AI</span><span class="feature-tag">9-Month 50% Off</span><span class="feature-tag">webOS Smart TV</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM100<span>/month</span></div>
+<div class="product-price">RM85<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM170/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20QNED%20evo%2075%20inch%2C%20saw%20the%20RM85%2Fmonth%20promo" >💬 Ask Us</a>
 </div>
 </div>
@@ -4013,7 +4089,8 @@
 <span class="feature-tag">5.1 Channel</span><span class="feature-tag">Wireless Rear</span><span class="feature-tag">Subwoofer</span><span class="feature-tag">Dolby Digital</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM70<span>/month</span></div>
+<div class="product-price">RM12<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM50/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20Soundbar%205.1ch%20S60TR" >💬 Ask Us</a>
 </div>
 </div>
@@ -4030,7 +4107,8 @@
 <span class="feature-tag">570W 5.1.3ch</span><span class="feature-tag">Dolby Atmos</span><span class="feature-tag">Hi-Res Audio</span><span class="feature-tag">Wireless Subwoofer</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM60<span>/month</span></div>
+<div class="product-price">RM30<span>/mth</span></div>
+<div class="product-price-note">Promo price · then RM60/mth</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%27m%20interested%20in%20LG%20Soundbar%20570W%20S90TY" >💬 Ask Us</a>
 </div>
 </div>
@@ -4959,7 +5037,14 @@
             advisor_kitchen: 'Kitchen space',
             advisor_note: 'Free consultation. No obligation to subscribe.',
             advisor_cta: 'Chat With Kelvin',
-            catalog_cta: '📄 Get 2026 Catalogue'
+            catalog_cta: '📄 Get 2026 Catalogue',
+            // Haze spotlight
+            haze_kicker: '🌫️ Haze Season',
+            haze_title: 'Haze outside? Keep the air inside clean.',
+            haze_desc: 'LG PuriCare 360\u00b0 air purifiers — PM 1.0 filtration, from RM35/month promo. Free installation, free filter service, 7-year warranty. T&C apply.',
+            haze_cta1: '💬 Ask Kelvin about haze package',
+            haze_cta2: 'View Air Purifiers →',
+            haze_badge: 'HAZE READY'
         },
         zh: {
             // Category buttons
@@ -5042,7 +5127,14 @@
             advisor_kitchen: '厨房空间',
             advisor_note: '免费咨询。无订阅义务。',
             advisor_cta: '与 Kelvin 聊聊',
-            catalog_cta: '📄 索取2026完整目录'
+            catalog_cta: '📄 索取2026完整目录',
+            // Haze spotlight
+            haze_kicker: '🌫️ 烟霾季节',
+            haze_title: '外面烟霾，家里的空气要顾好。',
+            haze_desc: 'LG PuriCare 360\u00b0 空气净化器 — PM 1.0 过滤，促销价 RM35/月起。免费安装、免费滤网服务、7年保固。条款与条件适用。',
+            haze_cta1: '💬 问Kelvin烟霾配套',
+            haze_cta2: '查看空气净化器 →',
+            haze_badge: '烟霾必备'
         },
         ms: {
             // Category buttons
@@ -5125,7 +5217,14 @@
             advisor_kitchen: 'Ruang dapur',
             advisor_note: 'Rundingan percuma. Tiada obligasi untuk melanggan.',
             advisor_cta: 'Sembang Dengan Kelvin',
-            catalog_cta: '📄 Dapatkan Katalog 2026'
+            catalog_cta: '📄 Dapatkan Katalog 2026',
+            // Haze spotlight
+            haze_kicker: '🌫️ Musim Jerebu',
+            haze_title: 'Jerebu di luar? Jaga udara dalam rumah.',
+            haze_desc: 'Penapis udara LG PuriCare 360\u00b0 — penapisan PM 1.0, promosi serendah RM35/bulan. Pemasangan percuma, servis penapis percuma, waranti 7 tahun. Tertakluk pada T&C.',
+            haze_cta1: '💬 Tanya Kelvin pakej jerebu',
+            haze_cta2: 'Lihat Penapis Udara →',
+            haze_badge: 'MUSIM JEREBU'
         }
     };
 
@@ -5398,7 +5497,7 @@
                     noteEl.className = 'product-price-note';
                     priceEl.parentNode.insertBefore(noteEl, priceEl.nextSibling);
                 }
-                noteEl.textContent = dict.note.replace('{p}', String(p.oldPrice).replace(/RM\s?/i, ''));
+                noteEl.textContent = window.lgPromoNote ? window.lgPromoNote(p) : dict.note.replace('{p}', String(p.oldPrice).replace(/RM\s?/i, ''));
             } else if (noteEl) {
                 noteEl.parentNode.removeChild(noteEl);
             }
@@ -5457,7 +5556,8 @@
             big: "Hi Kelvin, I'd like to know more about {name}{price}. Is maintenance and warranty included?",
             quote: "Hi Kelvin, I'd like a free plan for my home appliances. (New house / replacing old units)",
             pick: "Hi Kelvin, too many models — which one suits my home? Help me pick one.",
-            cat: "Hi Kelvin, may I have the latest 2026 catalogue and promo list?"
+            cat: "Hi Kelvin, may I have the latest 2026 catalogue and promo list?",
+            haze: "Hi Kelvin, the haze is bad now. Which LG air purifier suits my house size, and what is the current promo?"
         },
         zh: {
             per: '/月',
@@ -5465,7 +5565,8 @@
             big: "Hi Kelvin，我想了解 {name}{price}。包保养和保修吗?",
             quote: "Hi Kelvin，我想配置家里的家电，帮我做个免费规划?（新家 / 换旧机）",
             pick: "Hi Kelvin，型号太多不懂选。帮我推荐一台适合我家的?",
-            cat: "Hi Kelvin，可以给我 2026 最新目录和促销表吗?"
+            cat: "Hi Kelvin，可以给我 2026 最新目录和促销表吗?",
+            haze: "Hi Kelvin，最近烟霾很严重。我家适合哪一台空气净化器?现在什么促销?"
         },
         ms: {
             per: '/bulan',
@@ -5473,7 +5574,8 @@
             big: "Hi Kelvin, saya nak tahu lebih lanjut pasal {name}{price}. Termasuk servis dan waranti?",
             quote: "Hi Kelvin, saya nak perancangan percuma untuk perkakas rumah. (Rumah baru / ganti unit lama)",
             pick: "Hi Kelvin, terlalu banyak model. Boleh cadangkan satu yang sesuai untuk rumah saya?",
-            cat: "Hi Kelvin, boleh dapatkan katalog 2026 terkini dan senarai promosi?"
+            cat: "Hi Kelvin, boleh dapatkan katalog 2026 terkini dan senarai promosi?",
+            haze: "Hi Kelvin, jerebu teruk sekarang. Penapis udara LG mana sesuai untuk rumah saya, dan apa promosi terkini?"
         }
     };
 
@@ -5518,6 +5620,8 @@
 
         if (a.getAttribute('data-wa') === 'catalog') {
             msg = d.cat;
+        } else if (a.getAttribute('data-wa') === 'haze') {
+            msg = d.haze || d.pick;
         } else if (a.classList.contains('btn-whatsapp-primary')) {
             msg = d.quote;
         } else if (a.classList.contains('floating-whatsapp') ||
@@ -5561,7 +5665,9 @@
                 var priceEl = card.querySelector('.product-price');
                 if (!priceEl) return;
                 var unitSpan = priceEl.querySelector('span');
-                var unitText = unitSpan ? unitSpan.textContent : '/month';
+                var _ul = 'en';
+                try { _ul = localStorage.getItem('lg-lang') || 'en'; } catch (e) {}
+                var unitText = ({ en: '/mth', zh: '/\u6708', ms: '/bulan' }[_ul]) || (unitSpan ? unitSpan.textContent : '/mth');
                 priceEl.innerHTML = p.price + '<span>' + unitText + '</span>';
 
                 var note = card.querySelector('.product-price-note');
@@ -5571,14 +5677,75 @@
                         note.className = 'product-price-note';
                         priceEl.insertAdjacentElement('afterend', note);
                     }
-                    note.textContent = '促销价 · 原价恢复后 ' + p.oldPrice + unitText;
+                    note.textContent = window.lgPromoNote ? window.lgPromoNote(p, unitText) : ('Promo price \u00b7 then ' + p.oldPrice + unitText);
                 } else if (note) {
                     note.remove();
                 }
             });
         }
         document.addEventListener('DOMContentLoaded', syncCardPricing);
+        (function () {
+            var prev = window.setLang;
+            window.setLang = function (lang) {
+                if (typeof prev === 'function') prev(lang);
+                syncCardPricing();
+            };
+        })();
     })();
     </script>
+<!-- ===== Haze spotlight: pin air purifiers first + badge them ===== -->
+<script>
+(function () {
+    var BADGE = { en: 'HAZE READY', zh: '\u70df\u973e\u5fc5\u5907', ms: 'MUSIM JEREBU' };
+
+    function lang() {
+        try { return localStorage.getItem('lg-lang') || 'en'; } catch (e) { return 'en'; }
+    }
+
+    // Dehumidifiers sit in the same category but are not haze products.
+    function isPurifier(card) {
+        var h3 = card.querySelector('h3');
+        var name = h3 ? h3.textContent : '';
+        return !/dehumidifier/i.test(name);
+    }
+
+    function pinAirCards() {
+        var grid = document.getElementById('productsGrid');
+        if (!grid) return;
+        var air = Array.prototype.slice.call(grid.querySelectorAll('.product-card[data-category="air"]'));
+        // Purifiers first, dehumidifier right after them, then everything else.
+        air.sort(function (a, b) { return (isPurifier(b) ? 1 : 0) - (isPurifier(a) ? 1 : 0); });
+        air.reverse().forEach(function (card) { grid.insertBefore(card, grid.firstChild); });
+    }
+
+    function paintBadges() {
+        var text = BADGE[lang()] || BADGE.en;
+        document.querySelectorAll('.product-card[data-category="air"]').forEach(function (card) {
+            if (!isPurifier(card)) return;
+            var imgBox = card.querySelector('.product-image');
+            if (!imgBox) return;
+            if (getComputedStyle(imgBox).position === 'static') imgBox.style.position = 'relative';
+            var badge = imgBox.querySelector('.haze-badge');
+            if (!badge) {
+                badge = document.createElement('span');
+                badge.className = 'haze-badge';
+                imgBox.appendChild(badge);
+            }
+            badge.textContent = text;
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        pinAirCards();
+        paintBadges();
+    });
+
+    var prevSetLang = window.setLang;
+    window.setLang = function (l) {
+        if (typeof prevSetLang === 'function') prevSetLang(l);
+        paintBadges();
+    };
+})();
+</script>
 </body>
        </html>
