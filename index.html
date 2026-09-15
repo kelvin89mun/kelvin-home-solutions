@@ -2855,6 +2855,13 @@ window.lgPromoNote = function (product, unitText) {
     try { l = localStorage.getItem('lg-lang') || 'en'; } catch (e) {}
     var unit = unitText || ({ en: '/mth', zh: '/\u6708', ms: '/bulan' }[l] || '/mth');
     var old = product.oldPrice;
+    if (product.contractOff) {
+        return {
+            en: product.contractOff + '/mth off the whole plan \u00b7 save up to ' + product.contractSave,
+            zh: '\u6574\u4e2a\u914d\u5957\u6bcf\u6708\u7701 ' + product.contractOff + ' \u00b7 \u6700\u9ad8\u7701 ' + product.contractSave,
+            ms: 'Jimat ' + product.contractOff + '/bulan sepanjang pelan \u00b7 sehingga ' + product.contractSave
+        }[l] || (product.contractOff + '/mth off the whole plan \u00b7 save up to ' + product.contractSave);
+    }
     var m = String(product.promo || '').match(/(\d+)\s*months?/i);
     if (m) {
         return {
@@ -2965,7 +2972,7 @@ window.lgPromoNote = function (product, unitText) {
             'https://subscribe-smarthome.com/images/AlphaPetSingle.jpg',
             'https://subscribe-smarthome.com/images/alphapet-single-1.jpg',
             'https://subscribe-smarthome.com/images/alphapet-single-2.jpg'
-        ],imgAlt:'LG Alpha Pet Single Booster AS65GDBY0',desc:'50% off first 9 months: RM75 → RM38/month, T&C apply. PuriCare 360° with Pet Mode and booster fan.',features:["Covers 61 m\u00b2 (~660 sqft)", "PM 1.0 Filtration", "Single Booster", "Pet Mode", "7-Year Warranty"],price:'RM38',oldPrice:'RM75',outright:'RM3,550',plans:[['7-Year Self-Service Plan','RM75','RM38','50% off first 9 months']],wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Alpha%20Pet%20Single%20Booster%20AS65GDBY0'},
+        ],imgAlt:'LG Alpha Pet Single Booster AS65GDBY0',desc:'September offer: RM5/month off for the whole contract — RM70/month on the 7-year self-service plan (normal RM75), save up to RM420. T&C apply. PuriCare 360° with HEPA H13, PM 1.0 sensor, UVnano and Clean Booster.',features:["Covers 61 m\u00b2 (~660 sqft)", "PM 1.0 Filtration", "Single Booster", "Pet Mode", "7-Year Warranty"],price:'RM70',oldPrice:'RM75',outright:'RM3,550',contractOff:'RM5',contractSave:'RM420',save:'Save up to RM420',plans:[['7-Year Self Service','RM75','RM70','Save RM420 over the contract'],['7-Year Regular Visit','RM95','RM90','Save RM420 over the contract'],['5-Year Self Service','RM105','RM100','Save RM300 over the contract'],['5-Year Regular Visit','RM125','RM120','Save RM300 over the contract']],wa:'https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I\'m%20interested%20in%20LG%20Alpha%20Pet%20Single%20Booster%20AS65GDBY0'},
         {category:'air',badge:'AIR',title:'LG Alpha Pet Double Booster AS10GDBY0',img:'https://subscribe-smarthome.com/images/LG%20Alpha%20Pet%20Double%20Booster%20AS10GDBY0.jpeg',gallery:[
             'https://subscribe-smarthome.com/images/LG%20Alpha%20Pet%20Double%20Booster%20AS10GDBY0.jpeg',
             'https://subscribe-smarthome.com/images/AlphaPetDouble.jpg',
@@ -3642,14 +3649,14 @@ window.lgPromoNote = function (product, unitText) {
         </div>
 <div class="product-info">
 <h3>LG Alpha Pet Single Booster AS65GDBY0</h3>
-<p class="product-desc">PuriCare 360° with PM 1.0 filtration, covers up to 61 m² (~660 sqft). Booster fan + Pet Mode. T&amp;C apply.</p>
-<p class="product-tnc">Promo rate for the promo period only, then normal rate resumes. <strong>T&amp;C apply</strong>.</p>
+<p class="product-desc">PuriCare 360° with PM 1.0 filtration, covers up to 61 m² (~660 sqft). September offer: RM5/month off for the whole contract. T&amp;C apply.</p>
+<p class="product-tnc">Discount applies for the full contract term. <strong>T&amp;C apply</strong>.</p>
 <div class="product-features">
 <span class="feature-tag">Covers 61 m² (~660 sqft)</span><span class="feature-tag">PM 1.0 Filtration</span><span class="feature-tag">Single Booster</span><span class="feature-tag">Pet Mode</span><span class="feature-tag">7-Year Warranty</span>
 </div>
 <div class="product-footer">
-<div class="product-price">RM38<span>/mth</span></div>
-<div class="product-price-note">Promo price · then RM75/mth</div>
+<div class="product-price">RM70<span>/mth</span></div>
+<div class="product-price-note">RM5/mth off the whole plan · save up to RM420</div>
 <a class="btn-enquire" href="https://api.whatsapp.com/send?phone=601176060833&text=Hi%2C%20I%20want%20to%20subscribe%20to%20LG%20Alpha%20Pet%20Single%20Booster" >💬 Ask Us</a>
 </div>
 </div>
@@ -5044,7 +5051,18 @@ window.lgPromoNote = function (product, unitText) {
             haze_desc: 'LG PuriCare 360\u00b0 air purifiers — PM 1.0 filtration, from RM35/month promo. Free installation, free filter service, 7-year warranty. T&C apply.',
             haze_cta1: '💬 Ask Kelvin about haze package',
             haze_cta2: 'View Air Purifiers →',
-            haze_badge: 'HAZE READY'
+            haze_badge: 'HAZE READY',
+            promo_pop_eyebrow: '1 \u2013 30 September 2026',
+            promo_pop_title: 'Hazy days? LG PuriCare 360\u00b0 Alpha PET \u2014 save up to RM420.',
+            promo_pop_sub: 'HEPA H13 filter, PM 1.0 sensor, UVnano and 360\u00b0 purification. Free delivery and installation. Ask me which plan fits your home.',
+            promo_pop_role: 'Independent Smart Home Consultant \u00b7 LG Subscribe M260389',
+            promo_pop_wa_lbl: 'WhatsApp',
+            promo_pop_email_lbl: 'Email',
+            promo_pop_hours_lbl: 'Reply hours',
+            promo_pop_hours: 'Daily 9am \u2013 9pm',
+            promo_pop_cta1: '\uD83D\uDCAC WhatsApp me about this promo',
+            promo_pop_cta2: 'See air purifiers on this page',
+            promo_pop_fine: 'Promotion applies to LG Air Purifier model AS65GDBY0.AML only. Prices and offers may vary for other models. Images are for illustration only. LG reserves the right to change specifications, availability and pricing. T&Cs apply. This is an independent consultant website, not the official LG website.'
         },
         zh: {
             // Category buttons
@@ -5134,7 +5152,18 @@ window.lgPromoNote = function (product, unitText) {
             haze_desc: 'LG PuriCare 360\u00b0 空气净化器 — PM 1.0 过滤，促销价 RM35/月起。免费安装、免费滤网服务、7年保固。条款与条件适用。',
             haze_cta1: '💬 问Kelvin烟霾配套',
             haze_cta2: '查看空气净化器 →',
-            haze_badge: '烟霾必备'
+            haze_badge: '烟霾必备',
+            promo_pop_eyebrow: '2026年9月1日 – 9月30日',
+            promo_pop_title: '烟霾天？LG PuriCare 360° Alpha PET — 最高省 RM420。',
+            promo_pop_sub: 'HEPA H13 滤网、PM 1.0 感应器、UVnano 与 360° 净化。免费送货安装。哪一个计划适合你家，可以问我。',
+            promo_pop_role: '独立智能家居顾问 · LG Subscribe M260389',
+            promo_pop_wa_lbl: 'WhatsApp',
+            promo_pop_email_lbl: '电邮',
+            promo_pop_hours_lbl: '回复时间',
+            promo_pop_hours: '每天 上午9点 – 晚上9点',
+            promo_pop_cta1: '\uD83D\uDCAC WhatsApp 问这个促销',
+            promo_pop_cta2: '看本页空气净化器',
+            promo_pop_fine: '此促销仅适用于 LG 空气净化器型号 AS65GDBY0.AML。其他型号价格与优惠可能不同。图片仅供参考。LG 保留修改规格、供应与价格的权利。条款与条件适用。本网站为独立顾问网站，非 LG 官方网站。'
         },
         ms: {
             // Category buttons
@@ -5224,7 +5253,18 @@ window.lgPromoNote = function (product, unitText) {
             haze_desc: 'Penapis udara LG PuriCare 360\u00b0 — penapisan PM 1.0, promosi serendah RM35/bulan. Pemasangan percuma, servis penapis percuma, waranti 7 tahun. Tertakluk pada T&C.',
             haze_cta1: '💬 Tanya Kelvin pakej jerebu',
             haze_cta2: 'Lihat Penapis Udara →',
-            haze_badge: 'MUSIM JEREBU'
+            haze_badge: 'MUSIM JEREBU',
+            promo_pop_eyebrow: '1 \u2013 30 September 2026',
+            promo_pop_title: 'Hari berjerebu? LG PuriCare 360\u00b0 Alpha PET \u2014 jimat sehingga RM420.',
+            promo_pop_sub: 'Penapis HEPA H13, sensor PM 1.0, UVnano dan penulenan 360\u00b0. Penghantaran dan pemasangan percuma. Tanya saya pelan mana sesuai untuk rumah anda.',
+            promo_pop_role: 'Konsultan Rumah Pintar Bebas \u00b7 LG Subscribe M260389',
+            promo_pop_wa_lbl: 'WhatsApp',
+            promo_pop_email_lbl: 'E-mel',
+            promo_pop_hours_lbl: 'Waktu balas',
+            promo_pop_hours: 'Setiap hari 9pagi \u2013 9malam',
+            promo_pop_cta1: '\uD83D\uDCAC WhatsApp saya tentang promosi ini',
+            promo_pop_cta2: 'Lihat penapis udara di halaman ini',
+            promo_pop_fine: 'Promosi ini hanya terpakai untuk model Penapis Udara LG AS65GDBY0.AML. Harga dan tawaran mungkin berbeza bagi model lain. Imej adalah untuk tujuan ilustrasi sahaja. LG berhak mengubah spesifikasi, ketersediaan dan harga. T&C dikenakan. Ini laman konsultan bebas, bukan laman rasmi LG.'
         }
     };
 
@@ -5745,6 +5785,121 @@ window.lgPromoNote = function (product, unitText) {
         if (typeof prevSetLang === 'function') prevSetLang(l);
         paintBadges();
     };
+})();
+</script>
+<!-- ===== SEPTEMBER HAZE PROMO POPUP ===== -->
+<style>
+.promo-overlay{position:fixed;inset:0;z-index:9999;background:rgba(15,18,22,0.72);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;padding:16px;opacity:0;transition:opacity .25s ease;}
+.promo-overlay.open{display:flex;opacity:1;}
+.promo-sheet{background:#fff;border-radius:16px;width:100%;max-width:460px;max-height:92vh;overflow-y:auto;-webkit-overflow-scrolling:touch;position:relative;box-shadow:0 24px 60px rgba(0,0,0,0.35);transform:translateY(14px);transition:transform .28s ease;}
+.promo-overlay.open .promo-sheet{transform:translateY(0);}
+.promo-close{position:absolute;top:10px;right:10px;z-index:5;width:34px;height:34px;border-radius:50%;border:none;background:rgba(0,0,0,0.55);color:#fff;font-size:1.1rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.promo-close:active{transform:scale(0.92);}
+.promo-slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:16px 16px 0 0;}
+.promo-slides::-webkit-scrollbar{display:none;}
+.promo-slides img{flex:0 0 100%;width:100%;scroll-snap-align:start;display:block;}
+.promo-dots{display:flex;justify-content:center;gap:6px;padding:9px 0 3px;}
+.promo-dot{width:7px;height:7px;border-radius:50%;background:#d3d6da;transition:background .2s,width .2s;}
+.promo-dot.active{background:var(--lg-red,#c41e3a);width:18px;border-radius:4px;}
+.promo-body{padding:4px 18px 16px;}
+.promo-eyebrow{font-size:0.66rem;font-weight:700;letter-spacing:0.6px;color:var(--lg-red,#c41e3a);text-transform:uppercase;margin-bottom:5px;}
+.promo-title{font-family:var(--font-display);font-size:1.08rem;font-weight:700;line-height:1.32;color:#1a1a1a;margin-bottom:6px;}
+.promo-sub{font-size:0.8rem;line-height:1.5;color:#5a6068;margin-bottom:12px;}
+.promo-contact{background:#f6f7f8;border:1px solid #e6e8ea;border-radius:11px;padding:12px 14px;margin-bottom:13px;}
+.promo-contact-name{font-family:var(--font-display);font-size:0.86rem;font-weight:700;color:#1a1a1a;}
+.promo-contact-role{font-size:0.7rem;color:#6b7178;margin-bottom:8px;}
+.promo-contact-row{display:flex;align-items:center;gap:7px;font-size:0.78rem;margin-top:5px;}
+.promo-contact-row a{color:#1a1a1a;text-decoration:none;font-weight:600;}
+.promo-contact-row span.lbl{color:#8b9097;font-size:0.72rem;min-width:62px;}
+.promo-actions{display:flex;flex-direction:column;gap:8px;}
+.promo-btn{display:flex;align-items:center;justify-content:center;gap:7px;padding:12px;border-radius:10px;font-family:var(--font-display);font-size:0.85rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;}
+.promo-btn-wa{background:#25D366;color:#fff;}
+.promo-btn-ghost{background:#fff;color:#1a1a1a;border:1.5px solid #d8dbde;}
+.promo-btn:active{transform:scale(0.98);}
+.promo-fine{font-size:0.62rem;line-height:1.45;color:#9aa0a6;margin-top:11px;}
+@media(max-width:480px){.promo-sheet{max-height:94vh;}.promo-title{font-size:1rem;}}
+</style>
+<div class="promo-overlay" id="promoOverlay" role="dialog" aria-modal="true" aria-label="September air purifier promotion">
+  <div class="promo-sheet">
+    <button class="promo-close" id="promoClose" aria-label="Close">&#10005;</button>
+    <div class="promo-slides" id="promoSlides">
+      <img src="https://subscribe-smarthome.com/images/Air-Purifier-Haze-Version-Save-Upto-RM420-FA.jpeg" alt="LG Air Purifier haze promotion, save up to RM420 off, 1-30 September 2026" loading="eager"/>
+      <img src="https://subscribe-smarthome.com/images/Air-Purifier-Haze-Version-Save-Upto-RM420-FA2.jpeg" alt="LG PuriCare 360 Alpha PET AS65GDBY0 features and subscription plans" loading="lazy"/>
+    </div>
+    <div class="promo-dots"><div class="promo-dot active"></div><div class="promo-dot"></div></div>
+    <div class="promo-body">
+      <div class="promo-eyebrow" data-i18n="promo_pop_eyebrow">1 &ndash; 30 September 2026</div>
+      <div class="promo-title" data-i18n="promo_pop_title">Hazy days? LG PuriCare 360&deg; Alpha PET &mdash; save up to RM420.</div>
+      <div class="promo-sub" data-i18n="promo_pop_sub">HEPA H13 filter, PM 1.0 sensor, UVnano and 360&deg; purification. Free delivery and installation. Ask me which plan fits your home.</div>
+      <div class="promo-contact">
+        <div class="promo-contact-name">Chan Kar Mun (Kelvin Chan)</div>
+        <div class="promo-contact-role" data-i18n="promo_pop_role">Independent Smart Home Consultant &middot; LG Subscribe M260389</div>
+        <div class="promo-contact-row"><span class="lbl" data-i18n="promo_pop_wa_lbl">WhatsApp</span><a href="https://api.whatsapp.com/send?phone=601176060833">+60 11-7606 0833</a></div>
+        <div class="promo-contact-row"><span class="lbl" data-i18n="promo_pop_email_lbl">Email</span><a href="mailto:kelvin89mun@gmail.com">kelvin89mun@gmail.com</a></div>
+        <div class="promo-contact-row"><span class="lbl" data-i18n="promo_pop_hours_lbl">Reply hours</span><span data-i18n="promo_pop_hours">Daily 9am &ndash; 9pm</span></div>
+      </div>
+      <div class="promo-actions">
+        <a href="https://api.whatsapp.com/send?phone=601176060833" class="promo-btn promo-btn-wa" data-wa="haze" data-i18n="promo_pop_cta1">&#128172; WhatsApp me about this promo</a>
+        <button class="promo-btn promo-btn-ghost" id="promoSeeAir" data-i18n="promo_pop_cta2">See air purifiers on this page</button>
+      </div>
+      <div class="promo-fine" data-i18n="promo_pop_fine">Promotion applies to LG Air Purifier model AS65GDBY0.AML only. Prices and offers may vary for other models. Images are for illustration only. LG reserves the right to change specifications, availability and pricing. T&amp;Cs apply. This is an independent consultant website, not the official LG website.</div>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+    var PROMO_ID = 'haze-sep-2026';
+    var PROMO_END = new Date('2026-10-01T00:00:00+08:00'); // stops showing by itself after 30 Sep
+    var overlay = document.getElementById('promoOverlay');
+    if (!overlay) return;
+
+    function seenToday() {
+        try {
+            var v = localStorage.getItem('promo-seen-' + PROMO_ID);
+            if (!v) return false;
+            return (Date.now() - parseInt(v, 10)) < 24 * 60 * 60 * 1000;
+        } catch (e) { return false; }
+    }
+    function markSeen() {
+        try { localStorage.setItem('promo-seen-' + PROMO_ID, String(Date.now())); } catch (e) {}
+    }
+    function openPopup() {
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        markSeen();
+    }
+    function closePopup() {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    document.getElementById('promoClose').addEventListener('click', closePopup);
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) closePopup(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePopup(); });
+    overlay.querySelectorAll('a[href*="whatsapp"]').forEach(function (a) {
+        a.addEventListener('click', closePopup);
+    });
+    document.getElementById('promoSeeAir').addEventListener('click', function () {
+        closePopup();
+        if (typeof filterProducts === 'function') filterProducts('air');
+    });
+
+    // Slide indicator dots
+    var slides = document.getElementById('promoSlides');
+    var dots = overlay.querySelectorAll('.promo-dot');
+    slides.addEventListener('scroll', function () {
+        var i = Math.round(slides.scrollLeft / slides.clientWidth);
+        dots.forEach(function (d, n) { d.classList.toggle('active', n === i); });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        if (new Date() >= PROMO_END) return;                    // promo over, never shows again
+        if (seenToday()) return;                                // once per 24 hours per visitor
+        if (location.hash && location.hash !== '#all') return;  // arrived via a category/product link
+        setTimeout(openPopup, 2200);                            // let the page paint first
+    });
+
+    window.showPromoPopup = openPopup;   // manual trigger, in case you want a button for it later
 })();
 </script>
 </body>
