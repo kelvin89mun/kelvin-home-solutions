@@ -2,7 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://subscribe-smarthome.com/sitemap.xml
-
-# Brand Disclaimer
-# This website is operated by authorised sales agent KELVIN CHAN (LGM260389)
-# This is NOT the official LG Electronics website.
