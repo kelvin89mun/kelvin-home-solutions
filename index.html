@@ -936,6 +936,21 @@
         @media (prefers-reduced-motion: reduce) {
             .hero-split::before, .hero-split::after { animation: none; }
         }
+        /* Faint LG product-range photo, desktop only, sits behind everything in the hero */
+        .hero-range-bg {
+            position: absolute;
+            right: -3%;
+            bottom: 0;
+            width: min(540px, 44%);
+            opacity: 0.15;
+            z-index: 0;
+            pointer-events: none;
+            user-select: none;
+            filter: saturate(0.85);
+            -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 35%, rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(to left, rgba(0,0,0,1) 35%, rgba(0,0,0,0) 100%);
+        }
+        @media (max-width: 900px) { .hero-range-bg { display: none; } }
         .hero-split-grid { position: relative; z-index: 1; }
         .hero-split-grid {
             max-width: 1200px;
@@ -964,7 +979,7 @@
             font-weight: 700;
             margin-bottom: 16px;
         }
-        .hero-split-intro h2 {
+        .hero-split-intro h1, .hero-split-intro h2 {
             font-size: clamp(30px, 4.8vw, 50px);
             font-weight: 700;
             line-height: 1.08;
@@ -982,7 +997,7 @@
             to   { background-position: 100% 0; }
         }
         @media (prefers-reduced-motion: reduce) {
-            .hero-split-intro h2 { animation: none; }
+            .hero-split-intro h1, .hero-split-intro h2 { animation: none; }
         }
         .hero-split-lead {
             font-size: 17px;
@@ -1196,7 +1211,7 @@
         }
 
         @media (max-width: 480px) {
-            .hero-split-intro h2 { font-size: 26px; }
+            .hero-split-intro h1, .hero-split-intro h2 { font-size: 26px; }
         }
     
         /* Legal Table of Contents */
@@ -1291,7 +1306,7 @@
             color: #999;
             font-size: 0.85rem;
         }
-        .legal-section h1 { 
+        .legal-section .legal-title { 
             color: #e31837; 
             font-size: 28px; 
             margin-bottom: 10px; 
@@ -1822,7 +1837,7 @@
             letter-spacing: 1.5px;
             margin-bottom: 14px;
         }
-        .detail-info-block h1 {
+        .detail-info-block .detail-title {
             font-size: 1.8rem;
             font-weight: 700;
             color: #1a1a1a;
@@ -2589,7 +2604,7 @@
         .hero-split::after {
             background: radial-gradient(circle, rgba(10,132,255,0.13), transparent 70%);
         }
-        .hero-split-intro h2 {
+        .hero-split-intro h1, .hero-split-intro h2 {
             background: linear-gradient(115deg, #0c1226 30%, var(--lg-red) 75%, #ff5c76 100%);
             background-size: 200% 100%;
             -webkit-background-clip: text;
@@ -2708,6 +2723,57 @@
             .product-image img, .gallery-slide img, .detail-related-card img { opacity: 1; transform: none; transition: none; }
         }
 </style>
+<link rel="canonical" href="https://subscribe-smarthome.com/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Chan Kar Mun | LG Subscribe Consultant"/>
+<meta property="og:url" content="https://subscribe-smarthome.com/"/>
+<meta property="og:title" content="Kelvin Chan | Authorized LG Subscribe Independent Consultant Malaysia"/>
+<meta property="og:description" content="LG home appliance subscription in Malaysia — air purifiers, water purifiers, washers, fridges, air conditioners and TVs. Free installation and maintenance. Independent consultant, not the official LG website."/>
+<meta property="og:image" content="https://subscribe-smarthome.com/images/lg-subscribe-range.jpg"/>
+<meta property="og:locale" content="en_MY"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Kelvin Chan | Authorized LG Subscribe Independent Consultant Malaysia"/>
+<meta name="twitter:description" content="LG home appliance subscription in Malaysia. Free installation and maintenance. Independent consultant site."/>
+<meta name="twitter:image" content="https://subscribe-smarthome.com/images/lg-subscribe-range.jpg"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://subscribe-smarthome.com/#website",
+      "url": "https://subscribe-smarthome.com/",
+      "name": "Chan Kar Mun | LG Subscribe Independent Consultant",
+      "inLanguage": ["en-MY", "ms-MY", "zh-CN"],
+      "publisher": { "@id": "https://subscribe-smarthome.com/#consultant" }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://subscribe-smarthome.com/#consultant",
+      "name": "Chan Kar Mun (Kelvin Chan) — Independent LG Subscribe Consultant",
+      "description": "Independent consultant for LG Subscribe home appliance subscriptions in Malaysia. Not the official LG website.",
+      "url": "https://subscribe-smarthome.com/",
+      "telephone": "+60-11-7606-0833",
+      "email": "kelvin89mun@gmail.com",
+      "priceRange": "RM",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ipoh",
+        "addressRegion": "Perak",
+        "addressCountry": "MY"
+      },
+      "areaServed": { "@type": "Country", "name": "Malaysia" },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "09:00",
+        "closes": "21:00"
+      }],
+      "knowsLanguage": ["en", "ms", "zh"]
+    }
+  ]
+}
+</script>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-11021213892"></script>
 <script>
@@ -2812,10 +2878,11 @@
 </nav>
 <!-- ===== HERO BANNER (split layout, no video) ===== -->
 <div class="hero-split" id="heroVideoSection">
+<img class="hero-range-bg" data-range-img="1" alt="" aria-hidden="true" loading="lazy"/>
     <div class="hero-split-grid">
         <div class="hero-split-intro">
             <div class="hero-eyebrow" data-i18n="hero_eyebrow">Authorized LG Subscription Consultant</div>
-            <h2 data-i18n="hero_title">LG Home Appliances Subscription</h2>
+            <h1 data-i18n="hero_title">LG Home Appliances Subscription</h1>
             <p class="hero-split-lead" data-i18n="hero_subtitle">Fridges, washers, air conditioners, TVs, water &amp; air purifiers &mdash; free installation and free maintenance included, built for Malaysian homes.</p>
         </div>
         <div class="hero-split-actions">
@@ -4169,7 +4236,7 @@ window.lgPromoNote = function (product, unitText) {
         <div class="detail-content-grid">
             <div class="detail-info-block">
                 <span class="detail-badge" id="spBadge">WATER</span><span class="detail-urgent-tag" id="spUrgentTag" style="display:none;">🔥 Hot Seller</span>
-                <h1 id="spTitle">Product Title</h1>
+                <h2 id="spTitle" class="detail-title">Product Title</h2>
                 <div class="detail-model" id="spModel">Model No.</div>
                 <p class="detail-desc" id="spDesc">Description</p>
                 <div class="detail-trust-badges" id="spTrustBadges" style="display:none;"></div>
@@ -4291,7 +4358,7 @@ window.lgPromoNote = function (product, unitText) {
         <a href="#" onclick="showMainContent(); return false;">&#8592; Home</a>
         <span>Privacy Policy</span>
     </div>
-    <h1>Privacy Policy</h1>
+    <h2 class="legal-title">Privacy Policy</h2>
     <p class="effective-date"><strong>Effective Date:</strong> 3 May 2026 | <strong>Last Updated:</strong> 3 May 2026</p>
 
     <div class="legal-toc">
@@ -4385,7 +4452,7 @@ window.lgPromoNote = function (product, unitText) {
         <a href="#" onclick="showMainContent(); return false;">&#8592; Home</a>
         <span>Terms &amp; Conditions</span>
     </div>
-    <h1>Terms &amp; Conditions</h1>
+    <h2 class="legal-title">Terms &amp; Conditions</h2>
     <p class="effective-date"><strong>Effective Date:</strong> 3 May 2026 | <strong>Last Updated:</strong> 3 May 2026</p>
 <div class="highlight-box">
             Please read these Terms &amp; Conditions carefully before using our services. By using Chan Kar Mun Smart Home, you agree to these terms.
@@ -4514,7 +4581,7 @@ window.lgPromoNote = function (product, unitText) {
 <a href="#" onclick="showMainContent(); return false;">&#8592; Home</a>
 <span>About</span>
 </div>
-<h1>About Me</h1>
+<h2 class="legal-title">About Me</h2>
 <p class="effective-date"><strong>Chan Kar Mun (Kelvin Chan)</strong> | Independent Smart Home Consultant</p>
 <div class="highlight-box">
     Hi, I'm Kelvin Chan, an Independent Smart Home Consultant behind Chan Kar Mun Smart Home. I help homeowners discover the right LG appliances for their needs through personalised guidance and the flexible LG Subscribe programme.
@@ -5056,6 +5123,7 @@ window.lgPromoNote = function (product, unitText) {
             promo_pop_sub: 'Offer ends 30 September. Message me and I\u2019ll tell you which plan fits your home.',
             promo_pop_cta1: '\uD83D\uDCAC WhatsApp Kelvin',
             promo_pop_later: 'Maybe later',
+            promo_pop_reassure: 'Just asking is fine \u2014 no deposit, no forms.',
             promo_pop_fine: 'Promotion applies to LG Air Purifier model AS65GDBY0.AML only. T&Cs apply. Independent consultant website, not the official LG website.'
         },
         zh: {
@@ -5151,6 +5219,7 @@ window.lgPromoNote = function (product, unitText) {
             promo_pop_sub: '优惠到 9月30日。WhatsApp 我，我告诉你哪个配套适合你家。',
             promo_pop_cta1: '\uD83D\uDCAC WhatsApp Kelvin',
             promo_pop_later: '\u4e0b\u6b21\u518d\u8bf4',
+            promo_pop_reassure: '只是问问也没关系 — 不用订金，不用填表格。',
             promo_pop_fine: '此促销仅适用于型号 AS65GDBY0.AML。条款与条件适用。本网站为独立顾问网站，非 LG 官方网站。'
         },
         ms: {
@@ -5246,6 +5315,7 @@ window.lgPromoNote = function (product, unitText) {
             promo_pop_sub: 'Promosi tamat 30 September. WhatsApp saya, saya beritahu pelan mana sesuai untuk rumah anda.',
             promo_pop_cta1: '\uD83D\uDCAC WhatsApp Kelvin',
             promo_pop_later: 'Lain kali',
+            promo_pop_reassure: 'Tanya saja pun boleh \u2014 tiada deposit, tiada borang.',
             promo_pop_fine: 'Promosi hanya untuk model AS65GDBY0.AML. T&C dikenakan. Laman konsultan bebas, bukan laman rasmi LG.'
         }
     };
@@ -5574,30 +5644,30 @@ window.lgPromoNote = function (product, unitText) {
     var WA_COPY = {
         en: {
             per: '/month',
-            soft: "Hi Kelvin, I'm looking at {name}{price}. How do I apply, and when can it be installed?",
-            big: "Hi Kelvin, I'd like to know more about {name}{price}. Is maintenance and warranty included?",
-            quote: "Hi Kelvin, I'd like a free plan for my home appliances. (New house / replacing old units)",
-            pick: "Hi Kelvin, too many models — which one suits my home? Help me pick one.",
-            cat: "Hi Kelvin, may I have the latest 2026 catalogue and promo list?",
-            haze: "Hi Kelvin, the haze is bad now. Which LG air purifier suits my house size, and what is the current promo?"
+            soft: "Hi Kelvin, {name}{price} — can I know more?",
+            big: "Hi Kelvin, {name}{price} — can I know more?",
+            quote: "Hi Kelvin, can I get a quote for my home?",
+            cat: "Hi Kelvin, can I have the 2026 catalogue?",
+            pick: "Hi Kelvin, which model suits my home?",
+            haze: "Hi Kelvin, the haze air purifier promo — can I know more?"
         },
         zh: {
             per: '/月',
-            soft: "Hi Kelvin，我看中 {name}{price}。请问要怎样申请?几时可以安装?",
-            big: "Hi Kelvin，我想了解 {name}{price}。包保养和保修吗?",
-            quote: "Hi Kelvin，我想配置家里的家电，帮我做个免费规划?（新家 / 换旧机）",
-            pick: "Hi Kelvin，型号太多不懂选。帮我推荐一台适合我家的?",
-            cat: "Hi Kelvin，可以给我 2026 最新目录和促销表吗?",
-            haze: "Hi Kelvin，最近烟霾很严重。我家适合哪一台空气净化器?现在什么促销?"
+            soft: "Hi Kelvin，{name}{price}，可以了解一下吗？",
+            big: "Hi Kelvin，{name}{price}，可以了解一下吗？",
+            quote: "Hi Kelvin，可以帮我报个价吗？",
+            cat: "Hi Kelvin，可以给我 2026 目录吗？",
+            pick: "Hi Kelvin，哪一台适合我家？",
+            haze: "Hi Kelvin，空气净化器的烟霾促销，可以了解一下吗？"
         },
         ms: {
             per: '/bulan',
-            soft: "Hi Kelvin, saya berminat dengan {name}{price}. Macam mana nak mohon, dan bila boleh pasang?",
-            big: "Hi Kelvin, saya nak tahu lebih lanjut pasal {name}{price}. Termasuk servis dan waranti?",
-            quote: "Hi Kelvin, saya nak perancangan percuma untuk perkakas rumah. (Rumah baru / ganti unit lama)",
-            pick: "Hi Kelvin, terlalu banyak model. Boleh cadangkan satu yang sesuai untuk rumah saya?",
-            cat: "Hi Kelvin, boleh dapatkan katalog 2026 terkini dan senarai promosi?",
-            haze: "Hi Kelvin, jerebu teruk sekarang. Penapis udara LG mana sesuai untuk rumah saya, dan apa promosi terkini?"
+            soft: "Hi Kelvin, {name}{price} — boleh tahu lebih lanjut?",
+            big: "Hi Kelvin, {name}{price} — boleh tahu lebih lanjut?",
+            quote: "Hi Kelvin, boleh bagi sebut harga untuk rumah saya?",
+            cat: "Hi Kelvin, boleh dapatkan katalog 2026?",
+            pick: "Hi Kelvin, model mana sesuai untuk rumah saya?",
+            haze: "Hi Kelvin, promosi penapis udara jerebu — boleh tahu lebih lanjut?"
         }
     };
 
@@ -5788,7 +5858,8 @@ window.lgPromoNote = function (product, unitText) {
 .promo-sub{font-size:0.79rem;line-height:1.55;color:#72787f;margin-bottom:16px;}
 .promo-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;border-radius:13px;background:#25D366;color:#fff;font-family:var(--font-display);font-size:0.88rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;box-shadow:0 4px 14px rgba(37,211,102,0.28);transition:transform .15s ease;}
 .promo-btn:active{transform:scale(0.98);}
-.promo-later{display:block;width:100%;margin-top:11px;background:none;border:none;color:#9aa0a6;font-size:0.76rem;cursor:pointer;padding:4px;}
+.promo-reassure{font-size:0.71rem;color:#9aa0a6;margin-top:9px;}
+.promo-later{display:block;width:100%;margin-top:6px;background:none;border:none;color:#9aa0a6;font-size:0.76rem;cursor:pointer;padding:4px;}
 .promo-later:hover{color:#72787f;}
 .promo-fine{font-size:0.58rem;line-height:1.5;color:#b2b7bc;margin-top:15px;}
 @media(max-width:480px){.promo-sheet{max-height:92vh;}.promo-body{padding:12px 20px 20px;}}
@@ -5805,6 +5876,7 @@ window.lgPromoNote = function (product, unitText) {
       <div class="promo-title" data-i18n="promo_pop_title">Hazy days? Save up to RM420 on LG PuriCare 360&deg;</div>
       <div class="promo-sub" data-i18n="promo_pop_sub">Offer ends 30 September. Message me and I&rsquo;ll tell you which plan fits your home.</div>
       <a href="https://api.whatsapp.com/send?phone=601176060833" class="promo-btn" data-wa="haze" data-i18n="promo_pop_cta1">&#128172; WhatsApp Kelvin</a>
+      <div class="promo-reassure" data-i18n="promo_pop_reassure">Just asking is fine &mdash; no deposit, no forms.</div>
       <button class="promo-later" id="promoLater" data-i18n="promo_pop_later">Maybe later</button>
       <div class="promo-fine" data-i18n="promo_pop_fine">Promotion applies to LG Air Purifier model AS65GDBY0.AML only. T&amp;Cs apply. Independent consultant website, not the official LG website.</div>
     </div>
@@ -5863,6 +5935,22 @@ window.lgPromoNote = function (product, unitText) {
     });
 
     window.showPromoPopup = openPopup;   // manual trigger, in case you want a button for it later
+})();
+
+// Hero product-range photo: try the likely filenames so an upload name mismatch
+// leaves the hero clean instead of showing a broken image.
+(function () {
+    var img = document.querySelector('.hero-range-bg');
+    if (!img) return;
+    var BASE = 'https://subscribe-smarthome.com/images/';
+    var NAMES = ['lg-subscribe-range.jpg', 'IMG_0940.jpeg', 'IMG_0940.JPG', 'IMG_0940.jpg', 'lg-subscribe-range.jpeg'];
+    var i = 0;
+    img.addEventListener('error', function () {
+        i++;
+        if (i < NAMES.length) img.src = BASE + NAMES[i];
+        else img.style.display = 'none';
+    });
+    img.src = BASE + NAMES[0];
 })();
 </script>
 </body>
